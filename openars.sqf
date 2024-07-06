@@ -1,0 +1,1 @@
+(findDisplay 1488) ctrlCreate ["RscAttributeInventory", -1];

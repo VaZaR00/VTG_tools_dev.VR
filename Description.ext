@@ -1,0 +1,94 @@
+#include "defines.hpp"
+#include "controls.hpp"
+#include "manager.hpp"
+#include "newManager.hpp"
+#include "addFuncSelector.hpp"
+#include "targetsInput.hpp"
+
+
+class CfgFunctions
+{
+	class VTG
+	{
+		class General 
+		{
+			file = "uiScripts";
+			class open {};
+			class getAllItems {};
+			class getItemTypeFunc {};
+			class validPic {};
+			class getUIelements {};
+			class message {};
+			class findRootConfig {};
+		};
+		class Systems 
+		{
+			file = "uiScripts";
+			class convertAttributeToFunction {};
+			class convertFunctionToAttribute {};
+		};
+		class Menu
+		{
+			file = "uiScripts\Menu";
+			class createBtnFunc {};
+		};
+		class ModulesTree
+		{
+			file = "uiScripts\ModulesTree";
+			class addItemToTree {};
+			class initTreeItems {};
+		};
+		class Arsenal 
+		{
+			file = "uiScripts\Arsenal";
+			class loadArsenal {};
+			class loadAddToCombo {};
+			class getAmountInput {};
+			class onSearchKeyUp {};
+			class clearSearch {};
+
+		};
+		class Arsenal_addingItem
+		{
+			file = "uiScripts\Arsenal\addingItem";
+			class addItemFromArsenal {};
+			class checkCategories {};
+			class peekItem {};
+		}
+		class ModuleInventory
+		{
+			file = "uiScripts\ModuleInventory";
+			class loadModuleInventory {};
+			class getModuleItemName {};
+		};
+		class ModuleInventory_ItemOperations
+		{
+			file = "uiScripts\ModuleInventory\itemOperations";
+			class addItemToModule {};
+			class modifyModuleItem {};
+			class deleteModuleItems {};
+			class clearModule {};
+		};
+		class ModuleInventory_targets
+		{
+			file = "uiScripts\ModuleInventory\targets";
+			class addTargetToCombo {};
+			class getTargetsByClass {};
+			class getTargetSides {};
+			class loadTargetsCombo {};
+		};
+		class ModuleInventory_targets_menu
+		{
+			file = "uiScripts\ModuleInventory\targets\menu";
+			class openEditTargetsMenu {};
+		};
+		class addFuncSelect 
+		{
+			file = "uiScripts\addFuncSelector";
+			class openSelector {};
+			class loadSelector {};
+			class changeAddFunc {};
+			class updateAddFunc {};
+		};
+	};
+};
