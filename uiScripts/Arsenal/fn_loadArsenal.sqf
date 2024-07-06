@@ -10,7 +10,8 @@ tvClear _tree;
 {
 	_x params ['_name', '_list'];
 	private _treeCatIndex = _forEachIndex;
-	_tree tvAdd [[], _name];
+	private _index = _tree tvAdd [[], _name];
+	_tree tvSetValue [[_index], _forEachIndex];
 	if (_term isEqualTo '') then {
 		_tree tvCollapse [_treeCatIndex];
 	} else {
@@ -40,4 +41,4 @@ tvClear _tree;
 	};
 } forEach VTG_itemCache;
 
-_tree tvSort [[]];
+_tree tvSortByValue [[], true];

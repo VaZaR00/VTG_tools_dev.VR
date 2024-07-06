@@ -1,7 +1,9 @@
 //weapons
-private _weapons = []; 
-private _magazines = []; //separate 
+private _rifles = []; 
+private _pistols = []; 
+private _launchers = []; 
 //items
+private _magazines = []; //separate 
 private _items = [];
 private _accessories = [];
 //equipment
@@ -20,7 +22,15 @@ private _goggles = [];
 	// 	_items pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
 	// };
 	switch ([_configName] call VTG_fnc_getItemTypeFunc) do {
-		case "AW": { _weapons };
+		case "AW": {
+			private _baseclass = [configFile >> 'CfgWeapons' >> _configName, true] call BIS_fnc_returnParents;
+			switch (_baseclass select -2) do {
+				case "RifleCore": { _rifles };
+				case "PistolCore": { _pistols };
+				case "LauncherCore": { _launchers };
+				default { _items };
+			};
+		};
 		case "AM": { _magazines };
 		case "AI": { _items };
 		case "LI": { _items };
@@ -46,7 +56,9 @@ private _goggles = [];
 	_goggles pushBackUnique [getText (_x >> 'displayName'), configName _x, getText (_x >> 'picture')];
 } forEach ('(getNumber(_x >> "scope") isEqualTo 2) && {[getText(_x >> "picture")] call VTG_fnc_validPic}' configClasses (configFile >> 'CfgGlasses'));
 
-_weapons sort true;
+_rifles sort true;
+_pistols sort true;
+_launchers sort true;
 _magazines sort true;
 _items sort true;
 _accessories sort true;
@@ -58,7 +70,9 @@ _goggles sort true;
 
 //return
 [
-    ["Weapons", _weapons],
+    ["Rifles", _rifles],
+	["Pistols", _pistols],
+	["Launchers", _launchers],
     ["Magazines", _magazines],
     ["Items", _items],
     ["Accessories", _accessories],

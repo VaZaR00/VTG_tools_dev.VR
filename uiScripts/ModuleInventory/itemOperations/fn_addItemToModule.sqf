@@ -1,4 +1,4 @@
-params["_catPath", "_classname", "_name", "_amount", ["_func", "def"]];
+params["_path", "_classname", "_name", "_amount", ["_func", "def"]];
 
 if (_func == "def") then {
 	_func = _classname call VTG_fnc_getItemTypeFunc;
@@ -7,8 +7,7 @@ private _name = _classname call VTG_fnc_getModuleItemName;
 private _itemText = format ['%1 x %2', _amount, _name];
 private _inventoryTree = VTG_equipUI#1;
 //setting item
-private _index = _inventoryTree tvAdd [_catPath, _itemText];
-private _path = [_catPath#0, _catPath#1, _index];
+_path pushBack (_inventoryTree tvAdd [_path, _itemText]);
 private _cfg = _classname call VTG_fnc_findRootConfig;
 private _image = getText (configFile >> _cfg >> _classname >> 'picture');
 

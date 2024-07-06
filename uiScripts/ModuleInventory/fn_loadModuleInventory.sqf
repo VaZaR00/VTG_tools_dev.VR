@@ -6,7 +6,7 @@ tvClear _tree;
 
 //private _inventory = [_target] call EIM_fnc_getVehicleInventory;
 
-_tree tvAdd [[], "General"];
+_tree tvAdd [[], "Inventory"];
 _tree tvAdd [[], "To Uniform"];
 _tree tvAdd [[], "To Vest"];
 _tree tvAdd [[], "To Backpack"];

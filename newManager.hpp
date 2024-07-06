@@ -249,7 +249,7 @@ class EquipmentModulesManager {
 			{
 				class General
 				{
-					text = "General";
+					text = "Inventory";
 					default = 1;
 				};
 				class Uniform

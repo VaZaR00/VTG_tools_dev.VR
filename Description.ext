@@ -54,6 +54,8 @@ class CfgFunctions
 			class addItemFromArsenal {};
 			class checkCategories {};
 			class peekItem {};
+			class itemDestination {};
+			class iterate {};
 		}
 		class ModuleInventory
 		{
@@ -69,6 +71,14 @@ class CfgFunctions
 			class deleteModuleItems {};
 			class clearModule {};
 		};
+		class ModuleInventory_addFuncSelect 
+		{
+			file = "uiScripts\ModuleInventory\addFuncSelector";
+			class openSelector {};
+			class loadSelector {};
+			class changeAddFunc {};
+			class updateAddFunc {};
+		};
 		class ModuleInventory_targets
 		{
 			file = "uiScripts\ModuleInventory\targets";
@@ -81,14 +91,6 @@ class CfgFunctions
 		{
 			file = "uiScripts\ModuleInventory\targets\menu";
 			class openEditTargetsMenu {};
-		};
-		class addFuncSelect 
-		{
-			file = "uiScripts\addFuncSelector";
-			class openSelector {};
-			class loadSelector {};
-			class changeAddFunc {};
-			class updateAddFunc {};
 		};
 	};
 };

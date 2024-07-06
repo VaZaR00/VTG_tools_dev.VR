@@ -12,7 +12,7 @@ _moduleTree tvSetData [_selection, _funcShort];
 private _changeItemPlace = {
 	params["_selection", "_moduleTree", "_func", "_destination"];
 
-	_category = _moduleTree tvText [_selection#0, _selection#1];
+	_category = _moduleTree tvText [_selection#0];
 	_classname = _moduleTree tvTooltip _selection;
 
 	_path = [_destination, _category] call VTG_fnc_checkCategories;
