@@ -61,6 +61,8 @@ class CfgFunctions
 			class itemDestination {};
 			class iterate {};
 			class getAmountIfStack {};
+			class addItemMiddleware {};
+			class getCategory {};
 		};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	Inventory    ////////////////////////////////////////////////////////////////////////////////
@@ -71,6 +73,7 @@ class CfgFunctions
 			file = "uiScripts\ModuleInventory";
 			class loadModuleInventory {};
 			class getModuleItemName {};
+			class importFromArsenal {};
 		};
 		class ModuleInventory_ItemOperations
 		{
@@ -105,5 +108,19 @@ class CfgFunctions
 	class VTG_system
 	{
 		tag = "VTG";
+
+		class parsers_formScript
+		{
+			file = "Functions\Scripts\EquipmentControl\parsers\formScript";
+			class parseModule {};
+			class convertAttributeToFunction {};
+		};
+		class parsers_import
+		{
+			file = "Functions\Scripts\EquipmentControl\parsers\import";
+			class parser_middleware {};
+			class bi_arsenalExportParser {};
+			class convertFunctionToAttribute {};
+		};
 	};
 };

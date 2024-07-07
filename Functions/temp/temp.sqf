@@ -3,7 +3,7 @@ player addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}]
 
 [_result, "test result"] call BIS_fnc_3DENShowMessage;
 
-[text, type, duration, animate] call BIS_fnc_3DENNotification;
+[text, type, duration, animate] call VTG_fnc_message;
 
 
 {

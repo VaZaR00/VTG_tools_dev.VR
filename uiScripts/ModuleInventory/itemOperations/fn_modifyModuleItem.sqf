@@ -1,6 +1,6 @@
 private _inventoryTree = VTG_equipUI#1;
 
-params[["_path", tvCurSel _inventoryTree], ["_amount", nil]];
+params[["_path", tvCurSel _inventoryTree], "_amount"];
 
 if (isNil "_amount") then {
 	_amount = _path call VTG_fnc_getAmountIfStack

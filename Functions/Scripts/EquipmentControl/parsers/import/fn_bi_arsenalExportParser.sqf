@@ -25,7 +25,7 @@ private _parseString = {
 	_amount = 1;
 
 	if ("from " in _str) then {
-		_amount = _str select [(_str find "to ") + 3, 1]; 
+		_amount = parseNumber (_str select [(_str find "to ") + 3, 1]); 
 	};
 
 	_element = [_class, _function, _amount];

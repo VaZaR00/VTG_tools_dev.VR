@@ -78,4 +78,4 @@ private _setSquadNameInLobbyManager = {
 
 call _main;  //START
 
-//[str groups west,  0, 6] call BIS_fnc_3DENNotification;
+//[str groups west] call VTG_fnc_message;

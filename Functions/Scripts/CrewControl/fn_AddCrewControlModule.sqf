@@ -4,10 +4,10 @@ private _main = {
 	_entities = call _getEntities;
 
 	if (count (_entities#0) == 0) exitWith {
-		["No vehicles selected"] call BIS_fnc_3DENNotification;
+		["No vehicles selected"] call VTG_fnc_message;
 	};
 	if (count (_entities#1) == 0) exitWith {
-		["No units selected"] call BIS_fnc_3DENNotification;
+		["No units selected"] call VTG_fnc_message;
 	};
 
 	_messages = call _getMessagesText;

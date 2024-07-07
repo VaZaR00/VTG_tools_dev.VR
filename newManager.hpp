@@ -400,6 +400,7 @@ class EquipmentModulesManager {
 			h = 6.5 * GUI_GRID_H;
 			tooltip = "Import items from arsenal"; //--- ToDo: Localize;
 			sizeEx = 7 * GUI_GRID_H;
+			onButtonClick = "[] spawn VTG_fnc_importFromArsenal";
 		};
 		/*------ function ------*/
 		class function_module_Lbl: RscText

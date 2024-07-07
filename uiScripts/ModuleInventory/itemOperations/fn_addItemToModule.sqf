@@ -1,9 +1,8 @@
-params["_path", "_classname", "_name", ["_func", "def"]];
+params["_path", "_classname", ["_func", "def"], "_amount"];
 
 if (_func == "def") then {
 	_func = _classname call VTG_fnc_getItemTypeFunc;
 };
-private _amount = _path call VTG_fnc_getAmountIfStack;
 private _name = _classname call VTG_fnc_getModuleItemName;
 private _itemText = if (_amount > 1) then {
 	format ['%1 x %2', _amount, _name]

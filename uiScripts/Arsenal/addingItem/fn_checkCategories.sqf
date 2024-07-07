@@ -1,4 +1,4 @@
-params[["_destination", "Inventory"], "_arsenalCategories", ["_categoryIndex", 0]];
+params[["_destination", "Inventory"], "_arsenalCategories"];
 private _path = [];
 private _inventoryTree = VTG_equipUI#1;
 

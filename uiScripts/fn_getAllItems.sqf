@@ -39,37 +39,8 @@ private _all = [
 	// } else {
 	// 	_items pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
 	// };
-	switch ([_configName] call VTG_fnc_getItemTypeFunc) do {
-		case "AW": {
-			private _baseclass = [configFile >> 'CfgWeapons' >> _configName, true] call BIS_fnc_returnParents;
-			switch (_baseclass select -2) do {
-				case "RifleCore": { _rifles };
-				case "PistolCore": { _pistols };
-				case "LauncherCore": { _launchers };
-				default { _items };
-			};
-		};
-		case "AM": { _magazines };
-		case "AI": { _items };
-		case "LI": { _items };
-		case "APWI": {
-			private _itemType = _configName call BIS_fnc_itemType;
-			switch (_itemType#1) do {
-				case "AccessorySights": { _sights };
-				case "AccessoryPointer": { _pointers };
-				case "AccessoryMuzzle": { _muzzle };
-				case "AccessoryBipod": { _bipod };
-				default { _items };
-			};
-			//_accessories;
-		};
-		case "AU": { _uniforms };
-		case "AV": { _vests };
-		case "AH": { _helmets };
-		case "AB": { _backpacks };
-		case "AG": { _goggles };
-		default { [] };
-	} pushBackUnique _element;
+	private _cateogry = _all#(_configName call VTG_fnc_getCategory);
+	_cateogry pushBackUnique _element;
 } forEach ('(getNumber(_x >> "scope") isEqualTo 2) && ([getText(_x >> "picture")] call VTG_fnc_validPic) && !((getText (_x >> "displayName")) isEqualTo "")' configClasses (configFile >> 'CfgWeapons'));
 
 {
