@@ -4,7 +4,6 @@ _inventoryTree = VTG_equipUI#1;
 private _name = _arsenal tvText _sel;  //text of selection (item name)
 private _notFound = true;
 private _categItemCount = _inventoryTree tvCount _path;
-private _amount = call VTG_fnc_getAmountInput; //get amount number from input field
 
 //try to detect if such item is in module already
 if (_categItemCount > 0) then {
@@ -12,12 +11,12 @@ if (_categItemCount > 0) then {
 		private _data = _inventoryTree tvTooltip (_path + [_i]);  //there is classname in elements tooltip 
 		if (_classname == _data) then { //if it is then modify item amount
 			_path pushBack _i;
-			[_path, _amount] call VTG_fnc_modifyModuleItem;
+			[_path] call VTG_fnc_modifyModuleItem;
 			_notFound = false; //add item function won't be called
 			break;
 		};
 	};
 };
 if (_notFound) then { //if not detected then add new
-	[_path, _classname, _name, _amount, _func] call VTG_fnc_addItemToModule;
+	[_path, _classname, _name, _func] call VTG_fnc_addItemToModule;
 };

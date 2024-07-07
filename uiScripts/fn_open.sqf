@@ -21,6 +21,8 @@ waitUntil {!(isNil 'VTG_itemCache')&&(!isNull (uiNamespace getVariable ['Equipme
 private _display = uiNamespace getVariable ['EquipmentModulesManager', displayNull];
 VTG_equipUI = call VTG_fnc_getUIelements;
 
+waitUntil {!(isNil 'VTG_equipUI')};
+
 [] spawn VTG_fnc_loadArsenal;
 call VTG_fnc_loadTargetsCombo;
 //[_display] call VTG_fnc_loadModuleInventory;

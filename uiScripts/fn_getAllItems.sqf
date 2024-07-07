@@ -1,17 +1,35 @@
-//weapons
 private _rifles = []; 
 private _pistols = []; 
 private _launchers = []; 
-//items
-private _magazines = []; //separate 
+private _magazines = []; 
 private _items = [];
-private _accessories = [];
-//equipment
+private _sights = [];
+private _pointers = [];
+private _muzzle = [];
+private _bipod = [];
 private _uniforms = [];
 private _vests = [];
 private _helmets = [];
-private _backpacks = []; //separate
+private _backpacks = []; 
 private _goggles = [];
+private _accessories = [];
+
+private _all = [
+	_rifles,
+	_pistols,
+	_launchers,
+	_magazines,
+	_items,
+	_sights,
+	_pointers,
+	_muzzle,
+	_bipod,
+	_uniforms,
+	_vests,
+	_helmets,
+	_backpacks,
+	_goggles
+];
 
 {
 	private _configName = configName _x;
@@ -34,7 +52,17 @@ private _goggles = [];
 		case "AM": { _magazines };
 		case "AI": { _items };
 		case "LI": { _items };
-		case "APWI": { _accessories };
+		case "APWI": {
+			private _itemType = _configName call BIS_fnc_itemType;
+			switch (_itemType#1) do {
+				case "AccessorySights": { _sights };
+				case "AccessoryPointer": { _pointers };
+				case "AccessoryMuzzle": { _muzzle };
+				case "AccessoryBipod": { _bipod };
+				default { _items };
+			};
+			//_accessories;
+		};
 		case "AU": { _uniforms };
 		case "AV": { _vests };
 		case "AH": { _helmets };
@@ -56,17 +84,11 @@ private _goggles = [];
 	_goggles pushBackUnique [getText (_x >> 'displayName'), configName _x, getText (_x >> 'picture')];
 } forEach ('(getNumber(_x >> "scope") isEqualTo 2) && {[getText(_x >> "picture")] call VTG_fnc_validPic}' configClasses (configFile >> 'CfgGlasses'));
 
-_rifles sort true;
-_pistols sort true;
-_launchers sort true;
-_magazines sort true;
-_items sort true;
-_accessories sort true;
-_uniforms sort true;
-_vests sort true;
-_helmets sort true;
-_backpacks sort true;
-_goggles sort true;
+{
+	_x sort true;
+} forEach _all;
+
+private _accessories = [["Sights", _sights], ["Pointers", _pointers], ["Muzzles", _muzzle], ["Bipods", _bipod]];
 
 //return
 [
@@ -75,7 +97,7 @@ _goggles sort true;
 	["Launchers", _launchers],
     ["Magazines", _magazines],
     ["Items", _items],
-    ["Accessories", _accessories],
+    ["Accessories", _accessories], //3 arrays
     ["Uniforms", _uniforms],
     ["Vests", _vests],
     ["Helmets", _helmets],

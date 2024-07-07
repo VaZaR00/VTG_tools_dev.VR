@@ -15,7 +15,7 @@ private _changeItemPlace = {
 	_category = _moduleTree tvText [_selection#0];
 	_classname = _moduleTree tvTooltip _selection;
 
-	_path = [_destination, _category] call VTG_fnc_checkCategories;
+	_path = [_destination, [_category]] call VTG_fnc_checkCategories;
 	[_path, _classname, _func] call VTG_fnc_peekItem;
 
 	[true, _selection] call VTG_fnc_deleteModuleItems;
