@@ -63,6 +63,13 @@ class CfgFunctions
 			class getAmountIfStack {};
 			class addItemMiddleware {};
 			class getCategory {};
+			class isWeaponAttachment {};
+		};
+		class Arsenal_weapAttach
+		{
+			file = "uiScripts\Arsenal\weaponAttachments";
+			class closeWeapAttachMenu {};
+			class editWeapAttach {};
 		};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	Inventory    ////////////////////////////////////////////////////////////////////////////////

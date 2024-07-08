@@ -29,8 +29,8 @@ if (isNil "_items") exitWith {};
 
 	private _cateogry = [_all#(_class call VTG_fnc_getCategory)];
 
-	if (_cateogry in _accessories) then {
-		_cateogry insert [0, "Accessories"];
+	if ((_cateogry#0) in _accessories) then {
+		_cateogry insert [0, ["Accessories"]];
 	};
 
 	private _dest = [_function, false] call VTG_fnc_itemDestination;

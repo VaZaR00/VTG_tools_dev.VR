@@ -13,9 +13,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={4508.749,119.96729,2255.8455};
-		dir[]={0.08677379,-0.92249131,0.37613845};
-		up[]={0.20736881,0.38601777,0.89888179};
-		aside[]={0.97440678,0,-0.22479215};
+		dir[]={0.46985295,-0.8721981,-0.1360514};
+		up[]={0.83778256,0.48915213,-0.24258979};
+		aside[]={-0.27813628,4.0512532e-008,-0.96054095};
 	};
 };
 binarizationWanted=0;
@@ -159,6 +159,7 @@ class Mission
 							class primaryWeapon
 							{
 								name="SMG_03C_hex";
+								muzzle="muzzle_snds_570";
 								class primaryMuzzleMag
 								{
 									name="50Rnd_570x28_SMG_03";

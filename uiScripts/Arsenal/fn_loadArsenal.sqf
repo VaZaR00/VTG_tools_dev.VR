@@ -1,10 +1,10 @@
 disableSerialization;
 params [
-	['_search', '', ['']]
+	['_search', '', ['']],
+	['_tree', VTG_equipUI#0],
+	['_data', VTG_itemCache]
 ];
-private _tree = VTG_equipUI#0; //arsenal tree
 tvClear _tree;
-
 //indexes = [];
 
 private _main = {
@@ -40,7 +40,7 @@ private _main = {
 			} forEach _list;
 			[[_index]] call _checkIfEmpty;
 		};
-	} forEach VTG_itemCache;
+	} forEach _data;
 };
 
 // private _arsenalItem = {
@@ -86,7 +86,7 @@ private _filter = {
 };
 
 private _setArsenalItem = {
-	params["_path", "_itemName", "_itemClassname", "_itemPicture", ["_tree", (VTG_equipUI#0)]];
+	params["_path", "_itemName", "_itemClassname", "_itemPicture"];
 
 	private _index = _tree tvAdd [_path, _itemName];
 

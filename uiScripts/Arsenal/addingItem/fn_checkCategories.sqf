@@ -1,5 +1,5 @@
-params[["_destination", "Inventory"], "_arsenalCategories"];
-private _path = [];
+params[["_destination", "Inventory"], "_arsenalCategories", ["_path", []]];
+
 private _inventoryTree = VTG_equipUI#1;
 
 if (_destination != "Inventory") then {

@@ -1,6 +1,9 @@
 disableSerialization;
 //get ui elements
 private _arsenal = VTG_equipUI#0; //arsenal items tree
+if (ctrlShown (VTG_equipUI#10)) then {
+	_arsenal = VTG_equipUI#10;
+};
 private _inventoryTree = VTG_equipUI#1; //module items tree
 
 private _sel = tvCurSel _arsenal; //the selected item path: [cat, index]
@@ -21,6 +24,8 @@ for "_i" from 0 to (count _sel - 2) do {
 	_arsenalCategories pushBack (_arsenal tvText _arr);
 };
 
-[_classname, _arsenalCategories] call VTG_fnc_addItemMiddleware;
+private _isAttachment = if (_arsenal == (VTG_equipUI#10)) then {true} else {false};
+
+[_classname, _arsenalCategories, _isAttachment] call VTG_fnc_addItemMiddleware;
 
 _inventoryTree tvSortAll [[], false];

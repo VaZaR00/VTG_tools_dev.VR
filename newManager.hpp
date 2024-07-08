@@ -81,7 +81,7 @@ class EquipmentModulesManager {
 		};
 		class Preset_Menu_Lbl: RscText
 		{
-			idc = 1005;
+			idc = 1008;
 
 			text = "Preset"; //--- ToDo: Localize;
 			x = -24 * GUI_GRID_W + GUI_GRID_X;
@@ -118,7 +118,7 @@ class EquipmentModulesManager {
 		};
 		class Module_Menu_Lbl: RscText
 		{
-			idc = 1005;
+			idc = 1015;
 
 			text = "Module"; //--- ToDo: Localize;
 			x = 2 * GUI_GRID_W + GUI_GRID_X;
@@ -154,9 +154,10 @@ class EquipmentModulesManager {
 			idc = 1005;
 
 			text = "Arsenal"; //--- ToDo: Localize;
-			x = 67 * GUI_GRID_W + GUI_GRID_X;
+			style = 2;
+			x = 55.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 6.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 17.5 * GUI_GRID_W;
+			w = 40 * GUI_GRID_W;
 			h = 12 * GUI_GRID_H;
 		};
 		class Arsenal_frame: RscFrame
@@ -176,6 +177,29 @@ class EquipmentModulesManager {
 			w = 96 * GUI_GRID_W;
 			h = 122 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
+		};
+		/*-------- Weapon Attachments --------*/
+		class WeapAttach_Tree_hidden: RscTree
+		{
+			idc = 1239;
+
+			x = 27.5 * GUI_GRID_W + GUI_GRID_X;
+			y = 25.5 * GUI_GRID_H + GUI_GRID_Y;
+			w = 96 * GUI_GRID_W;
+			h = 117 * GUI_GRID_H;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class WeapAttachClose_Btn_hidden: RscButton
+		{
+			idc = 1238;
+			//text = "a3\3den\data\controlsgroups\tutorial\close_ca.paa"; //--- ToDo: Localize;
+			text = "X";
+			x = 118.5 * GUI_GRID_W + GUI_GRID_X;
+			y = 19 * GUI_GRID_H + GUI_GRID_Y;
+			w = 5 * GUI_GRID_W;
+			h = 6 * GUI_GRID_H;
+			tooltip = "Close weapon attachments menu"; //--- ToDo: Localize;
+			onButtonClick = "call VTG_fnc_closeWeapAttachMenu";
 		};
 		// class ArsenalLoading_Disable: 
 		// {
@@ -309,9 +333,10 @@ class EquipmentModulesManager {
 		{
 			idc = 1007;
 			text = "Module"; //--- ToDo: Localize;
-			x = 170.5 * GUI_GRID_W + GUI_GRID_X;
+			style = 2;
+			x = 168.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 17.5 * GUI_GRID_W;
+			w = 20 * GUI_GRID_W;
 			h = 8 * GUI_GRID_H;
 		};
 		class Module_frame: RscFrame
@@ -333,6 +358,7 @@ class EquipmentModulesManager {
 			colorBackground[] = {0,0,0,0.5};
 
 			onTreeSelChanged = "[] call VTG_fnc_updateAddFunc";
+			onTreeDblClick = "_this call VTG_fnc_editWeapAttach";
 		};
 
 		////////////////////////////////////////
@@ -447,7 +473,7 @@ class EquipmentModulesManager {
 		/*------ Targets ------*/
 		class TargetUnits_Lbl: RscText
 		{
-			idc = 1005;
+			idc = 1016;
 			text = "Target units: "; //--- ToDo: Localize;
 			x = 130.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 177 * GUI_GRID_H + GUI_GRID_Y;

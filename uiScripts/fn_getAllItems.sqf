@@ -68,7 +68,7 @@ private _accessories = [["Sights", _sights], ["Pointers", _pointers], ["Muzzles"
 	["Launchers", _launchers],
     ["Magazines", _magazines],
     ["Items", _items],
-    ["Accessories", _accessories], //3 arrays
+    ["Accessories", _accessories], //4 arrays
     ["Uniforms", _uniforms],
     ["Vests", _vests],
     ["Helmets", _helmets],
