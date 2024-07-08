@@ -177,6 +177,7 @@ class EquipmentModulesManager {
 			w = 96 * GUI_GRID_W;
 			h = 122 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
+			onTreeDblClick = "[] call VTG_fnc_addItemFromArsenal";
 		};
 		/*-------- Weapon Attachments --------*/
 		class WeapAttach_Tree_hidden: RscTree
@@ -188,6 +189,7 @@ class EquipmentModulesManager {
 			w = 96 * GUI_GRID_W;
 			h = 117 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
+			onTreeDblClick = "[] call VTG_fnc_addItemFromArsenal";
 		};
 		class WeapAttachClose_Btn_hidden: RscButton
 		{

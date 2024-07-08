@@ -1,3 +1,5 @@
 RscTree
 
+[_class, _func, _amount] ///////////////////////////////////////////////////////////////
+
 ['Nothing selected', 1] call VTG_fnc_message

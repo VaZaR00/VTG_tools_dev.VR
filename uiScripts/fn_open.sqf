@@ -24,6 +24,8 @@ VTG_equipUI = call VTG_fnc_getUIelements;
 
 waitUntil {!(isNil 'VTG_equipUI')};
 
+call VTG_fnc_loadTargetsCombo; //load combo of modules target units
+
 (VTG_equipUI#10) ctrlShow false; //hide weapon attachments tree
 (VTG_equipUI#11) ctrlShow false; //hide weapon attachments tree Close btn
 
@@ -35,10 +37,8 @@ if (isNil 'VTG_itemCache') then {
 
 waitUntil {!(isNil 'VTG_itemCache')};
 
-//load arsenal and other
-
+//load arsenal
 [] spawn VTG_fnc_loadArsenal;
-call VTG_fnc_loadTargetsCombo;
 //[_display] call VTG_fnc_loadModuleInventory;
 
 private _display = uiNamespace getVariable ['EquipmentModulesManager', displayNull];

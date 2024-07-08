@@ -1,4 +1,4 @@
-params["_path", "_classname", "_func", "_amount"];
+params["_path", "_classname", "_func", "_amount", "_name"];
 _inventoryTree = VTG_equipUI#1;
 
 private _notFound = true;
@@ -17,5 +17,5 @@ if (_categItemCount > 0) then {
 	};
 };
 if (_notFound) then { //if not detected then add new
-	[_path, _classname, _func, _amount] call VTG_fnc_addItemToModule;
+	[_path, _classname, _func, _amount, _name] call VTG_fnc_addItemToModule;
 };
