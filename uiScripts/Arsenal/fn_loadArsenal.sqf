@@ -10,7 +10,7 @@ tvClear _tree;
 private _main = {
 	params["_search"];
 
-	private _nested = ["Accessories"];
+	private _nested = ["Accessories", "Items"];
 	
 	{
 		private _name = _x#0;

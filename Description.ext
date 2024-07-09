@@ -16,6 +16,7 @@ class CfgFunctions
 			file = "uiScripts";
 			class open {};
 			class getAllItems {};
+			class getCategory {};
 			class getItemTypeFunc {};
 			class validPic {};
 			class getUIelements {};
@@ -62,8 +63,13 @@ class CfgFunctions
 			class iterate {};
 			class getAmountIfStack {};
 			class addItemMiddleware {};
-			class getCategory {};
 			class isWeaponAttachment {};
+		};
+		class Arsenal_addingItem_randomLbl
+		{
+			file = "uiScripts\Arsenal\addingItem\randomLbl";
+			class randomLbl {};
+			class checkIfRandom {};
 		};
 		class Arsenal_weapAttach
 		{
@@ -114,7 +120,7 @@ class CfgFunctions
 			class openEditTargetsMenu {};
 		};
 	};
-	class VTG_system
+	class VTG_equipModule_system
 	{
 		tag = "VTG";
 
@@ -130,6 +136,12 @@ class CfgFunctions
 			class parser_middleware {};
 			class bi_arsenalExportParser {};
 			class convertFunctionToAttribute {};
+		};
+
+		class storage_moduleItems
+		{
+			file = "Functions\Scripts\EquipmentControl\storage\moduleItems";
+			class setModuleItemsToVar {};
 		};
 	};
 };

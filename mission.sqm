@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4536.5425,7.4770117,2307.8062};
-		dir[]={-0.017136192,-0.089868486,0.99580699};
-		up[]={-0.001546256,0.99595392,0.089855};
-		aside[]={0.99985278,-2.0372681e-010,0.017205821};
+		pos[]={4525.0229,59.537022,2259.3713};
+		dir[]={0.010564878,-0.79487586,0.6066801};
+		up[]={0.013840067,0.60677207,0.7947554};
+		aside[]={0.99984837,0,-0.017411608};
 	};
 };
 binarizationWanted=0;
@@ -24,15 +24,13 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Weapons_F_Mod_SMGs_SMG_03",
-	"A3_Weapons_F_Mod",
-	"A3_Soft_F_Quadbike_01",
-	"A3_Characters_F_AoW"
+	"A3_Weapons_F_Mod"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=2;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -47,26 +45,11 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item2
-		{
-			className="A3_Soft_F";
-			name="Arma 3 Alpha - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item3
-		{
-			className="A3_Characters_F_AoW";
-			name="Arma 3 Art of War - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 dlcs[]=
 {
-	"OfficialMod",
-	"Expansion"
+	"OfficialMod"
 };
 randomSeed=6579932;
 class ScenarioData
@@ -131,7 +114,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=1;
 		class Item0
 		{
 			dataType="Group";
@@ -232,50 +215,6 @@ class Mission
 			{
 			};
 			id=210;
-		};
-		class Item1
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4543.0835,6.6262865,2326.0881};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="var_264";
-			};
-			id=264;
-			type="B_Quadbike_01_F";
-		};
-		class Item2
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4552.0547,5.0014391,2302.2119};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=303;
-					type="C_Man_formal_2_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=302;
 		};
 	};
 };

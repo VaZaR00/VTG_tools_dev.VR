@@ -10,7 +10,7 @@ if (_categCount == 0) then {
 	for "_i" from 0 to (_categCount) do { //if not empty then iterate through its categories
 		private _iText = _inventoryTree tvText (_path + [_i]);
 
-		if (_iText == _text) then { //if its target category then call function to peek item
+		if (_text in _iText) then { //if its target category then call function to peek item
 			_path pushBack _i;
 			_notFound = false;
 			break;

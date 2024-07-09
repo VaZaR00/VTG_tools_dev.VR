@@ -11,7 +11,7 @@ _itemPath append _path;
 
 _path deleteAt (count _path - 1);
 
-if !((_control tvText _path) in _weapons) exitWith {};
+if ((_weapons findIf { _x in (_control tvText _path) }) == -1) exitWith {};
 
 private _weapClass = _control tvTooltip _itemPath;
 
@@ -29,7 +29,7 @@ _closeBtn ctrlShow true;
 _arsenal ctrlShow false;
 _arsenalLbl ctrlSetText "Weapon Attachments";
 
-private _allAccessories = (VTG_itemCache#5)#1;
+private _allAccessories = (VTG_itemCache#9)#1;
 
 // {
 //     private _type = _x call VTG_fnc_getCategory;

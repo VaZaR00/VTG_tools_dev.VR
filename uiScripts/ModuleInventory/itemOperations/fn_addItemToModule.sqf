@@ -23,6 +23,9 @@ _inventoryTree tvSetPicture [_path, _image];
 _inventoryTree tvSetTooltip [_path, _classname];
 //select to show new item
 _inventoryTree tvSetCurSel _path;
+
+[_path, true] call VTG_fnc_checkIfRandom;
+
 /*
 
 module item:

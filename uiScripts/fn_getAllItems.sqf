@@ -2,7 +2,8 @@ private _rifles = [];
 private _pistols = []; 
 private _launchers = []; 
 private _magazines = []; 
-private _items = [];
+private _otherItems = [];
+private _binoculars = [];
 private _sights = [];
 private _pointers = [];
 private _muzzle = [];
@@ -12,14 +13,15 @@ private _vests = [];
 private _helmets = [];
 private _backpacks = []; 
 private _goggles = [];
-private _accessories = [];
+private _nvgs = [];
 
 private _all = [
 	_rifles,
 	_pistols,
 	_launchers,
 	_magazines,
-	_items,
+	_otherItems,
+	_binoculars,
 	_sights,
 	_pointers,
 	_muzzle,
@@ -28,7 +30,8 @@ private _all = [
 	_vests,
 	_helmets,
 	_backpacks,
-	_goggles
+	_goggles,
+	_nvgs
 ];
 
 {
@@ -37,7 +40,7 @@ private _all = [
 	// if (([_configName] call VTG_fnc_getItemTypeFunc) isEqualTo 2) then {
 	// 	_weapons pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
 	// } else {
-	// 	_items pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
+	// 	_otherItems pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
 	// };
 	private _cateogry = _all#(_configName call VTG_fnc_getCategory);
 	_cateogry pushBackUnique _element;
@@ -60,18 +63,19 @@ private _all = [
 } forEach _all;
 
 private _accessories = [["Sights", _sights], ["Pointers", _pointers], ["Muzzles", _muzzle], ["Bipods", _bipod]];
-
+private _allItems = [["Binoculars", _binoculars], ["Other", _otherItems]];
 //return
 [
     ["Rifles", _rifles],
 	["Pistols", _pistols],
 	["Launchers", _launchers],
-    ["Magazines", _magazines],
-    ["Items", _items],
-    ["Accessories", _accessories], //4 arrays
     ["Uniforms", _uniforms],
     ["Vests", _vests],
     ["Helmets", _helmets],
     ["Backpacks", _backpacks],
-    ["Goggles", _goggles]
+    ["Magazines", _magazines],
+    ["Items", _allItems],				//nested	2
+    ["Accessories", _accessories], 		//nested	4
+    ["Goggles", _goggles],
+	["NVGoggles", _nvgs]
 ]; 

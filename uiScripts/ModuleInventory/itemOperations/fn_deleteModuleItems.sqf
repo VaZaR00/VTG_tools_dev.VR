@@ -18,7 +18,7 @@ private _iterate = {
 	};
 };
 
-[_selectItem] call VTG_fnc_checkForAttachLbl;
+[_selectItem] call VTG_fnc_checkIfRandom; //if the category was a Random and it now has one item its no more random so remove label
 
 if (_all) exitWith {
 	_tree tvDelete _selectItem;
@@ -26,7 +26,9 @@ if (_all) exitWith {
 	[_selectItem] call _iterate;
 
 	[] call VTG_fnc_updateAddFunc;
+	[_selectItem, true] call VTG_fnc_checkForAttachLbl;
 };
 
 [_selectItem, -1] call VTG_fnc_modifyModuleItem;
 [] call VTG_fnc_updateAddFunc;
+[_selectItem, true] call VTG_fnc_checkForAttachLbl;

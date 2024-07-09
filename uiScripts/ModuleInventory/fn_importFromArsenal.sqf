@@ -26,6 +26,7 @@ if (isNil "_items") exitWith {};
 	private _class = _x#0;
 	private _function = _x#1;
 	private _amount = _x#2;
+    private _name = _class call VTG_fnc_getModuleItemName;
 
 	private _cateogry = [_all#(_class call VTG_fnc_getCategory)];
 
@@ -37,7 +38,7 @@ if (isNil "_items") exitWith {};
 
 	private _path = [_dest#0, _cateogry] call VTG_fnc_checkCategories;
 
-	[_path, _class, _function, _amount] call VTG_fnc_peekItem;
+	[_path, _class, _function, _amount, _name] call VTG_fnc_peekItem;
 } forEach _items;
 
 (VTG_equipUI#1) tvSortAll [[], false];
