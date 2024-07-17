@@ -28,4 +28,4 @@ private _isAttachment = if (_arsenal == (VTG_equipUI#10)) then {true} else {fals
 
 [_classname, _arsenalCategories, _isAttachment] call VTG_fnc_addItemMiddleware;
 
-_inventoryTree tvSortAll [[], false];
+//_inventoryTree tvSortAll [[], false];

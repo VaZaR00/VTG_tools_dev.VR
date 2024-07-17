@@ -1,11 +1,10 @@
-params["_text", ["_path", [[]] ]];
-disableSerialization;
+params["_text", "_type", ["_path", [] ]];
 
-if (_text == "") exitWith { hint "empty name" };
+private _ctrl = VTG_equipUI#5;
 
-private _display = uiNamespace getVariable ['EquipmentModulesManager', displayNull];
-waitUntil { !(_display isEqualTo displayNull) };
+private _index = _ctrl tvAdd [_path, _text];
+_path pushBack _index;
+_ctrl tvSetData [_path, _type];
+_ctrl tvSetTooltip [_path, _text];
 
-private _ctrl = _display displayCtrl 1778;
-
-_ctrl tvAdd [_path#0, _text];
+_index;

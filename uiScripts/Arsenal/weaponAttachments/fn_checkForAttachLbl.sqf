@@ -8,7 +8,6 @@ for "_i" from 0 to (count _path) do {
 		if ((_remove) && (((VTG_equipUI#1) tvCount _upPath) == 0)) then {
 			[_upPath, false] call VTG_fnc_attachLbl; //removing label
 		};
-		hint str [(VTG_equipUI#1) tvCount _upPath, _upPath];
 		_notFound = false;
 	};
 };

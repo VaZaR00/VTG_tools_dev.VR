@@ -3,9 +3,9 @@ params["_classname", "_arsenalCategories", ["_isAttachment", false]];
 //get the "Add" function of selected item
 private _func = _classname call VTG_fnc_getItemTypeFunc;
 private _destAndFunc = [_func] call VTG_fnc_itemDestination;
-private _name = _classname call VTG_fnc_getModuleItemName;
+private _name = _classname call VTG_fnc_getClassDisplayName;
 
-_path = [];
+private _path = [];
 if (_isAttachment) then {
 	_path append VTG_currentWeaponPath;
 	[_path, false] call VTG_fnc_checkForAttachLbl;

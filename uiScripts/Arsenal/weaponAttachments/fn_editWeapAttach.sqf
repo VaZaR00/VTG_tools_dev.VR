@@ -1,28 +1,19 @@
-params ["_control", "_path"];
-
-private _weapons = [
-	"Rifles",
-    "Pistols",
-    "Launchers"
-];
+params [["_control", VTG_equipUI#1], ["_path", tvCurSel (VTG_equipUI#1)]];
 
 private _itemPath  = [];
 _itemPath append _path;
 
-_path deleteAt (count _path - 1);
-
-if ((_weapons findIf { _x in (_control tvText _path) }) == -1) exitWith {};
+if ([_path] call VTG_fnc_isWeapon) exitWith {};
 
 private _weapClass = _control tvTooltip _itemPath;
-
 private _compatibleAttachments = _weapClass call BIS_fnc_compatibleItems;
 
-if (count _compatibleAttachments == 0) exitWith { ['No attachments for this weapon', 1] call VTG_fnc_message };
+if (count _compatibleAttachments == 0) exitWith {};//['No attachments for this weapon', 1] call VTG_fnc_message };
 
 private _attCtrl = VTG_equipUI#10; //weapon attachments tree control
 private _closeBtn = VTG_equipUI#11; //weapon attachments tree control Close Btn
 private _arsenal = VTG_equipUI#0; //arsenal tree
-private _arsenalLbl = VTG_equipUI#12; //arsenal tree
+private _arsenalLbl = VTG_equipUI#12; //arsenal tree lbl
 
 _attCtrl ctrlShow true;
 _closeBtn ctrlShow true;

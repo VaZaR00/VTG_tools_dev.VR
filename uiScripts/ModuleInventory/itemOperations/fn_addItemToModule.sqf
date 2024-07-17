@@ -10,22 +10,25 @@ private _itemText = if (_amount > 1) then {
 	_amount = 1;
 	_name
 };
-private _inventoryTree = VTG_equipUI#1;
+private _tree = VTG_equipUI#1;
 //setting item
-_path pushBack (_inventoryTree tvAdd [_path, _itemText]);
+_path pushBack (_tree tvAdd [_path, _itemText]);
 private _cfg = _classname call VTG_fnc_findRootConfig;
 private _image = getText (configFile >> _cfg >> _classname >> 'picture');
 
 //setting item data
-_inventoryTree tvSetData [_path, _func];
-_inventoryTree tvSetValue [_path, _amount];
-_inventoryTree tvSetPicture [_path, _image];
-_inventoryTree tvSetTooltip [_path, _classname];
+_tree tvSetData [_path, _func];
+_tree tvSetValue [_path, _amount];
+_tree tvSetPicture [_path, _image];
+_tree tvSetTooltip [_path, _classname];
 //select to show new item
-_inventoryTree tvSetCurSel _path;
+_tree tvSetCurSel _path;
 
 [_path, true] call VTG_fnc_checkIfRandom;
 
+_tree tvSortByValue [[], true];
+
+_path;
 /*
 
 module item:

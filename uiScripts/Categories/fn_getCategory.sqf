@@ -4,7 +4,7 @@ _pistols    1
 _launchers  2
 _magazines  3
 _items      4
-_binoculars  5
+_binoculars 5
 _sights     6
 _pointers   7
 _muzzle     8
@@ -57,5 +57,5 @@ switch (_type) do {
 	case "AH": { 12 /*_helmets*/ };
 	case "AB": { 13 /*_backpacks*/ };
 	case "AG": { 14 /*_goggles*/ };
-	default { [] };
+	default { 4 };
 }

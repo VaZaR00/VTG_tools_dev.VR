@@ -7,7 +7,7 @@ if (isNil "_amount") then {
 };
 
 private _class = _tree tvTooltip _path;
-private _name = _class call VTG_fnc_getModuleItemName;
+private _name = _class call VTG_fnc_getClassDisplayName;
 private _value = _tree tvValue _path;
 
 private _newAmount = (_value + _amount);

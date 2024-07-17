@@ -13,6 +13,11 @@ private _changeFuncBtn = _display displayCtrl 1686;        //10
 private _WeapAttachTree = _display displayCtrl 1239;       //11
 private _WeapAttachCloseBtn = _display displayCtrl 1238;   //12
 private _arsenalLbl = _display displayCtrl 1005;           //13
+private _attachmBtn = _display displayCtrl 1605;           //14
+private _editBtn = _display displayCtrl 1661;              //15
+private _moduleLbl = _display displayCtrl 1007;            //16
+private _expandChkbox = _display displayCtrl 1875;         //16
+
 
 
 [
@@ -28,7 +33,11 @@ private _arsenalLbl = _display displayCtrl 1005;           //13
     _changeFuncBtn,     //9  -  add func
     _WeapAttachTree,    //10 -  weapAtt
     _WeapAttachCloseBtn,//11 -  closeWeapAtt
-    _arsenalLbl         //12 -  arsLBL
+    _arsenalLbl,        //12 -  arsLBL
+    _attachmBtn,        //13 -  attchBtn
+    _editBtn,           //14 -  edit
+    _moduleLbl,         //15 -  modLBL
+    _expandChkbox       //16 -  expand
 ];
 
 //  VTG_equipUI#

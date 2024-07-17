@@ -19,7 +19,6 @@ private _main = {
 		private _index = [[], _name, "", ""] call _setArsenalItem;
 
 		//indexes pushBack [_index]; ///DBUG
-		//hint str _index;
 		//sleep 2;
 		if (_name in _nested) then {
 			{
@@ -43,40 +42,6 @@ private _main = {
 	} forEach _data;
 };
 
-// private _arsenalItem = {
-// 	params ['_name', '_list', '_tree', '_catPath', '_forIndex'];
-// 	private _treeCatIndex = _forIndex;
-// 	private _index = _tree tvAdd [_catPath, _name];
-// 	_tree tvSetValue [(_catPath + [_index]), _forIndex];
-// 	if (_search isEqualTo '') then {
-// 		_tree tvCollapse (_catPath + [_treeCatIndex]);
-// 	} else {
-// 		_tree tvExpand (_catPath + [_treeCatIndex]);
-// 	};
-// 	private _itemIndex = 0;
-// 	{
-// 		_x params ['_itemName', '_itemClassname', '_itemPicture'];
-// 		private _filter = if (_search isEqualTo '') then {
-// 			false
-// 		} else {
-// 			((toLower _itemClassname) find (toLower _search)) isEqualTo -1 && ((toLower _itemName) find (toLower _search)) isEqualTo -1
-// 		};
-// 		if (!_filter) then {
-// 			private _path = _catPath + [_treeCatIndex, _itemIndex];
-// 			_tree tvAdd [_catPath + [_treeCatIndex], _itemName];
-// 			_tree tvSetData [_path, _itemClassname];
-// 			_tree tvSetPicture [_path, _itemPicture];
-// 			_tree tvSetTooltip [_path, _itemClassname];
-// 			_itemIndex = _itemIndex + 1;
-// 		};
-// 	} forEach _list;
-// 	if (_itemIndex isEqualTo 0) then {
-// 		_tree tvAdd [_catPath + [_treeCatIndex], 'Nothing found'];
-// 		_tree tvSetData [_catPath + [_treeCatIndex, _itemIndex], ''];
-// 		_tree tvSetTooltip [_catPath + [_treeCatIndex, _itemIndex], 'Nothing found'];
-// 	};
-// };
-
 private _filter = {
 	params["_search", "_path", "_data"];
 
@@ -97,6 +62,8 @@ private _setArsenalItem = {
 	_tree tvSetData [_path, _itemClassname];
 	_tree tvSetPicture [_path, _itemPicture];
 	_tree tvSetTooltip [_path, _itemClassname];
+	_tree tvSetValue [_path, ([_itemName] call VTG_fnc_categorySortIndex)];
+
 	_index;
 	//sleep 5;
 };
@@ -118,4 +85,4 @@ if (_search != '') then {
 
 //hint str indexes;
 
-//_tree tvSortByValue [[], true];
+_tree tvSortByValue [[], true];

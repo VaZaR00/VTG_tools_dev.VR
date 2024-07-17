@@ -19,7 +19,7 @@ class EquipmentModulesManager {
 	//enableSimulation = 1;
 	enableDisplay = 1;
 	onLoad = "uiNamespace setVariable ['EquipmentModulesManager', _this select 0]";
-	onUnload = "uiNamespace setVariable ['EquipmentModulesManager', displayNull]";
+	onUnload = "call VTG_fnc_unload";
 	class controlsBackground {		
 		class BackgroundDisableTiles : ctrlStaticBackgroundDisableTiles {};
 		class BackgroundDisable : ctrlStaticBackgroundDisable {};
@@ -29,7 +29,7 @@ class EquipmentModulesManager {
 			x = -30 * GUI_GRID_W + GUI_GRID_X;
 			y = 0 * GUI_GRID_H + GUI_GRID_Y;
 			w = 260 * GUI_GRID_W;
-			h = 200 * GUI_GRID_H;
+			h = 206 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.7};
 		};
 		class title: RscText
@@ -54,7 +54,8 @@ class EquipmentModulesManager {
 			y = 0.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 4.5 * GUI_GRID_W;
 			h = 6 * GUI_GRID_H;
-			tooltip = "Current progre will be saved"; //--- ToDo: Localize;
+			tooltip = "Current progres will be saved"; //--- ToDo: Localize;
+			onButtonClick = "call VTG_fnc_close";
 		};
 //////////////////////////////////////////////////////////////////////////////////////		
 ////////    Modules Explorer    //////////////////////////////////////////////////////
@@ -68,7 +69,8 @@ class EquipmentModulesManager {
 			h = 160 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
 
-			onLoad = "call VTG_fnc_initTreeItems";
+			//onLoad = "call VTG_fnc_initTreeItems";
+			onTreeDblClick = "_this call VTG_fnc_setCurrentModule";
 		};
 		////// Preset Menu ///////
 		class Preset_Menu_frame: RscFrame
@@ -129,11 +131,13 @@ class EquipmentModulesManager {
 		class Module_Menu_Create_Btn: RscButton
 		{
 			idc = 1608;
-			text = "Create"; //--- ToDo: Localize;
+			text = "New"; //--- ToDo: Localize;
 			x = -1 * GUI_GRID_W + GUI_GRID_X;
 			y = 18 * GUI_GRID_H + GUI_GRID_Y;
 			w = 22 * GUI_GRID_W;
 			h = 8 * GUI_GRID_H;
+
+			onButtonClick = "call VTG_fnc_createNewModule";
 		};
 		class Module_Menu_Delete_Btn: RscButton
 		{
@@ -143,6 +147,8 @@ class EquipmentModulesManager {
 			y = 27 * GUI_GRID_H + GUI_GRID_Y;
 			w = 22 * GUI_GRID_W;
 			h = 8 * GUI_GRID_H;
+
+			onButtonClick = "[] call VTG_fnc_deleteModule";
 		};
 
 //////////////////////////////////////////////////////////////////////////////////////		
@@ -334,11 +340,11 @@ class EquipmentModulesManager {
 		class Module_Lbl: RscText
 		{
 			idc = 1007;
-			text = "Module"; //--- ToDo: Localize;
+			text = "New Module"; //--- ToDo: Localize;
 			style = 2;
-			x = 168.5 * GUI_GRID_W + GUI_GRID_X;
+			x = 130.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 20 * GUI_GRID_W;
+			w = 96 * GUI_GRID_W;
 			h = 8 * GUI_GRID_H;
 		};
 		class Module_frame: RscFrame
@@ -359,7 +365,7 @@ class EquipmentModulesManager {
 			h = 122 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
 
-			onTreeSelChanged = "[] call VTG_fnc_updateAddFunc";
+			onTreeSelChanged = "[] call VTG_fnc_onTreeSelect";
 			onTreeDblClick = "_this call VTG_fnc_editWeapAttach";
 		};
 
@@ -430,6 +436,20 @@ class EquipmentModulesManager {
 			sizeEx = 7 * GUI_GRID_H;
 			onButtonClick = "[] spawn VTG_fnc_importFromArsenal";
 		};
+		class Attachments_Items_module_Btn: RscButton
+		{
+			idc = 1605;
+
+			text = "Attachments"; //--- ToDo: Localize;
+			style = 2;
+			x = 188 * GUI_GRID_W + GUI_GRID_X;
+			y = 144 * GUI_GRID_H + GUI_GRID_Y;
+			w = 23 * GUI_GRID_W;
+			h = 6.5 * GUI_GRID_H;
+			tooltip = "Edit weapon Attachments"; //--- ToDo: Localize;
+			sizeEx = 7 * GUI_GRID_H;
+			onButtonClick = "[] call VTG_fnc_editWeapAttach";
+		};
 		/*------ function ------*/
 		class function_module_Lbl: RscText
 		{
@@ -491,6 +511,8 @@ class EquipmentModulesManager {
 			w = 50 * GUI_GRID_W;
 			h = 9 * GUI_GRID_H;
 			tooltip = "Select target units"; //--- ToDo: Localize;
+
+			onLBSelChanged = "[_this#0, _this#1] call VTG_fnc_showEditBtn";
 		};
 		class TargetUnits_Show_Btn: RscButton
 		{
@@ -530,31 +552,75 @@ class EquipmentModulesManager {
 			tooltip = "Clear All Inventory"; //--- ToDo: Localize;
 			onButtonClick = "call VTG_fnc_clearModule";
 		};
-		class Create_module_Btn: RscButton
+		// class Create_module_Btn: RscButton
+		// {
+		// 	idc = 1603;
+		// 	onButtonClick = "";
+
+		// 	text = "Create"; //--- ToDo: Localize;
+		// 	x = 210 * GUI_GRID_W + GUI_GRID_X;
+		// 	y = 175 * GUI_GRID_H + GUI_GRID_Y;
+		// 	w = 16.5 * GUI_GRID_W;
+		// 	h = 10 * GUI_GRID_H;
+		// 	tooltip = "Create/Modify module"; //--- ToDo: Localize;
+		// };
+		
+		class Save_module_Btn: RscButton
 		{
 			idc = 1603;
-			onButtonClick = "((ctrlParent (_this select 0)) closeDisplay 1)";
+			onButtonClick = "call VTG_fnc_checkSaveModule";
 
-			text = "Create"; //--- ToDo: Localize;
+			text = "Save"; //--- ToDo: Localize;
 			x = 210 * GUI_GRID_W + GUI_GRID_X;
 			y = 175 * GUI_GRID_H + GUI_GRID_Y;
 			w = 16.5 * GUI_GRID_W;
 			h = 10 * GUI_GRID_H;
-			tooltip = "Create/Modify module"; //--- ToDo: Localize;
+			tooltip = "Save module"; //--- ToDo: Localize;
 		};
-		class Cancel_module_Btn: RscButton
+		class Delete_module_Btn: RscButton
 		{
 			idc = 1603;
-			onButtonClick = "((ctrlParent (_this select 0)) closeDisplay 1)";
 
-			text = "Cancel"; //--- ToDo: Localize;
+			text = "Delete"; //--- ToDo: Localize;
 			x = 210 * GUI_GRID_W + GUI_GRID_X;
 			y = 186 * GUI_GRID_H + GUI_GRID_Y;
 			w = 16.5 * GUI_GRID_W;
 			h = 10 * GUI_GRID_H;
-			tooltip = "Close"; //--- ToDo: Localize;
+			tooltip = "Delete module"; //--- ToDo: Localize;
+
+			onButtonClick = "[] call VTG_fnc_deleteModule";
 		};
 
+//////////////////////////////////////////////////////////////////////////////////////		
+////////    Bottom options    ///////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+		class ExpandModuleTree_chkbox: RscCheckBox
+		{
+			idc = 1875;
+
+			x = -29 * GUI_GRID_W + GUI_GRID_X;
+			y = 199 * GUI_GRID_H + GUI_GRID_Y;
+			w = 5 * GUI_GRID_W;
+			h = 6 * GUI_GRID_H;
+			tooltip = "Expand Module inventory items tree"; //--- ToDo: Localize;
+			checked = 1;
+
+			onCheckedChanged = "VTG_expandInvChkbox = cbChecked (VTG_equipUI#16)";
+			//params ["_control", "_checked"];  0 for unchecked, 1 for checked
+		};
+		class ExpandModuleTree_Lbl: RscText
+		{
+			idc = 1876;
+
+			text = "Expand inventory"; //--- ToDo: Localize;
+			x = -25.5 * GUI_GRID_W + GUI_GRID_X;
+			y = 198.5 * GUI_GRID_H + GUI_GRID_Y;
+			w = 30 * GUI_GRID_W;
+			h = 7 * GUI_GRID_H;
+			sizeEx = 7 * GUI_GRID_H;
+			tooltip = "Expand Module inventory items tree"; //--- ToDo: Localize;
+		};
 
 		// class UnitsNames_Input: RscEdit
 		// {
