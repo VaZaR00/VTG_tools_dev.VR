@@ -8,11 +8,14 @@ private _moduleTargets = if (VTG_Current_Module != "none") then {
 } else { [] };
 
 private _targetsClasses = _moduleTargets#0;
-private _include = _moduleTargets#1;
-private _exclude = _moduleTargets#2;
 
-_includeField ctrlSetText _include;
-_excludeField ctrlSetText _exclude;
+if (count _moduleTargets > 1) then {
+	private _include = _moduleTargets#1;
+	private _exclude = _moduleTargets#2;
+
+	_includeField ctrlSetText _include;
+	_excludeField ctrlSetText _exclude;
+};
 
 private _blue = [];
 private _red = [];

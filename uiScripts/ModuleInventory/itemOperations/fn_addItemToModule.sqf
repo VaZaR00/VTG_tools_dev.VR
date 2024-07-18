@@ -10,6 +10,7 @@ private _itemText = if (_amount > 1) then {
 	_amount = 1;
 	_name
 };
+
 private _tree = VTG_equipUI#1;
 //setting item
 _path pushBack (_tree tvAdd [_path, _itemText]);

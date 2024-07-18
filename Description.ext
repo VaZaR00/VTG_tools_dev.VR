@@ -156,18 +156,23 @@ class CfgFunctions
 	{
 		tag = "VTG";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////	Parsers    ////////////////////////////////////////////////////////////////////////////////
+////////////	compilers    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		class parsers_formScript
+		class compilers_applyModules
 		{
-			file = "Functions\EquipmentControl\parsers\formScript";
-			class parseModule {};
+			file = "Functions\EquipmentControl\compilers\applyModules";
+			class applyInEditor {};
+			class compileItemFunc {};
+			class compileModule {};
+			class compiler {};
 			class convertAttributeToFunction {};
+			class prepareStorage {};
+			class setGLmodule {};
 		};
-		class parsers_import
+		class compilers_import
 		{
-			file = "Functions\EquipmentControl\parsers\import";
+			file = "Functions\EquipmentControl\compilers\import";
 			class parser_middleware {};
 			class bi_arsenalExportParser {};
 			class convertFunctionToAttribute {};

@@ -1,6 +1,6 @@
 params["_item", ["_isAttach", false], ["_parent", []]];
 
-private _accessories = ["Sights", "Pointers", "Muzzle", "Bipod"];
+private _accessories = ["Sights", "Pointers", "Muzzles", "Bipods"];
 private _all = [
     "Rifles",
     "Pistols",
@@ -10,8 +10,8 @@ private _all = [
     "Binoculars",  
     "Sights",
     "Pointers",
-    "Muzzle",
-    "Bipod",
+    "Muzzles",
+    "Bipods",
     "Uniforms",
     "Vests",
     "Helmets",
@@ -39,7 +39,9 @@ private _dest = [_function, false] call VTG_fnc_itemDestination;
 if (_isAttach) then {
 	_path append _parent;
 	[_path, false] call VTG_fnc_checkForAttachLbl;
-    _cateogry deleteAt 0;
+    if ((_cateogry#0) != "Magazines") then {
+        _cateogry deleteAt 0;
+    };
 };
 
 _path = [_dest#0, _cateogry, _path] call VTG_fnc_checkCategories;

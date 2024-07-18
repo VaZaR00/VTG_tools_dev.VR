@@ -6,7 +6,7 @@ _itemPath append _path;
 if ([_path] call VTG_fnc_isWeapon) exitWith {};
 
 private _weapClass = _control tvTooltip _itemPath;
-private _compatibleAttachments = _weapClass call BIS_fnc_compatibleItems;
+private _compatibleAttachments = compatibleItems _weapClass;
 
 if (count _compatibleAttachments == 0) exitWith {};//['No attachments for this weapon', 1] call VTG_fnc_message };
 
@@ -20,8 +20,12 @@ _closeBtn ctrlShow true;
 _arsenal ctrlShow false;
 _arsenalLbl ctrlSetText "Weapon Attachments";
 
-private _allAccessories = (VTG_itemCache#9)#1;
+private _allAccessories = +((VTG_itemCache#9)#1);
+private _allMagazines = +((VTG_itemCache#7)#1);
 
+_allAccessories pushBack ["Magazines", _allMagazines];
+//private _compatibleMags = _allMagazines select {_x in (compatibleMagazines _weapClass)};
+private _compatibleMags = compatibleMagazines _weapClass;
 // {
 //     private _type = _x call VTG_fnc_getCategory;
 //     private _category = switch (_type) do {
@@ -38,7 +42,7 @@ private _compatible = [];
 	private _i = _forEachIndex;
 	_compatible pushBack [(_x#0), []];
 	{
-		if ((_x#1) in _compatibleAttachments) then {
+		if (((_x#1) in _compatibleAttachments)||((_x#1) in _compatibleMags)) then {
 			((_compatible#_i)#1) pushBack _x;
 		};
 	} forEach (_x#1);

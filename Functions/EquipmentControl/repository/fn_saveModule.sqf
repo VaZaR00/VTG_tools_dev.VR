@@ -17,7 +17,8 @@ if (
 ) then {
 	[] call VTG_fnc_deleteModule;
 };
-
+// hint str _moduleItemsList;
+// copyToClipboard str _moduleItemsList;
 call VTG_fnc_loadModulesTree;
 
 [_name] call VTG_fnc_changeModule;
