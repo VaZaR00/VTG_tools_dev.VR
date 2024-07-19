@@ -138,7 +138,7 @@ class CfgFunctions
 		};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////  Other  /////////////////////////////////////////////////////////////////////////////////////
+/////////////  Systems  /////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		class Categories_
@@ -220,30 +220,42 @@ class CfgFunctions
 /////////////  Other Systems  /////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	class other_tools
+	class Naming
 	{
 		tag = "VTG";
-		class name_
+		class _main_
 		{
 			file = "Functions\naming";
-			class fn_message {};
+			class message {};
 		};
-		class naming_squad
+		class _squad_
 		{
 			file = "Functions\naming\squadNames";
-			class fn_clearSqNames {};
-			class fn_squadMiddleware {};
-			class fn_removeSqLeadNaming {};
-			class fn_setSquadName {};
-			class fn_setSqNameToDefault {};
+			class clearSqNames {};
+			class squadMiddleware {};
+			class removeSqLeadNaming {};
+			class setSquadName {};
+			class setSqNameToDefault {};
 		};
-		class naming_units
+		class _units_
 		{
 			file = "Functions\naming\unitNames";
-			class fn_clearUnitName {};
-			class fn_setUnitName {};
-			class fn_setUnitsNameToDefault {};
-			class fn_unitsMiddleware {};
+			class clearUnitName {};
+			class setUnitName {};
+			class setUnitsNameToDefault {};
+			class unitsMiddleware {};
+		};
+	};
+	class CrewControl
+	{
+		tag = "VTG";
+		class _main_
+		{
+			file = "Functions\CrewControl";
+			class AddCrewControlModule {};
+			class CrewControlScript {};
+			class setGLmodule {};
+			class Variables {};
 		};
 	};
 };

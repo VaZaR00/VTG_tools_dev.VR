@@ -1,7 +1,7 @@
 params["_script", "_name"];
 
 if (isNil "_script") exitWith {
-	["Empty module"] call EMM_fnc_message;
+	["Empty module"] call VTG_fnc_message;
 };
 
 private _main = {
@@ -26,7 +26,7 @@ private _modifyOldModule = {
 
 call _main;
 
-["Module created"] call EMM_fnc_message;
+["Module created"] call VTG_fnc_message;
 
 // private _setToLayer = {
 // 	_module = param[0];
