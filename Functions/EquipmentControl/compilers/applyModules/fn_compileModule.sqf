@@ -6,7 +6,7 @@ private _items = _module#1;
 private _itemsScripts = "";
 
 {
-	private _itemFunc = [+_x] call VTG_fnc_compileItemFunc;
+	private _itemFunc = [+_x] call EMM_fnc_compileItemFunc;
 	_itemsScripts = _itemsScripts + _itemFunc;
 } forEach _items;
 

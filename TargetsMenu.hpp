@@ -3,10 +3,10 @@
 #define GUI_GRID_W	(0.012)
 #define GUI_GRID_H	(0.02)
 
-class VTG_TargetsMenu{
+class EMM_TargetsMenu{
 	idd = 9854;
 
-	onLoad = "[_this select 0] call VTG_fnc_loadTargetsMenu";
+	onLoad = "[_this select 0] call EMM_fnc_loadTargetsMenu";
 	class controls 
 	{
 		class background: IGUIBack
@@ -26,7 +26,7 @@ class VTG_TargetsMenu{
 			h = 22.5 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
 
-			onTreeSelChanged = "_this call VTG_fnc_onSelectTarget";
+			onTreeSelChanged = "_this call EMM_fnc_onSelectTarget";
 		};
 		class Ok_btn: RscButton
 		{
@@ -37,7 +37,7 @@ class VTG_TargetsMenu{
 			w = 6.5 * GUI_GRID_W;
 			h = 2 * GUI_GRID_H;
 
-			onButtonClick = "call VTG_fnc_setTargets; _this call VTG_fnc_close";
+			onButtonClick = "call EMM_fnc_setTargets; _this call EMM_fnc_close";
 		};
 		class Cancel_btn: RscButton
 		{
@@ -48,7 +48,7 @@ class VTG_TargetsMenu{
 			w = 6.5 * GUI_GRID_W;
 			h = 2 * GUI_GRID_H;
 
-			onButtonClick = "_this call VTG_fnc_close";
+			onButtonClick = "_this call EMM_fnc_close";
 		};
 		class Include_Lbl: RscText
 		{

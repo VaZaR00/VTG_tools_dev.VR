@@ -19,7 +19,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="VTG_tools_dev";
+sourceName="EMM_tools_dev";
 addons[]=
 {
 	"A3_Characters_F",

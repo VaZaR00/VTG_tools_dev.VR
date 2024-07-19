@@ -5,7 +5,7 @@
 
 class AddFuncSelector {
 	idd = 11550;
-	onLoad = "[_this#0] call VTG_fnc_loadSelector";
+	onLoad = "[_this#0] call EMM_fnc_loadSelector";
 
 	class controls {
 		class background: IGUIBack
@@ -40,7 +40,7 @@ class AddFuncSelector {
 			w = 5 * GUI_GRID_W;
 			h = 2.35294 * GUI_GRID_H;
 
-			onButtonClick = "[ctrlParent (_this select 0)] call VTG_fnc_changeAddFunc;((ctrlParent (_this select 0)) closeDisplay 1)";
+			onButtonClick = "[ctrlParent (_this select 0)] call EMM_fnc_changeAddFunc;((ctrlParent (_this select 0)) closeDisplay 1)";
 		};
 		class cancel_btn: RscButtonMenuCancel
 		{

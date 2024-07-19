@@ -21,7 +21,7 @@ private _parseString = {
 	_arr = _str splitString " ";
 
 	_class = (_arr select -1) trim ['"', 0]; 
-	_function = [(_arr select -2)] call VTG_fnc_convertFunctionToAttribute; 
+	_function = [(_arr select -2)] call EMM_fnc_convertFunctionToAttribute; 
 	_amount = 1;
 
 	if ("from " in _str) then {

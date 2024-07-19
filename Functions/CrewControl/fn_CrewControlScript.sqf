@@ -1,9 +1,9 @@
 waitUntil {!isNull player};
 
-_crews_str = missionNamespace getVariable ["VTG_fnc_CrewControl_Crews", []];
-_vehicles_str = missionNamespace getVariable ["VTG_fnc_CrewControl_Vehicles", []];
-_warning = missionNamespace getVariable ["VTG_fnc_CrewControl_Warning", "You're not a crew!"];
-_crewMessage = missionNamespace getVariable ["VTG_fnc_CrewControl_CrewMessage", "You're crew!"];
+_crews_str = missionNamespace getVariable ["EMM_fnc_CrewControl_Crews", []];
+_vehicles_str = missionNamespace getVariable ["EMM_fnc_CrewControl_Vehicles", []];
+_warning = missionNamespace getVariable ["EMM_fnc_CrewControl_Warning", "You're not a crew!"];
+_crewMessage = missionNamespace getVariable ["EMM_fnc_CrewControl_CrewMessage", "You're crew!"];
 _CHECK_INTERVAL = 1;
 
 _REST_crews = _crews_str apply {

@@ -1,1 +1,1 @@
-VTG_Modules_amount = count ([] call VTG_fnc_getModulesStorage);
+EMM_Modules_amount = count ([] call EMM_fnc_getModulesStorage);

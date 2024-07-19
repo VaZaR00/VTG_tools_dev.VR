@@ -1,6 +1,6 @@
 params[["_keys", false], ["_nameAndType", false], ["_name", ""]];
 
-private _hashMap = uiNamespace getVariable ["VTG_EQUIP_STORAGE", createHashMap];
+private _hashMap = uiNamespace getVariable ["EMM_EQUIP_STORAGE", createHashMap];
 
 if (count _hashMap == 0) exitWith {_hashMap}; //return
 

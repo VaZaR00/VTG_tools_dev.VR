@@ -8,45 +8,52 @@
 
 class CfgFunctions
 {
-	class VTG_ui
+	class EMM_ui
 	{
-		tag = "VTG";
-		class General 
+		tag = "EMM";
+		class dialog 
 		{
-			file = "uiScripts";
+			file = "Functions\EquipmentControl\Interface\dialog";
 			class open {};
 			class getUIelements {};
 			class message {};
 			class close {};
 			class unload {};
 		};
-		class Systems 
-		{
-			file = "uiScripts";
-			class convertAttributeToFunction {};
-			class convertFunctionToAttribute {};
-		};
-		class Menu_ModuleFolder
-		{
-			file = "uiScripts\Menu\ModuleFolder";
-			class createNewModule {};
-			class newModule {};
-		};
 		class ModulesTree
 		{
-			file = "uiScripts\ModulesTree";
+			file = "Functions\EquipmentControl\Interface\ModulesTree";
 			class addItemToTree {};
 			class loadModulesTree {};
 			class setCurrentModule {};
 			class changeModule {};
 			class warning {};
 		};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////	Menu    ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		class Menu_Module
+		{
+			file = "Functions\EquipmentControl\Interface\Menu\Module";
+			class createNewModule {};
+			class newModule {};
+			class menuDeleteModule {};
+		};
+		class Menu_Preset
+		{
+			file = "Functions\EquipmentControl\Interface\Menu\Preset";
+			class export {};
+			class import {};
+		};
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	Arsenal    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		class Arsenal 
 		{
-			file = "uiScripts\Arsenal";
+			file = "Functions\EquipmentControl\Interface\Arsenal";
 			class loadArsenal {};
 			class loadAddToCombo {};
 			class getAmountInput {};
@@ -56,7 +63,7 @@ class CfgFunctions
 		};
 		class Arsenal_addingItem
 		{
-			file = "uiScripts\Arsenal\addingItem";
+			file = "Functions\EquipmentControl\Interface\Arsenal\addingItem";
 			class addItemFromArsenal {};
 			class peekItem {};
 			class itemDestination {};
@@ -67,7 +74,7 @@ class CfgFunctions
 		};
 		class Arsenal_weapAttach
 		{
-			file = "uiScripts\Arsenal\weaponAttachments";
+			file = "Functions\EquipmentControl\Interface\Arsenal\weaponAttachments";
 			class closeWeapAttachMenu {};
 			class editWeapAttach {};
 			class attachLbl {};
@@ -80,7 +87,7 @@ class CfgFunctions
 
 		class ModuleInventory
 		{
-			file = "uiScripts\ModuleInventory";
+			file = "Functions\EquipmentControl\Interface\ModuleInventory";
 			class checkModule {};
 			class checkSaveModule {};
 			class getClassDisplayName {};
@@ -89,7 +96,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_ItemOperations
 		{
-			file = "uiScripts\ModuleInventory\itemOperations";
+			file = "Functions\EquipmentControl\Interface\ModuleInventory\itemOperations";
 			class addItemToModule {};
 			class clearModule {};
 			class deleteModuleItems {};
@@ -97,7 +104,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_loadItems
 		{
-			file = "uiScripts\ModuleInventory\loadItems";
+			file = "Functions\EquipmentControl\Interface\ModuleInventory\loadItems";
 			class importFromArsenal {};
 			class loadModuleData {};
 			class loadModuleItems {};
@@ -105,7 +112,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_addFuncSelect 
 		{
-			file = "uiScripts\ModuleInventory\addFuncSelector";
+			file = "Functions\EquipmentControl\Interface\ModuleInventory\addFuncSelector";
 			class changeAddFunc {};
 			class loadSelector {};
 			class openSelector {};
@@ -113,7 +120,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_targets
 		{
-			file = "uiScripts\ModuleInventory\targets";
+			file = "Functions\EquipmentControl\Interface\ModuleInventory\targets";
 			class addTargetToCombo {};
 			class getTargetsByClass {};
 			class getTargetSides {};
@@ -122,7 +129,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_targets_menu
 		{
-			file = "uiScripts\ModuleInventory\targets\menu";
+			file = "Functions\EquipmentControl\Interface\ModuleInventory\targets\menu";
 			class openEditTargetsMenu {};
 			class loadTargetsMenu {};
 			class onSelectTarget {};
@@ -131,12 +138,12 @@ class CfgFunctions
 		};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////  Other  /////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		class Categories_
 		{
-			file = "uiScripts\Categories";
+			file = "Functions\EquipmentControl\Categories";
 			class categorySortIndex {};
 			class getCategory {};
 			class iterate {};
@@ -145,16 +152,23 @@ class CfgFunctions
 		};	
 		class Items_
 		{
-			file = "uiScripts\Items";
+			file = "Functions\EquipmentControl\Items";
 			class findRootConfig {};
 			class getAllItems {};
 			class getItemTypeFunc {};
 			class validPic {};
 		};
 	};
-	class VTG_equipModule_system
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////  Other  /////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	class EMM_equipModule_system
 	{
-		tag = "VTG";
+		tag = "EMM";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	compilers    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -199,6 +213,32 @@ class CfgFunctions
 			class getModulesStorage {};
 			class saveToModulesStorage {};
 			class setStorage {};
+		};
+	};
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////  Other Systems  /////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	class other_tools
+	{
+		class naming_squad
+		{
+			file = "Functions\naming\squadNames";
+			class fn_clearSqNames {};
+			class fn_squadMiddleware {};
+			class fn_removeSqLeadNaming {};
+			class fn_setSquadName {};
+			class fn_setSqNameToDefault {};
+		};
+		class naming_units
+		{
+			file = "Functions\naming\unitNames";
+			class fn_clearName {};
+			class fn_unitsMiddleware {};
+			class fn_removeSqLeadNaming {};
+			class fn_setSquadName {};
+			class fn_setToDefault {};
 		};
 	};
 };

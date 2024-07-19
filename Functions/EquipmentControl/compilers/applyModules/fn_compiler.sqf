@@ -1,4 +1,4 @@
-private _data = call VTG_fnc_prepareStorage;
+private _data = call EMM_fnc_prepareStorage;
 
 private _script = 
 "private _removeEq = {
@@ -14,7 +14,7 @@ removeGoggles _u;};
 {_x call _removeEq} forEach allUnits;";
 
 {
-	private _moduleScript = [+_x] call VTG_fnc_compileModule;
+	private _moduleScript = [+_x] call EMM_fnc_compileModule;
 	_script = _script + _moduleScript;
 } forEach _data;
 

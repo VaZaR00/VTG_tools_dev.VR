@@ -1,13 +1,13 @@
-VTG_EQUIP_TEST_BOOL = true;
-VTG_EQUIP_TEST_FAILED_ARR = [];
+EMM_EQUIP_TEST_BOOL = true;
+EMM_EQUIP_TEST_FAILED_ARR = [];
 
 //compile and execute
-private _script = call VTG_fnc_compiler;
+private _script = call EMM_fnc_compiler;
 call compile _script;
 
 //get test results
 private _result = [];
-private _arr = +VTG_EQUIP_TEST_FAILED_ARR;
+private _arr = +EMM_EQUIP_TEST_FAILED_ARR;
 
 {
 	private _el = _x;
@@ -19,5 +19,7 @@ private _arr = +VTG_EQUIP_TEST_FAILED_ARR;
 	_result pushBack _el;
 } forEach _arr;
 
-VTG_EQUIP_TEST_BOOL = nil;
-VTG_EQUIP_TEST_FAILED_ARR = nil;
+//_result
+
+EMM_EQUIP_TEST_BOOL = nil;
+EMM_EQUIP_TEST_FAILED_ARR = nil;

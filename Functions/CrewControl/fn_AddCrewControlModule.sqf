@@ -4,10 +4,10 @@ private _main = {
 	_entities = call _getEntities;
 
 	if (count (_entities#0) == 0) exitWith {
-		["No vehicles selected"] call VTG_fnc_message;
+		["No vehicles selected"] call EMM_fnc_message;
 	};
 	if (count (_entities#1) == 0) exitWith {
-		["No units selected"] call VTG_fnc_message;
+		["No units selected"] call EMM_fnc_message;
 	};
 
 	_messages = call _getMessagesText;
@@ -18,10 +18,10 @@ private _main = {
 		_crews = %2;
 		_warning = %3;
 		_crewMessage = %4;
-		missionNamespace setVariable ['VTG_fnc_CrewControl_Vehicles', _vehicles];
-		missionNamespace setVariable ['VTG_fnc_CrewControl_Crews', _crews];
-		missionNamespace setVariable ['VTG_fnc_CrewControl_Warning', _warning];
-		missionNamespace setVariable ['VTG_fnc_CrewControl_CrewMessage', _crewMessage];
+		missionNamespace setVariable ['EMM_fnc_CrewControl_Vehicles', _vehicles];
+		missionNamespace setVariable ['EMM_fnc_CrewControl_Crews', _crews];
+		missionNamespace setVariable ['EMM_fnc_CrewControl_Warning', _warning];
+		missionNamespace setVariable ['EMM_fnc_CrewControl_CrewMessage', _crewMessage];
 		", 
 		_entities#0, 
 		_entities#1,
@@ -62,7 +62,7 @@ private _createModule = {
 
 	_crewControlModule = create3DENEntity ["Logic", "Logic", [0,0,0]];
 
-	_crewControlModule set3DENAttribute ["Name", "DONT_CHANGE_VTG_fnc_CrewControlVariables"];
+	_crewControlModule set3DENAttribute ["Name", "DONT_CHANGE_EMM_fnc_CrewControlVariables"];
 	_crewControlModule set3DENAttribute ["Init", _script];
 
 	[_crewControlModule] call _setToLayer;
@@ -81,7 +81,7 @@ private _modifyOldModule = {
 
 	{
 		_varName = (_x get3DENAttribute "Name")#0;
-		if (_varName == "DONT_CHANGE_VTG_fnc_CrewControlVariables") then {
+		if (_varName == "DONT_CHANGE_EMM_fnc_CrewControlVariables") then {
 			delete3DENEntities [_x];
 		};
 	}forEach _allLogicModules;

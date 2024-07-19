@@ -4,16 +4,16 @@ private _parseModule = {
 	params["_data"];
 	private _functionsArr = [];
 
-	if (_data isEqualTo false) exitWith { ["empty storage"] call VTG_fnc_message; };
+	if (_data isEqualTo false) exitWith { ["empty storage"] call EMM_fnc_message; };
 
 	{
 		_element = _x;
 
 		if ("$$" in _element) then { //if it's a random module
 			_moduleArr = _element splitString "$$";
-			_moduleData = [_moduleArr#2] call VTG_fnc_getModuleStorageData;
+			_moduleData = [_moduleArr#2] call EMM_fnc_getModuleStorageData;
 
-			if (_moduleData isEqualTo false) exitWith { ["empty storage"] call VTG_fnc_message; };
+			if (_moduleData isEqualTo false) exitWith { ["empty storage"] call EMM_fnc_message; };
 
 			_functionsArr pushBack ([_moduleData] call _compileRandom);
 			continue;
@@ -30,7 +30,7 @@ private _compileFunction = {
 	private _arr = param[0];
 
 	private _amount = _arr#2;
-	private _command = [_arr#1] call VTG_fnc_convertAttributeToFunction;
+	private _command = [_arr#1] call EMM_fnc_convertAttributeToFunction;
 	private _class = _arr#2;
 
 	private _function = "";
@@ -44,7 +44,7 @@ private _compileFunction = {
 
 private _compileRandom = {
 	private _data = param[0];
-
+	
 	private _values = _data#0;
 	private _weights = _data#1;
 
@@ -52,6 +52,6 @@ private _compileRandom = {
 	_function;
 };
 
-private _script = [_data] call _parseModule;
+private _script = [] call _parseModule;
 
 _script;

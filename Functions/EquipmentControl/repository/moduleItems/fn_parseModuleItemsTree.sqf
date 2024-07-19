@@ -1,4 +1,4 @@
-private _tree = VTG_equipUI#1;
+private _tree = EMM_equipUI#1;
 
 private _items = [];
 
@@ -13,7 +13,7 @@ private _getItemData = {
 };
 
 private _iterate = {
-	params["_path", ["_arr", _items, []]];
+	params["_path", ["_arr", _items]];
 	private _count = (_tree tvCount _path) - 1;
 	for "_i" from 0 to _count do {
 		private _downPath = [];

@@ -1,4 +1,4 @@
-private _dataMap = call VTG_fnc_getModulesStorage;
+private _dataMap = call EMM_fnc_getModulesStorage;
 private _data = values _dataMap;
 
 private _algorithm = {

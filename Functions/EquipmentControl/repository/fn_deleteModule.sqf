@@ -1,9 +1,19 @@
-if (VTG_Current_Module != "none") then {
-	private _dataMap = [] call VTG_fnc_getModulesStorage;
-	_dataMap deleteAt VTG_Current_Module;
-	[_dataMap] call VTG_fnc_setStorage;
-	call VTG_fnc_modulesAmount;
+params[["_fromMenu", false], ["_name", EMM_Current_Module]];
+
+private _delete = {
+	private _dataMap = [] call EMM_fnc_getModulesStorage;
+	_dataMap deleteAt EMM_Current_Module;
+	[_dataMap] call EMM_fnc_setStorage;
+	call EMM_fnc_modulesAmount;
 };
-VTG_Current_Module = "none";
-call VTG_fnc_resetModule;
-call VTG_fnc_loadModulesTree;
+
+if (_fromMenu) exitWith {
+	call _delete;
+};
+
+if (EMM_Current_Module != "none") then {
+	call _delete;
+};
+EMM_Current_Module = "none";
+call EMM_fnc_resetModule;
+call EMM_fnc_loadModulesTree;

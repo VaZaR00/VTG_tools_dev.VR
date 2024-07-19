@@ -8,7 +8,7 @@ if (_class == "Rand") exitWith {
 	_data deleteAt 0;
 	private _randArr = [];
 	{
-		private _func = [_x, _dest] call VTG_fnc_compileItemFunc;
+		private _func = [_x, _dest] call EMM_fnc_compileItemFunc;
 		_randArr pushBack _func;
 	} forEach _data;
 	_text = format["_x call compile (selectRandom %1);", _randArr];
@@ -16,13 +16,13 @@ if (_class == "Rand") exitWith {
 	_text //return
 };
 
-private _func = [_data#1] call VTG_fnc_convertAttributeToFunction;
+private _func = [_data#1] call EMM_fnc_convertAttributeToFunction;
 private _amount = _data#2;
 
 private _ifTestFormat = {
 	params["_text"];
 
-	if (VTG_EQUIP_TEST_BOOL) then {
+	if (EMM_EQUIP_TEST_BOOL) then {
 		private _conditionFormat = switch (_data#1) do {
 			case "AW": {
 				private _baseclass = [configFile >> 'CfgWeapons' >> _class, true] call BIS_fnc_returnParents;
@@ -43,7 +43,7 @@ private _ifTestFormat = {
 			default { "_x canAdd %1" };
 		};
 		private _condition = format[_conditionFormat, str _class, str _dest];
-		_text = format["if(%1)then{%2}else{VTG_EQUIP_TEST_FAILED_ARR pushBack [_x, %3]};", _condition, _text, str _class];
+		_text = format["if(%1)then{%2}else{EMM_EQUIP_TEST_FAILED_ARR pushBack [_x, %3]};", _condition, _text, str _class];
 	};
 
 	_text
@@ -97,7 +97,7 @@ private _giveOtherMags = {
 
 	_item set [2, (_item#2) - 1];
 
-	private _attFunc = [_item, _class] call VTG_fnc_compileItemFunc;
+	private _attFunc = [_item, _class] call EMM_fnc_compileItemFunc;
 	_text = _text + _attFunc;
 };
 
@@ -122,7 +122,7 @@ private _giveOtherMags = {
 			};
 		};
 	};
-	private _attFunc = [_item, _class] call VTG_fnc_compileItemFunc;
+	private _attFunc = [_item, _class] call EMM_fnc_compileItemFunc;
 	_text = _text + _attFunc;
 } forEach _attachs;
 hint str _text;

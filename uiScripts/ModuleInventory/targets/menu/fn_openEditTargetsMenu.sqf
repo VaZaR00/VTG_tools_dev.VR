@@ -1,1 +1,0 @@
-(findDisplay 313) createDisplay 'VTG_TargetsMenu';

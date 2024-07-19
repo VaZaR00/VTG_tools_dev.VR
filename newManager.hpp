@@ -19,7 +19,7 @@ class EquipmentModulesManager {
 	//enableSimulation = 1;
 	enableDisplay = 1;
 	onLoad = "uiNamespace setVariable ['EquipmentModulesManager', _this select 0]";
-	onUnload = "call VTG_fnc_unload";
+	onUnload = "call EMM_fnc_unload";
 	class controlsBackground {		
 		class BackgroundDisableTiles : ctrlStaticBackgroundDisableTiles {};
 		class BackgroundDisable : ctrlStaticBackgroundDisable {};
@@ -55,7 +55,7 @@ class EquipmentModulesManager {
 			w = 4.5 * GUI_GRID_W;
 			h = 6 * GUI_GRID_H;
 			tooltip = "Current progres will be saved"; //--- ToDo: Localize;
-			onButtonClick = "call VTG_fnc_close";
+			onButtonClick = "call EMM_fnc_close";
 		};
 //////////////////////////////////////////////////////////////////////////////////////		
 ////////    Modules Explorer    //////////////////////////////////////////////////////
@@ -69,8 +69,8 @@ class EquipmentModulesManager {
 			h = 160 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
 
-			//onLoad = "call VTG_fnc_initTreeItems";
-			onTreeDblClick = "_this call VTG_fnc_setCurrentModule";
+			//onLoad = "call EMM_fnc_initTreeItems";
+			onTreeDblClick = "_this call EMM_fnc_setCurrentModule";
 		};
 		////// Preset Menu ///////
 		class Preset_Menu_frame: RscFrame
@@ -137,7 +137,7 @@ class EquipmentModulesManager {
 			w = 22 * GUI_GRID_W;
 			h = 8 * GUI_GRID_H;
 
-			onButtonClick = "call VTG_fnc_createNewModule";
+			onButtonClick = "call EMM_fnc_createNewModule";
 		};
 		class Module_Menu_Delete_Btn: RscButton
 		{
@@ -148,7 +148,7 @@ class EquipmentModulesManager {
 			w = 22 * GUI_GRID_W;
 			h = 8 * GUI_GRID_H;
 
-			onButtonClick = "[] call VTG_fnc_deleteModule";
+			onButtonClick = "[] call EMM_fnc_deleteModule";
 		};
 
 //////////////////////////////////////////////////////////////////////////////////////		
@@ -183,7 +183,7 @@ class EquipmentModulesManager {
 			w = 96 * GUI_GRID_W;
 			h = 122 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
-			onTreeDblClick = "[] call VTG_fnc_addItemFromArsenal";
+			onTreeDblClick = "[] call EMM_fnc_addItemFromArsenal";
 		};
 		/*-------- Weapon Attachments --------*/
 		class WeapAttach_Tree_hidden: RscTree
@@ -195,7 +195,7 @@ class EquipmentModulesManager {
 			w = 96 * GUI_GRID_W;
 			h = 117 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
-			onTreeDblClick = "[] call VTG_fnc_addItemFromArsenal";
+			onTreeDblClick = "[] call EMM_fnc_addItemFromArsenal";
 		};
 		class WeapAttachClose_Btn_hidden: RscButton
 		{
@@ -207,7 +207,7 @@ class EquipmentModulesManager {
 			w = 5 * GUI_GRID_W;
 			h = 6 * GUI_GRID_H;
 			tooltip = "Close weapon attachments menu"; //--- ToDo: Localize;
-			onButtonClick = "call VTG_fnc_closeWeapAttachMenu";
+			onButtonClick = "call EMM_fnc_closeWeapAttachMenu";
 		};
 		// class ArsenalLoading_Disable: 
 		// {
@@ -256,7 +256,7 @@ class EquipmentModulesManager {
 			w = 15 * GUI_GRID_W;
 			h = 12 * GUI_GRID_H;
 			tooltip = "Clear Search"; //--- ToDo: Localize;
-			onButtonClick = "[] call VTG_fnc_clearSearch";
+			onButtonClick = "[] call EMM_fnc_clearSearch";
 		};
 		/*------ add to ------*/
 		class AddTo_Lbl: RscText
@@ -330,7 +330,7 @@ class EquipmentModulesManager {
 			w = 15 * GUI_GRID_W;
 			h = 12 * GUI_GRID_H;
 			tooltip = "Add X Items To Module"; //--- ToDo: Localize;
-			onButtonClick = "[] call VTG_fnc_addItemFromArsenal";
+			onButtonClick = "[] call EMM_fnc_addItemFromArsenal";
 		};
 
 //////////////////////////////////////////////////////////////////////////////////////		
@@ -365,8 +365,8 @@ class EquipmentModulesManager {
 			h = 122 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
 
-			onTreeSelChanged = "[] call VTG_fnc_onTreeSelect";
-			onTreeDblClick = "_this call VTG_fnc_editWeapAttach";
+			onTreeSelChanged = "[] call EMM_fnc_onTreeSelect";
+			onTreeDblClick = "_this call EMM_fnc_editWeapAttach";
 		};
 
 		////////////////////////////////////////
@@ -394,7 +394,7 @@ class EquipmentModulesManager {
 			w = 5 * GUI_GRID_W;
 			h = 6.5 * GUI_GRID_H;
 			tooltip = "Add 1 Item"; //--- ToDo: Localize;
-			onButtonClick = "[] call VTG_fnc_modifyModuleItem";
+			onButtonClick = "[] call EMM_fnc_modifyModuleItem";
 		};
 		class Delete_OneItem_module_Btn: RscButton
 		{
@@ -407,7 +407,7 @@ class EquipmentModulesManager {
 			w = 5 * GUI_GRID_W;
 			h = 6.5 * GUI_GRID_H;
 			tooltip = "Delete 1 Item"; //--- ToDo: Localize;
-			onButtonClick = "[] call VTG_fnc_deleteModuleItems";
+			onButtonClick = "[] call EMM_fnc_deleteModuleItems";
 		};
 		class Delete_Items_module_Btn: RscButton
 		{
@@ -421,7 +421,7 @@ class EquipmentModulesManager {
 			h = 6.5 * GUI_GRID_H;
 			tooltip = "Delete All Selected Items"; //--- ToDo: Localize;
 			sizeEx = 7 * GUI_GRID_H;
-			onButtonClick = "[true] call VTG_fnc_deleteModuleItems";
+			onButtonClick = "[true] call EMM_fnc_deleteModuleItems";
 		};
 		class Import_Items_module_Btn: RscButton
 		{
@@ -434,7 +434,7 @@ class EquipmentModulesManager {
 			h = 6.5 * GUI_GRID_H;
 			tooltip = "Import items from arsenal"; //--- ToDo: Localize;
 			sizeEx = 7 * GUI_GRID_H;
-			onButtonClick = "[] spawn VTG_fnc_importFromArsenal";
+			onButtonClick = "[] spawn EMM_fnc_importFromArsenal";
 		};
 		class Attachments_Items_module_Btn: RscButton
 		{
@@ -448,7 +448,7 @@ class EquipmentModulesManager {
 			h = 6.5 * GUI_GRID_H;
 			tooltip = "Edit weapon Attachments"; //--- ToDo: Localize;
 			sizeEx = 7 * GUI_GRID_H;
-			onButtonClick = "[] call VTG_fnc_editWeapAttach";
+			onButtonClick = "[] call EMM_fnc_editWeapAttach";
 		};
 		/*------ function ------*/
 		class function_module_Lbl: RscText
@@ -464,7 +464,7 @@ class EquipmentModulesManager {
 		class function_Change_module_Btn: RscButton
 		{
 			idc = 1686;
-			onButtonClick = "[true] call VTG_fnc_openSelector";
+			onButtonClick = "[true] call EMM_fnc_openSelector";
 
 			text = "none"; //--- ToDo: Localize;
 			x = 149 * GUI_GRID_W + GUI_GRID_X;
@@ -512,7 +512,7 @@ class EquipmentModulesManager {
 			h = 9 * GUI_GRID_H;
 			tooltip = "Select target units"; //--- ToDo: Localize;
 
-			onLBSelChanged = "[_this#0, _this#1] call VTG_fnc_showEditBtn";
+			onLBSelChanged = "[_this#0, _this#1] call EMM_fnc_showEditBtn";
 		};
 		class TargetUnits_Show_Btn: RscButton
 		{
@@ -530,7 +530,7 @@ class EquipmentModulesManager {
 		class TargetUnits_Edit_Btn: RscButton
 		{
 			idc = 1661;
-			onButtonClick = "call VTG_fnc_openEditTargetsMenu";
+			onButtonClick = "call EMM_fnc_openEditTargetsMenu";
 
 			text = "Edit"; //--- ToDo: Localize;
 			x = 183 * GUI_GRID_W + GUI_GRID_X;
@@ -550,7 +550,7 @@ class EquipmentModulesManager {
 			w = 14 * GUI_GRID_W;
 			h = 6.5 * GUI_GRID_H;
 			tooltip = "Clear All Inventory"; //--- ToDo: Localize;
-			onButtonClick = "call VTG_fnc_clearModule";
+			onButtonClick = "call EMM_fnc_clearModule";
 		};
 		// class Create_module_Btn: RscButton
 		// {
@@ -568,7 +568,7 @@ class EquipmentModulesManager {
 		class Save_module_Btn: RscButton
 		{
 			idc = 1603;
-			onButtonClick = "call VTG_fnc_checkSaveModule";
+			onButtonClick = "call EMM_fnc_checkSaveModule";
 
 			text = "Save"; //--- ToDo: Localize;
 			x = 210 * GUI_GRID_W + GUI_GRID_X;
@@ -588,7 +588,7 @@ class EquipmentModulesManager {
 			h = 10 * GUI_GRID_H;
 			tooltip = "Delete module"; //--- ToDo: Localize;
 
-			onButtonClick = "[] call VTG_fnc_deleteModule";
+			onButtonClick = "[] call EMM_fnc_deleteModule";
 		};
 
 //////////////////////////////////////////////////////////////////////////////////////		
@@ -606,7 +606,7 @@ class EquipmentModulesManager {
 			tooltip = "Expand Module inventory items tree"; //--- ToDo: Localize;
 			checked = 1;
 
-			onCheckedChanged = "VTG_expandInvChkbox = cbChecked (VTG_equipUI#16)";
+			onCheckedChanged = "EMM_expandInvChkbox = cbChecked (EMM_equipUI#16)";
 			//params ["_control", "_checked"];  0 for unchecked, 1 for checked
 		};
 		class ExpandModuleTree_Lbl: RscText

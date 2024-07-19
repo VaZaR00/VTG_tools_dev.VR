@@ -1,5 +1,5 @@
 private _name = param[0];
-private _dataMap = call VTG_fnc_getAllModulesFromStorage;
+private _dataMap = call EMM_fnc_getAllModulesFromStorage;
 
 if (_dataMap isEqualTo false) exitWith { _dataMap; }; //return false
 
