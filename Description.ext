@@ -222,6 +222,12 @@ class CfgFunctions
 
 	class other_tools
 	{
+		tag = "VTG";
+		class name_
+		{
+			file = "Functions\naming";
+			class fn_message {};
+		};
 		class naming_squad
 		{
 			file = "Functions\naming\squadNames";
@@ -234,11 +240,10 @@ class CfgFunctions
 		class naming_units
 		{
 			file = "Functions\naming\unitNames";
-			class fn_clearName {};
+			class fn_clearUnitName {};
+			class fn_setUnitName {};
+			class fn_setUnitsNameToDefault {};
 			class fn_unitsMiddleware {};
-			class fn_removeSqLeadNaming {};
-			class fn_setSquadName {};
-			class fn_setToDefault {};
 		};
 	};
 };
