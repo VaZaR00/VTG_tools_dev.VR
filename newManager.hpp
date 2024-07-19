@@ -64,7 +64,7 @@ class EquipmentModulesManager {
 		{
 			idc = 1778;
 			x = -29 * GUI_GRID_W + GUI_GRID_X;
-			y = 38.5 * GUI_GRID_H + GUI_GRID_Y;
+			y = 18 * GUI_GRID_H + GUI_GRID_Y;
 			w = 52 * GUI_GRID_W;
 			h = 160 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
@@ -73,83 +73,83 @@ class EquipmentModulesManager {
 			onTreeDblClick = "_this call EMM_fnc_setCurrentModule";
 		};
 		////// Preset Menu ///////
-		class Preset_Menu_frame: RscFrame
-		{
-			idc = 1802;
-			x = -29 * GUI_GRID_W + GUI_GRID_X;
-			y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 25 * GUI_GRID_W;
-			h = 27 * GUI_GRID_H;
-		};
-		class Preset_Menu_Lbl: RscText
-		{
-			idc = 1008;
+		// class Preset_Menu_frame: RscFrame
+		// {
+		// 	idc = 1802;
+		// 	x = -29 * GUI_GRID_W + GUI_GRID_X;
+		// 	y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
+		// 	w = 25 * GUI_GRID_W;
+		// 	h = 27 * GUI_GRID_H;
+		// };
+		// class Preset_Menu_Lbl: RscText
+		// {
+		// 	idc = 1008;
 
-			text = "Preset"; //--- ToDo: Localize;
-			x = -24 * GUI_GRID_W + GUI_GRID_X;
-			y = 7 * GUI_GRID_H + GUI_GRID_Y;
-			w = 17.5 * GUI_GRID_W;
-			h = 12 * GUI_GRID_H;
-		};
-		class Preset_Import_Btn: RscButton
-		{
-			idc = 1606;
-			text = "Import"; //--- ToDo: Localize;
-			x = -27.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 18 * GUI_GRID_H + GUI_GRID_Y;
-			w = 22 * GUI_GRID_W;
-			h = 8 * GUI_GRID_H;
-		};
-		class Preset_Export_Btn: RscButton
-		{
-			idc = 1607;
-			text = "Export"; //--- ToDo: Localize;
-			x = -27.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 27 * GUI_GRID_H + GUI_GRID_Y;
-			w = 22 * GUI_GRID_W;
-			h = 8 * GUI_GRID_H;
-		};
-		////// Module Menu ///////
-		class Module_Menu_frame: RscFrame
-		{
-			idc = 1803;
-			x = -2.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 25 * GUI_GRID_W;
-			h = 27 * GUI_GRID_H;
-		};
-		class Module_Menu_Lbl: RscText
-		{
-			idc = 1015;
+		// 	text = "Preset"; //--- ToDo: Localize;
+		// 	x = -24 * GUI_GRID_W + GUI_GRID_X;
+		// 	y = 7 * GUI_GRID_H + GUI_GRID_Y;
+		// 	w = 17.5 * GUI_GRID_W;
+		// 	h = 12 * GUI_GRID_H;
+		// };
+		// class Preset_Import_Btn: RscButton
+		// {
+		// 	idc = 1606;
+		// 	text = "Import"; //--- ToDo: Localize;
+		// 	x = -27.5 * GUI_GRID_W + GUI_GRID_X;
+		// 	y = 18 * GUI_GRID_H + GUI_GRID_Y;
+		// 	w = 22 * GUI_GRID_W;
+		// 	h = 8 * GUI_GRID_H;
+		// };
+		// class Preset_Export_Btn: RscButton
+		// {
+		// 	idc = 1607;
+		// 	text = "Export"; //--- ToDo: Localize;
+		// 	x = -27.5 * GUI_GRID_W + GUI_GRID_X;
+		// 	y = 27 * GUI_GRID_H + GUI_GRID_Y;
+		// 	w = 22 * GUI_GRID_W;
+		// 	h = 8 * GUI_GRID_H;
+		// };
+		// ////// Module Menu ///////
+		// class Module_Menu_frame: RscFrame
+		// {
+		// 	idc = 1803;
+		// 	x = -2.5 * GUI_GRID_W + GUI_GRID_X;
+		// 	y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
+		// 	w = 25 * GUI_GRID_W;
+		// 	h = 27 * GUI_GRID_H;
+		// };
+		// class Module_Menu_Lbl: RscText
+		// {
+		// 	idc = 1015;
 
-			text = "Module"; //--- ToDo: Localize;
-			x = 2 * GUI_GRID_W + GUI_GRID_X;
-			y = 7 * GUI_GRID_H + GUI_GRID_Y;
-			w = 17.5 * GUI_GRID_W;
-			h = 12 * GUI_GRID_H;
-		};
-		class Module_Menu_Create_Btn: RscButton
-		{
-			idc = 1608;
-			text = "New"; //--- ToDo: Localize;
-			x = -1 * GUI_GRID_W + GUI_GRID_X;
-			y = 18 * GUI_GRID_H + GUI_GRID_Y;
-			w = 22 * GUI_GRID_W;
-			h = 8 * GUI_GRID_H;
+		// 	text = "Module"; //--- ToDo: Localize;
+		// 	x = 2 * GUI_GRID_W + GUI_GRID_X;
+		// 	y = 7 * GUI_GRID_H + GUI_GRID_Y;
+		// 	w = 17.5 * GUI_GRID_W;
+		// 	h = 12 * GUI_GRID_H;
+		// };
+		// class Module_Menu_Create_Btn: RscButton
+		// {
+		// 	idc = 1608;
+		// 	text = "New"; //--- ToDo: Localize;
+		// 	x = -1 * GUI_GRID_W + GUI_GRID_X;
+		// 	y = 18 * GUI_GRID_H + GUI_GRID_Y;
+		// 	w = 22 * GUI_GRID_W;
+		// 	h = 8 * GUI_GRID_H;
 
-			onButtonClick = "call EMM_fnc_createNewModule";
-		};
-		class Module_Menu_Delete_Btn: RscButton
-		{
-			idc = 1609;
-			text = "Delete"; //--- ToDo: Localize;
-			x = -1 * GUI_GRID_W + GUI_GRID_X;
-			y = 27 * GUI_GRID_H + GUI_GRID_Y;
-			w = 22 * GUI_GRID_W;
-			h = 8 * GUI_GRID_H;
+		// 	onButtonClick = "call EMM_fnc_createNewModule";
+		// };
+		// class Module_Menu_Delete_Btn: RscButton
+		// {
+		// 	idc = 1609;
+		// 	text = "Delete"; //--- ToDo: Localize;
+		// 	x = -1 * GUI_GRID_W + GUI_GRID_X;
+		// 	y = 27 * GUI_GRID_H + GUI_GRID_Y;
+		// 	w = 22 * GUI_GRID_W;
+		// 	h = 8 * GUI_GRID_H;
 
-			onButtonClick = "[] call EMM_fnc_deleteModule";
-		};
+		// 	onButtonClick = "[] call EMM_fnc_deleteModule";
+		// };
 
 //////////////////////////////////////////////////////////////////////////////////////		
 ////////    Arsenal    ///////////////////////////////////////////////////////////////

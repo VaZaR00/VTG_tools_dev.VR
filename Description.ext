@@ -210,8 +210,9 @@ class CfgFunctions
 		class repository_storage
 		{
 			file = "Functions\EquipmentControl\repository\storage";
+			class addModulesToStorage {};
 			class getModulesStorage {};
-			class saveToModulesStorage {};
+			class saveItemToStorage {};
 			class setStorage {};
 		};
 	};
