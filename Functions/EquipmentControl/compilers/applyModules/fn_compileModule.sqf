@@ -1,12 +1,13 @@
 params["_module"];
 
-private _targets = _module#0;
-private _items = _module#1;
+private _targets = (_module#1)#0;
+private _items = (_module#1)#1;
+private _name = _module#0;
 
 private _itemsScripts = "";
 
 {
-	private _itemFunc = [+_x] call EMM_fnc_compileItemFunc;
+	private _itemFunc = [+_x, _name] call EMM_fnc_compileItemFunc;
 	_itemsScripts = _itemsScripts + _itemFunc;
 } forEach _items;
 

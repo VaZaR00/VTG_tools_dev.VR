@@ -1,8 +1,9 @@
 private _dataMap = [] call EMM_fnc_getModulesStorage;
-private _data = values _dataMap;
+//private _data = values _dataMap;
+private _data = _dataMap toArray false;
 
 private _algorithm = {
-	private _el = +_x;
+	private _el = +(_x#1);
 
 	private _weight = 5;
 	private _first = ["FAU", "AV", "AB", "AW"];
@@ -74,5 +75,5 @@ private _algorithm = {
 };
 
 private _sorted = [_data, [], _algorithm] call BIS_fnc_sortBy;
-
+//[str _sorted] call EMM_fnc_message;
 _sorted;

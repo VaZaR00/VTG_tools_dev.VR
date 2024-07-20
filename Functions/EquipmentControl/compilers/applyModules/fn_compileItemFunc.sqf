@@ -1,4 +1,4 @@
-params["_data", ["_dest", ""]];
+params["_data", "_moduleName", ["_dest", ""]];
 
 private _class = _data#0;
 
@@ -8,7 +8,7 @@ if (_class == "Rand") exitWith {
 	_data deleteAt 0;
 	private _randArr = [];
 	{
-		private _func = [_x, _dest] call EMM_fnc_compileItemFunc;
+		private _func = [_x, _moduleName, _dest] call EMM_fnc_compileItemFunc;
 		_randArr pushBack _func;
 	} forEach _data;
 	_text = format["_x call compile (selectRandom %1);", _randArr];
@@ -43,7 +43,7 @@ private _ifTestFormat = {
 			default { "_x canAdd %1" };
 		};
 		private _condition = format[_conditionFormat, str _class, str _dest];
-		_text = format["if(%1)then{%2}else{EMM_EQUIP_TEST_FAILED_ARR pushBack [_x, %3]};", _condition, _text, str _class];
+		_text = format["if(%1)then{%2}else{EMM_EQUIP_TEST_FAILED_ARR pushBack [%4, _x, %3]};", _condition, _text, str _class, str _moduleName];
 	};
 
 	_text
@@ -97,7 +97,7 @@ private _giveOtherMags = {
 
 	_item set [2, (_item#2) - 1];
 
-	private _attFunc = [_item, _class] call EMM_fnc_compileItemFunc;
+	private _attFunc = [_item, _moduleName, _class] call EMM_fnc_compileItemFunc;
 	_text = _text + _attFunc;
 };
 
@@ -122,8 +122,8 @@ private _giveOtherMags = {
 			};
 		};
 	};
-	private _attFunc = [_item, _class] call EMM_fnc_compileItemFunc;
+	private _attFunc = [_item, _moduleName, _class] call EMM_fnc_compileItemFunc;
 	_text = _text + _attFunc;
 } forEach _attachs;
-hint str _text;
+
 _text //return

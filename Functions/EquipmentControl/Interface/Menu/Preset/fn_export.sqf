@@ -8,6 +8,16 @@ if (_one) then {
 
 private _storage = [false, false, _name] call EMM_fnc_getModulesStorage;
 
+if (count _storage == 0) exitWith {
+	["Data empty"] call EMM_fnc_message;	
+};
+
+if (_name != "") then {
+	private _data = +_storage;
+	_storage = createHashMap;
+	_storage insert [[_name, _data]];
+};
+
 _storage insert [["EMM_EXPORT", false]];
 
 copyToClipboard str _storage;

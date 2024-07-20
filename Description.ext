@@ -4,7 +4,7 @@
 #include "newManager.hpp"
 #include "addFuncSelector.hpp"
 #include "TargetsMenu.hpp"
-
+#include "failedReport.hpp"
 
 class CfgFunctions
 {
@@ -183,6 +183,7 @@ class CfgFunctions
 			class convertAttributeToFunction {};
 			class prepareStorage {};
 			class setGLmodule {};
+			class showFailedReport {};
 		};
 		class compilers_import
 		{

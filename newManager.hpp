@@ -95,7 +95,8 @@ class EquipmentModulesManager {
 					items[]=
 					{
 						"Import",
-						"Export"
+						"Export",
+						"Export_All"
 					};
 				};
 				class module
@@ -125,6 +126,11 @@ class EquipmentModulesManager {
 				class Export
 				{
 					text="Export";
+					action = "[true] call EMM_fnc_export";
+				};
+				class Export_All
+				{
+					text="Export All";
 					action = "[] call EMM_fnc_export";
 				};
 				class New

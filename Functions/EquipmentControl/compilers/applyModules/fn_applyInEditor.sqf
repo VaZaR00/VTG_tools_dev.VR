@@ -31,6 +31,9 @@ private _arr = +EMM_EQUIP_TEST_FAILED_ARR;
 	_result pushBack _el;
 } forEach _arr;
 
+[EMM_EQUIP_TEST_FAILED_ARR] call EMM_fnc_showFailedReport;
+
+
 //_result
 [str EMM_EQUIP_TEST_FAILED_ARR] call EMM_fnc_message;
 
