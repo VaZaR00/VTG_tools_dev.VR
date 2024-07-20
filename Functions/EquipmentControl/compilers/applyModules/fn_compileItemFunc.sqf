@@ -33,7 +33,7 @@ private _ifTestFormat = {
 				};
 			};
 			case "AH": { "(headgear _x)==''" };
-			case "AU": { "(uniform _x)==''" };
+			case "FAU": { "(uniform _x)==''" };
 			case "AV": { "(vest _x)==''" };
 			case "AB": { "(backpack _x)==''" };
 			case "AWI": { "%2 canAdd %1" };

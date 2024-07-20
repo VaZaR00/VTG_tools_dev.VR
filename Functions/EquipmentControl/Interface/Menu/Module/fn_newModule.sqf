@@ -6,3 +6,5 @@ call EMM_fnc_resetModule;
 
 EMM_Current_module_path = [-1];
 (EMM_equipUI#5) tvSetCurSel EMM_Current_module_path;
+
+["Module created"] call EMM_fnc_message;

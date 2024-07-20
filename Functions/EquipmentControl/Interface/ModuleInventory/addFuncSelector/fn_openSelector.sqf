@@ -9,4 +9,4 @@ private _category = _inventoryTree tvText [(_selectItem#0)];
 
 if ("To " in _category) exitWith { ["Can't change function when item in equipment!", 1] call EMM_fnc_message };
 
-(findDisplay 313) createDisplay 'AddFuncSelector';
+(findDisplay 11549) createDisplay 'AddFuncSelector';

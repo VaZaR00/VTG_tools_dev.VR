@@ -52,7 +52,7 @@ switch (_type) do {
 			default { 4 /*_items*/ };
 		};
 	};
-	case "AU": { 10 /*_uniforms*/ };
+	case "FAU": { 10 /*_uniforms*/ };
 	case "AV": { 11 /*_vests*/ };
 	case "AH": { 12 /*_helmets*/ };
 	case "AB": { 13 /*_backpacks*/ };

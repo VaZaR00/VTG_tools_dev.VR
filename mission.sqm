@@ -8,30 +8,27 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=339;
+		nextID=342;
 	};
 	class Camera
 	{
-		pos[]={4541.498,7.3676195,2310.8901};
-		dir[]={-0.84894621,-0.37406015,0.37332606};
-		up[]={-0.3424139,0.92740417,0.15057734};
-		aside[]={0.402549,-4.6566129e-010,0.91539919};
+		pos[]={4534.5781,13.677009,2308.9382};
+		dir[]={0.73964918,-0.67095804,0.054134693};
+		up[]={0.66918105,0.74146909,0.048977643};
+		aside[]={0.072998069,-2.0623247e-007,-0.99742043};
 	};
 };
 binarizationWanted=0;
 sourceName="VTG_tools_dev";
 addons[]=
 {
-	"A3_Characters_F",
-	"A3_Weapons_F_Mod_SMGs_SMG_03",
-	"A3_Weapons_F_Mod",
-	"A3_Characters_F_AoW"
+	"A3_Characters_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=1;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -39,26 +36,7 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item1
-		{
-			className="A3_Weapons_F_Mod";
-			name="Arma 3 Official Mod - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item2
-		{
-			className="A3_Characters_F_AoW";
-			name="Arma 3 Art of War - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
-};
-dlcs[]=
-{
-	"OfficialMod",
-	"Expansion"
 };
 randomSeed=6579932;
 class ScenarioData
@@ -123,7 +101,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=4;
+		items=1;
 		class Item0
 		{
 			dataType="Group";
@@ -136,178 +114,22 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4536.1758,5.0014391,2312.22};
+						position[]={4544.0078,5.0014391,2309.8806};
 					};
 					side="East";
 					flags=7;
 					class Attributes
 					{
-						name="var_211";
-						description="1: Asst. Gunner (Mk6) (Katiba Carbine 6.5 mm, Rook-40 9 mm)";
 						isPlayer=1;
-						isPlayable=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="SMG_03C_hex";
-								muzzle="muzzle_snds_570";
-								class primaryMuzzleMag
-								{
-									name="50Rnd_570x28_SMG_03";
-									ammoLeft=50;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_tshirt";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="50Rnd_570x28_SMG_03";
-										count=3;
-										ammoLeft=50;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_Chestrig_rgr";
-								isBackpack=0;
-							};
-							class backpack
-							{
-								typeName="B_Carryall_khk";
-								isBackpack=1;
-							};
-							headgear="H_HelmetB_camo";
-						};
 					};
-					id=211;
-					type="O_support_AMort_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male02PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.98000002;
-								};
-							};
-						};
-						nAttributes=2;
-					};
+					id=341;
+					type="O_crew_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=210;
-		};
-		class Item1
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5266.0864,5.0014391,2604.5791};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=329;
-					type="B_soldier_AR_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=328;
-		};
-		class Item2
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4691.0034,5.0014391,3276.1694};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=331;
-					type="C_Man_casual_7_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=330;
-		};
-		class Item3
-		{
-			dataType="Group";
-			side="Independent";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5269.6772,5.0014391,3368.0217};
-					};
-					side="Independent";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=333;
-					type="I_Soldier_AAT_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=332;
+			id=340;
 		};
 	};
 };

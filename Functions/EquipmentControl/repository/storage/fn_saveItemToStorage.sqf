@@ -7,4 +7,3 @@ _dataMap set [_name, [_type, _moduleItemsList]];
 [_dataMap] call EMM_fnc_setStorage;
 
 call EMM_fnc_modulesAmount;
-//["Modules data saved"] call EMM_fnc_message;

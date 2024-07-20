@@ -8,3 +8,4 @@ if (call EMM_fnc_checkSaveModule) exitWith {
 	call EMM_fnc_newModule;
 };
 call EMM_fnc_warning;
+

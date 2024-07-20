@@ -1,4 +1,4 @@
-private _data = call EMM_fnc_prepareStorage;
+params[["_data", call EMM_fnc_prepareStorage]];
 
 private _script = 
 "private _removeEq = {
@@ -18,5 +18,5 @@ removeGoggles _u;};
 	_script = _script + _moduleScript;
 } forEach _data;
 
-//if (!isServer) exitWith {};
+//
 _script

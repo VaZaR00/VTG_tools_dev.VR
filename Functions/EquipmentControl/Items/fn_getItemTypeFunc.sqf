@@ -49,7 +49,7 @@ private _getAddCommandByItemType = {
         };
         case (_category == "Equipment"): {
             switch (_type) do {
-                case "Uniform": { "AU" };
+                case "Uniform": { "FAU" };
                 case "Vest": { "AV" };
                 case "Backpack": { "AB" };
                 case "Headgear": { "AH" };

@@ -2,7 +2,6 @@
 
 disableSerialization;
 (findDisplay 313) createDisplay 'EquipmentModulesManager';
-
 waitUntil {(!isNull (uiNamespace getVariable ['EquipmentModulesManager', displayNull]))};
 
 //2 - get displays controls

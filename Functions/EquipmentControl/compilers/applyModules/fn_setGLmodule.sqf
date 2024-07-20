@@ -1,35 +1,37 @@
-params["_script", "_name"];
+private _setGL = {
+	params["_script", "_name"];
 
-if (isNil "_script") exitWith {
-	["Empty module"] call EMM_fnc_message;
+	if (isNil "_script") exitWith {
+		["Empty module"] call EMM_fnc_message;
+	};
+
+	private _set = {
+		_script = "if (!isServer) exitWith {};" + _script;
+
+		call _modifyOldModule;
+
+		private _GLmodule = create3DENEntity ["Logic", "Logic", [0,0,0]];
+
+		_GLmodule set3DENAttribute ["Name", _name];
+		_GLmodule set3DENAttribute ["Init", _script];
+	};
+
+	private _modifyOldModule = {
+		private _allLogicModules = allMissionObjects "Logic";
+
+		{
+			private _varName = (_x get3DENAttribute "Name")#0;
+			if (_varName == _name) then {
+				delete3DENEntities [_x];
+			};
+		}forEach _allLogicModules;
+	};
+
+	call _set;
+
+	["Module created"] call EMM_fnc_message;
 };
 
-private _main = {
-	call _modifyOldModule;
+private _script = call EMM_fnc_compiler;
 
-	private _GLmodule = create3DENEntity ["Logic", "Logic", [0,0,0]];
-
-	_GLmodule set3DENAttribute ["Name", _name];
-	_GLmodule set3DENAttribute ["Init", _script];
-};
-
-private _modifyOldModule = {
-	private _allLogicModules = allMissionObjects "Logic";
-
-	{
-		private _varName = (_x get3DENAttribute "Name")#0;
-		if (_varName == _name) then {
-			delete3DENEntities [_x];
-		};
-	}forEach _allLogicModules;
-};
-
-call _main;
-
-["Module created"] call EMM_fnc_message;
-
-// private _setToLayer = {
-// 	_module = param[0];
-
-
-// };
+[_script, "EQUIP_MODULES_COMPILED_CODE"] call _setGL;

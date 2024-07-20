@@ -8,6 +8,10 @@ if (_one) then {
 
 private _storage = [false, false, _name] call EMM_fnc_getModulesStorage;
 
+_storage insert [["EMM_EXPORT", false]];
+
 copyToClipboard str _storage;
+
+["Data copied to clipboard"] call EMM_fnc_message;
 
 _storage

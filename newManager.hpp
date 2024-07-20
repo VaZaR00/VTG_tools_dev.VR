@@ -26,9 +26,9 @@ class EquipmentModulesManager {
 		class background_bg: RscText
 		{
 			idc = -1;
-			x = -30 * GUI_GRID_W + GUI_GRID_X;
+			x = -33 * GUI_GRID_W + GUI_GRID_X;
 			y = 0 * GUI_GRID_H + GUI_GRID_Y;
-			w = 260 * GUI_GRID_W;
+			w = 263 * GUI_GRID_W;
 			h = 206 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.7};
 		};
@@ -36,9 +36,9 @@ class EquipmentModulesManager {
 		{
 			idc = -1;
 			text = "Equipment Module Manager"; //--- ToDo: Localize;
-			x = -30 * GUI_GRID_W + GUI_GRID_X;
+			x = -33 * GUI_GRID_W + GUI_GRID_X;
 			y = -0.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 260 * GUI_GRID_W;
+			w = 263 * GUI_GRID_W;
 			h = 8 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.75};
 		};
@@ -63,93 +63,101 @@ class EquipmentModulesManager {
 		class Modules_tree: RscTree
 		{
 			idc = 1778;
-			x = -29 * GUI_GRID_W + GUI_GRID_X;
+			x = -32 * GUI_GRID_W + GUI_GRID_X;
 			y = 18 * GUI_GRID_H + GUI_GRID_Y;
-			w = 52 * GUI_GRID_W;
-			h = 160 * GUI_GRID_H;
+			w = 56 * GUI_GRID_W;
+			h = 180 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
 
 			//onLoad = "call EMM_fnc_initTreeItems";
 			onTreeDblClick = "_this call EMM_fnc_setCurrentModule";
 		};
-		////// Preset Menu ///////
-		// class Preset_Menu_frame: RscFrame
-		// {
-		// 	idc = 1802;
-		// 	x = -29 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 25 * GUI_GRID_W;
-		// 	h = 27 * GUI_GRID_H;
-		// };
-		// class Preset_Menu_Lbl: RscText
-		// {
-		// 	idc = 1008;
+		class Menu: DBUG_MENU_STRIP
+		{
+			idc = 1008;
 
-		// 	text = "Preset"; //--- ToDo: Localize;
-		// 	x = -24 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 7 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 17.5 * GUI_GRID_W;
-		// 	h = 12 * GUI_GRID_H;
-		// };
-		// class Preset_Import_Btn: RscButton
-		// {
-		// 	idc = 1606;
-		// 	text = "Import"; //--- ToDo: Localize;
-		// 	x = -27.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 18 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 22 * GUI_GRID_W;
-		// 	h = 8 * GUI_GRID_H;
-		// };
-		// class Preset_Export_Btn: RscButton
-		// {
-		// 	idc = 1607;
-		// 	text = "Export"; //--- ToDo: Localize;
-		// 	x = -27.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 27 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 22 * GUI_GRID_W;
-		// 	h = 8 * GUI_GRID_H;
-		// };
-		// ////// Module Menu ///////
-		// class Module_Menu_frame: RscFrame
-		// {
-		// 	idc = 1803;
-		// 	x = -2.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 25 * GUI_GRID_W;
-		// 	h = 27 * GUI_GRID_H;
-		// };
-		// class Module_Menu_Lbl: RscText
-		// {
-		// 	idc = 1015;
+			x = -32 * GUI_GRID_W + GUI_GRID_X;
+			y = 8 * GUI_GRID_H + GUI_GRID_Y;
+			w = 50 * GUI_GRID_W;
+			h = 8 * GUI_GRID_H;
 
-		// 	text = "Module"; //--- ToDo: Localize;
-		// 	x = 2 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 7 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 17.5 * GUI_GRID_W;
-		// 	h = 12 * GUI_GRID_H;
-		// };
-		// class Module_Menu_Create_Btn: RscButton
-		// {
-		// 	idc = 1608;
-		// 	text = "New"; //--- ToDo: Localize;
-		// 	x = -1 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 18 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 22 * GUI_GRID_W;
-		// 	h = 8 * GUI_GRID_H;
-
-		// 	onButtonClick = "call EMM_fnc_createNewModule";
-		// };
-		// class Module_Menu_Delete_Btn: RscButton
-		// {
-		// 	idc = 1609;
-		// 	text = "Delete"; //--- ToDo: Localize;
-		// 	x = -1 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 27 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 22 * GUI_GRID_W;
-		// 	h = 8 * GUI_GRID_H;
-
-		// 	onButtonClick = "[] call EMM_fnc_deleteModule";
-		// };
+			class items
+			{
+				items[]=
+				{
+					"preset",
+					"module",
+					"compile"
+				};
+				class preset
+				{
+					text="Preset";
+					items[]=
+					{
+						"Import",
+						"Export"
+					};
+				};
+				class module
+				{
+					text="Module";
+					items[]=
+					{
+						"New",
+						"Delete"
+					};
+				};
+				class compile
+				{
+					text="Compile";
+					items[]=
+					{
+						"Set",
+						"Give",
+						"Give_All"
+					};
+				};
+				class Import
+				{
+					text="Import";
+					action = "[] call EMM_fnc_import";
+				};
+				class Export
+				{
+					text="Export";
+					action = "[] call EMM_fnc_export";
+				};
+				class New
+				{
+					text="New";
+					action = "[] call EMM_fnc_createNewModule";
+					//picture = "\a3\3DEN\Data\Displays\Display3DEN\ToolBar\new_ca.paa";
+					shortcuts[] = {"512+0x31"};
+				};
+				class Delete
+				{
+					text="Delete";
+					shortcuts[] = {"512+0x20"};
+					action = "[] call EMM_fnc_menuDeleteModule";
+				};
+				class Set
+				{
+					text="Set";
+					action = "[] call EMM_fnc_setGLmodule";
+				};
+				class Give
+				{
+					text="Give";
+					action = "[true] call EMM_fnc_applyInEditor";
+				};
+				class Give_All
+				{
+					text="Give All";
+					action = "[] call EMM_fnc_applyInEditor";
+				};
+				class Default;
+			};
+		};
 
 //////////////////////////////////////////////////////////////////////////////////////		
 ////////    Arsenal    ///////////////////////////////////////////////////////////////
@@ -387,7 +395,6 @@ class EquipmentModulesManager {
 		{
 			idc = 1600;
 
-			shortcuts[] = {"107"};
 			text = "+"; //--- ToDo: Localize;
 			x = 143.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 144 * GUI_GRID_H + GUI_GRID_Y;
@@ -395,12 +402,12 @@ class EquipmentModulesManager {
 			h = 6.5 * GUI_GRID_H;
 			tooltip = "Add 1 Item"; //--- ToDo: Localize;
 			onButtonClick = "[] call EMM_fnc_modifyModuleItem";
+			shortcuts[] = {"0x4E"};
 		};
 		class Delete_OneItem_module_Btn: RscButton
 		{
 			idc = 1600;
 
-			shortcuts[] = {"109"};
 			text = "-"; //--- ToDo: Localize;
 			x = 150 * GUI_GRID_W + GUI_GRID_X;
 			y = 144 * GUI_GRID_H + GUI_GRID_Y;
@@ -408,12 +415,12 @@ class EquipmentModulesManager {
 			h = 6.5 * GUI_GRID_H;
 			tooltip = "Delete 1 Item"; //--- ToDo: Localize;
 			onButtonClick = "[] call EMM_fnc_deleteModuleItems";
+			shortcuts[] = {"0x4A"};
 		};
 		class Delete_Items_module_Btn: RscButton
 		{
 			idc = 1601;
 
-			shortcuts[] = {"46"};
 			text = "Delete"; //--- ToDo: Localize;
 			x = 157 * GUI_GRID_W + GUI_GRID_X;
 			y = 144 * GUI_GRID_H + GUI_GRID_Y;
@@ -422,6 +429,7 @@ class EquipmentModulesManager {
 			tooltip = "Delete All Selected Items"; //--- ToDo: Localize;
 			sizeEx = 7 * GUI_GRID_H;
 			onButtonClick = "[true] call EMM_fnc_deleteModuleItems";
+			shortcuts[] = {"0xD3"};
 		};
 		class Import_Items_module_Btn: RscButton
 		{

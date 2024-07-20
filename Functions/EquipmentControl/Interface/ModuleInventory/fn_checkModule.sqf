@@ -10,7 +10,7 @@ if (_name in ["", "none"]) exitWith {
 	true;
 };
 if (
-	(_name in (call EMM_fnc_getModulesStorage))&&
+	(_name in ([] call EMM_fnc_getModulesStorage))&&
 	(EMM_Current_Module != _name)
 ) exitWith {
 	if (_showMsg) then {["Module Name is already exists!"] call EMM_fnc_message};

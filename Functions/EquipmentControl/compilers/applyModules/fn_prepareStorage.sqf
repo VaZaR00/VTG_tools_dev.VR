@@ -1,11 +1,11 @@
-private _dataMap = call EMM_fnc_getModulesStorage;
+private _dataMap = [] call EMM_fnc_getModulesStorage;
 private _data = values _dataMap;
 
 private _algorithm = {
 	private _el = +_x;
 
 	private _weight = 5;
-	private _first = ["AU", "AV", "AB", "AW"];
+	private _first = ["FAU", "AV", "AB", "AW"];
 	private _second = ["AIU", "AIV", "AIB"];
 	//else is third
 
@@ -13,7 +13,7 @@ private _algorithm = {
 		params["_list"];
 
 		private _pairs = [
-			["AU", "AIU"],
+			["FAU", "AIU"],
 			["AV", "AIV"],
 			["AB", "AIB"]
 		];
