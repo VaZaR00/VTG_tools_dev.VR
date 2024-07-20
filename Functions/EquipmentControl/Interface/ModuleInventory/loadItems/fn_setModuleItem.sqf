@@ -1,13 +1,14 @@
 params["_item", ["_isAttach", false], ["_parent", []]];
 
 private _accessories = ["Sights", "Pointers", "Muzzles", "Bipods"];
+private _items = ["Other", "Binoculars"];
 private _all = [
     "Rifles",
     "Pistols",
     "Launchers",
     "Magazines",
-    "Items",
-    "Binoculars",  
+    "Other",        //items
+    "Binoculars",   //items
     "Sights",
     "Pointers",
     "Muzzles",
@@ -17,7 +18,8 @@ private _all = [
     "Helmets",
     "Backpacks",
     "Goggles",
-    "NVGs"  
+    "NVGs",
+    "Modules"
 ];
 
 
@@ -30,6 +32,9 @@ private _cateogry = [_all#(_class call EMM_fnc_getCategory)];
 
 if ((_cateogry#0) in _accessories) then {
 	_cateogry insert [0, ["Accessories"]];
+};
+if ((_cateogry#0) in _items) then {
+	_cateogry insert [0, ["Items"]];
 };
 ////////////
 

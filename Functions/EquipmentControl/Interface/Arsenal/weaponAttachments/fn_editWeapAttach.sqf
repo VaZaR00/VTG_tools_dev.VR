@@ -51,4 +51,4 @@ private _compatible = [];
 EMM_weaponAttahcments = _compatible;
 EMM_currentWeaponPath = _itemPath;
 
-['', _attCtrl, EMM_weaponAttahcments, false] call EMM_fnc_loadArsenal;
+['', _attCtrl, EMM_weaponAttahcments, false] spawn EMM_fnc_loadArsenal;

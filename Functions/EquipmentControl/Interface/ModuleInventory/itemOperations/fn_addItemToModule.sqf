@@ -17,6 +17,8 @@ _path pushBack (_tree tvAdd [_path, _itemText]);
 private _cfg = _classname call EMM_fnc_findRootConfig;
 private _image = getText (configFile >> _cfg >> _classname >> 'picture');
 
+//[str [_cfg, _image, _name, _classname, _func]] call EMM_fnc_message;
+
 //setting item data
 _tree tvSetData [_path, _func];
 _tree tvSetValue [_path, _amount];

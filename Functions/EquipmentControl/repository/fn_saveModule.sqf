@@ -24,3 +24,5 @@ call EMM_fnc_loadModulesTree;
 [_name] call EMM_fnc_changeModule;
 
 ["Modules data saved"] call EMM_fnc_message;
+
+[_name] call EMM_fnc_checkForComposites;

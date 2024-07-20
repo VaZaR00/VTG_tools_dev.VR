@@ -10,11 +10,17 @@ if (_one&&(EMM_Current_Module == "none")) exitWith {
 };
 
 if (_one) then {
-	_data = [[false, false, EMM_Current_Module] call EMM_fnc_getModulesStorage];
+	_data = [false, false, EMM_Current_Module] call EMM_fnc_getModulesStorage;
+	_data = [[EMM_Current_Module, _data]];
 };
 
 //compile and execute
 private _script = [_data] call EMM_fnc_compiler;
+
+if (isNil "_script") exitWith {
+	//["No modules!"] call EMM_fnc_message;
+};
+
 call compile _script;
 
 //get test results
@@ -33,10 +39,5 @@ private _arr = +EMM_EQUIP_TEST_FAILED_ARR;
 
 [EMM_EQUIP_TEST_FAILED_ARR] call EMM_fnc_showFailedReport;
 
-
 //_result
-[str EMM_EQUIP_TEST_FAILED_ARR] call EMM_fnc_message;
-
-EMM_EQUIP_TEST_BOOL = nil;
-EMM_EQUIP_TEST_FAILED_ARR = nil;
 _script

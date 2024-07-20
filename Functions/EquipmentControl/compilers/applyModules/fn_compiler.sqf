@@ -1,5 +1,7 @@
 params[["_data", call EMM_fnc_prepareStorage]];
 
+if (count _data == 0) exitWith {nil};
+
 private _script = 
 "private _removeEq = {
 params[""_u""];

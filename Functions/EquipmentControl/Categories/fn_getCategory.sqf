@@ -15,6 +15,7 @@ _helmets    12
 _backpacks  13
 _goggles    14
 _nvgs		15
+modules 	16
 */
 
 params["_class"];
@@ -57,5 +58,6 @@ switch (_type) do {
 	case "AH": { 12 /*_helmets*/ };
 	case "AB": { 13 /*_backpacks*/ };
 	case "AG": { 14 /*_goggles*/ };
+	case "none": { 16 };
 	default { 4 };
 }

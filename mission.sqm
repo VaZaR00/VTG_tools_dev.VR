@@ -8,27 +8,32 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=342;
+		nextID=347;
 	};
 	class Camera
 	{
-		pos[]={4534.5781,13.677009,2308.9382};
-		dir[]={0.50428826,-0.53797579,0.67562914};
-		up[]={0.32181606,0.84292012,0.43115881};
-		aside[]={0.80145252,-8.000643e-007,-0.59820759};
+		pos[]={4537.5503,9.5122309,2318.429};
+		dir[]={0.59851271,-0.33948734,-0.72562593};
+		up[]={0.21601652,0.94060975,-0.26189399};
+		aside[]={-0.77144027,3.1664968e-008,-0.63630205};
 	};
 };
 binarizationWanted=0;
 sourceName="VTG_tools_dev";
 addons[]=
 {
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Weapons_F_Mod_SMGs_SMG_03",
+	"A3_Weapons_F_Mark",
+	"A3_Weapons_F",
+	"A3_Characters_F_Enoch_Facewear",
+	"A3_Modules_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=1;
+		items=6;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -36,7 +41,48 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item1
+		{
+			className="A3_Weapons_F_Mod";
+			name="Arma 3 Official Mod - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Weapons_F_Mark";
+			name="Arma 3 Marksmen - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Characters_F_Enoch";
+			name="Arma 3 Contact Platform - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
+};
+dlcs[]=
+{
+	"OfficialMod",
+	"Mark",
+	"Enoch"
 };
 randomSeed=6579932;
 class ScenarioData
@@ -101,7 +147,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
@@ -121,6 +167,21 @@ class Mission
 					class Attributes
 					{
 						isPlayer=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="SMG_03_camo";
+							};
+							class binocular
+							{
+								name="Laserdesignator_03";
+							};
+							map="ItemMap";
+							gps="ItemGPS";
+							goggles="G_AirPurifyingRespirator_02_sand_F";
+							hmd="NVGoggles_OPFOR";
+						};
 					};
 					id=341;
 					type="O_crew_F";
@@ -130,6 +191,18 @@ class Mission
 			{
 			};
 			id=340;
+		};
+		class Item1
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={0,5,0};
+			};
+			name="EQUIP_MODULES_COMPILED_CODE";
+			init="if (!isServer) exitWith {};private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits;{_x forceAddUniform ""U_B_CBRN_Suit_01_Wdl_F"";_x addWeapon ""arifle_AK12_arid_F"";_x addMagazine ""30rnd_762x39_AK12_Arid_Mag_F"";_x addWeaponItem [""arifle_AK12_arid_F"", ""30rnd_762x39_AK12_Arid_Mag_F"", true];_x addMagazine ""75rnd_762x39_AK12_Arid_Mag_F"";_x addMagazine ""75rnd_762x39_AK12_Lush_Mag_F"";_x addWeaponItem [""arifle_AK12_arid_F"", ""muzzle_snds_B_arid_F"", true];_x addWeaponItem [""arifle_AK12_arid_F"", ""bipod_02_F_arid"", true];_x addWeaponItem [""arifle_AK12_arid_F"", ""acc_flashlight"", true];_x addWeaponItem [""arifle_AK12_arid_F"", ""optic_Holosight_arid_F"", true];}forEach (allUnits);{_x linkItem ""Laserdesignator_02_ghex_F"";_x call compile (selectRandom [""_x linkItem """"ItemCompass"""";"",""_x addItem """"FirstAidKit"""";""]);_x linkItem ""O_NVGoggles_grn_F"";}forEach (allUnits);";
+			id=346;
+			type="Logic";
 		};
 	};
 };

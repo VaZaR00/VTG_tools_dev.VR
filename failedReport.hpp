@@ -6,6 +6,7 @@
 class failedReport{
 	idd = 69413;
 
+	onUnload = "EMM_EQUIP_TEST_FAILED_ARR = nil;EMM_EQUIP_TEST_BOOL = nil;";
 	class controls 
 	{
 		class IGUIBack_2200: IGUIBack
@@ -24,22 +25,34 @@ class failedReport{
 			w = 6.5 * GUI_GRID_W;
 			h = 2 * GUI_GRID_H;
 		};
-		class RscButtonMenuCancel_2700: RscButtonMenuCancel
+		class RscButtonMenuCopy_2700: RscButtonMenuCancel
 		{
 			text = "COPY"; //--- ToDo: Localize;
 			x = 49 * GUI_GRID_W + GUI_GRID_X;
 			y = 47.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 8 * GUI_GRID_W;
 			h = 2 * GUI_GRID_H;
+			onButtonClick = "[] call EMM_fnc_copyReport";
 		};
-		class STRUCTURED_TEXT_report: RscStructuredText
+		class text_ctrlGroup : RscControlsGroup
 		{
-			idc = 1500;
+			idc = -1;
 			x = 21 * GUI_GRID_W + GUI_GRID_X;
 			y = 2.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 43 * GUI_GRID_W;
 			h = 44.5 * GUI_GRID_H;
-			colorBackground[] = {0,0,0,0.5};
+
+			class controls {
+				class STRUCTURED_TEXT_report: RscStructuredText
+				{
+					idc = 1500;
+					x = 0 * GUI_GRID_W + GUI_GRID_X;
+					y = 0 * GUI_GRID_H + GUI_GRID_Y;
+					w = 43 * GUI_GRID_W;
+					h = 1000 * GUI_GRID_H;
+					colorBackground[] = {0,0,0,0.5};
+				};
+			};
 		};
 		class IGUIBack_2201: IGUIBack
 		{

@@ -1,4 +1,4 @@
 disableSerialization;
 private _display = uiNamespace getVariable ['EquipmentModulesManager', displayNull];
 (_display displayCtrl 1598) ctrlSetText '';
-call EMM_fnc_loadArsenal;
+[] spawn EMM_fnc_loadArsenal;

@@ -4,8 +4,8 @@ private _class = _data#0;
 
 private _text = "";
 
-if (_class == "module") exitWith {
-	private _module = _data#1;
+if ("comp$$" in _class) exitWith {
+	private _module = (_class splitString "$$")#1;
 	private _items = ([false, false, _module] call EMM_fnc_getModulesStorage)#1;
 	{
 		private _itemFunc = [+_x, _module] call EMM_fnc_compileItemFunc;
@@ -47,10 +47,12 @@ private _ifTestFormat = {
 			case "FAU": { "(uniform _x)==''" };
 			case "AV": { "(vest _x)==''" };
 			case "AB": { "(backpack _x)==''" };
+			case "AG": { "(goggles _x)==''" };
 			case "AWI": { "%2 canAdd %1" };
 			case "AIU": { "_x canAddItemToUniform %1" };
 			case "AIV": { "_x canAddItemToVest %1" };
 			case "AIB": { "_x canAddItemToBackpack %1" };
+			case "LI": { "true" };
 			default { "_x canAdd %1" };
 		};
 		private _condition = format[_conditionFormat, str _class, str _dest];

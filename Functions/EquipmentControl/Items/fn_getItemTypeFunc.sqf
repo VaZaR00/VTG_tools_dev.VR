@@ -29,6 +29,10 @@ private _itemsWithSlotTypes = ["Binocular", "Compass", "GPS", "LaserDesignator",
 private _getAddCommandByItemType = {
     params ["_item", "_full"];
 
+    if ("comp$$" in _item) exitWith {
+        "none";
+    };
+
     private _itemType = _item call BIS_fnc_itemType;
     private _category = _itemType select 0;
     private _type = _itemType select 1;

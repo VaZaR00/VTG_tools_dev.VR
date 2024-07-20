@@ -16,6 +16,7 @@ switch (_type) do {
     case "To Uniform": {12};
     case "To Vest": {13};
     case "To Backpack": {14};
+    case "Modules": {15};
     default {1488};
 };
 

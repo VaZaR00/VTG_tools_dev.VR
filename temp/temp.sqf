@@ -63,3 +63,7 @@ this addHeadgear "H_HelmetB_camo";
 
 comment "Set identity";
 [this,"PersianHead_A3_03","male02per"] call BIS_fnc_setIdentity;
+
+
+
+mk  -  Crewman [O_crew_F]  -  APR (Black) [CSAT] [G_AirPurifyingRespirator_02_black_F]
