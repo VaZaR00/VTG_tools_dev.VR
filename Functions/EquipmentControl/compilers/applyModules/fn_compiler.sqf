@@ -20,5 +20,6 @@ removeGoggles _u;};
 	_script = _script + _moduleScript;
 } forEach _data;
 
-//
+[_script] call EMM_fnc_message;
+copyToClipboard _script;
 _script

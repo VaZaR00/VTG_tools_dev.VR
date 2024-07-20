@@ -1,8 +1,8 @@
 params["_name"];
 
-private _type = ([false, true, _name] call EMM_fnc_getModulesStorage)#0#0;
+private _type = ([false, true, _name] call EMM_fnc_getModulesStorage)#0;
 
 
-if (_type == "comp") then {
+if ("comp" in _type) then {
 	[] spawn EMM_fnc_loadArsenal;
 };

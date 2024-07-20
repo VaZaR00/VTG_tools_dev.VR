@@ -18,7 +18,7 @@ if (_one) then {
 private _script = [_data] call EMM_fnc_compiler;
 
 if (isNil "_script") exitWith {
-	//["No modules!"] call EMM_fnc_message;
+	["No modules!"] call EMM_fnc_message;
 };
 
 call compile _script;

@@ -18,7 +18,7 @@ for "_i" from 0 to (lbSize _targetsCtrl) do {
 			_index = _i;
 		};
 	}else{
-		if ((_targetsCtrl lbData _i) in ["edit", "comp"]) exitWith {
+		if ((_targetsCtrl lbData _i) == "edit") exitWith {
 			_index = _i;
 		};
 	};

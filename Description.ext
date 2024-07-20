@@ -1,6 +1,4 @@
 #include "defines.hpp"
-#include "controls.hpp"
-#include "manager.hpp"
 #include "newManager.hpp"
 #include "addFuncSelector.hpp"
 #include "TargetsMenu.hpp"
@@ -267,3 +265,4 @@ class CfgFunctions
 		};
 	};
 };
+
