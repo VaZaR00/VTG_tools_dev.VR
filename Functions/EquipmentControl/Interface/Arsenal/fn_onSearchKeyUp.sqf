@@ -10,7 +10,7 @@ if (isNull EMM_searchTimeoutThread || scriptDone EMM_searchTimeoutThread) then {
 			EMM_searchTimeout <= diag_tickTime
 		};
 		if (ctrlShown (EMM_equipUI#10)) exitWith {
-			[ctrlText (_this select 0), (EMM_equipUI#10), EMM_weaponAttahcments] call EMM_fnc_loadArsenal;
+			[ctrlText (_this select 0), (EMM_equipUI#10), EMM_weaponAttahcments, false] call EMM_fnc_loadArsenal;
 		};
 		[ctrlText (_this select 0)] call EMM_fnc_loadArsenal;
 	};

@@ -15,6 +15,7 @@ class failedReport{
 			y = 0.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 45 * GUI_GRID_W;
 			h = 49.5 * GUI_GRID_H;
+			colorBackground[] = {0,0,0,0.3};
 		};
 		class RscButtonMenuOK_2600: RscButtonMenuOK
 		{

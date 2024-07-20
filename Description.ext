@@ -90,7 +90,6 @@ class CfgFunctions
 			file = "Functions\EquipmentControl\Interface\ModuleInventory";
 			class checkModule {};
 			class checkSaveModule {};
-			class getClassDisplayName {};
 			class onTreeSelect {};
 			class resetModule {};
 		};
@@ -148,13 +147,13 @@ class CfgFunctions
 			class getCategory {};
 			class iterate {};
 			class checkCategories {};
-
 		};	
 		class Items_
 		{
 			file = "Functions\EquipmentControl\Items";
 			class findRootConfig {};
 			class getAllItems {};
+			class getClassDisplayName {};
 			class getItemTypeFunc {};
 			class validPic {};
 		};

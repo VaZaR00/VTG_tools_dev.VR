@@ -4,6 +4,17 @@ private _class = _data#0;
 
 private _text = "";
 
+if (_class == "module") exitWith {
+	private _module = _data#1;
+	private _items = ([false, false, _module] call EMM_fnc_getModulesStorage)#1;
+	{
+		private _itemFunc = [+_x, _module] call EMM_fnc_compileItemFunc;
+		_text = _text + _itemFunc;
+	} forEach _items;
+
+	_text //return
+};
+
 if (_class == "Rand") exitWith {
 	_data deleteAt 0;
 	private _randArr = [];

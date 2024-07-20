@@ -1,14 +1,16 @@
 params[["_failed", EMM_EQUIP_TEST_FAILED_ARR]];
 
+private _compose = ["<t size='3'>Module name - unit - item</t>", lineBreak];
+
+{
+	private _moduleName = _x#0;
+	private _unit = [typeOf (_x#1)] call EMM_fnc_getClassDisplayName;
+	private _item = [_x#2]  call EMM_fnc_getClassDisplayName;
+
+	_compose append [_moduleName, " - ", _unit, " - ", _item, lineBreak];
+} forEach _failed;
+
 private _display = (findDisplay 11549) createDisplay "failedReport";
 private _textAreaCtrl = _display displayCtrl 1500;
 
-private _textHeader = "<t size='3'>Module name - unit - item</t>";
-
-{
-	private _name = _x#0;
-	private _unit = _x#1;
-	private _item = _x#2;
-
-	
-} forEach _failed;
+_textAreaCtrl ctrlSetText (composeText _compose);

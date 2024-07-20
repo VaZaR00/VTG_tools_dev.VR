@@ -4,6 +4,8 @@ private _targets = (_module#1)#0;
 private _items = (_module#1)#1;
 private _name = _module#0;
 
+if ((_targets#0) == "comp") exitWith {};
+
 private _itemsScripts = "";
 
 {

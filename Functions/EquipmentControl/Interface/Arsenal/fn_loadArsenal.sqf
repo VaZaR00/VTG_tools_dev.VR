@@ -2,9 +2,14 @@ disableSerialization;
 params [
 	['_search', '', ['']],
 	['_tree', EMM_equipUI#0],
-	['_data', EMM_itemCache]
+	['_data', EMM_itemCache],
+	['_composites', true]
 ];
 tvClear _tree;
+
+if (_composites) then {
+	_data = [+_data] call EMM_fnc_setCompositeModule;
+};
 //indexes = [];
 
 private _main = {
