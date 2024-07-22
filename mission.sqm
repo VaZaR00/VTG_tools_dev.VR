@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=363;
+		nextID=367;
 	};
 	class Camera
 	{
-		pos[]={4548.5952,10.992772,2305.9187};
-		dir[]={0.1344831,-0.41620651,0.89926994};
-		up[]={0.061557878,0.90927011,0.41162905};
-		aside[]={0.98900199,0,-0.14790225};
+		pos[]={4551.5229,29.165895,2326.95};
+		dir[]={-0.16084832,-0.87945312,-0.44801104};
+		up[]={-0.29717457,0.47598606,-0.82772171};
+		aside[]={-0.94118667,-3.6985148e-007,0.33791092};
 	};
 };
 binarizationWanted=0;
@@ -140,6 +140,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						name="gg";
 						isPlayer=1;
 					};
 					id=348;
@@ -454,8 +455,8 @@ class Mission
 				position[]={0,5,0};
 			};
 			name="EQUIP_MODULES_COMPILED_CODE";
-			init="if (!isServer) exitWith {};private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits;{_x forceAddUniform ""U_C_CBRN_Suit_01_White_F"";}forEach (((allUnits select {(typeOf _x) in [""B_Soldier_GL_F"",""C_Man_casual_4_v2_F""]})insert [-1, [""gay""]])- [""pidor"",""loh""]);";
-			id=362;
+			init="if (!isServer) exitWith {};private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits;{_x forceAddUniform ""U_C_CBRN_Suit_01_White_F"";_x addItemToUniform ""FirstAidKit"";}forEach ((allUnits select {(typeOf _x) in [""B_Soldier_GL_F"",""B_soldier_AR_F"",""C_Man_casual_4_v2_F""]}) + ([""gg""] apply {call compile _x}) - ([""loh"",""gay""] apply {call compile _x}));{_x addItemToUniform ""ChemicalDetector_01_watch_F"";}forEach (allUnits);";
+			id=366;
 			type="Logic";
 		};
 	};

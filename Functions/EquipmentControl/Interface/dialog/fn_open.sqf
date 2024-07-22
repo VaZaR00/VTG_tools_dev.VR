@@ -31,12 +31,13 @@ call EMM_fnc_modulesAmount;
 
 
 //4 - load items cache for arsenal
-
-if (isNil 'EMM_itemCache') then {
-	EMM_itemCache = call EMM_fnc_getAllItems;
+private _EMM_itemCache = parsingNamespace getVariable ["EMM_itemCache", nil];
+if (isNil "_EMM_itemCache") then {
+	_EMM_itemCache = call EMM_fnc_getAllItems;
+	parsingNamespace setVariable ["EMM_itemCache", _EMM_itemCache];
 };
 
-waitUntil {!(isNil 'EMM_itemCache')};
+waitUntil {!(isNil '_EMM_itemCache')};
 
 //load arsenal
 [] spawn EMM_fnc_loadArsenal;

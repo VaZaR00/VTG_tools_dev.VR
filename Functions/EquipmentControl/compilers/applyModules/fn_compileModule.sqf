@@ -27,25 +27,46 @@ private _targetsScript = if (count _targets == 1) then {
 	private _include = _targets#1;
 	private _exclude = _targets#2;
 
+	private _getUnits = {
+		params["_arr"];
+		private _units = allUnits select {
+			private _var = _x get3DENAttribute "name"; 
+			(_var#0) in _arr 
+		};
+		_units apply { get3DENEntityID _x };
+	};
+
 	_targetsClasses apply { str _x };
 	private _text = format["(allUnits select {(typeOf _x) in %1})", _targetsClasses];
 
 	if (_include != "") then {
 		_include = _include splitString " ,;.";
+		_include = _include arrayIntersect _include;
 	};
 	if (_exclude != "") then {
 		_exclude = _exclude splitString " ,;.";
+		_exclude = _exclude arrayIntersect _exclude;
 	};
-
+	
 	if (count _include != 0) then {
-		_text = "(" + _text + format["insert [-1, %1])", _include];
+		if !(isNil "EMM_EQUIP_TEST_BOOL") then {	
+			_include = [_include] call _getUnits;
+			_text = _text + format[" + (%1 apply { get3DENEntity _x })", _include];
+		}else{
+			_text = _text + format[" + (%1 apply {call compile _x})", _include];
+		};
 	};
 	if (count _exclude != 0) then {
-		_text = _text + format["- %1", _exclude];
+		if !(isNil "EMM_EQUIP_TEST_BOOL") then {	
+			_exclude = [_exclude] call _getUnits;
+			_text = _text + format[" - (%1 apply { get3DENEntity _x })", _exclude];
+		}else{
+			_text = _text + format[" - (%1 apply {call compile _x})", _exclude];
+		};
 	};
 	_text;
 };
 
 private _script = format["{%1}forEach (%2);", _itemsScripts, _targetsScript];
-//hint _script;
+
 _script;

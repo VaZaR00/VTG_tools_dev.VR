@@ -20,8 +20,9 @@ _closeBtn ctrlShow true;
 _arsenal ctrlShow false;
 _arsenalLbl ctrlSetText "Weapon Attachments";
 
-private _allAccessories = +((EMM_itemCache#9)#1);
-private _allMagazines = +((EMM_itemCache#7)#1);
+private _EMM_itemCache = parsingNamespace getVariable "EMM_itemCache";
+private _allAccessories = +((_EMM_itemCache#9)#1);
+private _allMagazines = +((_EMM_itemCache#7)#1);
 
 _allAccessories pushBack ["Magazines", _allMagazines];
 //private _compatibleMags = _allMagazines select {_x in (compatibleMagazines _weapClass)};

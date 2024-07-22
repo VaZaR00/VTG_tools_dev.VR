@@ -1,7 +1,5 @@
 params["_dataMap"];
 
-///////////////TEMP/////////////////
 uiNamespace setVariable ["EMM_EQUIP_STORAGE", _dataMap];
-///////////////TEMP/////////////////
 
-
+//set3DENMissionAttributes [["EMM_attributes", "EMM_MODULES_STORAGE", str _dataMap]];

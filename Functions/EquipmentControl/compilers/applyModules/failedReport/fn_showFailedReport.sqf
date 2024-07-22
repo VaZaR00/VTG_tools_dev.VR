@@ -1,7 +1,7 @@
 params[["_failed", EMM_EQUIP_TEST_FAILED_ARR]];
 
 if (count EMM_EQUIP_TEST_FAILED_ARR == 0) exitWith {
-	//["Equipment gived successfuly!"] call EMM_fnc_message;
+	["Equipment gived successfuly!"] call EMM_fnc_message;
 };
 
 private _header = text "Module - unit - item";

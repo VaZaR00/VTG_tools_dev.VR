@@ -1,8 +1,11 @@
 disableSerialization;
+
+if (isNil "EMM_equipUI") exitWith {};
+
 params [
 	['_search', '', ['']],
 	['_tree', EMM_equipUI#0],
-	['_data', EMM_itemCache],
+	['_data', parsingNamespace getVariable "EMM_itemCache"],
 	['_composites', true]
 ];
 tvClear _tree;
@@ -18,6 +21,8 @@ private _main = {
 	private _nested = ["Accessories", "Items"];
 	
 	{
+		if (isNil "EMM_equipUI") exitWith {};
+
 		private _name = _x#0;
 		private _list = _x#1;
 
@@ -27,6 +32,8 @@ private _main = {
 		//sleep 2;
 		if (_name in _nested) then {
 			{
+				if (isNil "EMM_equipUI") exitWith {};
+
 				private _subName = _x#0;
 				private _subList = _x#1;
 
@@ -40,6 +47,7 @@ private _main = {
 			} forEach _list;
 		}else{
 			{
+				if (isNil "EMM_equipUI") exitWith {};
 				[_search, [_index], _x] call _filter;
 			} forEach _list;
 			[[_index]] call _checkIfEmpty;
@@ -76,6 +84,8 @@ private _setArsenalItem = {
 private _checkIfEmpty = {
 	params["_path"];
 
+	if (isNil "EMM_equipUI") exitWith {};
+
 	private _tree = EMM_equipUI#0;
 	if ((_tree tvCount _path) == 0) then {
 		_tree tvAdd [_path, "Nothing found"];
@@ -83,6 +93,8 @@ private _checkIfEmpty = {
 };
 
 _search call _main;
+
+if (isNil "EMM_equipUI") exitWith {};
 
 if (_search != '') then {
 	tvExpandAll _tree;
