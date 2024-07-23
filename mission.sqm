@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=367;
+		nextID=380;
 	};
 	class Camera
 	{
-		pos[]={4551.5229,29.165895,2326.95};
-		dir[]={-0.16084832,-0.87945312,-0.44801104};
-		up[]={-0.29717457,0.47598606,-0.82772171};
-		aside[]={-0.94118667,-3.6985148e-007,0.33791092};
+		pos[]={4547.8682,26.205778,2309.4509};
+		dir[]={-0.0072810426,-0.65482002,-0.75584614};
+		up[]={-0.0063070934,0.75569564,-0.65488064};
+		aside[]={-1.0000155,-3.8369762e-007,0.0096272035};
 	};
 };
 binarizationWanted=0;
@@ -24,7 +24,7 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Characters_F_AoW",
-	"A3_Modules_F"
+	"A3_Characters_F_Orange"
 };
 class AddonsMetaData
 {
@@ -47,8 +47,8 @@ class AddonsMetaData
 		};
 		class Item2
 		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
+			className="A3_Characters_F_Orange";
+			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -56,7 +56,8 @@ class AddonsMetaData
 };
 dlcs[]=
 {
-	"Expansion"
+	"AoW",
+	"ORANGE"
 };
 randomSeed=6579932;
 class ScenarioData
@@ -121,343 +122,110 @@ class Mission
 	};
 	class Entities
 	{
-		items=8;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
-			side="Civilian";
+			side="West";
 			class Entities
 			{
-				items=1;
+				items=3;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4550.2402,5.0014391,2313.8821};
+						position[]={4544.8413,5.0014391,2296.9221};
 					};
-					side="Civilian";
+					side="West";
 					flags=7;
 					class Attributes
 					{
-						name="gg";
+						description="@Alpha 1-1 | Alpha 1-2";
 						isPlayer=1;
 					};
-					id=348;
-					type="C_man_p_beggar_F";
-					class CustomAttributes
+					id=374;
+					type="B_medic_F";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
 					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male05GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=2;
+						position[]={4537.3521,5.0014391,2292.499};
 					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=375;
+					type="B_Officer_Parade_Veteran_F";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4546.2803,5.0014391,2294.1128};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=379;
+					type="B_soldier_mine_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=347;
+			id=373;
 		};
 		class Item1
 		{
 			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4548.3174,5.0014391,2314.0581};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=350;
-					type="C_Man_casual_4_v2_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=349;
-		};
-		class Item2
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4546.1563,5.0014391,2313.9932};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=352;
-					type="C_Man_casual_4_v2_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=351;
-		};
-		class Item3
-		{
-			dataType="Group";
 			side="West";
 			class Entities
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4551.084,5.0014391,2318.835};
-						angles[]={0,3.1568294,0};
+						position[]={4550.186,5.0014391,2287.2004};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						name="pidor";
+						description="@Alpha 1-2 | ";
 					};
-					id=354;
-					type="B_Soldier_GL_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male12ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
+					id=377;
+					type="B_officer_F";
 				};
-			};
-			class Attributes
-			{
-			};
-			id=353;
-		};
-		class Item4
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
+				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4548.8271,5.0014391,2319.0911};
-						angles[]={0,3.1568294,0};
+						position[]={4551.7788,5.0014391,2282.5422};
 					};
 					side="West";
-					flags=7;
+					flags=5;
 					class Attributes
 					{
-						name="loh";
 					};
-					id=356;
-					type="B_Soldier_GL_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
+					id=378;
+					type="B_helicrew_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=355;
-		};
-		class Item5
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4546.4092,5.0014391,2319.3201};
-						angles[]={0,3.1568372,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=358;
-					type="B_Soldier_GL_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=357;
-		};
-		class Item6
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4553.123,5.0014391,2318.9189};
-						angles[]={0,3.3788874,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						name="gay";
-					};
-					id=361;
-					type="B_soldier_AR_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male03ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.01;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=360;
-		};
-		class Item7
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={0,5,0};
-			};
-			name="EQUIP_MODULES_COMPILED_CODE";
-			init="if (!isServer) exitWith {};private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits;{_x forceAddUniform ""U_C_CBRN_Suit_01_White_F"";_x addItemToUniform ""FirstAidKit"";}forEach ((allUnits select {(typeOf _x) in [""B_Soldier_GL_F"",""B_soldier_AR_F"",""C_Man_casual_4_v2_F""]}) + ([""gg""] apply {call compile _x}) - ([""loh"",""gay""] apply {call compile _x}));{_x addItemToUniform ""ChemicalDetector_01_watch_F"";}forEach (allUnits);";
-			id=366;
-			type="Logic";
+			id=376;
 		};
 	};
 };

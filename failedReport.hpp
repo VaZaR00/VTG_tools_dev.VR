@@ -3,7 +3,7 @@
 #define GUI_GRID_W	(0.012)
 #define GUI_GRID_H	(0.02)
 
-class failedReport{
+class EMM_failedItemsReport{
 	idd = 69413;
 
 	onUnload = "EMM_EQUIP_TEST_FAILED_ARR = nil;EMM_EQUIP_TEST_BOOL = nil;";

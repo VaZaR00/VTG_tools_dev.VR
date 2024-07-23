@@ -1,5 +1,6 @@
 params["_squad"];
 
-_group setGroupId [""];
+_squad setGroupId [""];
+_squad setVariable ["VTG_fnc_squadDefaultName", nil];
 
-[_group] call VTG_fnc_removeSqLeadNaming;
+[_squad] call VTG_fnc_removeSqLeadNaming;

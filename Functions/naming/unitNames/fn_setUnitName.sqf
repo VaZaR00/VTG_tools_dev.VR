@@ -33,6 +33,8 @@ private _getUnitWeapon = {
 
 	private _TEXT = "";
 
+	if (VTG_UNIT_NAMES_NO_WEAPON) exitWith {""};
+
 	if (_primary != "") then {
 		_TEXT = _TEXT + " (" + _primary;
 	};

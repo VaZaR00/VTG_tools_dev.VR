@@ -1,26 +1,3 @@
-/* 1 - magazines , 2 - weapons , 3 - backpacks , 4 - equipment , 5 - items , 6 - weapon accessories
-params [
-	['_itemClassName', '', ['']]
-];
-if (_itemClassName isEqualTo '') exitWith {-1};
-private _itemType = [_itemClassName] call BIS_fnc_itemType;
-
-switch (_itemType select 0) do {
-	case "Weapon": {1};
-	case "Mine": {1};
-	case "Magazine": {1};
-	case "Item": {
-		if ((_itemType select 1) in [
-			"AccessoryMuzzle", 
-			"AccessoryPointer", 
-			"AccessorySights", 
-			"AccessoryBipod"
-		]) then {6}else{5};
-	};
-	case "Equipment": { if ((_itemType select 1) == "Backpack" ) then {3} else {4} };
-	default {4};
-}
-*/
 // Define a function to get the appropriate add command based on item type
 params["_item", ["_full", false]];
 
@@ -46,7 +23,14 @@ private _getAddCommandByItemType = {
         };
         case (_category == "Item"): {
             switch (true) do {
-                case ("Accessory" in _type): { "APWI" };
+                case ("Accessory" in _type): {
+                    private _parents = [configFile >> (_item call EMM_fnc_findRootConfig) >> _item, true] call BIS_fnc_returnParents;
+                    if ((_parents findIf { "ace" in (toLower _x) }) != -1) then {
+                        "AI"
+                    } else {
+                        "APWI"
+                    }; 
+                };
                 case (_type in _itemsWithSlotTypes): { "LI" };
                 default { "AI" };
             };

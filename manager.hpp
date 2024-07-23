@@ -14,11 +14,11 @@ class ctrlStaticBackgroundDisable;
 class ctrlStaticBackgroundDisableTiles;
 */
 
-class EquipmentModulesManager {
+class EMM_EquipmentModulesManager {
 	idd = 11549;
 	//enableSimulation = 1;
 	enableDisplay = 1;
-	onLoad = "uiNamespace setVariable ['EquipmentModulesManager', _this select 0]";
+	onLoad = "uiNamespace setVariable ['EMM_EquipmentModulesManager', _this select 0]";
 	onUnload = "call EMM_fnc_unload";
 	class controlsBackground {		
 		class BackgroundDisableTiles : ctrlStaticBackgroundDisableTiles {};
@@ -127,11 +127,13 @@ class EquipmentModulesManager {
 				{
 					text="Export";
 					action = "[true] call EMM_fnc_export";
+					tooltip = "Export cuurently open module";
 				};
 				class Export_All
 				{
 					text="Export All";
 					action = "[] call EMM_fnc_export";
+					tooltip = "Export ALL modules";
 				};
 				class New
 				{
@@ -150,16 +152,19 @@ class EquipmentModulesManager {
 				{
 					text="Set";
 					action = "[] call EMM_fnc_setGLmodule";
+					tooltip = "Compiles modules code and sets it to Game Logic module, so equipment is applied upon mission start";
 				};
 				class Give
 				{
 					text="Give";
 					action = "[true] call EMM_fnc_applyInEditor";
+					tooltip = "Compiles currently open module and applies to its targets with test, so you can see if all items are given";
 				};
 				class Give_All
 				{
 					text="Give All";
 					action = "[] call EMM_fnc_applyInEditor";
+					tooltip = "Compiles all modules and applies to its targets with test, so you can see if all items are given";
 				};
 				class Default;
 			};
@@ -198,6 +203,20 @@ class EquipmentModulesManager {
 			h = 122 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
 			onTreeDblClick = "[] call EMM_fnc_addItemFromArsenal";
+		};
+		class Arsenal_Loading_Lbl: RscText
+		{
+			idc = 1338;
+
+			text = "LOADING..."; //--- ToDo: Localize;
+			style = 2;
+			font = "PuristaBold";
+			SizeEx = 20 * GUI_GRID_H;
+			x = 27.5 * GUI_GRID_W + GUI_GRID_X;
+			y = 20.5 * GUI_GRID_H + GUI_GRID_Y;
+			w = 96 * GUI_GRID_W;
+			h = 122 * GUI_GRID_H;
+			colorBackground[] = {0,0,0,0.7};
 		};
 		/*-------- Weapon Attachments --------*/
 		class WeapAttach_Tree_hidden: RscTree
@@ -527,19 +546,6 @@ class EquipmentModulesManager {
 			tooltip = "Select target units"; //--- ToDo: Localize;
 
 			onLBSelChanged = "[_this#0, _this#1] call EMM_fnc_showEditBtn";
-		};
-		class TargetUnits_Show_Btn: RscButton
-		{
-			idc = 1603;
-			onButtonClick = "";
-
-			text = "Show"; //--- ToDo: Localize;
-			sizeEx = 6.5 * GUI_GRID_H;
-			x = 155 * GUI_GRID_W + GUI_GRID_X;
-			y = 177 * GUI_GRID_H + GUI_GRID_Y;
-			w = 11 * GUI_GRID_W;
-			h = 6.5 * GUI_GRID_H;
-			tooltip = "Select target units in editor"; //--- ToDo: Localize;
 		};
 		class TargetUnits_Edit_Btn: RscButton
 		{

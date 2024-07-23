@@ -26,18 +26,19 @@ call compile _script;
 //get test results
 private _result = [];
 private _arr = +EMM_EQUIP_TEST_FAILED_ARR;
-
 {
-	private _el = _x;
+	private _el = _x; //mdl , unit , item
 
-	if ((_result findIf {(_el#1) in _x}) != -1) exitWith {};
+	if ((_result findIf {((_el#1) in _x)&&((_el#2) in _x)}) != -1) then {continue};
 
 	private _amount = { _el isEqualTo _x } count _arr;
 	_el insert [0, [_amount]];
-	_result pushBack _el;
+
+	_result pushBack _el; ///itmCount, mdl , unit , item
 } forEach _arr;
 
-[EMM_EQUIP_TEST_FAILED_ARR] call EMM_fnc_showFailedReport;
+EMM_EQUIP_TEST_FAILED_ARR = _result;
+[_result] call EMM_fnc_showFailedReport;
 
 //_result
 _script

@@ -1,8 +1,8 @@
 //1 - create display
 
 disableSerialization;
-(findDisplay 313) createDisplay 'EquipmentModulesManager';
-waitUntil {(!isNull (uiNamespace getVariable ['EquipmentModulesManager', displayNull]))};
+(findDisplay 313) createDisplay 'EMM_EquipmentModulesManager';
+waitUntil {(!isNull (uiNamespace getVariable ['EMM_EquipmentModulesManager', displayNull]))};
 
 //2 - get displays controls
 
@@ -44,7 +44,7 @@ waitUntil {!(isNil '_EMM_itemCache')};
 
 //[_display] call EMM_fnc_loadModuleInventory;
 
-private _display = uiNamespace getVariable ['EquipmentModulesManager', displayNull];
+private _display = uiNamespace getVariable ['EMM_EquipmentModulesManager', displayNull];
 
 (_display displayCtrl 1598) ctrlSetEventHandler ['KeyUp', '_this call EMM_fnc_onSearchKeyUp'];
 //(_display displayCtrl 1501) ctrlSetEventHandler ['onTreeSelChanged', '_this call EMM_fnc_treeSelChanged'];

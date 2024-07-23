@@ -6,4 +6,4 @@ EMM_equipUI = nil;
 profileNamespace setVariable ["EMM_expandInvChkbox_prof", EMM_expandInvChkbox];
 EMM_expandInvChkbox = nil;
 
-uiNamespace setVariable ['EquipmentModulesManager', displayNull];
+uiNamespace setVariable ['EMM_EquipmentModulesManager', displayNull];

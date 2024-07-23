@@ -3,7 +3,7 @@
 #define GUI_GRID_W	(0.01)
 #define GUI_GRID_H	(0.017)
 
-class AddFuncSelector {
+class EMM_AddFuncSelector {
 	idd = 11550;
 	onLoad = "[_this#0] call EMM_fnc_loadSelector";
 

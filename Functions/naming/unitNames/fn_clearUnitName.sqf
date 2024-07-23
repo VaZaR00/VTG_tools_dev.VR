@@ -6,3 +6,4 @@ if (isNil "_defaultName") then {
 } else {
 	_unit set3DENAttribute ["description", _defaultName];
 };
+_unit setVariable ["VTG_fnc_unitDefaultName", nil];

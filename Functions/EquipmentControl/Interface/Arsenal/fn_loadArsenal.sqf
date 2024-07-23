@@ -2,6 +2,8 @@ disableSerialization;
 
 if (isNil "EMM_equipUI") exitWith {};
 
+(EMM_equipUI#17) ctrlShow true; //show loading
+
 params [
 	['_search', '', ['']],
 	['_tree', EMM_equipUI#0],
@@ -95,6 +97,8 @@ private _checkIfEmpty = {
 _search call _main;
 
 if (isNil "EMM_equipUI") exitWith {};
+
+(EMM_equipUI#17) ctrlShow false; //hide loading
 
 if (_search != '') then {
 	tvExpandAll _tree;

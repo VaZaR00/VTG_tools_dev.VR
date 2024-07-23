@@ -13,7 +13,7 @@ private _next = "";
 private _msg = "";
 
 switch (_func) do {
-	case "claer": {
+	case "clr": {
 		_next = VTG_fnc_clearSqNames; 
 		_msg = "Squad names cleared";
 	};
@@ -31,4 +31,5 @@ switch (_func) do {
 	[_x] call _next;
 }forEach _groups;
 
-[_msg] call VTG_fnc_message;
+//[_msg] call VTG_fnc_message;
+//[str [_groups]] call VTG_fnc_message;

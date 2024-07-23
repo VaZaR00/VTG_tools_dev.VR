@@ -54,18 +54,17 @@ private _setSquadCallsign = {
 };
 
 private _setSquadNameInLobbyManager = {
-	private _squadName = param[0];
+	params["_squadName"];
 
 	private _squadLead = (units _squad)#0;
 	private _squadLeadName = _squadLead get3DENAttribute "description";
 	
-	_squadName = _squadLeadName#0 + "@" + _squadName;
+	_squadName = (_squadLeadName#0) + "@" + _squadName;
 
-	if !("@" in _squadLeadName#0) then {
+	if !("@" in (_squadLeadName#0)) then {
+		[str [_squadName, _squadLead]] call VTG_fnc_message;
 		_squadLead set3DENAttribute ["description", _squadName];
 	};
 };
 
 call _main;  //START
-
-//[str groups west] call VTG_fnc_message;

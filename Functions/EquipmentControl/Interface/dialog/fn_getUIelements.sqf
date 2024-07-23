@@ -1,4 +1,4 @@
-private _display = uiNamespace getVariable ['EquipmentModulesManager', displayNull];
+private _display = uiNamespace getVariable ['EMM_EquipmentModulesManager', displayNull];
 //private _target = _display getVariable ['EIM_Target', objNull];
 private _arsenal = _display displayCtrl 1501;              //1
 private _inventoryTree = _display displayCtrl 1500;        //2
@@ -16,7 +16,8 @@ private _arsenalLbl = _display displayCtrl 1005;           //13
 private _attachmBtn = _display displayCtrl 1605;           //14
 private _editBtn = _display displayCtrl 1661;              //15
 private _moduleLbl = _display displayCtrl 1007;            //16
-private _expandChkbox = _display displayCtrl 1875;         //16
+private _expandChkbox = _display displayCtrl 1875;         //17
+private _loadingArsenalLbl = _display displayCtrl 1338;    //18
 
 
 
@@ -37,7 +38,8 @@ private _expandChkbox = _display displayCtrl 1875;         //16
     _attachmBtn,        //13 -  attchBtn
     _editBtn,           //14 -  edit
     _moduleLbl,         //15 -  modLBL
-    _expandChkbox       //16 -  expand
+    _expandChkbox,      //16 -  expand
+    _loadingArsenalLbl  //17 -  loading
 ];
 
 //  EMM_equipUI#
