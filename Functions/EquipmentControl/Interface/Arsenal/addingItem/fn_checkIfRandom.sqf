@@ -2,7 +2,7 @@ params["_path", ["_set", false]];
 
 _tree = EMM_equipUI#1;
 
-private _stackable = ["To ", "Magaz"];
+private _stackable = ["To ", "Magaz", "Other"];
 private _categories = [];
 private _categ = [];
 for "_i" from 0 to (count _path - 2) do {
@@ -10,7 +10,8 @@ for "_i" from 0 to (count _path - 2) do {
 	_categories pushBack (_tree tvText _categ);
 };
 if (_categories findIf {
-	((_stackable#0) in _x) || ((_stackable#1) in _x) 
+	private _el = _x;
+	(_stackable findIf { _x in _el }) != -1
 	} != -1
 ) exitWith {};
 
