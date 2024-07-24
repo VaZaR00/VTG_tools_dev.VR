@@ -1,5 +1,7 @@
 params[["_failed", EMM_EQUIP_TEST_FAILED_ARR]];
 
+EMM_check_load = false;
+
 if (count _failed == 0) exitWith {
 	["Equipment gived successfuly!"] call EMM_fnc_message;
 };

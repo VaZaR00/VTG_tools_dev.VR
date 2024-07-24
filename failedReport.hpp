@@ -6,7 +6,7 @@
 class EMM_failedItemsReport{
 	idd = 69413;
 
-	onUnload = "EMM_EQUIP_TEST_FAILED_ARR = nil;EMM_EQUIP_TEST_BOOL = nil;";
+	onUnload = "EMM_EQUIP_TEST_FAILED_ARR = nil;EMM_EQUIP_TEST_BOOL = nil;EMM_check_load = nil;";
 	class controls 
 	{
 		class IGUIBack_2200: IGUIBack

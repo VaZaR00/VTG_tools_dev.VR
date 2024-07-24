@@ -2,6 +2,15 @@ disableSerialization;
 
 if (isNil "EMM_equipUI") exitWith {};
 
+private _terminateHandle = [] spawn {
+	if (isNil "EMM_ARSENAL_LOADING_HANDLE") exitwith {};
+	terminate EMM_ARSENAL_LOADING_HANDLE
+};
+
+waitUntil{scriptDone _terminateHandle};
+
+EMM_ARSENAL_LOADING_HANDLE = _thisScript;
+
 (EMM_equipUI#17) ctrlShow true; //show loading
 
 params [
@@ -107,3 +116,5 @@ if (_search != '') then {
 //hint str indexes;
 
 _tree tvSortByValue [[], true];
+
+EMM_ARSENAL_LOADING_HANDLE = nil;

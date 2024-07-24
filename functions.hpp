@@ -180,7 +180,9 @@ class CfgFunctions
 		{
 			file = "Functions\EquipmentControl\compilers\applyModules\failedReport";
 			class copyReport {};
-			class showFailedReport {};
+			class failedToGiveReport {};
+			class failedToLoadReport {};
+			class checkIfFail {};
 		};
 		class compilers_import
 		{

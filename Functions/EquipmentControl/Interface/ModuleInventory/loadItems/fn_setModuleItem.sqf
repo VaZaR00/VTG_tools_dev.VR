@@ -28,6 +28,8 @@ private _function = _item#1;
 private _amount = _item#2;
 private _name = _class call EMM_fnc_getClassDisplayName;
 
+if ([[_class]] call EMM_fnc_checkIfFail) exitwith {};
+
 private _cateogry = [_all#(_class call EMM_fnc_getCategory)];
 
 if ((_cateogry#0) in _accessories) then {

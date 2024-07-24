@@ -38,7 +38,7 @@ private _arr = +EMM_EQUIP_TEST_FAILED_ARR;
 } forEach _arr;
 
 EMM_EQUIP_TEST_FAILED_ARR = _result;
-[_result] call EMM_fnc_showFailedReport;
+[_result] call EMM_fnc_failedToGiveReport;
 
 //_result
 _script

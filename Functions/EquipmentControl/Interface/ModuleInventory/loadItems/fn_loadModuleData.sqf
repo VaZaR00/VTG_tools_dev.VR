@@ -28,4 +28,6 @@ _targetsCtrl lbSetCurSel _index;
 
 [_items] call EMM_fnc_loadModuleItems;
 
+call EMM_fnc_failedToLoadReport; //check if there any problems
+
 EMM_moduleTargets = _targets;

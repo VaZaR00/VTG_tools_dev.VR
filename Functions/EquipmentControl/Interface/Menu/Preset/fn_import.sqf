@@ -21,4 +21,11 @@ if ((_data findIf {
 	[] spawn EMM_fnc_loadArsenal;
 };
 
+EMM_EQUIP_TEST_FAILED_ARR = [];
+{
+	[+(_x#1#1), EMM_fnc_checkIfFail] call EMM_fnc_loadModuleItems;
+} forEach _data;
+
 ["Imported successfully!"] call EMM_fnc_message;
+
+call EMM_fnc_failedToLoadReport; //check if there any problems
