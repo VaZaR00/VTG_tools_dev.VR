@@ -1,8 +1,8 @@
 params["_data", "_moduleName", ["_dest", ""]];
 
-private _class = _data#0;
-
 private _text = "";
+
+private _class = _data#0;
 
 if ("comp$$" in _class) exitWith {
 	private _module = (_class splitString "$$")#1;
@@ -52,7 +52,21 @@ private _ifTestFormat = {
 			case "AIU": { "_x canAddItemToUniform %1" };
 			case "AIV": { "_x canAddItemToVest %1" };
 			case "AIB": { "_x canAddItemToBackpack %1" };
-			case "LI": { "true" };
+			case "LI": {
+				private _type = _class call BIS_fnc_itemType;
+				private _slot = switch (_type#1) do {
+					case "Map": { 608 };
+					case "Compass": { 609 };
+					case "Watch": { 610 };
+					case "Radio": { 611 };
+					case "GPS": { 612 };
+					case "NVGoggles": { 616 };
+					case "Binocular": { 617 };
+					case "LaserDesignator": { 617 };
+					default { 612 };
+				};
+				format["(_x getSlotItemName %1) == ''", _slot];
+			};
 			default { "_x canAdd %1" };
 		};
 		private _condition = format[_conditionFormat, str _class, str _dest];
@@ -65,6 +79,13 @@ private _ifTestFormat = {
 private _format = switch (_data#1) do {
 	case "AWI": { "_x %1 [%4, %2, true];" };
 	case "AMS": { "_x %1 [%2, %3];" };
+	case "AM": {
+		"if (_x canAddItemToVest %2) then {
+			_x addItemToVest %2;
+		} else {
+			_x %1 %2;
+		};"
+	};
 	default { "_x %1 %2;" };
 };
 _format = _format call _ifTestFormat;
@@ -77,14 +98,14 @@ if (count _data < 4) exitWith {_text};//return
 
 private _attachs = _data#3;
 
-{
-	if ((_x#0) == "Rand") exitWith {
-		private _item = +_x
-	};
-	if ((_x#2) != 1) exitWith {
+// {
+// 	if ((_x#0) == "Rand") exitWith {
+// 		private _item = +_x
+// 	};
+// 	if ((_x#2) != 1) exitWith {
 
-	};
-}forEach _attachs;
+// 	};
+// }forEach _attachs;
 
 private _isLoadedMag = false;
 private _isLoadedGl = false;
@@ -109,6 +130,8 @@ private _giveOtherMags = {
 	_item = [_item] call _setAddMag;
 
 	_item set [2, (_item#2) - 1];
+
+	if ((_item#2) == 0) exitwith {};
 
 	private _attFunc = [_item, _moduleName, _class] call EMM_fnc_compileItemFunc;
 	_text = _text + _attFunc;
