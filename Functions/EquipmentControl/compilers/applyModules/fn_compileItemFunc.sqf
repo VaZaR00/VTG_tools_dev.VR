@@ -6,11 +6,19 @@ private _class = _data#0;
 
 if ("comp$$" in _class) exitWith {
 	private _module = (_class splitString "$$")#1;
-	private _items = ([false, false, _module] call EMM_fnc_getModulesStorage)#1;
+	private _items = [false, false, _module] call EMM_fnc_getModulesStorage;
+
+	if (_items isEqualTo false) exitWith {
+		if (EMM_EQUIP_TEST_BOOL) then {
+			EMM_EQUIP_TEST_FAILED_ARR pushBack [_moduleName, "composite", (str _module) + " MODULE DON'T EXIST"];
+		};
+		_text //return
+	};
+
 	{
 		private _itemFunc = [+_x, _module] call EMM_fnc_compileItemFunc;
 		_text = _text + _itemFunc;
-	} forEach _items;
+	} forEach (_items#1);
 
 	_text //return
 };
@@ -20,10 +28,14 @@ if (_class == "Rand") exitWith {
 	private _randArr = [];
 	{
 		private _func = [_x, _moduleName, _dest] call EMM_fnc_compileItemFunc;
-		_randArr pushBack _func;
+		if (count _func != 0) then {
+			_randArr pushBack _func;
+		};
 	} forEach _data;
-	_text = format["_x call compile (selectRandom %1);", _randArr];
 
+	if (count _randArr != 0) then {
+		_text = format["_x call compile (selectRandom %1);", _randArr];
+	};
 	_text //return
 };
 

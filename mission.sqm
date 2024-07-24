@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=380;
+		nextID=390;
 	};
 	class Camera
 	{
-		pos[]={4538.6187,13.763863,2304.6978};
-		dir[]={0.46479777,-0.66865212,-0.58055234};
-		up[]={0.41795909,0.74348313,-0.52204853};
-		aside[]={-0.7806946,-3.3160904e-007,-0.62503934};
+		pos[]={4538.0435,22.149147,2300.0732};
+		dir[]={0.25904152,-0.61472815,-0.74512291};
+		up[]={0.20189992,0.78864098,-0.58075643};
+		aside[]={-0.94463843,-1.3571116e-007,-0.3284055};
 	};
 };
 binarizationWanted=0;
@@ -23,14 +23,13 @@ sourceName="VTG_tools_dev";
 addons[]=
 {
 	"A3_Characters_F",
-	"A3_Characters_F_AoW",
-	"A3_Characters_F_Orange"
+	"A3_Characters_F_AoW"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=2;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -45,19 +44,11 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item2
-		{
-			className="A3_Characters_F_Orange";
-			name="Arma 3 Orange - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 dlcs[]=
 {
-	"AoW",
-	"ORANGE"
+	"AoW"
 };
 randomSeed=6579932;
 class ScenarioData
@@ -129,53 +120,67 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=3;
+				items=2;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4544.8413,5.0014391,2296.9221};
+						position[]={4546.2798,5.0014391,2294.113};
 					};
 					side="West";
-					flags=7;
+					flags=6;
 					class Attributes
 					{
-						description="@Alpha 1-1 | Alpha 1-2";
 						isPlayer=1;
 					};
-					id=374;
-					type="B_medic_F";
+					id=384;
+					type="B_soldier_repair_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male12ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4537.3521,5.0014391,2292.499};
+						position[]={4542.4966,5.0014391,2289.6282};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
 					};
-					id=375;
+					id=385;
 					type="B_Officer_Parade_Veteran_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4546.2803,5.0014391,2294.1128};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-					};
-					id=379;
-					type="B_soldier_mine_F";
 				};
 			};
 			class Attributes
@@ -186,46 +191,30 @@ class Mission
 		class Item1
 		{
 			dataType="Group";
-			side="West";
+			side="East";
 			class Entities
 			{
-				items=2;
+				items=1;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4550.186,5.0014391,2287.2004};
+						position[]={4546.6421,5.0014391,2279.7183};
 					};
-					side="West";
+					side="East";
 					flags=7;
 					class Attributes
 					{
-						description="@Alpha 1-2 | ";
 					};
-					id=377;
-					type="B_officer_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4551.7788,5.0014391,2282.5422};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-					};
-					id=378;
-					type="B_helicrew_F";
+					id=389;
+					type="O_helipilot_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=376;
+			id=388;
 		};
 	};
 };

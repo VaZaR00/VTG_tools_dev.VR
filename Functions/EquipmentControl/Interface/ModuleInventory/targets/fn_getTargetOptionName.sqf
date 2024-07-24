@@ -1,6 +1,7 @@
 params["_type"];
 
 private _option = EMM_TARGETS_OPTIONS select { (_x#2) == _type };
-private _return = (_option#0)#0;
 
-_return;
+if (count _option != 0) then {
+	(_option#0)#0
+} else {"All"};

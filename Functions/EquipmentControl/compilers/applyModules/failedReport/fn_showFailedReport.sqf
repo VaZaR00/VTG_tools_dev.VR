@@ -12,7 +12,11 @@ private _compose = [_header, lineBreak, lineBreak];
 {
 	private _amount = str (_x#0);
 	private _moduleName = _x#1;
-	private _unit = [typeOf (_x#2)] call EMM_fnc_getClassDisplayName;
+	private _unit = if ((_x#2) isEqualType "") then {
+		(_x#2)
+	} else {
+		[typeOf (_x#2)] call EMM_fnc_getClassDisplayName;
+	};
 	private _item = [_x#3]  call EMM_fnc_getClassDisplayName;
 
 	_compose append [_moduleName, "  -  ", _unit, "  -  ", _amount, " x ", _item, lineBreak];
