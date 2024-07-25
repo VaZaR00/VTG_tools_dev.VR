@@ -1,4 +1,5 @@
 //1 - create display
+EMM_DEV_STATE = false;
 
 disableSerialization;
 (findDisplay 313) createDisplay 'EMM_EquipmentModulesManager';

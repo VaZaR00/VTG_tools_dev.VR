@@ -1,6 +1,6 @@
-#include "Functions\EMM\defines.hpp"
+#include "definesDev.hpp"
 #include "Functions\EMM\manager.hpp"
-#include "Functions\EMM\AddFuncSelector.hpp"
+#include "Functions\EMM\addFuncSelector.hpp"
 #include "Functions\EMM\TargetsMenu.hpp"
 #include "Functions\EMM\failedReport.hpp"
 #include "Functions\EMM\functions.hpp"

@@ -8,7 +8,7 @@ class CfgFunctions
 		tag = "EMM";
 		class dialog 
 		{
-			file = "Functions\EMM\Functions\Interface\dialog";
+			file = "EMM\Functions\Interface\dialog";
 			class open {};
 			class getUIelements {};
 			class message {};
@@ -18,7 +18,7 @@ class CfgFunctions
 		};
 		class ModulesTree
 		{
-			file = "Functions\EMM\Functions\Interface\ModulesTree";
+			file = "EMM\Functions\Interface\ModulesTree";
 			class addItemToTree {};
 			class loadModulesTree {};
 			class setCurrentModule {};
@@ -32,14 +32,14 @@ class CfgFunctions
 
 		class Menu_Module
 		{
-			file = "Functions\EMM\Functions\Interface\Menu\Module";
+			file = "EMM\Functions\Interface\Menu\Module";
 			class createNewModule {};
 			class newModule {};
 			class menuDeleteModule {};
 		};
 		class Menu_Preset
 		{
-			file = "Functions\EMM\Functions\Interface\Menu\Preset";
+			file = "EMM\Functions\Interface\Menu\Preset";
 			class export {};
 			class import {};
 		};
@@ -49,7 +49,7 @@ class CfgFunctions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		class Arsenal 
 		{
-			file = "Functions\EMM\Functions\Interface\Arsenal";
+			file = "EMM\Functions\Interface\Arsenal";
 			class loadArsenal {};
 			class loadAddToCombo {};
 			class getAmountInput {};
@@ -60,7 +60,7 @@ class CfgFunctions
 		};
 		class Arsenal_addingItem
 		{
-			file = "Functions\EMM\Functions\Interface\Arsenal\addingItem";
+			file = "EMM\Functions\Interface\Arsenal\addingItem";
 			class addItemFromArsenal {};
 			class peekItem {};
 			class itemDestination {};
@@ -71,7 +71,7 @@ class CfgFunctions
 		};
 		class Arsenal_weapAttach
 		{
-			file = "Functions\EMM\Functions\Interface\Arsenal\weaponAttachments";
+			file = "EMM\Functions\Interface\Arsenal\weaponAttachments";
 			class closeWeapAttachMenu {};
 			class editWeapAttach {};
 			class attachLbl {};
@@ -84,7 +84,7 @@ class CfgFunctions
 
 		class ModuleInventory
 		{
-			file = "Functions\EMM\Functions\Interface\ModuleInventory";
+			file = "EMM\Functions\Interface\ModuleInventory";
 			class checkModule {};
 			class checkSaveModule {};
 			class onTreeSelect {};
@@ -92,7 +92,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_ItemOperations
 		{
-			file = "Functions\EMM\Functions\Interface\ModuleInventory\itemOperations";
+			file = "EMM\Functions\Interface\ModuleInventory\itemOperations";
 			class addItemToModule {};
 			class clearModule {};
 			class deleteModuleItems {};
@@ -100,7 +100,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_loadItems
 		{
-			file = "Functions\EMM\Functions\Interface\ModuleInventory\loadItems";
+			file = "EMM\Functions\Interface\ModuleInventory\loadItems";
 			class importFromArsenal {};
 			class loadModuleData {};
 			class loadModuleItems {};
@@ -108,7 +108,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_addFuncSelect 
 		{
-			file = "Functions\EMM\Functions\Interface\ModuleInventory\AddFuncSelector";
+			file = "EMM\Functions\Interface\ModuleInventory\AddFuncSelector";
 			class changeAddFunc {};
 			class loadSelector {};
 			class openSelector {};
@@ -116,7 +116,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_targets
 		{
-			file = "Functions\EMM\Functions\Interface\ModuleInventory\targets";
+			file = "EMM\Functions\Interface\ModuleInventory\targets";
 			class addTargetToCombo {};
 			class getTargetsByClass {};
 			class getTargetSides {};
@@ -125,7 +125,7 @@ class CfgFunctions
 		};
 		class ModuleInventory_targets_menu
 		{
-			file = "Functions\EMM\Functions\Interface\ModuleInventory\targets\menu";
+			file = "EMM\Functions\Interface\ModuleInventory\targets\menu";
 			class openEditTargetsMenu {};
 			class loadTargetsMenu {};
 			class onSelectTarget {};
@@ -139,7 +139,7 @@ class CfgFunctions
 
 		class Categories_
 		{
-			file = "Functions\EMM\Functions\Categories";
+			file = "EMM\Functions\Categories";
 			class categorySortIndex {};
 			class getCategory {};
 			class iterate {};
@@ -147,7 +147,7 @@ class CfgFunctions
 		};	
 		class Items_
 		{
-			file = "Functions\EMM\Functions\Items";
+			file = "EMM\Functions\Items";
 			class findRootConfig {};
 			class getAllItems {};
 			class getClassDisplayName {};
@@ -172,7 +172,7 @@ class CfgFunctions
 
 		class compilers_applyModules
 		{
-			file = "Functions\EMM\Functions\compilers\applyModules";
+			file = "EMM\Functions\compilers\applyModules";
 			class applyInEditor {};
 			class compileItemFunc {};
 			class compileModule {};
@@ -183,7 +183,7 @@ class CfgFunctions
 		};
 		class compilers_applyModules_failedReport
 		{
-			file = "Functions\EMM\Functions\compilers\applyModules\failedReport";
+			file = "EMM\Functions\compilers\applyModules\failedReport";
 			class copyReport {};
 			class failedToGiveReport {};
 			class failedToLoadReport {};
@@ -191,7 +191,7 @@ class CfgFunctions
 		};
 		class compilers_import
 		{
-			file = "Functions\EMM\Functions\compilers\import";
+			file = "EMM\Functions\compilers\import";
 			class parser_middleware {};
 			class bi_arsenalExportParser {};
 			class convertFunctionToAttribute {};
@@ -202,19 +202,19 @@ class CfgFunctions
 
 		class repository
 		{
-			file = "Functions\EMM\Functions\repository";
+			file = "EMM\Functions\repository";
 			class saveModule {};
 			class deleteModule {};
 			class modulesAmount {};
 		};
 		class repository_moduleItems
 		{
-			file = "Functions\EMM\Functions\repository\moduleItems";
+			file = "EMM\Functions\repository\moduleItems";
 			class parseModuleItemsTree {};
 		};
 		class repository_storage
 		{
-			file = "Functions\EMM\Functions\repository\storage";
+			file = "EMM\Functions\repository\storage";
 			class addModulesToStorage {};
 			class getModulesStorage {};
 			class saveItemToStorage {};

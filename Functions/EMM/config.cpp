@@ -1,6 +1,6 @@
 #include "defines.hpp"
 #include "manager.hpp"
-#include "AddFuncSelector.hpp"
+#include "addFuncSelector.hpp"
 #include "TargetsMenu.hpp"
 #include "failedReport.hpp"
 #include "functions.hpp"
