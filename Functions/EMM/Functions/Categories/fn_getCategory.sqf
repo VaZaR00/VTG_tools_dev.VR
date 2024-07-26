@@ -43,8 +43,10 @@ switch (_type) do {
 			default { 4 /*_items*/ };
 		};
 	};
-	case "APWI": {
+	case call {if (_type=="AWI") then {"AWI"} else {"APWI"}}: {
 		//accessories
+		if ((_itemType#0)=="Magazine") exitwith {3};
+
 		switch (_itemType#1) do {
 			case "AccessorySights": { 6 /*_sights*/ };
 			case "AccessoryPointer": { 7 /*_pointers*/ };
@@ -62,3 +64,5 @@ switch (_type) do {
 	case "none": { 16 };
 	default { 4 };
 }
+
+

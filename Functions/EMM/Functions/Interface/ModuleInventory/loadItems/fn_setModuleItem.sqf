@@ -35,7 +35,8 @@ if (EMM_validateFunctions) then {
 };
 
 _amount = if (
-    ("AI" in _function)||("AM" in _function)
+    ("AI" in _function) ||
+    (((_class call BIS_fnc_itemType)#0) == "Magazine")
 ) then {_amount} else {0};
 
 private _cateogry = [_all#(_class call EMM_fnc_getCategory)];

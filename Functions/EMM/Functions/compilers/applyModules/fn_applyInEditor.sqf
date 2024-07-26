@@ -40,5 +40,7 @@ private _arr = +EMM_EQUIP_TEST_FAILED_ARR;
 EMM_EQUIP_TEST_FAILED_ARR = _result;
 [_result] call EMM_fnc_failedToGiveReport;
 
+EMM_EQUIP_TEST_BOOL = nil;
+
 //_result
 _script

@@ -10,6 +10,11 @@ private _class = _tree tvTooltip _path;
 private _name = _class call EMM_fnc_getClassDisplayName;
 private _value = _tree tvValue _path;
 
+if !(
+    ((_class call EMM_fnc_getCategory) in [3, 4])||
+	((_tree tvData _path) in ["AIV", "AIB", "AIU"])
+) exitWith {};
+
 private _newAmount = (_value + _amount);
 
 if (_class == "") exitWith {};
