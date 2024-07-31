@@ -55,7 +55,33 @@ private _algorithm = {
 	private _check = {
 		params["_data"];
 
-		private _onlyFuncs = flatten ((_data) apply {
+		private _fullData = [];
+
+		private _unpackComposites = {
+			params["_item"];
+			if !(_item isEqualType []) exitWith {};
+			if ("comp$$" in (_item#0)) then {
+				private _moduleData = [false, false, ((_item#0) splitString "$$")#1] call EMM_fnc_getModulesStorage;
+				if !(_moduleData isEqualType true) then {
+					_fullData append (_moduleData#1);
+					continue;
+				};
+			};
+			_fullData append [_item];
+		};
+
+		{
+			private _firstEl = (_x#1);
+			if (_firstEl isEqualType []) then {
+				{
+					[_x] call _unpackComposites;
+				} forEach _x;
+				continue;
+			};
+			[_x] call _unpackComposites;
+		} forEach _data;
+
+		private _onlyFuncs = flatten ((_fullData) apply {
 			_res = _x#1;
 			if ((_x#0) isEqualTo "Rand") then {
 				private _arr = _x;
@@ -65,7 +91,7 @@ private _algorithm = {
 			_res;
 		});
 
-		if ((_onlyFuncs findIf { _x in _first }) == -1) exitWith {3};
+		if ((_onlyFuncs findIf { _x in _first }) == -1) exitWith {4};
 		if ([_onlyFuncs] call _disbalanceCheck) exitWith {2};
 		1 //return
 	};
@@ -75,9 +101,9 @@ private _algorithm = {
 };
 
 // _data apply { 
-// 	if ((((_x#1)#0)#0) == "") then {
+//	 if ((((_x#1)#0)#0) == "") then {
 
-// 	} else {_x} 
+//	 } else {_x} 
 // };
 
 private _sorted = [_data, [], _algorithm] call BIS_fnc_sortBy;

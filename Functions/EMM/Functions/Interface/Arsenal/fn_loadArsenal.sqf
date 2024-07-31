@@ -114,7 +114,7 @@ if (_search != '') then {
 };
 
 //hint str indexes;
-
+_tree tvSortAll [[]];
 _tree tvSortByValue [[], true];
 
 EMM_ARSENAL_LOADING_HANDLE = nil;
