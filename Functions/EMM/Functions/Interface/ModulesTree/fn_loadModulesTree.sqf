@@ -14,6 +14,7 @@ private _main = {
 		{
 			[_x, _type, [_index] ] call EMM_fnc_addItemToTree;
 		}forEach _y;
+		(EMM_equipUI#5) tvsort [[_forEachIndex]];
 	}forEach _treeMap;
 };
 

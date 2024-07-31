@@ -45,7 +45,7 @@ private _amount = _data#2;
 private _ifTestFormat = {
 	params["_text"];
 
-	if (EMM_EQUIP_TEST_BOOL) then {
+	if (EMM_EQUIP_TEST_BOOL && !("No" in _class)) then {
 		private _conditionFormat = switch (_data#1) do {
 			case "AW": {
 				private _baseclass = [configFile >> 'CfgWeapons' >> _class, true] call BIS_fnc_returnParents;

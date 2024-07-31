@@ -79,3 +79,5 @@ private _allItems = [["Binoculars", _binoculars], ["Other", _otherItems]];
     ["Goggles", _goggles],
 	["NVGoggles", _nvgs]
 ]; 
+
+//item: [name, class, picture]

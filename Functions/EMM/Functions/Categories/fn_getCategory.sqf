@@ -20,6 +20,15 @@ modules 	16
 
 params["_class", ["_func", nil]];
 
+if ("No " in _class) exitWith {
+	switch (_class) do {
+		case "No Sight": { 6 /*_sights*/ };
+		case "No Pointer": { 7 /*_pointers*/ };
+		case "No Muzzle": { 8 /*_muzzle*/ };
+		case "No Bipod": { 9 /*_bipod*/ };
+	};
+};
+
 private _type = if (isNil "_func") then {[_class] call EMM_fnc_getItemTypeFunc}else{_func};
 private _itemType = _class call BIS_fnc_itemType;
 

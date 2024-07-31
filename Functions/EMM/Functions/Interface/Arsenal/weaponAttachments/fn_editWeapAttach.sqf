@@ -42,6 +42,14 @@ private _compatible = [];
 { 
 	private _i = _forEachIndex;
 	_compatible pushBack [(_x#0), []];
+	private _empty = switch (_x#0) do {
+		case "Sights": { "No Sight" };
+		case "Pointers": { "No Pointer" };
+		case "Muzzles": { "No Muzzle" };
+		case "Bipods": { "No Bipod" };
+		default { nil };
+	};
+	if (!isNil "_empty") then { ((_compatible#_i)#1) pushBack [_empty, _empty, ""]; };
 	{
 		if (((_x#1) in _compatibleAttachments)||((_x#1) in _compatibleMags)) then {
 			((_compatible#_i)#1) pushBack _x;
