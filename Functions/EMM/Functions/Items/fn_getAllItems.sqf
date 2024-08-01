@@ -44,7 +44,12 @@ private _all = [
 	// };
 	private _cateogry = _all#(_configName call EMM_fnc_getCategory);
 	_cateogry pushBackUnique _element;
-} forEach ('(getNumber(_x >> "scope") isEqualTo 2) && ([getText(_x >> "picture")] call EMM_fnc_validPic) && !((getText (_x >> "displayName")) isEqualTo "")' configClasses (configFile >> 'CfgWeapons'));
+} forEach ('
+	(getNumber(_x >> "scope") isEqualTo 2) && 
+	([getText(_x >> "picture")] call EMM_fnc_validPic) && 
+	!((getText (_x >> "displayName")) isEqualTo "") &&
+	!(isClass(_x >> "LinkedItems"))
+' configClasses (configFile >> 'CfgWeapons'));
 
 {
 	_magazines pushBackUnique [getText (_x >> 'displayName'), configName _x, getText (_x >> 'picture')];

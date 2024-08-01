@@ -16,32 +16,31 @@ private _arsenalLbl = _display displayCtrl 1005;           //13
 private _attachmBtn = _display displayCtrl 1605;           //14
 private _editBtn = _display displayCtrl 1661;              //15
 private _moduleLbl = _display displayCtrl 1007;            //16
-private _expandChkbox = _display displayCtrl 1875;         //17
-private _loadingArsenalLbl = _display displayCtrl 1338;    //18
-private _validFuncsChkbox = _display displayCtrl 1995;     //19
+private _loadingArsenalLbl = _display displayCtrl 1338;    //17
+private _optionsLine = _display displayCtrl 1874;          //18
+
 
 
 
 [
-    _arsenal,           //0  -  ars
-    _inventoryTree,     //1  -  inv
-    _searchInput,       //2  -  search
-    _amountInput,       //3  -  amount
-    _addToCombo,        //4  -  addTo
-    _modulesTree,       //5  -  modlTree
-    _moduleNameInput,   //6  -  modlName
-    _targetsCombo,      //7  -  target
-    _unitsNamesInput,   //8  -  units
-    _changeFuncBtn,     //9  -  add func
-    _WeapAttachTree,    //10 -  weapAtt
-    _WeapAttachCloseBtn,//11 -  closeWeapAtt
-    _arsenalLbl,        //12 -  arsLBL
-    _attachmBtn,        //13 -  attchBtn
-    _editBtn,           //14 -  edit
-    _moduleLbl,         //15 -  modLBL
-    _expandChkbox,      //16 -  expand
-    _loadingArsenalLbl, //17 -  loading
-    _validFuncsChkbox   //18 -  validateFUNC
+    _arsenal,               //0  -  ars
+    _inventoryTree,         //1  -  inv
+    _searchInput,           //2  -  search
+    _amountInput,           //3  -  amount
+    _addToCombo,            //4  -  addTo
+    _modulesTree,           //5  -  modlTree
+    _moduleNameInput,       //6  -  modlName
+    _targetsCombo,          //7  -  target
+    _unitsNamesInput,       //8  -  units
+    _changeFuncBtn,         //9  -  add func
+    _WeapAttachTree,        //10 -  weapAtt
+    _WeapAttachCloseBtn,    //11 -  closeWeapAtt
+    _arsenalLbl,            //12 -  arsLBL
+    _attachmBtn,            //13 -  attchBtn
+    _editBtn,               //14 -  edit
+    _moduleLbl,             //15 -  modLBL
+    _loadingArsenalLbl,     //16 -  loading
+    _optionsLine            //17 -  options
 ];
 
 //  EMM_equipUI#

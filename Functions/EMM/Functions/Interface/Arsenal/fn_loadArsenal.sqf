@@ -11,7 +11,7 @@ waitUntil{scriptDone _terminateHandle};
 
 EMM_ARSENAL_LOADING_HANDLE = _thisScript;
 
-(EMM_equipUI#17) ctrlShow true; //show loading
+(EMM_equipUI#16) ctrlShow true; //show loading
 
 params [
 	['_search', '', ['']],
@@ -107,7 +107,7 @@ _search call _main;
 
 if (isNil "EMM_equipUI") exitWith {};
 
-(EMM_equipUI#17) ctrlShow false; //hide loading
+(EMM_equipUI#16) ctrlShow false; //hide loading
 
 if (_search != '') then {
 	tvExpandAll _tree;

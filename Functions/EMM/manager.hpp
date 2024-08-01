@@ -29,7 +29,7 @@ class EMM_EquipmentModulesManager {
 			x = -33 * GUI_GRID_W + GUI_GRID_X;
 			y = 0 * GUI_GRID_H + GUI_GRID_Y;
 			w = 263 * GUI_GRID_W;
-			h = 206 * GUI_GRID_H;
+			h = 210.5 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.7};
 		};
 		class title: RscText
@@ -242,15 +242,6 @@ class EMM_EquipmentModulesManager {
 			tooltip = "Close weapon attachments menu"; //--- ToDo: Localize;
 			onButtonClick = "call EMM_fnc_closeWeapAttachMenu";
 		};
-		// class ArsenalLoading_Disable: 
-		// {
-		// 	idc = 1536;
-
-		// 	x = 27.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 20.5 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 96 * GUI_GRID_W;
-		// 	h = 122 * GUI_GRID_H;
-		// };
 
 		////////////////////////////////////////
 		/////////  Arsenal operations  /////////
@@ -615,79 +606,23 @@ class EMM_EquipmentModulesManager {
 ////////    Bottom options    ///////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-		class ExpandModuleTree_chkbox: RscCheckBox
+		class EMM_options_line_ctrlG : RscControlsGroupNoVScrollbars
 		{
-			idc = 1875;
+			idc = 1874;
+			x = -31 * GUI_GRID_W + GUI_GRID_X;
+			y = 198.3 * GUI_GRID_H + GUI_GRID_Y;
+			w = 258 * GUI_GRID_W;
+			h = 11 * GUI_GRID_H;
 
-			x = -29 * GUI_GRID_W + GUI_GRID_X;
-			y = 199 * GUI_GRID_H + GUI_GRID_Y;
-			w = 5 * GUI_GRID_W;
-			h = 6 * GUI_GRID_H;
-			tooltip = "Expand Module inventory items tree"; //--- ToDo: Localize;
-			checked = 1;
+			class HScrollBar : ScrollBar
+			{
+				height = 0.017;
+			};
 
-			onCheckedChanged = "EMM_expandInvChkbox = cbChecked (EMM_equipUI#16)";
-			//params ["_control", "_checked"];  0 for unchecked, 1 for checked
+			class controls
+			{
+
+			};
 		};
-		class ExpandModuleTree_Lbl: RscText
-		{
-			idc = 1876;
-
-			text = "Expand inventory"; //--- ToDo: Localize;
-			x = -25.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 198.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 30 * GUI_GRID_W;
-			h = 7 * GUI_GRID_H;
-			sizeEx = 7 * GUI_GRID_H;
-			tooltip = "Expand Module inventory items tree"; //--- ToDo: Localize;
-		};
-
-		class ValidFuncsChkbox_chkbox: RscCheckBox
-		{
-			idc = 1995;
-
-			x = 3 * GUI_GRID_W + GUI_GRID_X;
-			y = 199 * GUI_GRID_H + GUI_GRID_Y;
-			w = 5 * GUI_GRID_W;
-			h = 6 * GUI_GRID_H;
-			tooltip = "Validate items functions"; //--- ToDo: Localize;
-			checked = 1;
-
-			onCheckedChanged = "EMM_validateFunctions = cbChecked (EMM_equipUI#18)";
-			//params ["_control", "_checked"];  0 for unchecked, 1 for checked
-		};
-		class ValidFuncsChkbox_Lbl: RscText
-		{
-			idc = 1996;
-
-			text = "Validate functions"; //--- ToDo: Localize;
-			x = 6.5 * GUI_GRID_W + GUI_GRID_X;
-			y = 198.5 * GUI_GRID_H + GUI_GRID_Y;
-			w = 30 * GUI_GRID_W;
-			h = 7 * GUI_GRID_H;
-			sizeEx = 7 * GUI_GRID_H;
-			tooltip = "Validate items functions"; //--- ToDo: Localize;
-		};
-
-		// class UnitsNames_Input: RscEdit
-		// {
-		// 	idc = 1403;
-		// 	text = ""; //--- ToDo: Localize;
-		// 	x = 145 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 184.5 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 52 * GUI_GRID_W;
-		// 	h = 9 * GUI_GRID_H;
-		// 	tooltip = "(Optional) Variable names of units"; //--- ToDo: Localize;
-		// };
-		// class UnitsNames_Lbl: RscText
-		// {
-		// 	idc = 1407;
-		// 	text = "Units"; //--- ToDo: Localize;
-		// 	x = 130.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 183.5 * GUI_GRID_H + GUI_GRID_Y;
-		// 	w = 13 * GUI_GRID_W;
-		// 	h = 10.5 * GUI_GRID_H;
-		// 	tooltip = "(Optional) Variable names of units"; //--- ToDo: Localize;
-		// };
 	};
 };

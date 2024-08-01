@@ -13,6 +13,8 @@ import RscCheckBox;
 import ctrlStaticBackgroundDisableTiles;
 import ctrlStaticBackgroundDisable;
 import ctrlMenuStrip;
+import RscControlsGroupNoVScrollbars;
+import ScrollBar;
 
 //from advanced developer tools
 class DBUG_MENU_STRIP: ctrlMenuStrip

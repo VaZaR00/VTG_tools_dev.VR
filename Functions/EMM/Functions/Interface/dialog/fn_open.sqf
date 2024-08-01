@@ -11,6 +11,9 @@ EMM_equipUI = call EMM_fnc_getUIelements;
 
 waitUntil {!(isNil 'EMM_equipUI')};
 
+//load manager user settings
+call EMM_fnc_loadUserSettings;
+
 call EMM_fnc_loadTargetsCombo; //load combo of modules target units
 
 (EMM_equipUI#10) ctrlShow false; //hide weapon attachments tree
@@ -25,9 +28,6 @@ EMM_Current_module_path = [-1];
 
 call EMM_fnc_loadModulesTree;
 call EMM_fnc_modulesAmount;
-
-//load manager user settings
-call EMM_fnc_loadUserSettings;
 
 //4 - load items cache for arsenal
 private _EMM_itemCache = parsingNamespace getVariable ["EMM_itemCache", nil];
