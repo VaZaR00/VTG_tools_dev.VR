@@ -45,5 +45,7 @@ waitUntil {!(isNil '_EMM_itemCache')};
 
 private _display = uiNamespace getVariable ['EMM_EquipmentModulesManager', displayNull];
 
-(_display displayCtrl 1598) ctrlSetEventHandler ['KeyUp', '_this call EMM_fnc_onSearchKeyUp'];
+(_display displayCtrl 1598) ctrlSetEventHandler ['KeyUp', '[_this, EMM_fnc_loadArsenal, 1] call EMM_fnc_onSearchKeyUp'];
+(_display displayCtrl 9568) ctrlSetEventHandler ['KeyUp', '[_this, EMM_fnc_loadModulesTree, 0.3] call EMM_fnc_onSearchKeyUp'];
+
 //(_display displayCtrl 1501) ctrlSetEventHandler ['onTreeSelChanged', '_this call EMM_fnc_treeSelChanged'];

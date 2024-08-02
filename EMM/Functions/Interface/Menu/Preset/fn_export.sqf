@@ -10,7 +10,7 @@ if (_name == "none") exitWith {
 	["No saved module opened"] call EMM_fnc_message;	
 };
 
-private _storage = [false, false, _name] call EMM_fnc_getModulesStorage;
+private _storage = [false, false, false, _name] call EMM_fnc_getModulesStorage;
 
 if (_name isEqualTo false) exitWith {
 	["No module data"] call EMM_fnc_message;	

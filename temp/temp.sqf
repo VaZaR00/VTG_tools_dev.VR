@@ -1,1 +1,16 @@
-[["bp_afougf_sidor","AB",1],["UK3CB_ADE_O_U_02_I","FAU",1],["UK3CB_ADE_O_U_02_B","FAU",1],["UK3CB_ADE_O_U_02_C","FAU",1],["UK3CB_ADE_O_U_02_F","FAU",1],["UK3CB_ADE_O_U_02_H","FAU",1],["U_C_IDAP_Man_casual_F","AB",1],["U_C_ArtTShirt_01_v6_F","AB",1],["U_I_CombatUniform","AB",1],["rhs_30Rnd_762x39mm_bakelite","AI",1],["rhs_weap_akm","AW",1],["rhs_acc_dtkakm","APWI",1],["ACE_tourniquet","AIU",2],["ACE_morphine","AIU",1],["ACE_quikclot","AIU",5],["ACE_elasticBandage","AIU",4],["ACE_packingBandage","AIU",4],["ACE_fieldDressing","AIU",4],["ACE_epinephrine","AIU",1],["ACE_Banana","AIU",1],["rhs_30Rnd_762x39mm_bakelite","AIU",5],["ACE_surgicalKit","AIB",1],["ACE_packingBandage","AIB",1],["ACE_fieldDressing","AIB",1],["ACE_elasticBandage","AIB",1],["ACE_quikclot","AIB",2],["ACE_morphine","AIB",5],["ACE_bloodIV_500","AIB",5],["ACE_salineIV_500","AIB",5],["ACE_plasmaIV_500","AIB",5],["ACE_bodyBag","AIB",2],["ACE_tourniquet","AIB",6],["ACE_atropine","AIB",5],["ACE_epinephrine","AIB",5],["ACE_adenosine","AIB",5],["ACE_personalAidKit","AIB",3],["ACE_Banana","AIB",1],["ItemMap","LI",1],["ItemCompass","LI",1],["ItemWatch","LI",1],["tf_pnr1000a","LI",1]]
+[
+	[
+		"gfhf",
+		[
+			["all"],
+			[["U_C_IDAP_Man_cargo_F","FAU",1]]
+		]
+	],
+	[
+		"fghfg",
+		[
+			["all"],
+			[["U_C_IDAP_Man_shorts_F","FAU",1]]
+		]
+	]
+]

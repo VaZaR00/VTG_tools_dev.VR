@@ -7,4 +7,6 @@ _path pushBack _index;
 _ctrl tvSetData [_path, _type];
 _ctrl tvSetTooltip [_path, _text];
 
+[_text] call EMM_fnc_setModulesTreeSize;
+
 _index;

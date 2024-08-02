@@ -20,9 +20,10 @@ class CfgFunctions
 		{
 			file = "EMM\Functions\Interface\ModulesTree";
 			class addItemToTree {};
+			class changeModule {};
 			class loadModulesTree {};
 			class setCurrentModule {};
-			class changeModule {};
+			class setModulesTreeSize {};
 			class warning {};
 		};
 

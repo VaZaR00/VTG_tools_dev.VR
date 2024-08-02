@@ -4,7 +4,7 @@ private _includeField = _display displayCtrl 1400;
 private _excludeField = _display displayCtrl 1401;
 
 private _moduleTargets = if (EMM_Current_Module != "none") then {
-	([false, true, EMM_Current_Module] call EMM_fnc_getModulesStorage)#0;
+	([false, true, false, EMM_Current_Module] call EMM_fnc_getModulesStorage)#0;
 } else { [] };
 
 private _targetsClasses = _moduleTargets#0;

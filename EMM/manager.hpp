@@ -60,17 +60,80 @@ class EMM_EquipmentModulesManager {
 //////////////////////////////////////////////////////////////////////////////////////		
 ////////    Modules Explorer    //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
-		class Modules_tree: RscTree
+		
+		class Modules_tree_grp: RscControlsGroup
 		{
-			idc = 1778;
+			idc = 1779;
 			x = -32 * GUI_GRID_W + GUI_GRID_X;
 			y = 18 * GUI_GRID_H + GUI_GRID_Y;
 			w = 56 * GUI_GRID_W;
 			h = 180 * GUI_GRID_H;
-			colorBackground[] = {0,0,0,0.5};
 
-			//onLoad = "call EMM_fnc_initTreeItems";
-			onTreeDblClick = "_this call EMM_fnc_setCurrentModule";
+			class HScrollBar : ScrollBar
+			{
+				height = 0.017;
+			};
+
+			class controls
+			{
+				class Add_folder_btn : ctrlButtonToolbar
+				{
+					idc = 9566;
+					x = 0 * GUI_GRID_W + GUI_GRID_X;
+					y = 0 * GUI_GRID_H + GUI_GRID_Y;
+					w = 6 * GUI_GRID_W;
+					h = 7 * GUI_GRID_H;
+					text = "\a3\3DEN\Data\Displays\Display3DEN\PanelLeft\entityList_layer_ca.paa";
+					tooltip = "New folder";
+				};
+				class Remove_folder_btn : ctrlButtonToolbar
+				{
+					idc = 9567;
+					x = 7 * GUI_GRID_W + GUI_GRID_X;
+					y = 0 * GUI_GRID_H + GUI_GRID_Y;
+					w = 6 * GUI_GRID_W;
+					h = 7 * GUI_GRID_H;
+					text = "\a3\3DEN\Data\Displays\Display3DEN\PanelLeft\entityList_layerRemove_ca.paa";
+					tooltip = "Delete folder";
+				};
+				class Search_folder_input_edit : RscEdit
+				{
+					idc = 9568;
+					x = 14 * GUI_GRID_W + GUI_GRID_X;
+					y = 0.4 * GUI_GRID_H + GUI_GRID_Y;
+					w = 36 * GUI_GRID_W;
+					h = 6.8 * GUI_GRID_H;
+					tooltip = "Search";
+					sizeEx = 6.7 * GUI_GRID_H;
+				};
+				class Search_folder_btn : ctrlButtonToolbar
+				{
+					idc = 9569;
+					x = 50 * GUI_GRID_W + GUI_GRID_X;
+					y = 0 * GUI_GRID_H + GUI_GRID_Y;
+					w = 6 * GUI_GRID_W;
+					h = 7 * GUI_GRID_H;
+					colorBackground[] = {0,0,0,0.5};
+					text = "\a3\3DEN\Data\Displays\Display3DEN\search_start_ca.paa";
+					tooltip = "Search";
+
+					onButtonClick = "call EMM_fnc_loadModulesTree";
+				};
+
+				class Modules_tree: RscTree
+				{
+					idc = 1778;
+					//x = -32 * GUI_GRID_W + GUI_GRID_X;
+					//y = 18 * GUI_GRID_H + GUI_GRID_Y;
+					x = 0 * GUI_GRID_W + GUI_GRID_X;
+					y = 8 * GUI_GRID_H + GUI_GRID_Y;
+					w = 57 * GUI_GRID_W;
+					h = 168 * GUI_GRID_H;
+					colorBackground[] = {0,0,0,0.5};
+
+					onTreeDblClick = "_this call EMM_fnc_setCurrentModule";
+				};
+			};
 		};
 		class Menu: DBUG_MENU_STRIP
 		{

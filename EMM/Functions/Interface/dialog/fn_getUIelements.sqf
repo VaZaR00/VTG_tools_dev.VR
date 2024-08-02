@@ -18,7 +18,7 @@ private _editBtn = _display displayCtrl 1661;              //15
 private _moduleLbl = _display displayCtrl 1007;            //16
 private _loadingArsenalLbl = _display displayCtrl 1338;    //17
 private _optionsLine = _display displayCtrl 1874;          //18
-
+private _modulesSearch = _display displayCtrl 9568;        //19
 
 
 
@@ -40,7 +40,8 @@ private _optionsLine = _display displayCtrl 1874;          //18
     _editBtn,               //14 -  edit
     _moduleLbl,             //15 -  modLBL
     _loadingArsenalLbl,     //16 -  loading
-    _optionsLine            //17 -  options
+    _optionsLine,           //17 -  options
+    _modulesSearch          //18 -  modulesGRP
 ];
 
 //  EMM_equipUI#
