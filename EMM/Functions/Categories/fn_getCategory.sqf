@@ -49,7 +49,10 @@ switch (_type) do {
 			case "NVGoggles": { 15 /*_goggles*/ };
 			case "Binocular": { 5 /*_binoculars*/ };
 			case "LaserDesignator": { 5 /*_binoculars*/ };
-			default { 4 /*_items*/ };
+			case "FirstAidKit": { 4 /*_binoculars*/ };
+			case "Medikit": { 4 /*_binoculars*/ };
+			case "Toolkit": { 4 /*_binoculars*/ };
+			default { 16 /*_items*/ };
 		};
 	};
 	case call {if (_type=="AWI") then {"AWI"} else {"APWI"}}: {

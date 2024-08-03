@@ -6,7 +6,7 @@ class CfgFunctions
 	class EMM_ui
 	{
 		tag = "EMM";
-		class dialog 
+		class _dialog 
 		{
 			file = "EMM\Functions\Interface\dialog";
 			class open {};
@@ -16,7 +16,7 @@ class CfgFunctions
 			class unload {};
 			class loadUserSettings {};
 		};
-		class ModulesTree
+		class _ModulesTree
 		{
 			file = "EMM\Functions\Interface\ModulesTree";
 			class addItemToTree {};
@@ -31,14 +31,14 @@ class CfgFunctions
 ////////////	Menu    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		class Menu_Module
+		class _Menu_Module
 		{
 			file = "EMM\Functions\Interface\Menu\Module";
 			class createNewModule {};
 			class newModule {};
 			class menuDeleteModule {};
 		};
-		class Menu_Preset
+		class _Menu_Preset
 		{
 			file = "EMM\Functions\Interface\Menu\Preset";
 			class export {};
@@ -48,42 +48,42 @@ class CfgFunctions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	Arsenal    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		class Arsenal 
-		{
-			file = "EMM\Functions\Interface\Arsenal";
-			class loadArsenal {};
-			class loadAddToCombo {};
-			class getAmountInput {};
-			class onSearchKeyUp {};
-			class clearSearch {};
-			class setCompositeModule {};
-			class checkForComposites {};
-		};
-		class Arsenal_addingItem
-		{
-			file = "EMM\Functions\Interface\Arsenal\addingItem";
-			class addItemFromArsenal {};
-			class peekItem {};
-			class itemDestination {};
-			class getAmountIfStack {};
-			class addItemMiddleware {};
-			class isWeaponAttachment {};
-			class checkIfRandom {};
-		};
-		class Arsenal_weapAttach
-		{
-			file = "EMM\Functions\Interface\Arsenal\weaponAttachments";
-			class closeWeapAttachMenu {};
-			class editWeapAttach {};
-			class attachLbl {};
-			class checkForAttachLbl {};
-			class isWeapon {};
-		};
+		// class _Arsenal 
+		// {
+		// 	file = "EMM\Functions\Interface\Arsenal";
+		// 	class loadArsenal {};
+		// 	class loadAddToCombo {};
+		// 	class getAmountInput {};
+		// 	class onSearchKeyUp {};
+		// 	class clearSearch {};
+		// 	class setCompositeModule {};
+		// 	class checkForComposites {};
+		// };
+		// class _Arsenal_addingItem
+		// {
+		// 	file = "EMM\Functions\Interface\Arsenal\addingItem";
+		// 	class addItemFromArsenal {};
+		// 	class peekItem {};
+		// 	class itemDestination {};
+		// 	class getAmountIfStack {};
+		// 	class addItemMiddleware {};
+		// 	class isWeaponAttachment {};
+		// 	class checkIfRandom {};
+		// };
+		// class _Arsenal_weapAttach
+		// {
+		// 	file = "EMM\Functions\Interface\Arsenal\weaponAttachments";
+		// 	class closeWeapAttachMenu {};
+		// 	class editWeapAttach {};
+		// 	class attachLbl {};
+		// 	class checkForAttachLbl {};
+		// 	class isWeapon {};
+		// };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	Inventory    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		class ModuleInventory
+		class _ModuleInventory
 		{
 			file = "EMM\Functions\Interface\ModuleInventory";
 			class checkModule {};
@@ -91,7 +91,7 @@ class CfgFunctions
 			class onTreeSelect {};
 			class resetModule {};
 		};
-		class ModuleInventory_ItemOperations
+		class _ModuleInventory_ItemOperations
 		{
 			file = "EMM\Functions\Interface\ModuleInventory\itemOperations";
 			class addItemToModule {};
@@ -99,7 +99,7 @@ class CfgFunctions
 			class deleteModuleItems {};
 			class modifyModuleItem {};
 		};
-		class ModuleInventory_loadItems
+		class _ModuleInventory_loadItems
 		{
 			file = "EMM\Functions\Interface\ModuleInventory\loadItems";
 			class importFromArsenal {};
@@ -107,7 +107,7 @@ class CfgFunctions
 			class loadModuleItems {};
 			class setModuleItem {};
 		};
-		class ModuleInventory_addFuncSelect 
+		class _ModuleInventory_addFuncSelect 
 		{
 			file = "EMM\Functions\Interface\ModuleInventory\AddFuncSelector";
 			class changeAddFunc {};
@@ -115,7 +115,7 @@ class CfgFunctions
 			class openSelector {};
 			class updateAddFunc {};
 		};
-		class ModuleInventory_targets
+		class _ModuleInventory_targets
 		{
 			file = "EMM\Functions\Interface\ModuleInventory\targets";
 			class addTargetToCombo {};
@@ -124,7 +124,7 @@ class CfgFunctions
 			class loadTargetsCombo {};
 			class getTargetOptionName {};
 		};
-		class ModuleInventory_targets_menu
+		class _ModuleInventory_targets_menu
 		{
 			file = "EMM\Functions\Interface\ModuleInventory\targets\menu";
 			class openEditTargetsMenu {};
@@ -138,7 +138,7 @@ class CfgFunctions
 /////////////  Systems  /////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		class Categories_
+		class _Categories_
 		{
 			file = "EMM\Functions\Categories";
 			class categorySortIndex {};
@@ -146,7 +146,7 @@ class CfgFunctions
 			class iterate {};
 			class checkCategories {};
 		};	
-		class Items_
+		class _Items_
 		{
 			file = "EMM\Functions\Items";
 			class findRootConfig {};
@@ -220,6 +220,40 @@ class CfgFunctions
 			class getModulesStorage {};
 			class saveItemToStorage {};
 			class setStorage {};
+		};
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////	DEV REWORK    ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		class Dialog
+		{
+			file = "EMM\FunctionsRework\Dialog";
+			class treeMapper {};
+			class setUIEventHandlers {};
+			class onSearchKeyUp {};
+		};
+		class Arsenal
+		{
+			file = "EMM\FunctionsRework\Arsenal";
+			class loadArsenalItems {};
+			class loadArsenalCategories {};
+		};
+		class _Arsenal_Item
+		{
+			file = "EMM\FunctionsRework\Arsenal\Item";
+			class getAmount {};
+			class getAmountInput {};
+		};
+		class _Arsenal_Item_addingItem
+		{
+			file = "EMM\FunctionsRework\Arsenal\Item\AddingItem";
+			class addItemFromArsenal {};
+		};
+		class ModuleInventory
+		{
+			file = "EMM\FunctionsRework\ModuleInventory";
+			class setModuleTab {};
+			class loadModuleTabs {};
 		};
 	};
 };

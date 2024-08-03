@@ -15,8 +15,11 @@ import ctrlStaticBackgroundDisable;
 import ctrlMenuStrip;
 import RscControlsGroupNoVScrollbars;
 import RscControlsGroup;
+import RscControlsGroupNoScrollbars;
 import ScrollBar;
 import ctrlButtonToolbar;
+import RscListNBox;
+import RscActivePicture;
 
 //from advanced developer tools
 class DBUG_MENU_STRIP: ctrlMenuStrip

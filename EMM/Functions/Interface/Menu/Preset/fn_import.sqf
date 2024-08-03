@@ -18,7 +18,7 @@ if ((_data findIf {
 		(_x#1#0#0) == "comp"
 	}else{false};
 }) != -1) then {
-	[] spawn EMM_fnc_loadArsenal;
+	//[] spawn EMM_fnc_loadArsenal;
 };
 
 EMM_EQUIP_TEST_FAILED_ARR = [];

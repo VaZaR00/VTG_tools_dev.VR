@@ -19,6 +19,8 @@ private _moduleLbl = _display displayCtrl 1007;            //16
 private _loadingArsenalLbl = _display displayCtrl 1338;    //17
 private _optionsLine = _display displayCtrl 1874;          //18
 private _modulesSearch = _display displayCtrl 9568;        //19
+private _arsenalCategory = _display displayCtrl 6355;
+
 
 
 
@@ -41,7 +43,8 @@ private _modulesSearch = _display displayCtrl 9568;        //19
     _moduleLbl,             //15 -  modLBL
     _loadingArsenalLbl,     //16 -  loading
     _optionsLine,           //17 -  options
-    _modulesSearch          //18 -  modulesGRP
+    _modulesSearch,         //18 -  modulesGRP
+    _arsenalCategory        //19
 ];
 
 //  EMM_equipUI#

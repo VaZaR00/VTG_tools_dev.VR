@@ -2,7 +2,7 @@ private _rifles = [];
 private _pistols = []; 
 private _launchers = []; 
 private _magazines = []; 
-private _otherItems = [];
+private _items = [];
 private _binoculars = [];
 private _sights = [];
 private _pointers = [];
@@ -14,13 +14,14 @@ private _helmets = [];
 private _backpacks = []; 
 private _goggles = [];
 private _nvgs = [];
+private _devices = [];
 
 private _all = [
 	_rifles,
 	_pistols,
 	_launchers,
 	_magazines,
-	_otherItems,
+	_items,
 	_binoculars,
 	_sights,
 	_pointers,
@@ -31,7 +32,8 @@ private _all = [
 	_helmets,
 	_backpacks,
 	_goggles,
-	_nvgs
+	_nvgs,
+	_devices
 ];
 
 {
@@ -40,7 +42,7 @@ private _all = [
 	// if (([_configName] call EMM_fnc_getItemTypeFunc) isEqualTo 2) then {
 	// 	_weapons pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
 	// } else {
-	// 	_otherItems pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
+	// 	_items pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
 	// };
 	private _cateogry = _all#(_configName call EMM_fnc_getCategory);
 	_cateogry pushBackUnique _element;
@@ -67,8 +69,6 @@ private _all = [
 	_x sort true;
 } forEach _all;
 
-private _accessories = [["Sights", _sights], ["Pointers", _pointers], ["Muzzles", _muzzle], ["Bipods", _bipod]];
-private _allItems = [["Binoculars", _binoculars], ["Other", _otherItems]];
 //return
 [
     ["Rifles", _rifles],
@@ -79,8 +79,13 @@ private _allItems = [["Binoculars", _binoculars], ["Other", _otherItems]];
     ["Helmets", _helmets],
     ["Backpacks", _backpacks],
     ["Magazines", _magazines],
-    ["Items", _allItems],				//nested	2
-    ["Accessories", _accessories], 		//nested	4
+	["Binoculars", _binoculars], 
+	["Items", _items],
+	["Devices", _devices],
+	["Accessories/Sights", _sights], 
+	["Accessories/Pointers", _pointers], 
+	["Accessories/Muzzles", _muzzle], 
+	["Accessories/Bipods", _bipod],
     ["Goggles", _goggles],
 	["NVGoggles", _nvgs]
 ]; 
