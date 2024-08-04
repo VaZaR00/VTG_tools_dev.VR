@@ -333,7 +333,7 @@ class EMM_EquipmentModulesManager {
 							h = 8.5 * GUI_GRID_H;
 							tooltip = "Choose arsenal category";
 
-							onLBSelChanged = "[] call EMM_fnc_loadArsenalItems";
+							onLBSelChanged = "EMM_Arsenal_filter = {true}; EMM_attachs_currentWeapon_path = []; [] call EMM_fnc_loadArsenalItems";
 						};
 					};
 				};
@@ -609,7 +609,7 @@ class EMM_EquipmentModulesManager {
 					w = 14 * GUI_GRID_W;
 					h = 8 * GUI_GRID_H;
 					tooltip = "Clear All Inventory"; //--- ToDo: Localize;
-					onButtonClick = "call EMM_fnc_clearModule";
+					onButtonClick = "tvClear (EMM_ActiveModuleTab#1)";
 				};
 				class Items_operations_grp : RscControlsGroupNoScrollbars
 				{
@@ -639,7 +639,7 @@ class EMM_EquipmentModulesManager {
 							w = 5 * GUI_GRID_W;
 							h = 6.5 * GUI_GRID_H;
 							tooltip = "Add 1 Item"; //--- ToDo: Localize;
-							onButtonClick = "[nil, 1] call EMM_fnc_modifyModuleItem";
+							onButtonClick = "[EMM_ActiveModuleTab#1, tvCurSel (EMM_ActiveModuleTab#1), 1] call EMM_fnc_modifyItem";
 							shortcuts[] = {"0x4E"};
 						};
 						class Delete_OneItem_module_Btn: RscButton
@@ -652,7 +652,7 @@ class EMM_EquipmentModulesManager {
 							w = 5 * GUI_GRID_W;
 							h = 6.5 * GUI_GRID_H;
 							tooltip = "Delete 1 Item"; //--- ToDo: Localize;
-							onButtonClick = "[] call EMM_fnc_deleteModuleItems";
+							onButtonClick = "[EMM_ActiveModuleTab#1, tvCurSel (EMM_ActiveModuleTab#1), -1] call EMM_fnc_modifyItem";
 							shortcuts[] = {"0x4A"};
 						};
 						class Delete_Items_module_Btn: RscButton
@@ -666,7 +666,7 @@ class EMM_EquipmentModulesManager {
 							h = 6.5 * GUI_GRID_H;
 							tooltip = "Delete All Selected Items"; //--- ToDo: Localize;
 							sizeEx = 7 * GUI_GRID_H;
-							onButtonClick = "[true] call EMM_fnc_deleteModuleItems";
+							onButtonClick = "[EMM_ActiveModuleTab#1, tvCurSel (EMM_ActiveModuleTab#1)] call EMM_fnc_deleteItem";
 							shortcuts[] = {"0xD3"};
 						};
 						class Import_Items_module_Btn: RscButton
@@ -720,7 +720,7 @@ class EMM_EquipmentModulesManager {
 						class function_Change_module_Btn: RscButton
 						{
 							idc = 1686;
-							onButtonClick = "[true] call EMM_fnc_openSelector";
+							onButtonClick = "call EMM_fnc_openSelector";
 
 							text = "none"; //--- ToDo: Localize;
 							x = 18.5 * GUI_GRID_W;
@@ -803,7 +803,7 @@ class EMM_EquipmentModulesManager {
 							y = 11 * GUI_GRID_H;
 							tooltip = "Save module"; //--- ToDo: Localize;
 
-							onButtonClick = "call EMM_fnc_checkSaveModule";
+							onButtonClick = "call EMM_fnc_saveModule";
 						};
 						class Delete_module_Btn: Rename_module_Btn
 						{

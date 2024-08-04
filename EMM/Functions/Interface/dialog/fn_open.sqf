@@ -26,6 +26,7 @@ call EMM_fnc_loadTargetsCombo; //load combo of modules target units
 
 EMM_Current_Module = "none";
 EMM_Current_module_path = [-1];
+EMM_attachs_currentWeapon_path = [];
 
 call EMM_fnc_loadModulesTree;
 call EMM_fnc_modulesAmount;

@@ -12,6 +12,8 @@ for "_i" from 0 to 3 do {
 
 	_tab ctrlShow false;
 
+	_tab ctrlSetEventHandler ['TreeDblClick', '_this call EMM_fnc_onModuleItemDbClick;'];
+
 	private _el = [_tab, (_display displayCtrl (3330 + _i)), (_display displayCtrl (3320 + _i))];
 
 	EMM_moduleTabs pushBack _el;

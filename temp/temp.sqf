@@ -15,3 +15,25 @@
 	[[0],"EMM_CATEGORY","Backpacks",0,""],
 	[[0,0],"AB","Bergen Backpack (Digital)",1,"B_Bergen_dgtl_F"]
 ]
+[
+	[
+		"Rand",
+		["arifle_AK12_GL_arid_F","AW",1,
+			[
+				"Rand",
+				["optic_DMS","APWI",1],
+				["optic_Arco_AK_lush_F","APWI",1]
+			],
+			[
+				"Rand",
+				["acc_pointer_IR","APWI",1],
+				["acc_flashlight","APWI",1]
+			]
+		],
+		["arifle_AK12_GL_lush_F","AW",1,
+			[
+				["muzzle_snds_B_lush_F","APWI",1]
+			]
+		]
+	]
+]

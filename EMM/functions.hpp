@@ -77,36 +77,36 @@ class CfgFunctions
 		// 	class editWeapAttach {};
 		// 	class attachLbl {};
 		// 	class checkForAttachLbl {};
-		// 	class isWeapon {};
+		// 	
 		// };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	Inventory    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		class _ModuleInventory
-		{
-			file = "EMM\Functions\Interface\ModuleInventory";
-			class checkModule {};
-			class checkSaveModule {};
-			class onTreeSelect {};
-			class resetModule {};
-		};
-		class _ModuleInventory_ItemOperations
-		{
-			file = "EMM\Functions\Interface\ModuleInventory\itemOperations";
-			class addItemToModule {};
-			class clearModule {};
-			class deleteModuleItems {};
-			class modifyModuleItem {};
-		};
-		class _ModuleInventory_loadItems
-		{
-			file = "EMM\Functions\Interface\ModuleInventory\loadItems";
-			class importFromArsenal {};
-			class loadModuleData {};
-			class loadModuleItems {};
-			class setModuleItem {};
-		};
+		// class _ModuleInventory
+		// {
+		// 	file = "EMM\Functions\Interface\ModuleInventory";
+		// 	class checkModule {};
+		// 	class checkSaveModule {};
+		// 	class onTreeSelect {};
+		// 	class resetModule {};
+		// };
+		// class _ModuleInventory_ItemOperations
+		// {
+		// 	file = "EMM\Functions\Interface\ModuleInventory\itemOperations";
+		// 	class addItemToModule {};
+		// 	class clearModule {};
+		// 	class deleteModuleItems {};
+		// 	class modifyModuleItem {};
+		// };
+		// class _ModuleInventory_loadItems
+		// {
+		// 	file = "EMM\Functions\Interface\ModuleInventory\loadItems";
+		// 	class importFromArsenal {};
+		// 	class loadModuleData {};
+		// 	class loadModuleItems {};
+		// 	class setModuleItem {};
+		// };
 		class _ModuleInventory_addFuncSelect 
 		{
 			file = "EMM\Functions\Interface\ModuleInventory\AddFuncSelector";
@@ -146,16 +146,6 @@ class CfgFunctions
 			class iterate {};
 			class checkCategories {};
 		};	
-		class _Items_
-		{
-			file = "EMM\Functions\Items";
-			class findRootConfig {};
-			class getAllItems {};
-			class getClassDisplayName {};
-			class getItemTypeFunc {};
-			class validateFunction {};
-			class validPic {};
-		};
 	};
 
 
@@ -211,7 +201,6 @@ class CfgFunctions
 		class repository_moduleItems
 		{
 			file = "EMM\Functions\repository\moduleItems";
-			class parseModuleItemsTree {};
 		};
 		class repository_storage
 		{
@@ -238,22 +227,39 @@ class CfgFunctions
 			class loadArsenalItems {};
 			class loadArsenalCategories {};
 		};
-		class _Arsenal_Item
+		class _Arsenal_AddingItem
 		{
-			file = "EMM\FunctionsRework\Arsenal\Item";
+			file = "EMM\FunctionsRework\Arsenal\AddingItem";
+			class addItemFromArsenal {};
 			class getAmount {};
 			class getAmountInput {};
-		};
-		class _Arsenal_Item_addingItem
-		{
-			file = "EMM\FunctionsRework\Arsenal\Item\AddingItem";
-			class addItemFromArsenal {};
 		};
 		class ModuleInventory
 		{
 			file = "EMM\FunctionsRework\ModuleInventory";
 			class setModuleTab {};
 			class loadModuleTabs {};
+			class onModuleItemDbClick {};
+			class checkItemsLabels {};
+			class parseModuleItemsTree {};
+		};
+		class ItemsOperations
+		{
+			file = "EMM\FunctionsRework\ItemsOperations";
+			class addItem {};
+			class deleteItem {};
+			class modifyItem {};
+		};
+		class Items_
+		{
+			file = "EMM\FunctionsRework\Items";
+			class findRootConfig {};
+			class getAllItems {};
+			class getClassDisplayName {};
+			class getItemTypeFunc {};
+			class validateFunction {};
+			class validPic {};
+			class isWeapon {};
 		};
 	};
 };

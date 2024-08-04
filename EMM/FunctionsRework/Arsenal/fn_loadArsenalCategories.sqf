@@ -2,6 +2,8 @@ private _EMM_itemCache = createHashMapFromArray (parsingNamespace getVariable ["
 
 if (isNil "_EMM_itemCache") exitWith {};
 
+EMM_Arsenal_filter = {true};
+
 private _categories = keys _EMM_itemCache;
 private _combo = EMM_equipUI#19;
 

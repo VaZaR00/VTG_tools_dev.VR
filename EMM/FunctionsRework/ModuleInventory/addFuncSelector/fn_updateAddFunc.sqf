@@ -1,4 +1,4 @@
-private _inventoryTree = EMM_equipUI#1;
+private _inventoryTree = EMM_ActiveModuleTab#1;
 private _changeFuncBtn = EMM_equipUI#9; 
 
 private _selectItem = tvCurSel _inventoryTree;

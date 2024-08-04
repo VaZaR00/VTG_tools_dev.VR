@@ -8,6 +8,7 @@ if (isNil "_EMM_itemCache") exitWith {};
 (EMM_equipUI#16) ctrlShow true; 
 
 private _category = _combo lbText _sel;
+EMM_currentArsenalCategory = _category;
 
 private _items = _EMM_itemCache get _category;
 private _arsenal = EMM_equipUI#0;
@@ -20,6 +21,7 @@ lnbClear _arsenal;
 	private _pic = _x#2;
 
 	if ((_search != "") && !((toLower _search) in (toLower _name))) then {continue};
+	if !([_class] call EMM_Arsenal_filter) then {continue};
 
 	private _rowIndex = _arsenal lnbAddRow [_name, ""];
 	_arsenal lnbSetTooltip [[_rowIndex, 0], _class];
