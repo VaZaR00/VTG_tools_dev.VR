@@ -15,11 +15,3 @@
 // 	(findDisplay 11549)
 // ] call BIS_fnc_3DENShowMessage;
 
-[
-	"Can't continue because you have not completed current module.",
-	"Warning!",
-	true,
-	false,
-	nil,
-	(findDisplay 11549)
-] call BIS_fnc_3DENShowMessage;

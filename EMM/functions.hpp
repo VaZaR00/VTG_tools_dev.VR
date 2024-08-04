@@ -16,16 +16,15 @@ class CfgFunctions
 			class unload {};
 			class loadUserSettings {};
 		};
-		class _ModulesTree
-		{
-			file = "EMM\Functions\Interface\ModulesTree";
-			class addItemToTree {};
-			class changeModule {};
-			class loadModulesTree {};
-			class setCurrentModule {};
-			class setModulesTreeSize {};
-			class warning {};
-		};
+		// class _ModulesTree
+		// {
+		// 	file = "EMM\Functions\Interface\ModulesTree";
+		// 	class addItemToTree {};
+		// 	class changeModule {};
+		// 	class loadModulesTree {};
+		// 	class setCurrentModule {};
+		// 	class warning {};
+		// };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	Menu    ////////////////////////////////////////////////////////////////////////////////
@@ -210,6 +209,12 @@ class CfgFunctions
 			class saveItemToStorage {};
 			class setStorage {};
 		};
+		class repository_storage_Folders
+		{
+			file = "EMM\Functions\repository\storage\Folders";
+			class getFoldersStorage {};
+			class setFoldersStorage {};
+		};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	DEV REWORK    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -260,6 +265,21 @@ class CfgFunctions
 			class validateFunction {};
 			class validPic {};
 			class isWeapon {};
+		};
+		class ModuleBrowser
+		{
+			file = "EMM\FunctionsRework\ModuleBrowser";
+			class addElement {};
+			class deleteElement {};
+			class deleteElementMiddleware {};
+			class setModulesTreeSize {};
+			class loadModuleBrowser {};
+		};
+		class ModuleBrowser_Rename
+		{
+			file = "EMM\FunctionsRework\ModuleBrowser\Rename";
+			class openRenameMenu {};
+			class rename {};
 		};
 	};
 };

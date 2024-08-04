@@ -3,8 +3,8 @@
 		// {
 		// 	idc = 1239;
 
-		// 	x = 27.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 25.5 * GUI_GRID_H + GUI_GRID_Y;
+		// 	x = 27.5 * GUI_GRID_W;
+		// 	y = 25.5 * GUI_GRID_H;
 		// 	w = 96 * GUI_GRID_W;
 		// 	h = 117 * GUI_GRID_H;
 		// 	colorBackground[] = {0,0,0,0.5};
@@ -15,8 +15,8 @@
 		// 	idc = 1238;
 		// 	//text = "a3\3den\data\controlsgroups\tutorial\close_ca.paa"; //--- ToDo: Localize;
 		// 	text = "X";
-		// 	x = 118.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 19 * GUI_GRID_H + GUI_GRID_Y;
+		// 	x = 118.5 * GUI_GRID_W;
+		// 	y = 19 * GUI_GRID_H;
 		// 	w = 5 * GUI_GRID_W;
 		// 	h = 6 * GUI_GRID_H;
 		// 	tooltip = "Close weapon attachments menu"; //--- ToDo: Localize;
@@ -28,8 +28,8 @@
 		// 	idc = 1007;
 		// 	text = "New Module"; //--- ToDo: Localize;
 		// 	style = 2;
-		// 	x = 130.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
+		// 	x = 130.5 * GUI_GRID_W;
+		// 	y = 8.5 * GUI_GRID_H;
 		// 	w = 96 * GUI_GRID_W;
 		// 	h = 8 * GUI_GRID_H;
 		// };
@@ -38,8 +38,8 @@
 		// {
 		// 	idc = 1500;
 
-		// 	x = 130.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 20.5 * GUI_GRID_H + GUI_GRID_Y;
+		// 	x = 130.5 * GUI_GRID_W;
+		// 	y = 20.5 * GUI_GRID_H;
 		// 	w = 96 * GUI_GRID_W;
 		// 	h = 122 * GUI_GRID_H;
 		// 	colorBackground[] = {0,0,0,0.5};
@@ -61,8 +61,8 @@
 		// {
 		// 	idc = 1409;
 		// 	text = "Name:"; //--- ToDo: Localize;
-		// 	x = 130.5 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 165.5 * GUI_GRID_H + GUI_GRID_Y;
+		// 	x = 130.5 * GUI_GRID_W;
+		// 	y = 165.5 * GUI_GRID_H;
 		// 	w = 13 * GUI_GRID_W;
 		// 	h = 9 * GUI_GRID_H;
 		// };
@@ -70,8 +70,8 @@
 		// {
 		// 	idc = 1442;
 		// 	text = ""; //--- ToDo: Localize;
-		// 	x = 145 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 165.5 * GUI_GRID_H + GUI_GRID_Y;
+		// 	x = 145 * GUI_GRID_W;
+		// 	y = 165.5 * GUI_GRID_H;
 		// 	w = 52 * GUI_GRID_W;
 		// 	h = 9 * GUI_GRID_H;
 		// };
@@ -85,8 +85,8 @@
 		// 	onButtonClick = "";
 
 		// 	text = "Create"; //--- ToDo: Localize;
-		// 	x = 210 * GUI_GRID_W + GUI_GRID_X;
-		// 	y = 175 * GUI_GRID_H + GUI_GRID_Y;
+		// 	x = 210 * GUI_GRID_W;
+		// 	y = 175 * GUI_GRID_H;
 		// 	w = 16.5 * GUI_GRID_W;
 		// 	h = 10 * GUI_GRID_H;
 		// 	tooltip = "Create/Modify module"; //--- ToDo: Localize;

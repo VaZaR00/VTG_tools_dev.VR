@@ -9,10 +9,10 @@ private _treeMap = [_tree] call EMM_fnc_treeMapper;
 	private _tooltip = _x#4;
 	private _count = _tree tvCount _path;
 	
-	if (_data in ["EMM_CATEGORY", "EMM_ATTACHMENT_CATEGORY"]) then {
+	if (_data in ["%EMM_CATEGORY%", "%EMM_ATTACHMENT_CATEGORY%"]) then {
 		if (
 			(_tree != (EMM_moduleTabs#0#0)) &&
-			(_data != "EMM_ATTACHMENT_CATEGORY")
+			(_data != "%EMM_ATTACHMENT_CATEGORY%")
 		) then {continue};
 		
 		if (_count > 1) then {
@@ -29,11 +29,13 @@ private _treeMap = [_tree] call EMM_fnc_treeMapper;
 		continue;
 	};
 
-	if ((_count > 0) && ([_tooltip] call EMM_fnc_isWeapon)) then {
-		if (" (+ Attachments)" in _text) then {continue};
-		_tree tvSetText [_path, format["%1 (+ Attachments)", _text]];
-	} else {
-		private _name = _tooltip call EMM_fnc_getClassDisplayName;
-		_tree tvSetText [_path, _name];
+	if ([_tooltip] call EMM_fnc_isWeapon) then {
+		if (_count > 0) then {
+			if (" (+ Attachments)" in _text) then {continue};
+			_tree tvSetText [_path, format["%1 (+ Attachments)", _text]];
+		} else {
+			private _name = _tooltip call EMM_fnc_getClassDisplayName;
+			_tree tvSetText [_path, _name];
+		};
 	};
 } forEach _treeMap;

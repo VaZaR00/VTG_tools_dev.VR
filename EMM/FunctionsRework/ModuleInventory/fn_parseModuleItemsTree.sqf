@@ -26,12 +26,12 @@ private _dest = _result;
 		_dest = _dest#(count _dest - 1);
 	};
 
-	if (_func in ["EMM_CATEGORY", "EMM_ATTACHMENT_CATEGORY"]) then {
+	if (_func in ["%EMM_CATEGORY%", "%EMM_ATTACHMENT_CATEGORY%"]) then {
 		if ("(Random)" in _name) then {
 			_dest pushBack ["Rand"];
 			continue;
 		};
-		if (_func == "EMM_ATTACHMENT_CATEGORY") then {
+		if (_func == "%EMM_ATTACHMENT_CATEGORY%") then {
 			_dest pushBack [];
 			continue
 		};

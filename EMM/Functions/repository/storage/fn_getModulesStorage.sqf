@@ -1,4 +1,4 @@
-params[["_keys", false], ["_nameAndType", false], ["_folders", false], ["_name", ""]];
+params[["_keys", false], ["_nameAndType", false], ["_name", ""]];
 
 private _data = if (EMM_DEV_STATE) then {
 	+(uiNamespace getVariable ["EMM_EQUIP_STORAGE", createHashMap]);
@@ -17,10 +17,6 @@ private _data = if (EMM_DEV_STATE) then {
 if (count _data == 0) exitWith {createHashMap}; //return
 
 if (_keys) exitWith {keys _data}; //return
-
-if (!_folders) then {
-	_data apply { if ((count _y) > 2) then {_y deleteAt 2} };
-};
 
 if (_nameAndType) then {
 	_data apply { _y deleteAt 1 };

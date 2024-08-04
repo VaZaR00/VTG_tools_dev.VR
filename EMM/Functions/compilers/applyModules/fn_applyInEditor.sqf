@@ -10,7 +10,7 @@ if (_one&&(EMM_Current_Module == "none")) exitWith {
 };
 
 if (_one) then {
-	_data = [false, false, false, EMM_Current_Module] call EMM_fnc_getModulesStorage;
+	_data = [false, false, EMM_Current_Module] call EMM_fnc_getModulesStorage;
 	_data = [[EMM_Current_Module, _data]];
 };
 

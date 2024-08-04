@@ -6,7 +6,7 @@ private _class = _data#0;
 
 if ("comp$$" in _class) exitWith {
 	private _module = (_class splitString "$$")#1;
-	private _items = [false, false, false, _module] call EMM_fnc_getModulesStorage;
+	private _items = [false, false, _module] call EMM_fnc_getModulesStorage;
 
 	if (_items isEqualTo false) exitWith {
 		if (EMM_EQUIP_TEST_BOOL) then {

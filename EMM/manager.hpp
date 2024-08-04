@@ -75,7 +75,7 @@ class EMM_EquipmentModulesManager {
 					text = "\a3\3DEN\Data\Displays\Display3DEN\PanelLeft\entityList_layer_ca.paa";
 					tooltip = "New folder";
 
-					onButtonClick = "";
+					onButtonClick = "['Folder'] call EMM_fnc_addElement";
 				};
 				class Remove_folder_btn : Add_folder_btn
 				{
@@ -84,14 +84,28 @@ class EMM_EquipmentModulesManager {
 					text = "\a3\3DEN\Data\Displays\Display3DEN\PanelLeft\entityList_layerRemove_ca.paa";
 					tooltip = "Delete folder";
 
-					onButtonClick = "";
+					onButtonClick = "['Folder'] call EMM_fnc_deleteElementMiddleware";
+				};
+				class Rename_btn : RscButton
+				{
+					idc = 9667;
+					x = 14 * GUI_GRID_W;
+					y = 0 * GUI_GRID_H;
+					w = 6 * GUI_GRID_W;
+					h = 7 * GUI_GRID_H;
+					colorBackground[] = {0,0,0,0.3};
+
+					text = "R";
+					tooltip = "Rename module/folder";
+
+					onButtonClick = "call EMM_fnc_openRenameMenu";
 				};
 				class Search_folder_input_edit : RscEdit
 				{
 					idc = 9568;
-					x = 14 * GUI_GRID_W;
+					x = 21 * GUI_GRID_W;
 					y = 0.4 * GUI_GRID_H;
-					w = 36 * GUI_GRID_W;
+					w = 29 * GUI_GRID_W;
 					h = 6.8 * GUI_GRID_H;
 					tooltip = "Search";
 					sizeEx = 6.7 * GUI_GRID_H;
@@ -205,7 +219,7 @@ class EMM_EquipmentModulesManager {
 				class New
 				{
 					text="New";
-					action = "[] call EMM_fnc_createNewModule";
+					action = "['Module'] call EMM_fnc_addElement";
 					//picture = "\a3\3DEN\Data\Displays\Display3DEN\ToolBar\new_ca.paa";
 					shortcuts[] = {"512+0x31"};
 				};
@@ -213,7 +227,7 @@ class EMM_EquipmentModulesManager {
 				{
 					text="Delete";
 					shortcuts[] = {"512+0x20"};
-					action = "[] call EMM_fnc_menuDeleteModule";
+					action = "['Module'] call EMM_fnc_deleteElementMiddleware";
 				};
 				class Set
 				{
@@ -382,58 +396,6 @@ class EMM_EquipmentModulesManager {
 						};
 					};
 				};
-				// class AddTo_grp : RscControlsGroupNoScrollbars
-				// {
-				// 	idc = 4565;
-				// 	x = 3 * GUI_GRID_W;
-				// 	y = 163 * GUI_GRID_H;
-				// 	w = 96 * GUI_GRID_W;
-				// 	h = 15 * GUI_GRID_H;
-				// 	class controls
-				// 	{
-				// 		class AddTo_Lbl: RscText
-				// 		{
-				// 			idc = 1008;
-				// 			text = "Add To:"; //--- ToDo: Localize;
-				// 			x = 0 * GUI_GRID_W;
-				// 			y = 0 * GUI_GRID_H;
-				// 			w = 15 * GUI_GRID_W;
-				// 			h = 12 * GUI_GRID_H;
-				// 			tooltip = "Choose container to which you want add item";
-				// 		};
-				// 		class AddTo_Combo: RscCombo
-				// 		{
-				// 			idc = 2100;
-
-				// 			x = 17.5 * GUI_GRID_W;
-				// 			y = 1.7 * GUI_GRID_H;
-				// 			w = 61 * GUI_GRID_W;
-				// 			h = 8.5 * GUI_GRID_H;
-				// 			tooltip = "Choose container to which you want add item";
-
-				// 			class items 
-				// 			{
-				// 				class General
-				// 				{
-				// 					text = "Inventory";
-				// 					default = 1;
-				// 				};
-				// 				class Uniform
-				// 				{
-				// 					text = "Uniform";
-				// 				};
-				// 				class Vest
-				// 				{
-				// 					text = "Vest";
-				// 				};
-				// 				class Backpack
-				// 				{
-				// 					text = "Backpack";
-				// 				};
-				// 			};
-				// 		};
-				// 	};
-				// };
 				class Amount_grp : RscControlsGroupNoScrollbars
 				{
 					idc = 4565;
@@ -460,7 +422,7 @@ class EMM_EquipmentModulesManager {
 							x = 17.5 * GUI_GRID_W;
 							y = 0.5 * GUI_GRID_H;
 							w = 60 * GUI_GRID_W;
-							h = 11 * GUI_GRID_H;
+							h = 10 * GUI_GRID_H;
 							tooltip = "Amount of Items to Add"; //--- ToDo: Localize;
 						};
 						class AddItem_Arsenal_Btn: RscButton
@@ -496,8 +458,6 @@ class EMM_EquipmentModulesManager {
 			y = 6.5 * GUI_GRID_H;
 			w = 100 * GUI_GRID_W;
 			h = 191.5 * GUI_GRID_H;
-			//colorBackground[] = {0,0,0,0.5};
-			//onTreeDblClick = "[] call EMM_fnc_addItemFromArsenal";
 			class controls
 			{
 				class Module_Lbl: RscText
@@ -517,7 +477,7 @@ class EMM_EquipmentModulesManager {
 
 					x = 1.7 * GUI_GRID_W;
 					y = 13.2 * GUI_GRID_H;
-					w = 96 * GUI_GRID_W;
+					w = 96.5 * GUI_GRID_W;
 					h = 122 * GUI_GRID_H;
 
 					class controls
@@ -527,7 +487,7 @@ class EMM_EquipmentModulesManager {
 				class Module_tabs : RscControlsGroupNoScrollbars
 				{
 					idc = 3568;
-					x = 1.92 * GUI_GRID_W;
+					x = 1.7 * GUI_GRID_W;
 					y = 135.2 * GUI_GRID_H;
 					w = 50 * GUI_GRID_W;
 					h = 10 * GUI_GRID_H;
@@ -793,6 +753,7 @@ class EMM_EquipmentModulesManager {
 							w = 18.5 * GUI_GRID_W;
 							h = 10 * GUI_GRID_H;
 							tooltip = "Rename module"; //--- ToDo: Localize;
+							onButtonClick = "call EMM_fnc_openRenameMenu";
 						};
 						class Save_module_Btn: Rename_module_Btn
 						{

@@ -18,7 +18,7 @@ private _iterate = {
 		private _value = _tree tvValue _downPath;
 		private _tooltip = _tree tvTooltip _downPath;
 
-		if (_justFolders && (_data in ["EMM_FOLDER", "EMM_CATEGORY"])) then {
+		if (_justFolders && (_data in ["%EMM_FOLDER%", "%EMM_CATEGORY%"])) then {
 			continue;
 		};
 

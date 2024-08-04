@@ -6,7 +6,7 @@ EMM_moduleTabs = []; //0 - inventory, 1 - uniform, 2 - vest, 3 - backpack
 for "_i" from 0 to 3 do {
 	private _tab = _display ctrlCreate ["RscTree", 5110 + _i, _tabsGrp];
 
-	_tab ctrlSetPosition [0, 0, 96, 122];
+	_tab ctrlSetPosition [0, 0, 96.5, 122];
 	_tab ctrlSetBackgroundColor [0, 0, 0, 0.5];
 	_tab ctrlCommit 0;
 

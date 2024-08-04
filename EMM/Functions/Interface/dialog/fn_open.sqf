@@ -28,7 +28,7 @@ EMM_Current_Module = "none";
 EMM_Current_module_path = [-1];
 EMM_attachs_currentWeapon_path = [];
 
-call EMM_fnc_loadModulesTree;
+call EMM_fnc_loadModuleBrowser;
 call EMM_fnc_modulesAmount;
 call EMM_fnc_loadModuleTabs;
 

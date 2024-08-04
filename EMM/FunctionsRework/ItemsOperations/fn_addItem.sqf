@@ -11,7 +11,7 @@ _tree tvExpand _path;
 _path pushBack (_tree tvAdd [_path, _name]);
 _tree tvSetTooltip [_path, _class];
 _tree tvSetPicture [_path, _pic];
-_tree tvSetValue [_path, _amount];
 _tree tvSetData [_path, _func];
+_tree tvSetValue [_path, _amount];
 
 [_tree] call EMM_fnc_checkItemsLabels;

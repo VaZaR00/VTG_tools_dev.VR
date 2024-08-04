@@ -27,14 +27,15 @@ private _comparePath = {
 private _moduleTreeMap = [_module] call EMM_fnc_treeMapper;
 
 private _path = [];
-private _categoryType = "EMM_CATEGORY";
+private _categoryType = "%EMM_CATEGORY%";
 
 if (count EMM_attachs_currentWeapon_path != 0) then {
 	_path = +EMM_attachs_currentWeapon_path;
 	_module tvExpand EMM_attachs_currentWeapon_path;
-	_categoryType = "EMM_ATTACHMENT_CATEGORY";
+	_categoryType = "%EMM_ATTACHMENT_CATEGORY%";
 };
 
+//modify
 private _peekItem = _moduleTreeMap select {
 	private _itemPath = +(_x#0);
 	_itemPath deleteAt (count _itemPath - 1);
@@ -50,12 +51,13 @@ private _peekItem = _moduleTreeMap select {
 
 if (
 	((count _peekItem) != 0)
-) then {
+) exitWith {
 	_path = _peekItem#0#0;
-	[str [1, _path]] call EMM_fnc_message;
 	
 	[_module, _path, _newAmount] call EMM_fnc_modifyItem;
 };
+
+//add
 private _peekCategory = _moduleTreeMap select {
 	(_category in (_x#2)) && 
 	((_x#1) == _categoryType) &&
@@ -74,6 +76,5 @@ if (
 }else{
 	_path = _peekCategory#0#0;
 };
-[str [2, _path, _peekCategory]] call EMM_fnc_message;
 
 [_itemData, _module, _path] call EMM_fnc_addItem;

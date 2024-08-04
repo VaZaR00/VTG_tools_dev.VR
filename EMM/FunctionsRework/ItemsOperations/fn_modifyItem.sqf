@@ -1,5 +1,7 @@
 params["_tree", "_path", ["_amount", 1]];
 
+if ((_tree tvData _path) in ["%EMM_CATEGORY%", "%EMM_ATTACHMENT_CATEGORY%"]) exitWith {};
+
 private _itemName = _tree tvText _path;
 private _itemAmount = _tree tvValue _path;
 private _newAmount = [{_itemAmount + _amount}] call EMM_fnc_getAmount;

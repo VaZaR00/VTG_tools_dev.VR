@@ -12,7 +12,7 @@
 
 
 [
-	[[0],"EMM_CATEGORY","Backpacks",0,""],
+	[[0],"%EMM_CATEGORY%","Backpacks",0,""],
 	[[0,0],"AB","Bergen Backpack (Digital)",1,"B_Bergen_dgtl_F"]
 ]
 [

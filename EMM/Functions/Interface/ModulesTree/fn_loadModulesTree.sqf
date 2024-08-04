@@ -11,7 +11,7 @@ _ctrl ctrlCommit 0;
 
 
 private _main = {
-	private _modules = [false, true, true] call EMM_fnc_getModulesStorage;
+	private _modules = [false, true] call EMM_fnc_getModulesStorage;
 
 	if (count _modules == 0) exitWith {};
 

@@ -7,7 +7,7 @@ _path deleteAt (count _path - 1);
 if (
 	(count _path > 0)
 	&& 
-	((_tree tvData _path) in ["EMM_CATEGORY", "EMM_ATTACHMENT_CATEGORY"])
+	((_tree tvData _path) in ["%EMM_CATEGORY%", "%EMM_ATTACHMENT_CATEGORY%"])
 	&&
 	((_tree tvCount _path) == 0)
 ) then {

@@ -6,16 +6,20 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=513;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
 		nextID=391;
 	};
 	class Camera
 	{
-		pos[]={4544.9766,7.9087248,2302.5068};
-		dir[]={-0.10807013,-0.40183884,-0.90931219};
-		up[]={-0.047424108,0.91571015,-0.39903101};
-		aside[]={-0.99301296,1.4726538e-008,0.11801768};
+		pos[]={4544.6465,7.9087248,2299.8306};
+		dir[]={0.38904673,-0.57167315,-0.72238159};
+		up[]={0.27106887,0.82047969,-0.50332016};
+		aside[]={-0.88043386,2.059096e-008,-0.47416741};
 	};
 };
 binarizationWanted=0;
@@ -122,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
@@ -198,34 +202,6 @@ class Mission
 			id=373;
 		};
 		class Item1
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4546.6421,5.0014391,2279.7183};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=389;
-					type="O_helipilot_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=388;
-		};
-		class Item2
 		{
 			dataType="Object";
 			class PositionInfo
