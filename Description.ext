@@ -4,3 +4,4 @@
 #include "EMM\TargetsMenu.hpp"
 #include "EMM\failedReport.hpp"
 #include "EMM\functions.hpp"
+#include "EMM\nameInput.hpp"

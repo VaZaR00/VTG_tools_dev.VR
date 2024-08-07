@@ -40,9 +40,9 @@ class Cfg3DEN
 				{
 					class Attributes
 					{
-						class EMM_MODULES_STORAGE
+						class EMM_EQUIP_STORAGE
 						{
-							property="EMM_MODULES_STORAGE";
+							property="EMM_EQUIP_STORAGE";
 							defaultValue="";
 						};
 					};

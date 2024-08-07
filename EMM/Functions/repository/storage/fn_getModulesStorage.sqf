@@ -1,9 +1,9 @@
 params[["_keys", false], ["_nameAndType", false], ["_name", ""]];
 
 private _data = if (EMM_DEV_STATE) then {
-	+(uiNamespace getVariable ["EMM_EQUIP_STORAGE", createHashMap]);
+	+(parsingNamespace getVariable ["EMM_EQUIP_STORAGE", createHashMap]);
 } else {
-	private _hashMap = "EMM_attributes" get3DENMissionAttribute "EMM_MODULES_STORAGE";
+	private _hashMap = "EMM_attributes" get3DENMissionAttribute "EMM_EQUIP_STORAGE";
 
 	if !(_hashMap isEqualType "") exitWith {createHashMap}; //return
 	if (count _hashMap == 0) exitWith {createHashMap}; //return
@@ -23,7 +23,7 @@ if (_nameAndType) then {
 }; 
 
 if (_name != "") exitWith {
-	_data getOrDefault [_name, false];
+	_data getOrDefault [_name, []];
 };
 
 _data; //return

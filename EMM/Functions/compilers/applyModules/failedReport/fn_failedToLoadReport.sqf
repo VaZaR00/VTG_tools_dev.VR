@@ -2,7 +2,7 @@ if (count EMM_EQUIP_TEST_FAILED_ARR == 0) exitWith {EMM_EQUIP_TEST_FAILED_ARR=ni
 
 EMM_check_load = true;
 
-["Some items couldn't be added"] call EMM_fnc_message;
+["Some items couldn't be added", 1] call EMM_fnc_message;
 
 private _header = text "List of classes that couldn't be loaded";
 _header setAttributes ["size", "1", "font", "EtelkaMonospacePro"];

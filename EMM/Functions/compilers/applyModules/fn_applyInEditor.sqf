@@ -6,7 +6,7 @@ EMM_EQUIP_TEST_FAILED_ARR = [];
 _data = nil;
 
 if (_one&&(EMM_Current_Module == "none")) exitWith {
-	["No module opened"] call EMM_fnc_message;
+	["No module opened", 1] call EMM_fnc_message;
 };
 
 if (_one) then {
@@ -18,7 +18,7 @@ if (_one) then {
 private _script = [_data] call EMM_fnc_compiler;
 
 if (isNil "_script") exitWith {
-	["No modules!"] call EMM_fnc_message;
+	["No modules!", 1] call EMM_fnc_message;
 };
 
 call compile _script;

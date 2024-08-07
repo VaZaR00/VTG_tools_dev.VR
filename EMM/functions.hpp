@@ -3,156 +3,6 @@
 
 class CfgFunctions
 {
-	class EMM_ui
-	{
-		tag = "EMM";
-		class _dialog 
-		{
-			file = "EMM\Functions\Interface\dialog";
-			class open {};
-			class getUIelements {};
-			class message {};
-			class close {};
-			class unload {};
-			class loadUserSettings {};
-		};
-		// class _ModulesTree
-		// {
-		// 	file = "EMM\Functions\Interface\ModulesTree";
-		// 	class addItemToTree {};
-		// 	class changeModule {};
-		// 	class loadModulesTree {};
-		// 	class setCurrentModule {};
-		// 	class warning {};
-		// };
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////	Menu    ////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		class _Menu_Module
-		{
-			file = "EMM\Functions\Interface\Menu\Module";
-			class createNewModule {};
-			class newModule {};
-			class menuDeleteModule {};
-		};
-		class _Menu_Preset
-		{
-			file = "EMM\Functions\Interface\Menu\Preset";
-			class export {};
-			class import {};
-		};
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////	Arsenal    ////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		// class _Arsenal 
-		// {
-		// 	file = "EMM\Functions\Interface\Arsenal";
-		// 	class loadArsenal {};
-		// 	class loadAddToCombo {};
-		// 	class getAmountInput {};
-		// 	class onSearchKeyUp {};
-		// 	class clearSearch {};
-		// 	class setCompositeModule {};
-		// 	class checkForComposites {};
-		// };
-		// class _Arsenal_addingItem
-		// {
-		// 	file = "EMM\Functions\Interface\Arsenal\addingItem";
-		// 	class addItemFromArsenal {};
-		// 	class peekItem {};
-		// 	class itemDestination {};
-		// 	class getAmountIfStack {};
-		// 	class addItemMiddleware {};
-		// 	class isWeaponAttachment {};
-		// 	class checkIfRandom {};
-		// };
-		// class _Arsenal_weapAttach
-		// {
-		// 	file = "EMM\Functions\Interface\Arsenal\weaponAttachments";
-		// 	class closeWeapAttachMenu {};
-		// 	class editWeapAttach {};
-		// 	class attachLbl {};
-		// 	class checkForAttachLbl {};
-		// 	
-		// };
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////	Inventory    ////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		// class _ModuleInventory
-		// {
-		// 	file = "EMM\Functions\Interface\ModuleInventory";
-		// 	class checkModule {};
-		// 	class checkSaveModule {};
-		// 	class onTreeSelect {};
-		// 	class resetModule {};
-		// };
-		// class _ModuleInventory_ItemOperations
-		// {
-		// 	file = "EMM\Functions\Interface\ModuleInventory\itemOperations";
-		// 	class addItemToModule {};
-		// 	class clearModule {};
-		// 	class deleteModuleItems {};
-		// 	class modifyModuleItem {};
-		// };
-		// class _ModuleInventory_loadItems
-		// {
-		// 	file = "EMM\Functions\Interface\ModuleInventory\loadItems";
-		// 	class importFromArsenal {};
-		// 	class loadModuleData {};
-		// 	class loadModuleItems {};
-		// 	class setModuleItem {};
-		// };
-		class _ModuleInventory_addFuncSelect 
-		{
-			file = "EMM\Functions\Interface\ModuleInventory\AddFuncSelector";
-			class changeAddFunc {};
-			class loadSelector {};
-			class openSelector {};
-			class updateAddFunc {};
-		};
-		class _ModuleInventory_targets
-		{
-			file = "EMM\Functions\Interface\ModuleInventory\targets";
-			class addTargetToCombo {};
-			class getTargetsByClass {};
-			class getTargetSides {};
-			class loadTargetsCombo {};
-			class getTargetOptionName {};
-		};
-		class _ModuleInventory_targets_menu
-		{
-			file = "EMM\Functions\Interface\ModuleInventory\targets\menu";
-			class openEditTargetsMenu {};
-			class loadTargetsMenu {};
-			class onSelectTarget {};
-			class showEditBtn {};
-			class setTargets {};
-		};
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////  Systems  /////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		class _Categories_
-		{
-			file = "EMM\Functions\Categories";
-			class categorySortIndex {};
-			class getCategory {};
-			class iterate {};
-			class checkCategories {};
-		};	
-	};
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////  Other  /////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 	class EMM_equipModule_system
 	{
 		tag = "EMM";
@@ -185,6 +35,7 @@ class CfgFunctions
 			class parser_middleware {};
 			class bi_arsenalExportParser {};
 			class convertFunctionToAttribute {};
+			class importClassesParser {};
 		};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////	Repository    ////////////////////////////////////////////////////////////////////////////////
@@ -197,16 +48,13 @@ class CfgFunctions
 			class deleteModule {};
 			class modulesAmount {};
 		};
-		class repository_moduleItems
-		{
-			file = "EMM\Functions\repository\moduleItems";
-		};
 		class repository_storage
 		{
 			file = "EMM\Functions\repository\storage";
 			class addModulesToStorage {};
 			class getModulesStorage {};
 			class saveItemToStorage {};
+			class updateStorage {};
 			class setStorage {};
 		};
 		class repository_storage_Folders
@@ -214,50 +62,157 @@ class CfgFunctions
 			file = "EMM\Functions\repository\storage\Folders";
 			class getFoldersStorage {};
 			class setFoldersStorage {};
+			class importFolders {};
 		};
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////	DEV REWORK    ////////////////////////////////////////////////////////////////////////////////
+////////////	Global    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+		class _Shared 
+		{
+			file = "EMM\Functions\Shared";
+			class copyClassname {};
+			class loadUserSettings {};
+			class message {};
+			class onSearchKeyUp {};
+			class treeMapper {};
+		};
 		class Dialog
 		{
-			file = "EMM\FunctionsRework\Dialog";
-			class treeMapper {};
+			file = "EMM\Functions\Dialog";
+			class close {};
+			class getUIelements {};
+			class hideStartMsg {};
+			class open {};
 			class setUIEventHandlers {};
-			class onSearchKeyUp {};
+			class unload {};
 		};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////	arsenal    ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		class Arsenal
 		{
-			file = "EMM\FunctionsRework\Arsenal";
+			file = "EMM\Functions\Arsenal";
 			class loadArsenalItems {};
 			class loadArsenalCategories {};
+			class checkForComposites {};
 		};
 		class _Arsenal_AddingItem
 		{
-			file = "EMM\FunctionsRework\Arsenal\AddingItem";
-			class addItemFromArsenal {};
+			file = "EMM\Functions\Arsenal\AddingItem";
+			class addItemToModule {};
+			class getItemFromArsenal {};
 			class getAmount {};
 			class getAmountInput {};
 		};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////	module inventory    ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		class ModuleInventory
 		{
-			file = "EMM\FunctionsRework\ModuleInventory";
+			file = "EMM\Functions\ModuleInventory";
 			class setModuleTab {};
 			class loadModuleTabs {};
 			class onModuleItemDbClick {};
 			class checkItemsLabels {};
+			class checkIfEmpty {};
+			class resetModule {};
 			class parseModuleItemsTree {};
 		};
-		class ItemsOperations
+		class _ModuleInventory_loadItems
 		{
-			file = "EMM\FunctionsRework\ItemsOperations";
+			file = "EMM\Functions\ModuleInventory\loadItems";
+			class importFromArsenal {};
+			class loadModuleData {};
+			class loadModuleItems {};
+			class setModuleItem {};
+			class loadModuleTargets {};
+		};
+		class _ModuleInventory_addFuncSelect 
+		{
+			file = "EMM\Functions\ModuleInventory\AddFuncSelector";
+			class changeAddFunc {};
+			class loadSelector {};
+			class openSelector {};
+			class updateAddFunc {};
+		};
+		class _ModuleInventory_targets
+		{
+			file = "EMM\Functions\ModuleInventory\targets";
+			class addTargetToCombo {};
+			class getTargetsByClass {};
+			class getTargetSides {};
+			class loadTargetsCombo {};
+			class getTargetOptionName {};
+		};
+		class _ModuleInventory_targets_menu
+		{
+			file = "EMM\Functions\ModuleInventory\targets\menu";
+			class openEditTargetsMenu {};
+			class loadTargetsMenu {};
+			class onSelectTarget {};
+			class showEditBtn {};
+			class setTargets {};
+		};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////	browser    ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		class ModuleBrowser
+		{
+			file = "EMM\Functions\ModuleBrowser";
+			class setModulesTreeSize {};
+			class loadModuleBrowser {};
+			class sortItems {};
+			class openModule {};
+			class checkIfModuleExists {};
+		};
+		class ModuleBrowser_getInput
+		{
+			file = "EMM\Functions\ModuleBrowser\Rename";
+			class openRenameMenu {};
+			class getInput {};
+			class rename {};
+			class checkIfNameExists {};
+			class getSortingIndex {};
+		};
+		class ModuleBrowser_ItemsManipulations
+		{
+			file = "EMM\Functions\ModuleBrowser\ItemsManipulations";
+			class addElement {};
+			class deleteElement {};
+			class deleteElementMiddleware {};
+			class dragItem {};
+			class moveItem {};
+		};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////	Other    ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		class Preset_
+		{
+			file = "EMM\Functions\Preset";
+			class export {};
+			class import {};
+			class clearPreset {};
+		};
+		class treeElements
+		{
+			file = "EMM\Functions\treeElements";
 			class addItem {};
 			class deleteItem {};
 			class modifyItem {};
 		};
 		class Items_
 		{
-			file = "EMM\FunctionsRework\Items";
+			file = "EMM\Functions\Items";
 			class findRootConfig {};
 			class getAllItems {};
 			class getClassDisplayName {};
@@ -265,21 +220,7 @@ class CfgFunctions
 			class validateFunction {};
 			class validPic {};
 			class isWeapon {};
-		};
-		class ModuleBrowser
-		{
-			file = "EMM\FunctionsRework\ModuleBrowser";
-			class addElement {};
-			class deleteElement {};
-			class deleteElementMiddleware {};
-			class setModulesTreeSize {};
-			class loadModuleBrowser {};
-		};
-		class ModuleBrowser_Rename
-		{
-			file = "EMM\FunctionsRework\ModuleBrowser\Rename";
-			class openRenameMenu {};
-			class rename {};
+			class getCategory {};
 		};
 	};
 };

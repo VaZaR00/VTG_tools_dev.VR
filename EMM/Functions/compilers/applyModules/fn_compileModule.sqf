@@ -4,7 +4,7 @@ private _targets = (_module#1)#0;
 private _items = (_module#1)#1;
 private _name = _module#0;
 
-if ("comp" in (_targets#0)) exitWith {""};
+if ("%EMM_comp%" in (_targets#0)) exitWith {""};
 
 private _itemsScripts = "";
 

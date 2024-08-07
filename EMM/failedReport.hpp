@@ -46,10 +46,12 @@ class EMM_failedItemsReport{
 				class STRUCTURED_TEXT_report: RscStructuredText
 				{
 					idc = 1500;
+					SizeEx = 8 * GUI_GRID_H;
+					linespacing = 2;
 					x = 0 * GUI_GRID_W;
 					y = 0 * GUI_GRID_H;
-					w = 43 * GUI_GRID_W;
-					h = 1000 * GUI_GRID_H;
+					w = 100 * GUI_GRID_W;
+					h = 100 * GUI_GRID_H;
 					colorBackground[] = {0,0,0,0.5};
 				};
 			};

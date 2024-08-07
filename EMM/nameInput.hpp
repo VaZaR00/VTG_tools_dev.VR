@@ -39,7 +39,7 @@ class EMM_name_input_menu {
 			y = 27.5 * GUI_GRID_H;
 			w = 6.5 * GUI_GRID_W;
 			h = 2 * GUI_GRID_H;
-			onButtonClick = "call EMM_fnc_rename";
+			onButtonClick = "call EMM_fnc_getInput";
 		};
 		class cancel_btn: RscButtonMenuCancel
 		{
@@ -48,7 +48,7 @@ class EMM_name_input_menu {
 			y = 27.5 * GUI_GRID_H;
 			w = 9.5 * GUI_GRID_W;
 			h = 2 * GUI_GRID_H;
-			onButtonClick = "call EMM_fnc_close";
+			onButtonClick = "call EMM_fnc_close; EMM_ENTERED_NAME = false";
 		};
 	};
 };

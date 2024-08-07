@@ -57,7 +57,7 @@ class CfgFunctions
 		class Arsenal_addingItem
 		{
 			file = "Functions\EquipmentControl\Interface\Arsenal\addingItem";
-			class addItemFromArsenal {};
+			class getItemFromArsenal {};
 			class peekItem {};
 			class itemDestination {};
 			class getAmountIfStack {};

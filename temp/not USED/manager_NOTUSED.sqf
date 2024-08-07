@@ -8,7 +8,7 @@
 		// 	w = 96 * GUI_GRID_W;
 		// 	h = 117 * GUI_GRID_H;
 		// 	colorBackground[] = {0,0,0,0.5};
-		// 	onTreeDblClick = "[] call EMM_fnc_addItemFromArsenal";
+		// 	onTreeDblClick = "[] call EMM_fnc_getItemFromArsenal";
 		// };
 		// class WeapAttachClose_Btn_hidden: RscButton
 		// {

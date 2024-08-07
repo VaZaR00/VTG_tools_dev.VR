@@ -107,5 +107,5 @@ private _algorithm = {
 // };
 
 private _sorted = [_data, [], _algorithm] call BIS_fnc_sortBy;
-//[str _sorted] call EMM_fnc_message;
+
 _sorted;

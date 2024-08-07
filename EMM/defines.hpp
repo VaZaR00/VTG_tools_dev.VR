@@ -17,7 +17,7 @@ class RscControlsGroupNoVScrollbars;
 class ScrollBar;
 
 //from advanced developer tools
-class DBUG_MENU_STRIP: ctrlMenuStrip
+class EMM_DBUG_MENU_STRIP: ctrlMenuStrip
 {
 	idc=-99;
 	onSetFocus="call DBUG_fnc_handleFocus";
@@ -62,5 +62,3 @@ class DBUG_MENU_STRIP: ctrlMenuStrip
 	{
 	};
 };
-
-
