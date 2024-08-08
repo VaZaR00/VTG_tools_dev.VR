@@ -1,4 +1,4 @@
-EMM_Arsenal_filter = {true};
+EMM_Arsenal_filter = "true";
 
 private _categories = EMM_itemsCache_scheme apply {_x#0};
 private _combo = EMM_equipUI#19;

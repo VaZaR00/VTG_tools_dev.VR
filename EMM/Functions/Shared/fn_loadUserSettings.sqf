@@ -15,13 +15,13 @@ private _options = [
 	// 	true,
 	// 	"if (!EMM_expandInvChkbox) then {{ (_x#1) tvCollapse [] } forEach EMM_moduleTabs};"
 	// ], 
-	[
-		"EMM_validateFunctions", 
-		"Validate functions", 
-		"Validate items functions",
-		true,
-		""
-	], 
+	// [
+	// 	"EMM_validateFunctions", 
+	// 	"Validate functions", 
+	// 	"Validate items functions",
+	// 	true,
+	// 	""
+	// ],
 	[
 		"EMM_SHOW_TARGETS_CLASSES", 
 		"Targets as class",  
@@ -34,6 +34,13 @@ private _options = [
 			!(_moduleData isEqualTo [])
 		) then {_moduleData#0} else {[]};
 		[_targets] call EMM_fnc_loadModuleTargets;"
+	],
+	[
+		"EMM_MODULE_SAVE_MASSAGE_ON", 
+		'"Save" message', 
+		'Show "Module saved" message',
+		true,
+		""
 	]
 ];
 

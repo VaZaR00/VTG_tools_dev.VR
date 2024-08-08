@@ -22,7 +22,7 @@ private _iterate = {
 			["Rand", [item, item ...]]
 
 		*/
-		EMM_attachs_currentWeapon_path = [];
+		[false] call EMM_fnc_setNestParent;
 
 		private _item = _x;
 		if ((_item#0) == "Rand") then {
@@ -36,9 +36,11 @@ private _iterate = {
 		};
 		private _path = [_item, +_parent, _parentFunc] call _next;
 		
-		EMM_attachs_currentWeapon_path = [];
+		[false] call EMM_fnc_setNestParent;
 
 		if (count _item == 4) then {
+			//[str [_item#0, EMM_nested_currnetParentPath, (_item#3), (_item#1), _path]] call EMM_fnc_message;
+
 			[(_item#3), +_path, (_item#1)] call _iterate;
 		};
 	}forEach _items;
@@ -51,5 +53,5 @@ call EMM_fnc_checkIfEmpty;
 if (isNil "EMM_TEMP_NEW_ACTIVE_TAB") then {EMM_TEMP_NEW_ACTIVE_TAB = 0};
 [EMM_TEMP_NEW_ACTIVE_TAB] call EMM_fnc_setModuleTab;
 
-EMM_attachs_currentWeapon_path = [];
+[false] call EMM_fnc_setNestParent;
 EMM_TEMP_NEW_ACTIVE_TAB = nil;

@@ -24,7 +24,6 @@ call EMM_fnc_loadTargetsCombo; //load combo of modules target units
 
 EMM_Current_Module = "none";
 EMM_Current_module_path = [-1];
-EMM_attachs_currentWeapon_path = [];
 
 call EMM_fnc_loadModuleBrowser;
 call EMM_fnc_modulesAmount;
@@ -33,13 +32,13 @@ call EMM_fnc_loadModuleTabs;
 //4 - load items cache for arsenal
 
 EMM_itemsCache_scheme = [
-	["Rifles", []],          			// 0
-	["Pistols", []],          			// 1
-	["Launchers", []],        			// 2
-	["Uniforms", []],          			// 3
-	["Vests", []],             			// 4
-	["Helmets", []],           			// 5
-	["Backpacks", []],					// 6
+	["Uniforms", []],          			// 0
+	["Vests", []],             			// 1
+	["Helmets", []],           			// 2
+	["Backpacks", []],					// 3
+	["Rifles", []],          			// 4
+	["Pistols", []],          			// 5
+	["Launchers", []],        			// 6
 	["Magazines", []],         			// 7
 	["Binoculars", []],        			// 8
 	["Items", []],             			// 9
@@ -66,6 +65,8 @@ waitUntil {!(isNil '_EMM_itemCache')};
 [_display] call EMM_fnc_setUIEventHandlers;
 
 call EMM_fnc_loadArsenalCategories;
+
+[false] call EMM_fnc_setNestParent;
 
 //[_display] call EMM_fnc_loadModuleInventory;
 

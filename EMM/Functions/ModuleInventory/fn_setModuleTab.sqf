@@ -1,5 +1,9 @@
 params[["_index", 0]];
 
+if !(isNil "EMM_ActiveModuleTab") then {
+	[false] call EMM_fnc_setNestParent;
+};
+
 {
 	(_x#0) ctrlShow false;
 	(_x#1) ctrlSetTextColor [1, 1, 1, 0.5];

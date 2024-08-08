@@ -26,7 +26,10 @@ lnbClear _arsenal;
 	private _pic = _x#2;
 
 	if ((_search != "") && !((toLower _search) in (toLower _name))) then {continue};
-	if !([_class] call EMM_Arsenal_filter) then {continue};
+	if (
+		!(_class call compile EMM_Arsenal_filter) &&
+		(_class != "%NO_ACCESSORY%")
+	) then {continue};
 
 	private _rowIndex = _arsenal lnbAddRow [_name, ""];
 	_arsenal lnbSetTooltip [[_rowIndex, 0], _class];

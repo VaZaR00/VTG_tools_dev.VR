@@ -18,7 +18,7 @@ private _setTabTree = {
 	_treeTab ctrlShow false;
 
 	_treeTab ctrlSetEventHandler ['TreeDblClick', '_this call EMM_fnc_onModuleItemDbClick;'];
-	_treeTab ctrlSetEventHandler ['TreeSelChanged', '_this call EMM_fnc_updateAddFunc;'];
+	_treeTab ctrlSetEventHandler ['TreeSelChanged', '_this call EMM_fnc_updateAddFunc;']; //[(_this#0) tvData (_this#1)] call EMM_fnc_message;'];
 	_treeTab ctrlAddEventHandler  ["KeyUp", {
 		params ["_control", "_key", "_shift", "_ctrl", "_alt"];
 		[_control, _key, _ctrl, 1] call EMM_fnc_copyClassname;

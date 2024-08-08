@@ -15,3 +15,4 @@ if (
 };
 
 [_tree] call EMM_fnc_checkItemsLabels;
+[false] call EMM_fnc_setNestParent;

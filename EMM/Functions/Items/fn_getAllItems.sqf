@@ -22,7 +22,7 @@ private _EMM_itemsCache = +EMM_itemsCache_scheme;
 } forEach ('(getNumber(_x >> "scope") isEqualTo 2) && {[getText(_x >> "picture")] call EMM_fnc_validPic}' configClasses (configFile >> 'CfgMagazines'));
 
 {
-	(_EMM_itemsCache#6#1) pushBackUnique [getText (_x >> 'displayName'), configName _x, getText (_x >> 'picture')];
+	(_EMM_itemsCache#3#1) pushBackUnique [getText (_x >> 'displayName'), configName _x, getText (_x >> 'picture')];
 } forEach ('(getNumber(_x >> "scope") isEqualTo 2) && {(getText(_x >> "vehicleClass") isEqualTo "Backpacks")}' configClasses (configFile >> 'CfgVehicles'));
 
 {
@@ -32,6 +32,11 @@ private _EMM_itemsCache = +EMM_itemsCache_scheme;
 {
 	(_x#1) sort true;
 } forEach _EMM_itemsCache;
+
+(_EMM_itemsCache#11#1) insert [0, [["No Sight", "%NO_ACCESSORY%", ""]]];
+(_EMM_itemsCache#12#1) insert [0, [["No Pointer", "%NO_ACCESSORY%", ""]]];
+(_EMM_itemsCache#13#1) insert [0, [["No Muzzle", "%NO_ACCESSORY%", ""]]];
+(_EMM_itemsCache#14#1) insert [0, [["No Bipod", "%NO_ACCESSORY%", ""]]];
 
 //return
 _EMM_itemsCache

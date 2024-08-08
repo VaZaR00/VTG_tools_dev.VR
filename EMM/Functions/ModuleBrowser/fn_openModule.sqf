@@ -15,4 +15,5 @@ if !(ctrlShown (EMM_equipUI#13)) then {
 
 [_tree tvText _sel] call EMM_fnc_loadModuleData;
 
+[_tree, _sel] call EMM_fnc_setOpenedModuleColor;
 _tree tvSetCurSel _sel;

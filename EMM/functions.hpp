@@ -99,6 +99,7 @@ class CfgFunctions
 			class loadArsenalItems {};
 			class loadArsenalCategories {};
 			class checkForComposites {};
+			class onCategoryChange {};
 		};
 		class _Arsenal_AddingItem
 		{
@@ -118,11 +119,18 @@ class CfgFunctions
 			file = "EMM\Functions\ModuleInventory";
 			class setModuleTab {};
 			class loadModuleTabs {};
-			class onModuleItemDbClick {};
 			class checkItemsLabels {};
 			class checkIfEmpty {};
 			class resetModule {};
 			class parseModuleItemsTree {};
+		};
+		class _ModuleInventory_addFuncSelect 
+		{
+			file = "EMM\Functions\ModuleInventory\AddFuncSelector";
+			class changeAddFunc {};
+			class loadSelector {};
+			class openSelector {};
+			class updateAddFunc {};
 		};
 		class _ModuleInventory_loadItems
 		{
@@ -133,13 +141,11 @@ class CfgFunctions
 			class setModuleItem {};
 			class loadModuleTargets {};
 		};
-		class _ModuleInventory_addFuncSelect 
+		class _ModuleInventory_Nesting
 		{
-			file = "EMM\Functions\ModuleInventory\AddFuncSelector";
-			class changeAddFunc {};
-			class loadSelector {};
-			class openSelector {};
-			class updateAddFunc {};
+			file = "EMM\Functions\ModuleInventory\Nesting";
+			class onModuleItemDbClick {};
+			class setNestParent {};
 		};
 		class _ModuleInventory_targets
 		{
@@ -172,6 +178,7 @@ class CfgFunctions
 			class sortItems {};
 			class openModule {};
 			class checkIfModuleExists {};
+			class setOpenedModuleColor {};
 		};
 		class ModuleBrowser_getInput
 		{

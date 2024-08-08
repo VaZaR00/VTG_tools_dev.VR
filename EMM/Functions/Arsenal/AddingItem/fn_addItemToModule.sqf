@@ -14,7 +14,7 @@ if (_amount > 1) then {
 private _comparePath = {
 	params["_path1"];
 
-	private _path2 = +EMM_attachs_currentWeapon_path;
+	private _path2 = +EMM_nested_currnetParentPath;
 	private _count = count _path2;
 	_path1 resize _count;
 	_path2 isEqualTo _path1;
@@ -25,10 +25,20 @@ private _treeMap = [_tree] call EMM_fnc_treeMapper;
 private _path = [];
 private _categoryType = "%EMM_CATEGORY%";
 
-if (count EMM_attachs_currentWeapon_path != 0) then {
-	_path = +EMM_attachs_currentWeapon_path;
-	_tree tvExpand EMM_attachs_currentWeapon_path;
+if (count EMM_nested_currnetParentPath != 0) then {
+	_path = +EMM_nested_currnetParentPath;
+	_tree tvExpand EMM_nested_currnetParentPath;
 	_categoryType = "%EMM_ATTACHMENT_CATEGORY%";
+	//if (_path > 2) then {
+		private _index = ["Unif", "Vest", "Backpack"] findIf {_x in EMM_nested_currnetParentName};
+		private _newfunc = switch (_index) do {
+			case 0: { "AIU" };
+			case 1: { "AIV" };
+			case 2: { "AIB" };
+			default {_func};
+		};
+		_itemData set [3, _newfunc];
+	//};
 };
 
 //modify
@@ -40,7 +50,7 @@ private _peekItem = _treeMap select {
 	((_x#4) == _class) && 
 	(_categType == _categoryType) &&
 	(
-		(count EMM_attachs_currentWeapon_path == 0) ||
+		(count EMM_nested_currnetParentPath == 0) ||
 		([+(_x#0)] call _comparePath)
 	)
 };
@@ -58,7 +68,7 @@ private _peekCategory = _treeMap select {
 	(_category in (_x#2)) && 
 	((_x#1) == _categoryType) &&
 	(
-		(count EMM_attachs_currentWeapon_path == 0) ||
+		(count EMM_nested_currnetParentPath == 0) ||
 		([+(_x#0)] call _comparePath)
 	)
 };
@@ -67,10 +77,19 @@ if (
 	((count (_peekCategory)) == 0)
 ) then {
 	private _index = _tree tvAdd [_path, _category];
+	private _pathTemp = +_path;
+	_pathTemp deleteAt (-1);
+	// [str [_itemData#0, _tree tvText _pathTemp, _path, EMM_nested_currnetParentPath, _index]] call EMM_fnc_message;
 	_path pushBack _index;
 	_tree tvSetData [_path, _categoryType];
+
+	private _sortIndex = EMM_itemsCache_scheme findIf { _category == (_x#0) };
+	_tree tvSetValue [_path, _sortIndex];
 }else{
 	_path = _peekCategory#0#0;
 };
+private _newPath = [_itemData, _tree, _path] call EMM_fnc_addItem;
 
-[_itemData, _tree, _path] call EMM_fnc_addItem;
+_tree tvSortByValue [[], true];
+
+_newPath

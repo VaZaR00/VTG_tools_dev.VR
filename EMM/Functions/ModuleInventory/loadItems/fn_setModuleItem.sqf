@@ -21,8 +21,8 @@ private _tabIndex = switch (_parentFunc) do {
 };
 private _tab = EMM_moduleTabs#_tabIndex#0;
 
-if (count _parent > 0) then {
-    EMM_attachs_currentWeapon_path = +_parent;
+if (count _parent != 0) then {
+    [true, _tab, _parent] call EMM_fnc_setNestParent;
 };
 
 private _itemData = [_name, _class, _pic, _func, _amount];

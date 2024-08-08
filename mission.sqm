@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=393;
+		nextID=394;
 	};
 	class Camera
 	{
-		pos[]={4542.9985,10.622536,2301.3132};
-		dir[]={0.033213649,-0.47675872,-0.87840652};
-		up[]={0.018013969,0.87903416,-0.47641826};
-		aside[]={-0.99928588,-1.8626451e-009,-0.037784249};
+		pos[]={4544.9639,7.3589725,2296.6084};
+		dir[]={0.11632562,-0.43928933,-0.89079183};
+		up[]={0.056882937,0.89834201,-0.43559504};
+		aside[]={-0.99159026,-1.1883822e-007,-0.12948851};
 	};
 };
 binarizationWanted=0;
@@ -232,8 +232,8 @@ class Mission
 				position[]={0,5,0};
 			};
 			name="EQUIP_MODULES_COMPILED_CODE";
-			init="if (!isServer) exitWith {};private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits;{_x call compile (selectRandom [""_x forceAddUniform """"U_C_IDAP_Man_Tee_F"""";"",""_x forceAddUniform """"U_C_IDAP_Man_shorts_F"""";""]);}forEach (allUnits);{_x call compile (selectRandom [""_x addWeapon """"SMG_03_TR_black"""";"",""_x addWeapon """"SMG_03_TR_hex"""";""]);}forEach (allUnits);{_x call compile (selectRandom [""_x linkItem """"Laserdesignator_01_khk_F"""";"",""_x linkItem """"Laserdesignator_02"""";"",""_x linkItem """"Rangefinder"""";""]);}forEach (allUnits);";
-			id=392;
+			init="if (!isServer) exitWith {};private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits;{_x forceAddUniform ""U_C_IDAP_Man_casual_F"";_x addVest ""V_PlateCarrier1_tna_F"";_x addWeapon ""arifle_AK12_arid_F"";_x addWeaponItem [""arifle_AK12_arid_F"", ""75Rnd_762x39_Mag_Tracer_F"", true];for ""_i"" from 1 to 4 do {if (_x canAddItemToVest ""75Rnd_762x39_Mag_F"") then {" \n "			_x addItemToVest ""75Rnd_762x39_Mag_F"";" \n "		} else {" \n "			_x addMagazine ""75Rnd_762x39_Mag_F"";" \n "		};};}forEach (allUnits);";
+			id=393;
 			type="Logic";
 		};
 	};

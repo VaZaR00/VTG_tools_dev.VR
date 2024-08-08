@@ -1,5 +1,7 @@
 params["_tree"];
 
+private _nestingCategories = ["unif", "vest", "backpack"];
+
 private _treeMap = [_tree] call EMM_fnc_treeMapper;
 
 {
@@ -16,6 +18,20 @@ private _treeMap = [_tree] call EMM_fnc_treeMapper;
 			(_data != "%EMM_ATTACHMENT_CATEGORY%")
 		) then {continue};
 		
+		private _tempPath = +_path;
+		_tempPath pushBack 0;
+		private _class = _tree tvTooltip _tempPath;
+		if ((_data == "%EMM_ATTACHMENT_CATEGORY%") &&
+			(((_class call BIS_fnc_itemType)#0) == "Magazine")
+		) then {continue};
+
+		if (count _tempPath > 3) then {
+			_tempPath resize (count _tempPath - 3);
+			private _parentName = _tree tvText _tempPath;
+			private _category = _nestingCategories findIf {_x in (toLower _parentName)};
+			if (_category != -1) then { continue };
+		};
+
 		if (_count > 1) then {
 			if (" (Random)" in _text) then {continue};
 			_tree tvSetText [_path, format["%1 (Random)", _text]];

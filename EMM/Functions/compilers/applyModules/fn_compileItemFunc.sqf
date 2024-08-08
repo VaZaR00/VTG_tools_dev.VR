@@ -27,14 +27,17 @@ if (_class == "Rand") exitWith {
 	_data deleteAt 0;
 	private _randArr = [];
 	{
+		private _weight = _x#2;
+		_x set [2, 1];
 		private _func = [_x, _moduleName, _dest] call EMM_fnc_compileItemFunc;
 		if (count _func != 0) then {
 			_randArr pushBack _func;
+			_randArr pushBack _weight;
 		};
 	} forEach _data;
 
 	if (count _randArr != 0) then {
-		_text = format["_x call compile (selectRandom %1);", _randArr];
+		_text = format["_x call compile (selectRandomWeighted %1);", _randArr];
 	};
 	_text //return
 };

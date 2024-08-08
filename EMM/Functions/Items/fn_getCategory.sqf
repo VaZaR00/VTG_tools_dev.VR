@@ -1,11 +1,11 @@
 /*
-_rifles     0
-_pistols    1
-_launchers  2
-_uniforms   3
-_vests      4
-_helmets    5
-_backpacks  6
+_uniforms   0
+_vests      1
+_helmets    2
+_backpacks  3
+_rifles     4
+_pistols    5
+_launchers  6
 _magazines  7
 _binoculars 8
 _items      9
@@ -36,9 +36,9 @@ switch (_type) do {
     case "AW": {
         private _baseclass = [configFile >> 'CfgWeapons' >> _class, true] call BIS_fnc_returnParents;
         switch (_baseclass select -2) do {
-            case "RifleCore": { 0 /*_rifles*/ };
-            case "PistolCore": { 1 /*_pistols*/ };
-            case "LauncherCore": { 2 /*_launchers*/ };
+            case "RifleCore": { 4 /*_rifles*/ };
+            case "PistolCore": { 5 /*_pistols*/ };
+            case "LauncherCore": { 6 /*_launchers*/ };
             default { 9 /*_items*/ };
         };
     };
@@ -67,11 +67,11 @@ switch (_type) do {
             default { 9 /*_items*/ };
         };
     };
-    case "FAU": { 3 /*_uniforms*/ };
-    case "AU": { 3 /*_uniforms*/ };
-    case "AV": { 4 /*_vests*/ };
-    case "AH": { 5 /*_helmets*/ };
-    case "AB": { 6 /*_backpacks*/ };
+    case "FAU": { 0 /*_uniforms*/ };
+    case "AU": { 0 /*_uniforms*/ };
+    case "AV": { 1 /*_vests*/ };
+    case "AH": { 2 /*_helmets*/ };
+    case "AB": { 3 /*_backpacks*/ };
     case "AG": { 15 /*_goggles*/ };
     case "none": { 17 /*_modules*/ };
     default { 9 /*_items*/ };

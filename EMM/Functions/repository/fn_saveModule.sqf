@@ -11,4 +11,7 @@ private _moduleItemsList = call EMM_fnc_parseModuleItemsTree;
 [EMM_Current_Module, _type, _moduleItemsList] call EMM_fnc_saveItemToStorage;
 
 call EMM_fnc_checkForComposites;
-//["Modules data saved"] call EMM_fnc_message;
+
+if (EMM_MODULE_SAVE_MASSAGE_ON) then {
+	["Modules data saved"] call EMM_fnc_message;
+};

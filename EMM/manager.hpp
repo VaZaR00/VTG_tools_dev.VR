@@ -231,7 +231,7 @@ class EMM_EquipmentModulesManager {
 				};
 				class _Clear
 				{
-					text="Clear";
+					text="Clear All Data";
 					action = "[] call EMM_fnc_clearPreset";
 					tooltip = "Export ALL modules";
 					picture = "a3\3den\data\displays\display3denmsgbox\picture_ca.paa";
@@ -371,7 +371,7 @@ class EMM_EquipmentModulesManager {
 							h = 8.5 * GUI_GRID_H;
 							tooltip = "Choose arsenal category";
 
-							onLBSelChanged = "EMM_Arsenal_filter = {true}; EMM_attachs_currentWeapon_path = []; [] call EMM_fnc_loadArsenalItems";
+							onLBSelChanged = "_this call EMM_fnc_onCategoryChange";
 						};
 						class hint_lbl: category_Lbl
 						{
@@ -567,7 +567,7 @@ class EMM_EquipmentModulesManager {
 							idc = 3331;
 							x = 11 * GUI_GRID_W;
 							text = "\a3\Ui_F_Curator\Data\RscCommon\RscAttributeInventory\filter_8_ca.paa";
-							tooltip = "Uniform";
+							tooltip = "Items in Uniform";
 
 							onButtonClick = "[1] call EMM_fnc_setModuleTab";
 						};
@@ -581,7 +581,7 @@ class EMM_EquipmentModulesManager {
 							idc = 3332;
 							x = 22 * GUI_GRID_W;
 							text = "\a3\Ui_F_Curator\Data\RscCommon\RscAttributeInventory\filter_9_ca.paa";
-							tooltip = "Vest";
+							tooltip = "Items in Vest";
 
 							onButtonClick = "[2] call EMM_fnc_setModuleTab";
 						};
@@ -595,7 +595,7 @@ class EMM_EquipmentModulesManager {
 							idc = 3333;
 							x = 33 * GUI_GRID_W;
 							text = "\a3\Ui_F_Curator\Data\RscCommon\RscAttributeInventory\filter_10_ca.paa";
-							tooltip = "Backpack";
+							tooltip = "Items in Backpack";
 
 							onButtonClick = "[3] call EMM_fnc_setModuleTab";
 						};
@@ -611,7 +611,7 @@ class EMM_EquipmentModulesManager {
 					w = 14 * GUI_GRID_W;
 					h = 8 * GUI_GRID_H;
 					tooltip = "Clear All Inventory"; //--- ToDo: Localize;
-					onButtonClick = "tvClear (EMM_ActiveModuleTab#1)";
+					onButtonClick = "tvClear (EMM_ActiveModuleTab#1); [false] call EMM_fnc_setNestParent;";
 				};
 				class Items_operations_grp : RscControlsGroupNoScrollbars
 				{

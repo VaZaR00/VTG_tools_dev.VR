@@ -9,18 +9,19 @@ private _name = _arsenal lnbText [_row, 0];
 private _class = _arsenal lnbData [_row, 0];
 private _pic = _arsenal lnbPicture [_row, 1];
 private _func = [_class] call EMM_fnc_getItemTypeFunc;
-private _amount = [] call EMM_fnc_getAmount;
+private _amount = [] call EMM_fnc_getAmountInput;
 
-switch (EMM_ActiveModuleTab#0) do {
-	case 1: { _func = "AIU" };
-	case 2: { _func = "AIV" };
-	case 3: { _func = "AIB" };
-};
 if (
-	!(EMM_attachs_currentWeapon_path isEqualTo []) &&
+	!(EMM_nested_currnetParentPath isEqualTo []) &&
 	(_func in ["APWI", "AM"])
 ) then {
 	_func = "AWI";
+} else {
+	switch (EMM_ActiveModuleTab#0) do {
+		case 1: { _func = "AIU" };
+		case 2: { _func = "AIV" };
+		case 3: { _func = "AIB" };
+	};
 };
 
 if (
