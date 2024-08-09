@@ -4,3 +4,5 @@
 
 EMM_Current_Module = "none";
 EMM_moduleTargets = nil;
+
+(EMM_equipUI#7) lbSetCurSel 0;

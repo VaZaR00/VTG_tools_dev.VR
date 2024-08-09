@@ -41,28 +41,28 @@ class CfgFunctions
 ////////////	Repository    ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		class repository
+		class repository_Folders
 		{
-			file = "EMM\Functions\repository";
-			class saveModule {};
-			class deleteModule {};
-			class modulesAmount {};
+			file = "EMM\Functions\repository\Folders";
+			class getFoldersStorage {};
+			class importFolders {};
+			class setFoldersStorage {};
 		};
-		class repository_storage
+		class repository_Modules
 		{
-			file = "EMM\Functions\repository\storage";
+			file = "EMM\Functions\repository\Modules";
 			class addModulesToStorage {};
+			class deleteModule {};
 			class getModulesStorage {};
-			class saveItemToStorage {};
-			class updateStorage {};
+			class modulesAmount {};
+			class saveModule {};
+			class setModuleToStorage {};
 			class setStorage {};
 		};
-		class repository_storage_Folders
+		class repository_Presets
 		{
-			file = "EMM\Functions\repository\storage\Folders";
-			class getFoldersStorage {};
-			class setFoldersStorage {};
-			class importFolders {};
+			file = "EMM\Functions\repository\Presets";
+			class ss {};
 		};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -77,6 +77,7 @@ class CfgFunctions
 			class message {};
 			class onSearchKeyUp {};
 			class treeMapper {};
+			class clearSearch {};
 		};
 		class Dialog
 		{
@@ -177,7 +178,9 @@ class CfgFunctions
 			class loadModuleBrowser {};
 			class sortItems {};
 			class openModule {};
-			class checkIfModuleExists {};
+			class checkIfModuleNameExists {};
+			class updateBrowser {};
+			class setCurrentModule {};
 			class setOpenedModuleColor {};
 		};
 		class ModuleBrowser_getInput

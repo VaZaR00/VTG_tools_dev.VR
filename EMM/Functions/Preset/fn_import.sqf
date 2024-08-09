@@ -5,11 +5,11 @@ if !("EMM_EXPORT" in _clipboard) exitWith {
 };
 
 private _data = call compile _clipboard;
-private _folders = _data#0;
-private _modules = _data#1;
+private _folders = _data#1;
+private _modules = _data#2;
 
-private _tagPos = _modules findIf {"EMM_EXPORT" in _x};
-_modules deleteAt _tagPos;
+// private _tagPos = _modules findIf {"EMM_EXPORT" in _x};
+// _modules deleteAt _tagPos;
 
 
 if (_folders isEqualTo []) then {
@@ -17,18 +17,18 @@ if (_folders isEqualTo []) then {
 };
 
 private _setCopyName = {
-	params["_data", "_pos"];
+	params["_itemData", "_pos"];
 	
 	private _storage = [false, false] call EMM_fnc_getModulesStorage;
 	if (
 		(_storage isEqualTo createHashMap) &&
 		(_storage isEqualTo [])
 	) exitWith {
-		_data
+		_itemData
 	};
 
-	private _startName = (_data#_pos);
-	if !([_startName] call EMM_fnc_checkIfModuleExists) exitWith {_data};
+	private _startName = (_itemData#_pos);
+	if !([_startName] call EMM_fnc_checkIfModuleNameExists) exitWith {_itemData};
 
 	private _index = 0;
 	while {_index < 100} do {
@@ -36,12 +36,12 @@ private _setCopyName = {
 		private _name = _startName + _add;
 
 		_index = _index + 1;
-		_data set [_pos, _name];
+		_itemData set [_pos, _name];
 
-		if !([_name] call EMM_fnc_checkIfModuleExists) exitWith {_data};
+		if !([_name] call EMM_fnc_checkIfModuleNameExists) exitWith {_itemData};
 	};
 
-	_data
+	_itemData
 };
 
 _modules = _modules apply {
@@ -55,8 +55,8 @@ _folders = _folders apply {
 [_modules] call EMM_fnc_addModulesToStorage;
 [_folders] call EMM_fnc_importFolders;
 
-[] call EMM_fnc_loadModulesTree;
-[] call EMM_fnc_sortItems;
+[] call EMM_fnc_updateBrowser;
+[] call EMM_fnc_loadModuleBrowser;
 
 EMM_EQUIP_TEST_FAILED_ARR = [];
 {
@@ -67,7 +67,7 @@ private _msg = if (EMM_EQUIP_TEST_FAILED_ARR isEqualTo []) then {
 	["Imported successfully!", 0]
 } else {["Imported with some problems", 1]};
 
-call EMM_fnc_updateStorage;
+//call EMM_fnc_updateStorage;
 
 _msg call EMM_fnc_message;
 

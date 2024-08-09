@@ -1,5 +1,7 @@
+if (EMM_var_BLOCK_BROWSER_OPERATIONS) exitWith {["Operation cannot be performed while Search active!", 1] call EMM_fnc_message};
+
 private _tree = EMM_equipUI#5;
-private _path = tvCurSel _tree;
+params[["_path", tvCurSel _tree]];
 
 if (_path isEqualTo []) exitWith {
 	["Nothing selected!", 1] call EMM_fnc_message;
@@ -23,14 +25,14 @@ if (_name == _prevName) exitWith {};
 _tree tvSetText [_path, _name];
 _tree tvSetTooltip [_path, _name];
 
-[] call {
-	[_name] call EMM_fnc_setModulesTreeSize;
-
-	if (EMM_Current_Module != "none") then {
-		EMM_Current_Module = _name;
-		call EMM_fnc_saveModule;
-		call EMM_fnc_loadModuleData;
-	};
-
-	[] call EMM_fnc_sortItems;
+if (EMM_Current_Module == _prevName) then {
+	EMM_Current_Module = _name;
 };
+
+call EMM_fnc_updateBrowser;
+
+// if (EMM_Current_Module != "none") then {
+// 	EMM_Current_Module = _name;
+// 	call EMM_fnc_saveModule;
+// 	call EMM_fnc_loadModuleData;
+// };

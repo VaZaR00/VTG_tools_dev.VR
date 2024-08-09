@@ -1,5 +1,5 @@
-private _treeMap = [EMM_equipUI#5] call EMM_fnc_treeMapper;
-
+//private _treeMap = [EMM_equipUI#5] call EMM_fnc_treeMapper;
+params["_treeMap"];
 // private _algorythm = {
 // 	params["_item"];
 // 	_sum = "";

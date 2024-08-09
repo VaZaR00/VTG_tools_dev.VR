@@ -8,7 +8,7 @@ if ((_type#0) == "edit") then {
 	_type = EMM_moduleTargets;
 };
 private _moduleItemsList = call EMM_fnc_parseModuleItemsTree;
-[EMM_Current_Module, _type, _moduleItemsList] call EMM_fnc_saveItemToStorage;
+[EMM_Current_Module, _type, _moduleItemsList] call EMM_fnc_setModuleToStorage;
 
 call EMM_fnc_checkForComposites;
 

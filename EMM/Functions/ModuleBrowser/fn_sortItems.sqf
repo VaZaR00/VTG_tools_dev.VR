@@ -25,4 +25,4 @@ private _sorted = [_treeMap, [], { _x#2 }] call BIS_fnc_sortBy;
 
 _tree tvSortByValueAll [[], true];
 
-call EMM_fnc_updateStorage;
+// call EMM_fnc_updateStorage;

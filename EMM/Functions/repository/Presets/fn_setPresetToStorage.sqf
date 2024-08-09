@@ -1,0 +1,1 @@
+//[_name, [_folders, _modulesData]] - hashMap

@@ -22,7 +22,7 @@ private _iterate = {
 			["Rand", [item, item ...]]
 
 		*/
-		[false] call EMM_fnc_setNestParent;
+		//[false] call EMM_fnc_setNestParent;
 
 		private _item = _x;
 		if ((_item#0) == "Rand") then {
@@ -36,7 +36,7 @@ private _iterate = {
 		};
 		private _path = [_item, +_parent, _parentFunc] call _next;
 		
-		[false] call EMM_fnc_setNestParent;
+		//[false] call EMM_fnc_setNestParent;
 
 		if (count _item == 4) then {
 			//[str [_item#0, EMM_nested_currnetParentPath, (_item#3), (_item#1), _path]] call EMM_fnc_message;

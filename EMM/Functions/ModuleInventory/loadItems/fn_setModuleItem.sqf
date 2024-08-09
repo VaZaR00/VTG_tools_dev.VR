@@ -19,9 +19,24 @@ private _tabIndex = switch (_parentFunc) do {
     case "AIB": {3};
     default {0};
 };
+
 private _tab = EMM_moduleTabs#_tabIndex#0;
 
 if (count _parent != 0) then {
+    if ((_tab tvCount []) == 0) then {
+        private _parentCount = count _parent;
+        private _num = _parentCount - (_parentCount - 1);
+        private _parentCopy = +_parent;
+        _parentCopy resize (count _parentCopy - _num);
+        private _firstParentFunc = _tab tvData _parentCopy;
+        _tabIndex = switch (_firstParentFunc) do {
+            case "AIU": {1};
+            case "AIV": {2};
+            case "AIB": {3};
+            default {0};
+        };
+        _tab = EMM_moduleTabs#_tabIndex#0;
+    };
     [true, _tab, _parent] call EMM_fnc_setNestParent;
 };
 

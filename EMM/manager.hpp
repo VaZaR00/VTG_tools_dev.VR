@@ -16,7 +16,7 @@ class EMM_EquipmentModulesManager {
 	enableDisplay = 1;
 	onLoad = "uiNamespace setVariable ['EMM_EquipmentModulesManager', _this select 0]";
 	onUnload = "call EMM_fnc_unload";
-	//onMouseMoving = "[str ((tvCurSel (EMM_equipUI#5))isEqualTo [])] call EMM_fnc_message;";
+	//onMouseMoving = "[str EMM_nested_currnetParentPath] call EMM_fnc_message;"; //str ((tvCurSel (EMM_equipUI#5))isEqualTo [])
 	class controlsBackground {		
 		class BackgroundDisableTiles : ctrlStaticBackgroundDisableTiles {};
 		class BackgroundDisable : ctrlStaticBackgroundDisable {};
@@ -110,15 +110,15 @@ class EMM_EquipmentModulesManager {
 					tooltip = "Search";
 					sizeEx = 6.7 * GUI_GRID_H;
 				};
-				class Search_folder_btn : Add_folder_btn
+				class Clear_Search_folder_btn : Add_folder_btn
 				{
 					idc = 9569;
 					x = 50 * GUI_GRID_W;
 					colorBackground[] = {0,0,0,0.5};
-					text = "\a3\3DEN\Data\Displays\Display3DEN\search_start_ca.paa";
-					tooltip = "Search";
+					text = "a3\3den\data\displays\display3den\panelleft\entitylist_delete_ca.paa";
+					tooltip = "Clear search";
 
-					onButtonClick = "call EMM_fnc_loadModulesTree";
+					onButtonClick = "[0] call EMM_fnc_clearSearch;"; //[] call EMM_fnc_loadModuleBrowser";
 				};
 
 				class Modules_tree_grp: RscControlsGroup
@@ -168,7 +168,7 @@ class EMM_EquipmentModulesManager {
 
 			x = -32 * GUI_GRID_W;
 			y = 8 * GUI_GRID_H;
-			w = 50 * GUI_GRID_W;
+			w = 70 * GUI_GRID_W;
 			h = 8 * GUI_GRID_H;
 
 			class items
@@ -347,7 +347,7 @@ class EMM_EquipmentModulesManager {
 					x = 3 * GUI_GRID_W;
 					y = 136.5 * GUI_GRID_H;
 					w = 96 * GUI_GRID_W;
-					h = 22 * GUI_GRID_H;
+					h = 11 * GUI_GRID_H;
 					class controls
 					{
 						class category_Lbl: RscText
@@ -431,7 +431,7 @@ class EMM_EquipmentModulesManager {
 							w = 15 * GUI_GRID_W;
 							h = 12 * GUI_GRID_H;
 							tooltip = "Clear Search"; //--- ToDo: Localize;
-							onButtonClick = "[] call EMM_fnc_clearSearch";
+							onButtonClick = "[1] call EMM_fnc_clearSearch;";
 						};
 					};
 				};
@@ -618,8 +618,8 @@ class EMM_EquipmentModulesManager {
 					idc = 4563;
 					x = 1 * GUI_GRID_W;
 					y = 149 * GUI_GRID_H;
-					w = 96 * GUI_GRID_W;
-					h = 15 * GUI_GRID_H;
+					w = 60 * GUI_GRID_W;
+					h = 10 * GUI_GRID_H;
 					class controls
 					{
 						class Item_module_Lbl: RscText
@@ -785,42 +785,39 @@ class EMM_EquipmentModulesManager {
 					h = 32.2 * GUI_GRID_H;
 					class controls
 					{
-						// class Rename_module_Btn: RscButton
-						// {
-						// 	idc = 3652;
-
-						// 	text = "Rename"; //--- ToDo: Localize;
-						// 	x = 0 * GUI_GRID_W;
-						// 	y = 0 * GUI_GRID_H;
-						// 	w = 18.5 * GUI_GRID_W;
-						// 	h = 10 * GUI_GRID_H;
-						// 	tooltip = "Rename module"; //--- ToDo: Localize;
-						// 	onButtonClick = "call EMM_fnc_openRenameMenu";
-						// };
 						class Save_module_Btn: RscButton
 						{
 							idc = 3653;
 
 							text = "Save"; //--- ToDo: Localize;
 							x = 0 * GUI_GRID_W;
-							y = 22 * GUI_GRID_H;
+							y = 0 * GUI_GRID_H;
 							w = 18.5 * GUI_GRID_W;
 							h = 10 * GUI_GRID_H;
 							tooltip = "Save module"; //--- ToDo: Localize;
 
 							onButtonClick = "call EMM_fnc_saveModule";
 						};
-						// class Delete_module_Btn: Save_module_Btn
-						// {
-						// 	idc = 3654;
+						class Rename_module_Btn: Save_module_Btn
+						{
+							idc = 3652;
 
-						// 	text = "Delete"; //--- ToDo: Localize;
-						// 	x = 0 * GUI_GRID_W;
-						// 	y = 22 * GUI_GRID_H;
-						// 	tooltip = "Delete module"; //--- ToDo: Localize;
+							text = "Rename"; //--- ToDo: Localize;
+							y = 11 * GUI_GRID_H;
+							tooltip = "Rename module"; //--- ToDo: Localize;
+							onButtonClick = "[EMM_Current_Module_path] spawn EMM_fnc_rename";
+						};
+						class Delete_module_Btn: Save_module_Btn
+						{
+							idc = 3654;
 
-						// 	onButtonClick = "[] call EMM_fnc_deleteModule; [] call EMM_fnc_updateStorage";
-						// };
+							text = "Delete"; //--- ToDo: Localize;
+							x = 0 * GUI_GRID_W;
+							y = 22 * GUI_GRID_H;
+							tooltip = "Delete module"; //--- ToDo: Localize;
+
+							onButtonClick = "[EMM_Current_Module_path] call EMM_fnc_deleteElementMiddleware";
+						};
 					};
 				};
 			};

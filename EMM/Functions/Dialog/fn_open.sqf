@@ -23,11 +23,12 @@ call EMM_fnc_loadTargetsCombo; //load combo of modules target units
 //3 - load modules
 
 EMM_Current_Module = "none";
-EMM_Current_module_path = [-1];
+EMM_Current_module_path = [];
+EMM_var_BLOCK_BROWSER_OPERATIONS = false;
 
-call EMM_fnc_loadModuleBrowser;
 call EMM_fnc_modulesAmount;
 call EMM_fnc_loadModuleTabs;
+[] call EMM_fnc_loadModuleBrowser;
 
 //4 - load items cache for arsenal
 
@@ -69,13 +70,5 @@ call EMM_fnc_loadArsenalCategories;
 [false] call EMM_fnc_setNestParent;
 
 //[_display] call EMM_fnc_loadModuleInventory;
-
-(EMM_equipUI#0) ctrlAddEventHandler  ["KeyUp", {
-	params ["_control", "_key", "_shift", "_ctrl", "_alt"];
-
-	[_control, _key, _ctrl, 0] call EMM_fnc_copyClassname;
-
-	false
-}];
 
 //(_display displayCtrl 1501) ctrlSetEventHandler ['onTreeSelChanged', '_this call EMM_fnc_treeSelChanged'];

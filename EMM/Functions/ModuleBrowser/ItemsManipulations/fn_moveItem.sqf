@@ -1,10 +1,12 @@
+if (EMM_var_BLOCK_BROWSER_OPERATIONS) exitWith {["Operation cannot be performed while Search active!", 1] call EMM_fnc_message};
+
 params["_tree", "_startPath", "_destinationPath"];
 
 if ((_tree tvData _destinationPath) in ["%EMM_MODULE%"]) exitWith {
 	["Can't move item there!", 1] call EMM_fnc_message;
 };
 
-private _currentModule = "";
+// private _currentModule = "";
 
 private _treeMap = [EMM_equipUI#5] call EMM_fnc_treeMapper;
 private _nested = _treeMap select {
@@ -14,9 +16,9 @@ private _nested = _treeMap select {
 };
 
 _nested = _nested apply {
-	if ((_x#0) isEqualTo EMM_Current_Module_path) then {
-		_currentModule = (_x#2);
-	};
+	// if ((_x#0) isEqualTo EMM_Current_Module_path) then {
+	// 	_currentModule = (_x#2);
+	// };
 	(_x#0) deleteAt (count (_x#0) - 1);
 	(_x#0) deleteRange [0, count _startPath];
 	_x
@@ -48,10 +50,6 @@ _nested = _nested apply {
 		_path
 	] call EMM_fnc_addItem;
 
-	if ((_x#2) == _currentModule) then {
-		[_tree, _newPath] call EMM_fnc_setOpenedModuleColor; 
-	};
-
 	if (_forEachIndex == 0) then {
 		_tree tvSetCurSel _newPath;
 		_destinationPath = _newPath;
@@ -60,4 +58,4 @@ _nested = _nested apply {
 
 [_tree, _startPath] call EMM_fnc_deleteItem;
 
-[] call EMM_fnc_sortItems;
+call EMM_fnc_updateBrowser;

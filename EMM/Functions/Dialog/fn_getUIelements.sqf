@@ -2,7 +2,7 @@ private _display = uiNamespace getVariable ['EMM_EquipmentModulesManager', displ
 //private _target = _display getVariable ['EIM_Target', objNull];
 private _arsenal = _display displayCtrl 1501;              //1
 private _inventoryTree = _display displayCtrl 1500;        //2
-private _searchInput = _display displayCtrl 1598;          //3
+private _arsSearchInput = _display displayCtrl 1598;       //3
 private _amountInput = _display displayCtrl 1401;          //4
 private _addToCombo = _display displayCtrl 2100;           //5
 private _modulesTree = _display displayCtrl 1778;          //6
@@ -27,7 +27,7 @@ private _arsenalCategory = _display displayCtrl 6355;
 [
     _arsenal,               //0  -  ars
     _inventoryTree,         //1  -  inv
-    _searchInput,           //2  -  search
+    _arsSearchInput,        //2  -  search
     _amountInput,           //3  -  amount
     _addToCombo,            //4  -  addTo
     _modulesTree,           //5  -  modlTree

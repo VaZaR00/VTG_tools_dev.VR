@@ -1,3 +1,5 @@
+if (EMM_var_BLOCK_BROWSER_OPERATIONS) exitWith {["Operation cannot be performed while Search active!", 1] call EMM_fnc_message};
+
 params["_el"];
 
 private _tree = EMM_equipUI#5;
@@ -42,11 +44,8 @@ if (_name isEqualTo false) exitWith {};
 
 private _path = [[_name, _name, _image, _type, 0], _tree, _path] call EMM_fnc_addItem;
 
-[_name] call EMM_fnc_setModulesTreeSize;
-
 if (_el == "Module") then {
-	[_tree, _path] call EMM_fnc_openModule;
-	call EMM_fnc_saveModule;
+	EMM_Current_Module = _name;
 };
 
-[] call EMM_fnc_sortItems;
+call EMM_fnc_updateBrowser;

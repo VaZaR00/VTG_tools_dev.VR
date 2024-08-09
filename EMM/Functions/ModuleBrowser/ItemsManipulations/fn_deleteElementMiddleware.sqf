@@ -1,5 +1,7 @@
+if (EMM_var_BLOCK_BROWSER_OPERATIONS) exitWith {["Operation cannot be performed while Search active!", 1] call EMM_fnc_message};
+
 private _tree = EMM_equipUI#5;
-private _path = tvCurSel _tree;
+params[["_path", tvCurSel _tree]];
 private _type = _tree tvData _path;
 
 if (_path isEqualTo []) exitWith {
@@ -14,19 +16,12 @@ switch (_type) do {
 	case "%EMM_FOLDER%": {
 		_text = "Are you sure you want to delete the folder? It will delete all modules in it!";
 	    _title = "Delete folder";
-		EMM_delete_secondFunc = {
-			if (call EMM_fnc_checkIfModuleExists) then {
-				call EMM_fnc_updateStorage;
-				call EMM_fnc_resetModule;
-				[nil, false] call EMM_fnc_hideStartMsg;
-			};
-		};
 	};
 	case "%EMM_MODULE%": {
 		_text = "Are you sure you want to delete the Module?";
 	    _title = "Delete module";
-		private _name = _tree tvText _path;
-		EMM_delete_secondFunc = {[_name] call EMM_fnc_deleteModule};
+		EMM_var_TEMP_MODULE_TO_DELETE = _tree tvText _path;
+		EMM_delete_secondFunc = {[EMM_var_TEMP_MODULE_TO_DELETE] call EMM_fnc_deleteModule; EMM_var_TEMP_MODULE_TO_DELETE = nil;};
 	};
 };
 
@@ -35,7 +30,7 @@ switch (_type) do {
 	_title,
 	[
 		"Yes",
-		{call EMM_fnc_deleteElement; call EMM_delete_secondFunc; EMM_delete_secondFunc = nil;}
+		{call EMM_fnc_deleteElement; call EMM_delete_secondFunc; call EMM_fnc_updateBrowser; } // call EMM_delete_secondFunc; EMM_delete_secondFunc = nil;}
 	],
 	[
 		"No",
