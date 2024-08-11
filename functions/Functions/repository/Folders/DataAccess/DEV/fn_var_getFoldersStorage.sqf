@@ -1,0 +1,1 @@
++(parsingNamespace getVariable ["EMM_BROWSER_STORAGE", nil]);

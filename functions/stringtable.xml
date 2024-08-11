@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Equipment Modules Manager">
+    <Package name="Module items operations">
+        <Container name="Items">
+            <Key ID="STR_TAG_EMM_Save">
+                <Original>yes</Original>
+                <English>yes</English>
+                <Russian>да</Russian>
+            </Key>
+            <Key ID="STR_TAG_EMM_Rename">
+                <English>Rename</English>
+                <Original>Rename</Original>
+                <Russian>Переименовать</Russian>
+            </Key>
+        </Container>
+        <Container name="Another Container">
+            <Key ID="STR_TAG_formatted">
+                <Original>Hello, %1.</Original>
+            </Key>
+            <Key ID="STR_TAG_structuredText">
+                <Original>Some text &lt;t color='%1'&gt;%2&lt;/t&gt;</Original>
+            </Key>
+        </Container>
+    </Package>
+</Project>

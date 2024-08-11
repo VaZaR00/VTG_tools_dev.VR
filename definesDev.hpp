@@ -19,6 +19,7 @@ import RscControlsGroupNoScrollbars;
 import ScrollBar;
 import ctrlButtonToolbar;
 import RscListNBox;
+import RscListBox;
 import RscActivePicture;
 
 //from advanced developer tools
