@@ -1,9 +1,11 @@
 params[["_name", EMM_Current_Module], ["_showMsg", true]];
 
-private _dataMap = [] call EMM_fnc_getModulesStorage;
-_dataMap deleteAt _name;
+private _data = [] call EMM_fnc_getModules;
+if (_data isEqualTo createHashMap) exitWith {};
 
-[_dataMap] call EMM_fnc_setModulesStorage;
+_data deleteAt _name;
+
+[_data] call EMM_fnc_setModulesStorage;
 EMM_Current_Module = "none";
 call EMM_fnc_modulesAmount;
 

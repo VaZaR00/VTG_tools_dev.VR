@@ -1,6 +1,6 @@
 params["_data"];
 
-private _storage = [] call EMM_fnc_getModulesStorage;
+private _storage = [] call EMM_fnc_getModules;
 
 _storage insert _data;
 

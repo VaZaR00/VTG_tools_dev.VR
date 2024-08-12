@@ -31,12 +31,8 @@ private _EMM_itemsCache = +EMM_itemsCache_scheme;
 
 {
 	(_x#1) sort true;
+	(_x#1) insert [0, [["Nothing", "%NO_ITEM%", EMM_var_pic_NOTHING]]]
 } forEach _EMM_itemsCache;
-
-(_EMM_itemsCache#11#1) insert [0, [["No Sight", "%NO_ACCESSORY%", ""]]];
-(_EMM_itemsCache#12#1) insert [0, [["No Pointer", "%NO_ACCESSORY%", ""]]];
-(_EMM_itemsCache#13#1) insert [0, [["No Muzzle", "%NO_ACCESSORY%", ""]]];
-(_EMM_itemsCache#14#1) insert [0, [["No Bipod", "%NO_ACCESSORY%", ""]]];
 
 //return
 _EMM_itemsCache

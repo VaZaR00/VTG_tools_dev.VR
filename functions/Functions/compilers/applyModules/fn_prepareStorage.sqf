@@ -1,4 +1,4 @@
-private _dataMap = [] call EMM_fnc_getModulesStorage;
+private _dataMap = [] call EMM_fnc_getModules;
 //private _data = values _dataMap;
 private _data = _dataMap toArray false;
 
@@ -61,7 +61,7 @@ private _algorithm = {
 			params["_item"];
 			if !(_item isEqualType []) exitWith {};
 			if ("comp$$" in (_item#0)) then {
-				private _moduleData = [false, false, ((_item#0) splitString "$$")#1] call EMM_fnc_getModulesStorage;
+				private _moduleData = [((_item#0) splitString "$$")#1] call EMM_fnc_getModules;
 				if !(_moduleData isEqualType true) then {
 					_fullData append (_moduleData#1);
 					continue;

@@ -3,7 +3,7 @@ params[["_one", false]];
 private _name = "";
 
 private _nested = [];
-private _folders = call EMM_fnc_getFoldersStorage;
+private _folders = [] call EMM_fnc_getFolders;
 
 if (
 	if (_one) then {
@@ -39,7 +39,7 @@ if (
 ) exitWith {};
 
 
-private _storage = [false, false, _name] call EMM_fnc_getModulesStorage;
+private _storage = [_name] call EMM_fnc_getModules;
 
 if ((_storage isEqualTo createHashMap) ||
 	(_storage isEqualTo [])

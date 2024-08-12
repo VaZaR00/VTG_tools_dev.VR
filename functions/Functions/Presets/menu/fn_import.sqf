@@ -19,7 +19,7 @@ if (_folders isEqualTo []) then {
 private _setCopyName = {
 	params["_itemData", "_pos"];
 	
-	private _storage = [false, false] call EMM_fnc_getModulesStorage;
+	private _storage = [] call EMM_fnc_getModules;
 	if (
 		(_storage isEqualTo createHashMap) &&
 		(_storage isEqualTo [])
@@ -52,7 +52,7 @@ _folders = _folders apply {
 	[_x, 2] call _setCopyName;
 };
 
-[_modules] call EMM_fnc_addModulesToStorage;
+[_modules] call EMM_fnc_addModule;
 [_folders] call EMM_fnc_importFolders;
 
 [] call EMM_fnc_updateBrowser;

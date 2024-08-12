@@ -1,4 +1,4 @@
-params['_type'];
+params[['_type', nil], ['_name', '', '']];
 
 /*
 	str - get by name
@@ -8,9 +8,18 @@ params['_type'];
 */
 
 private _data = [] call EMM_fnc_getModulesStorage;
+if (count _data == 0) exitWith {createHashMap};
 
-if (_type isEqualType "") exitWith {
-	_data getOrDefault [_name, []];
+if (isNil '_type') exitWith {
+	+_data
+};
+
+if (_type isEqualType "") then {_name = _type};
+
+if !(_name isEqualTo "") exitWith {
+	_data = _data getOrDefault [_name, []];
+	if (_type isEqualTo 1) then {_data deleteAt 1};
+	+_data
 };
 
 switch (_type) do {

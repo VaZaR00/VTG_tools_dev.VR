@@ -1,3 +1,1 @@
-params["_data"];
-
-parsingNamespace setVariable ["EMM_EQUIP_STORAGE", _data];
+parsingNamespace setVariable ["EMM_EQUIP_STORAGE", (_this#1)];

@@ -4,7 +4,7 @@ call EMM_fnc_resetModule;
 
 (EMM_equipUI#15) ctrlSetText format['Module %1', str _module];
 
-private _moduleData = [false, false, _module] call EMM_fnc_getModulesStorage;
+private _moduleData = [_module] call EMM_fnc_getModules;
 
 private _targets = [];
 private _items = [];

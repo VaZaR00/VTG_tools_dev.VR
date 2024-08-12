@@ -28,7 +28,7 @@ private _options = [
 		"Show targets as classes",
 		false,
 		"if (EMM_Current_Module == 'none') exitWith {};
-		private _moduleData = [false, false, EMM_Current_Module] call EMM_fnc_getModulesStorage;
+		private _moduleData = [EMM_Current_Module] call EMM_fnc_getModules;
 		_targets = if (
 			!(_moduleData isEqualTo createHashMap) &&
 			!(_moduleData isEqualTo [])
@@ -41,6 +41,20 @@ private _options = [
 		'Show "Module saved" message',
 		true,
 		""
+	],
+	[
+		"EMM_var_SAVE_TO_MISSION_FILE_TOO", 
+		'Save to mission file', 
+		'Additionally save data to mission file (duplicate). Its needed when you send mission to someone else or open it with other profile',
+		true,
+		"if (EMM_var_SAVE_TO_MISSION_FILE_TOO) then {
+			private _presetData = [] call EMM_fnc_getPresetData;
+
+			[_presetData#0] call EMM_fnc_setFoldersStorage;
+			[_presetData#1] call EMM_fnc_setModulesStorage;
+		} else {
+			call EMM_fnc_wipePreset;
+		};"
 	]
 ];
 

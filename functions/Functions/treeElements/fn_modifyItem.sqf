@@ -1,6 +1,7 @@
 params["_tree", "_path", ["_amount", 1]];
 
-if ((_tree tvData _path) in ["%EMM_CATEGORY%", "%EMM_ATTACHMENT_CATEGORY%"]) exitWith {};
+private _data = _tree tvData _path;
+if ((EMM_var_Inv_Tree_Categories findIf {_x in _data}) != -1) exitWith {};
 
 //check if its random in inventory tab
 private _destination = EMM_ActiveModuleTab#0;

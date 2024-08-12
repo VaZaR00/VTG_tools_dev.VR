@@ -5,6 +5,9 @@ disableSerialization;
 private _display = (findDisplay 313) createDisplay 'EMM_EquipmentModulesManager';
 waitUntil {(!isNull (uiNamespace getVariable ['EMM_EquipmentModulesManager', displayNull]))};
 
+//get preset
+call EMM_fnc_initPreset;
+
 //2 - get displays controls
 //[_display, false] call EMM_fnc_hideStartMsg;
 
@@ -25,6 +28,14 @@ call EMM_fnc_loadTargetsCombo; //load combo of modules target units
 EMM_Current_Module = "none";
 EMM_Current_module_path = [];
 EMM_var_BLOCK_BROWSER_OPERATIONS = false;
+//images
+EMM_var_pic_MODULE = "a3\3den\data\cfg3den\history\changeattributes_ca.paa";
+EMM_var_pic_FOLDER = "a3\3den\data\cfg3den\layer\icon_ca.paa";
+EMM_var_pic_NOTHING = "a3\3den\data\cfgwaypoints\dismiss_ca.paa";
+
+EMM_var_Inv_Tree_Categories = ["%EMM_CATEGORY%", "%EMM_ATTACHMENT_CATEGORY%"];
+
+EMM_var_Nesting_Categories = ["unif", "vest", "backpack", "module"];
 
 call EMM_fnc_modulesAmount;
 call EMM_fnc_loadModuleTabs;
@@ -61,14 +72,10 @@ if (isNil "_EMM_itemCache") then {
 
 waitUntil {!(isNil '_EMM_itemCache')};
 
-//load arsenal
-////[] spawn EMM_fnc_loadArsenal;
 [_display] call EMM_fnc_setUIEventHandlers;
 
+//load arsenal
 call EMM_fnc_loadArsenalCategories;
 
 [false] call EMM_fnc_setNestParent;
 
-//[_display] call EMM_fnc_loadModuleInventory;
-
-//(_display displayCtrl 1501) ctrlSetEventHandler ['onTreeSelChanged', '_this call EMM_fnc_treeSelChanged'];

@@ -24,5 +24,3 @@ if ([_input] call EMM_fnc_checkIfNameExists) exitWith {
 [_inputField] call EMM_fnc_close;
 
 EMM_ENTERED_NAME = _input;
-
-[_input] call EMM_fnc_setModulesTreeSize;

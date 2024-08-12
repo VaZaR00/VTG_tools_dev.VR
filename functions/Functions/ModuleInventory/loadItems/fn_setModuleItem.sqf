@@ -1,10 +1,10 @@
-params["_item", ["_parent", []], ["_parentFunc", ""]];
+params["_item", ["_parent", []], ["_parentFunc", ""], ["_isRand", true]];
 
 private _class = _item#0;
 private _func = _item#1;
 private _amount = _item#2;
 private _name = _class call EMM_fnc_getClassDisplayName;
-private _pic = getText (configFile >> (_class call EMM_fnc_findRootConfig) >> _class >> 'picture');
+private _pic = _class call EMM_fnc_getClassPicture;
 
 if ([[_class]] call EMM_fnc_checkIfFail) exitWith {};
 
@@ -44,4 +44,4 @@ private _itemData = [_name, _class, _pic, _func, _amount];
 
 EMM_TEMP_NEW_ACTIVE_TAB = _tabIndex;
 
-[_itemData, _category, _tab] call EMM_fnc_addItemToModule;
+[_itemData, _category, _tab, _isRand] call EMM_fnc_addItemToModule;

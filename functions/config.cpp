@@ -3,7 +3,7 @@
 #include "addFuncSelector.hpp"
 #include "TargetsMenu.hpp"
 #include "failedReport.hpp"
-#include "functions.hpp"
+#include "cfgFunctions.hpp"
 #include "presetManager.hpp"
 
 class CfgPatches
@@ -70,7 +70,7 @@ class display3DEN
 				class EMM_OpenManager
 				{
 					text = "Equipment Manager"; // Item text
-					action = "[] spawn EMM_fnc_open;"; // Expression called upon clicking; ideally, it should call your custom function
+					action = "[] spawn EMM_fnc_openModulesManager;"; // Expression called upon clicking; ideally, it should call your custom function
 					opensNewWindow = 1;// Adds '...' to the name of the menu entry, indicating the user that a new window will be opened.
 				};
 			};

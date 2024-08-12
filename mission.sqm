@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=396;
+		nextID=397;
 	};
 	class Camera
 	{
-		pos[]={4537.1899,12.485664,2295.9929};
-		dir[]={0.65803939,-0.70721769,-0.25852647};
-		up[]={0.6582402,0.70699549,-0.25860533};
-		aside[]={-0.36566725,1.5809201e-007,-0.93074906};
+		pos[]={4530.9063,44.324104,2322.6917};
+		dir[]={0.034810487,-0.66443646,-0.74654114};
+		up[]={0.030948203,0.74734324,-0.66371626};
+		aside[]={-0.99891979,2.0398875e-007,-0.046577945};
 	};
 };
 binarizationWanted=0;
@@ -28,14 +28,13 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Characters_F_AoW",
-	"A3_Supplies_F_Exp_Ammoboxes",
-	"A3_Modules_F"
+	"A3_Supplies_F_Exp_Ammoboxes"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=3;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -54,13 +53,6 @@ class AddonsMetaData
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item3
-		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -134,7 +126,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
@@ -223,18 +215,6 @@ class Mission
 			};
 			id=390;
 			type="Box_AAF_Equip_F";
-		};
-		class Item2
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={0,5,0};
-			};
-			name="EQUIP_MODULES_COMPILED_CODE";
-			init="if (!isServer) exitWith {};private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits;{_x call compile (selectRandomWeighted [""_x addBackpack """"B_Carryall_green_F"""";_x addItemToBackpack """"arifle_AK12_F"""";_x call compile (selectRandomWeighted [""""_x addWeaponItem [""""""""arifle_AK12_F"""""""", """"""""optic_Arco_AK_lush_F"""""""", true];"""",1,""""_x addWeaponItem [""""""""arifle_AK12_F"""""""", """"""""optic_Arco_AK_blk_F"""""""", true];"""",1]);"",1,""_x addBackpack """"B_AssaultPack_rgr"""";_x addItemToBackpack """"hgun_ACPC2_F"""";_x addWeaponItem [""""hgun_ACPC2_F"""", """"optic_ACO_grn"""", true];"",1]);}forEach (allUnits);";
-			id=395;
-			type="Logic";
 		};
 	};
 };

@@ -18,7 +18,7 @@ private _iterate1D = { //this algorithm will create 1 Dimensiononal array
 		private _value = _tree tvValue _downPath;
 		private _tooltip = _tree tvTooltip _downPath;
 
-		if (_justFolders && (_data in ["%EMM_FOLDER%", "%EMM_CATEGORY%"])) then {
+		if (_justFolders && (_data in ["%EMM_FOLDER%", EMM_var_Inv_Tree_Categories#0])) then {
 			continue;
 		};
 
@@ -48,7 +48,7 @@ private _iterate2D = { //this algorithm will create 2 Dimensiononal array (neste
 		private _value = _tree tvValue _downPath;
 		private _tooltip = _tree tvTooltip _downPath;
 
-		if (_justFolders && (_data in ["%EMM_FOLDER%", "%EMM_CATEGORY%"])) then {
+		if (_justFolders && (_data in ["%EMM_FOLDER%", EMM_var_Inv_Tree_Categories#0])) then {
 			continue;
 		};
 

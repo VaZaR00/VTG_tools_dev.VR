@@ -347,7 +347,7 @@ class EMM_EquipmentModulesManager {
 					x = 3 * GUI_GRID_W;
 					y = 136.5 * GUI_GRID_H;
 					w = 96 * GUI_GRID_W;
-					h = 11 * GUI_GRID_H;
+					h = 22 * GUI_GRID_H;
 					class controls
 					{
 						class category_Lbl: RscText
@@ -386,7 +386,7 @@ class EMM_EquipmentModulesManager {
 							x = 0 * GUI_GRID_W;
 							y = 11 * GUI_GRID_H;
 							w = 90 * GUI_GRID_W;
-							h = 10 * GUI_GRID_H;
+							h = 9 * GUI_GRID_H;
 						};
 					};
 				};
@@ -396,7 +396,7 @@ class EMM_EquipmentModulesManager {
 					x = 3 * GUI_GRID_W;
 					y = 160 * GUI_GRID_H;
 					w = 96 * GUI_GRID_W;
-					h = 15 * GUI_GRID_H;
+					h = 14 * GUI_GRID_H;
 					class controls
 					{
 						class search_Lbl: RscText
@@ -441,7 +441,7 @@ class EMM_EquipmentModulesManager {
 					x = 3 * GUI_GRID_W;
 					y = 176.5 * GUI_GRID_H;
 					w = 96 * GUI_GRID_W;
-					h = 11.2 * GUI_GRID_H;
+					h = 12 * GUI_GRID_H;
 					class controls
 					{
 						class amount_Lbl: RscText
@@ -601,18 +601,55 @@ class EMM_EquipmentModulesManager {
 						};
 					};
 				};
-				class Clear_module_Btn: RscButton
+				class Category_operations_grp : RscControlsGroupNoScrollbars
 				{
-					idc = 1602;
-
-					text = "Clear"; //--- ToDo: Localize;
-					x = 84 * GUI_GRID_W;
+					idc = 1657;
+					x = 69 * GUI_GRID_W;
 					y = 136.5 * GUI_GRID_H;
-					w = 14 * GUI_GRID_W;
-					h = 8 * GUI_GRID_H;
-					tooltip = "Clear All Inventory"; //--- ToDo: Localize;
-					onButtonClick = "tvClear (EMM_ActiveModuleTab#1); [false] call EMM_fnc_setNestParent;";
+					w = 31 * GUI_GRID_W;
+					h = 20 * GUI_GRID_H;
+
+					class controls 
+					{
+						class Randomize_category_Btn: RscButton
+						{
+							idc = 1398;
+
+							text = "Randomize"; //--- ToDo: Localize;
+							x = 0 * GUI_GRID_W;
+							y = 9 * GUI_GRID_H;
+							w = 29 * GUI_GRID_W;
+							h = 8 * GUI_GRID_H;
+							tooltip = "Randomize selected category"; //--- ToDo: Localize;
+							onButtonClick = "call EMM_fnc_setRandomized";
+						};
+						class Nest_category_Btn: RscButton
+						{
+							idc = 1399;
+
+							text = "Nest"; //--- ToDo: Localize;
+							x = 0 * GUI_GRID_W;
+							y = 0 * GUI_GRID_H;
+							w = 14 * GUI_GRID_W;
+							h = 8 * GUI_GRID_H;
+							tooltip = "Set as nesting parent. It used to put items into items, so you can attach accessories to weapon or put items to containers etc."; //--- ToDo: Localize;
+							onButtonClick = "[(EMM_ActiveModuleTab#1), tvCurSel (EMM_ActiveModuleTab#1)] call EMM_fnc_onModuleItemDbClick;";
+						};
+						class Clear_module_Btn: RscButton
+						{
+							idc = 1602;
+
+							text = "Clear"; //--- ToDo: Localize;
+							x = 15 * GUI_GRID_W;
+							y = 0 * GUI_GRID_H;
+							w = 14 * GUI_GRID_W;
+							h = 8 * GUI_GRID_H;
+							tooltip = "Clear All Inventory"; //--- ToDo: Localize;
+							onButtonClick = "tvClear (EMM_ActiveModuleTab#1); [false] call EMM_fnc_setNestParent;";
+						};
+					};
 				};
+				
 				class Items_operations_grp : RscControlsGroupNoScrollbars
 				{
 					idc = 4563;

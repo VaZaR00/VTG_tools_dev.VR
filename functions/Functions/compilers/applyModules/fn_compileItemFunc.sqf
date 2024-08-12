@@ -6,9 +6,9 @@ private _class = _data#0;
 
 if ("comp$$" in _class) exitWith {
 	private _module = (_class splitString "$$")#1;
-	private _items = [false, false, _module] call EMM_fnc_getModulesStorage;
+	private _items = [_module] call EMM_fnc_getModules;
 
-	if (_items isEqualTo false) exitWith {
+	if (count _items == 0) exitWith {
 		if (EMM_EQUIP_TEST_BOOL) then {
 			EMM_EQUIP_TEST_FAILED_ARR pushBack [_moduleName, "composite", (str _module) + " MODULE DON'T EXIST"];
 		};
@@ -19,6 +19,15 @@ if ("comp$$" in _class) exitWith {
 		private _itemFunc = [+_x, _module] call EMM_fnc_compileItemFunc;
 		_text = _text + _itemFunc;
 	} forEach (_items#1);
+
+	if (count _data > 3) then {
+		private _nested = _data#3;
+		if ("Rand" in _nested) then {_nested deleteAt 0};
+		{
+			private _itemFunc = [+_x, _module] call EMM_fnc_compileItemFunc;
+			_text = _text + _itemFunc;
+		} forEach _nested;
+	};
 
 	_text //return
 };

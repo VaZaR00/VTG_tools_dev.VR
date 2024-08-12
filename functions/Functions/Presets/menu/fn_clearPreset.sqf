@@ -1,27 +1,20 @@
-EMM_wipePreset = {
-	[EMM_equipUI#0] call EMM_fnc_close;
-	if (EMM_DEV_STATE) then {
-		parsingNamespace setVariable ["EMM_EQUIP_STORAGE", nil];
-		parsingNamespace setVariable ["EMM_BROWSER_STORAGE", nil];
-	} else {
-		set3DENMissionAttributes [["EMM_attributes", "EMM_EQUIP_STORAGE", ""]];
-		set3DENMissionAttributes [["EMM_attributes", "EMM_BROWSER_STORAGE", ""]];
-	};
-	["ALL DATA DELETED"] call EMM_fnc_message;
-	[] spawn EMM_fnc_open;
-};
-
 EMM_second_warning = {
 	[
 		"Are you REALY sure you want to delete ALL data?",
 		"Delete All data 0_o ?",
 		[
 			"Absolutely!",
-			{call EMM_wipePreset; EMM_wipePreset = nil; EMM_clear_all_first_warning = nil;}
+			{
+				[EMM_equipUI#0] call EMM_fnc_close;
+				call EMM_fnc_wipePreset;
+				["ALL DATA DELETED"] call EMM_fnc_message;
+				[] spawn EMM_fnc_openModulesManager;
+				EMM_clear_all_first_warning = nil;
+			}
 		],
 		[
 			"Hell nuh",
-			{EMM_wipePreset = nil; EMM_clear_all_first_warning = nil;}
+			{EMM_clear_all_first_warning = nil;}
 		],
 		"a3\ui_f\data\map\markers\military\warning_ca.paa",
 		EMM_clear_all_first_warning

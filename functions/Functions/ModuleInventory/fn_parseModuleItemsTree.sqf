@@ -1,6 +1,3 @@
-private _attachs = "%EMM_ATTACHMENT_CATEGORY%";
-private _categoriesLabels = ["%EMM_CATEGORY%", _attachs];
-
 private _iterate = {
 	params["_elements", "_dest"];
 
@@ -12,7 +9,7 @@ private _iterate = {
 		private _class = _x#4;
 		private _childrens = _x#5;
 
-		if (_func in _categoriesLabels) then {
+		if ((EMM_var_Inv_Tree_Categories findIf {_x in _func}) != -1) then {
 			if ("(Random)" in _name) then {
 				_dest pushBack ["Rand"];
 			};

@@ -16,6 +16,8 @@ waitUntil { !(isNil "EMM_ENTERED_NAME") || _menuClosed };
 
 if (_menuClosed) exitWith {};
 
+[EMM_ENTERED_NAME] call EMM_fnc_setModulesTreeSize;
+
 private _name = EMM_ENTERED_NAME;
 EMM_ENTERED_NAME = nil;
 

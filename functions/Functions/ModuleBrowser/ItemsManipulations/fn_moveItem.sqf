@@ -30,10 +30,10 @@ _nested = _nested apply {
 
 	private _pic = switch ((_x#1)) do {
 		case "%EMM_FOLDER%": {
-			"a3\3den\data\cfg3den\layer\icon_ca.paa";
+			EMM_var_pic_FOLDER;
 		};
 		case "%EMM_MODULE%": {
-			"a3\3den\data\cfg3den\history\changeattributes_ca.paa";
+			EMM_var_pic_MODULE;
 		};
 		default {""};
 	};

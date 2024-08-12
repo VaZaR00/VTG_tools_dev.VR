@@ -11,11 +11,11 @@ private _image = "";
 switch (_el) do {
 	case "Folder": {
 		_type = "%EMM_FOLDER%";
-		_image = "a3\3den\data\cfg3den\layer\icon_ca.paa";
+		_image = EMM_var_pic_FOLDER;
 	};
 	case "Module": {
 		_type = "%EMM_MODULE%";
-		_image = "a3\3den\data\cfg3den\history\changeattributes_ca.paa";
+		_image = EMM_var_pic_MODULE;
 	};
 };
 
@@ -36,6 +36,8 @@ private _menuClosed = ((findDisplay 11549) isEqualTo displayNull) || ((findDispl
 waitUntil { !(isNil "EMM_ENTERED_NAME") || _menuClosed };
 
 if (_menuClosed) exitWith {};
+
+[EMM_ENTERED_NAME] call EMM_fnc_setModulesTreeSize;
 
 private _name = EMM_ENTERED_NAME;
 EMM_ENTERED_NAME = nil;

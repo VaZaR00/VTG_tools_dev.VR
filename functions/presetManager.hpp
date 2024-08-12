@@ -5,6 +5,8 @@ class EMM_presetManager
 {
 	idd = 12337;
 	enableDisplay = 1;
+	onLoad = "EMM_RESTART_WHEN_PM_CLOSED = false";
+	onUnload = "[] call EMM_fnc_onUnloadPM";
 
 	class controlsBackground {
 		class background: RscText

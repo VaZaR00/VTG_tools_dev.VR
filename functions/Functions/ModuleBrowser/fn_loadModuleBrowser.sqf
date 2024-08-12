@@ -1,6 +1,6 @@
 params[["_search", ""]];
 
-private _treeMap = call EMM_fnc_getFoldersStorage;
+private _treeMap = [] call EMM_fnc_getFolders;
 private _tree = EMM_equipUI#5;
 
 tvClear _tree;
@@ -11,10 +11,10 @@ tvClear _tree;
 
 	private _pic = switch (_type) do {
 		case "%EMM_FOLDER%": {
-			"a3\3den\data\cfg3den\layer\icon_ca.paa";
+			EMM_var_pic_FOLDER;
 		};
 		case "%EMM_MODULE%": {
-			"a3\3den\data\cfg3den\history\changeattributes_ca.paa";
+			EMM_var_pic_MODULE;
 		};
 		default {""};
 	};

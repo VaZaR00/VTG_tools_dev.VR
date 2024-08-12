@@ -1,4 +1,4 @@
-params['_itemData', '_category', '_tree'];
+params['_itemData', '_category', '_tree', ['_isRand', true]];
 
 private _name = _itemData#0;
 private _class = _itemData#1;
@@ -23,12 +23,12 @@ private _comparePath = {
 private _treeMap = [_tree] call EMM_fnc_treeMapper;
 
 private _path = [];
-private _categoryType = "%EMM_CATEGORY%";
+private _categoryType = EMM_var_Inv_Tree_Categories#0;
 
 if (count EMM_nested_currnetParentPath != 0) then {
 	_path = +EMM_nested_currnetParentPath;
 	_tree tvExpand EMM_nested_currnetParentPath;
-	_categoryType = "%EMM_ATTACHMENT_CATEGORY%";
+	_categoryType = EMM_var_Inv_Tree_Categories#1;
 	//if (_path > 2) then {
 		private _index = ["Unif", "Vest", "Backpack"] findIf {_x in EMM_nested_currnetParentName};
 		private _newfunc = switch (_index) do {
@@ -41,6 +41,8 @@ if (count EMM_nested_currnetParentPath != 0) then {
 	//};
 };
 
+_categoryType = format["%1@@%2", _categoryType, _isRand];
+
 //modify
 private _peekItem = _treeMap select {
 	private _itemPath = +(_x#0);
@@ -48,7 +50,7 @@ private _peekItem = _treeMap select {
 	private _categType = _tree tvData _itemPath;
 
 	((_x#4) == _class) && 
-	(_categType == _categoryType) &&
+	(_categType in _categoryType) &&
 	(
 		(count EMM_nested_currnetParentPath == 0) ||
 		([+(_x#0)] call _comparePath)
@@ -65,8 +67,12 @@ if (
 
 //add
 private _peekCategory = _treeMap select {
+	private _existingCat = (_x#1);
+	if ("@@" in _existingCat) then {
+		_existingCat = (_existingCat splitString "@@")#0;
+	};
 	(_category in (_x#2)) && 
-	((_x#1) == _categoryType) &&
+	(_existingCat in _categoryType) &&
 	(
 		(count EMM_nested_currnetParentPath == 0) ||
 		([+(_x#0)] call _comparePath)

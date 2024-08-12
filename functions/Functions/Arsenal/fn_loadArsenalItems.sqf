@@ -28,7 +28,7 @@ lnbClear _arsenal;
 	if ((_search != "") && !([_search, _name, false] call BIS_fnc_inString)) then {continue};
 	if (
 		!(_class call compile EMM_Arsenal_filter) &&
-		(_class != "%NO_ACCESSORY%")
+		(_class != "%NO_ITEM%")
 	) then {continue};
 
 	private _rowIndex = _arsenal lnbAddRow [_name, ""];

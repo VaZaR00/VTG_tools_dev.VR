@@ -4,10 +4,12 @@ _tree tvDelete _path;
 
 _path deleteAt (count _path - 1);
 
+private _data = _tree tvData _path;
+
 if (
 	(count _path > 0)
 	&& 
-	((_tree tvData _path) in ["%EMM_CATEGORY%", "%EMM_ATTACHMENT_CATEGORY%"])
+	((EMM_var_Inv_Tree_Categories findIf {_x in _data}) != -1)
 	&&
 	((_tree tvCount _path) == 0)
 ) then {

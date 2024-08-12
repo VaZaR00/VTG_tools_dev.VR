@@ -1,1 +1,0 @@
-EMM_Modules_amount = count ([true] call EMM_fnc_getModulesStorage);

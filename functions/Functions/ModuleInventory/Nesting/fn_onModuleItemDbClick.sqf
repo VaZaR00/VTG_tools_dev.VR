@@ -1,7 +1,7 @@
 params["_tree", "_treeSel"];
 private _currentModuleItem = _tree tvTooltip _treeSel;
 
-private _nestingCategories = ["unif", "vest", "backpack", "rifl", "pist", "launch"];
+private _nestingCategories = EMM_var_Nesting_Categories + ["rifl", "pist", "launch"];
 
 EMM_Arsenal_filter = "true";
 
@@ -18,7 +18,7 @@ private _parentName = _tree tvText _parentPath;
 private _category = _nestingCategories findIf {_x in (toLower _parentName)};
 if (_category != -1) then {
 	private _script = switch (_category) do {
-		case 3: {format["%1 canAdd _this", str _currentModuleItem]};
+		case 4: {format["%1 canAdd _this", str _currentModuleItem]};
 		default {"true"};
 	};
 

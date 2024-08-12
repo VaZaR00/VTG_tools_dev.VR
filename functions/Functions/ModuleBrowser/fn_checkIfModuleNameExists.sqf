@@ -1,6 +1,6 @@
 params[["_module", EMM_Current_Module]];
 
-private _moduleData = [false, false, _module] call EMM_fnc_getModulesStorage;
+private _moduleData = [_module] call EMM_fnc_getModules;
 
 if (
 	(_moduleData isEqualTo createHashMap) ||

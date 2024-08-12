@@ -37,4 +37,6 @@ if (_class == "%EMM_comp%") then {
 
 private _itemData = [_name, _class, _pic, _func, _amount];
 
-[_itemData, _category, _module] call EMM_fnc_addItemToModule;
+private _isRand = if ((EMM_ActiveModuleTab#0) == 0) then {true} else {false};
+
+[_itemData, _category, _module, _isRand] call EMM_fnc_addItemToModule;

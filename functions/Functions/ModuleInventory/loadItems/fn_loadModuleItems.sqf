@@ -4,9 +4,8 @@ params["_items", ["_next", EMM_fnc_setModuleItem]];
 EMM_EQUIP_TEST_FAILED_ARR = [];
 
 private _iterate = {
-	params["_items", ["_parent", []], ["_parentFunc", ""]];
+	params["_items", ["_parent", []], ["_parentFunc", ""], ["_isRand", false]];
 
-	private _next = EMM_fnc_setModuleItem;
 	{
 		/*
 		item:
@@ -22,21 +21,21 @@ private _iterate = {
 			["Rand", [item, item ...]]
 
 		*/
-		//[false] call EMM_fnc_setNestParent;
+		[false] call EMM_fnc_setNestParent;
 
 		private _item = _x;
 		if ((_item#0) == "Rand") then {
 			_item deleteAt 0;
-			[_item, +_parent, _parentFunc] call _iterate;
+			[_item, +_parent, _parentFunc, true] call _iterate;
 			continue;
 		};
 		if ((_item#1) == "AWI") then {
-			[_item, +_parent, _parentFunc] call _next;
+			[_item, +_parent, _parentFunc, _isRand] call _next;
 			continue;
 		};
-		private _path = [_item, +_parent, _parentFunc] call _next;
+		private _path = [_item, +_parent, _parentFunc, _isRand] call _next;
 		
-		//[false] call EMM_fnc_setNestParent;
+		[false] call EMM_fnc_setNestParent;
 
 		if (count _item == 4) then {
 			//[str [_item#0, EMM_nested_currnetParentPath, (_item#3), (_item#1), _path]] call EMM_fnc_message;

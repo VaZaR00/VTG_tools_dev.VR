@@ -1,0 +1,1 @@
+EMM_Modules_amount = count ([0] call EMM_fnc_getModules);
