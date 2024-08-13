@@ -38,7 +38,6 @@ private _iterate = {
 		[false] call EMM_fnc_setNestParent;
 
 		if (count _item == 4) then {
-			//[str [_item#0, EMM_nested_currnetParentPath, (_item#3), (_item#1), _path]] call EMM_fnc_message;
 			if !(_path isEqualType []) then {_path = []};
 			[(_item#3), +_path, (_item#1)] call _iterate;
 		};

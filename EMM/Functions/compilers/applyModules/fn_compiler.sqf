@@ -20,4 +20,8 @@ removeGoggles _u;};
 	_script = _script + _moduleScript;
 } forEach _data;
 
+if (EMM_var_COMPILE_IN_SPAWN) then {
+	_script = format["[] spawn {%1};", _script];
+};
+
 _script

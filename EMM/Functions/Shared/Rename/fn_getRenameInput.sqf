@@ -22,6 +22,6 @@ if ([_input] call EMM_fnc_checkIfNameExists) exitWith {
 };
 EMM_var_temp_RENAME_EL_TYPE = nil;
 
-[_inputField] call EMM_fnc_close;
+EMM_var_temp_ENTERED_NAME = _input;
 
-EMM_ENTERED_NAME = _input;
+[_inputField] call EMM_fnc_close;

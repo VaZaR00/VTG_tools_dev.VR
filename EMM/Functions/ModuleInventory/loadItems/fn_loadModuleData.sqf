@@ -9,10 +9,7 @@ private _moduleData = [_module] call EMM_fnc_getModules;
 private _targets = [];
 private _items = [];
 
-if (
-	!(_moduleData isEqualTo createHashMap) &&
-	!(_moduleData isEqualTo [])
-) then {
+if (count _moduleData != 0) then {
 	_targets = _moduleData#0;
 	_items = _moduleData#1;
 };

@@ -1,10 +1,7 @@
 params["_itemData", "_pos"];
 	
 private _storage = [] call EMM_fnc_getModules;
-if (
-	(_storage isEqualTo createHashMap) &&
-	(_storage isEqualTo [])
-) exitWith {
+if (count _moduleData == 0) exitWith {
 	_itemData
 };
 

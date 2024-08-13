@@ -3,6 +3,7 @@
 
 class EMM_name_input_menu {
 	idd = 15550;
+	onUnload = "EMM_var_temp_rename_open = nil";
 
 	class controls 
 	{
@@ -39,7 +40,7 @@ class EMM_name_input_menu {
 			y = 27.5 * GUI_GRID_H;
 			w = 6.5 * GUI_GRID_W;
 			h = 2 * GUI_GRID_H;
-			onButtonClick = "call EMM_fnc_getRenameInput";
+			onButtonClick = "call EMM_fnc_getRenameInput;";
 		};
 		class cancel_btn: RscButtonMenuCancel
 		{
@@ -48,7 +49,7 @@ class EMM_name_input_menu {
 			y = 27.5 * GUI_GRID_H;
 			w = 9.5 * GUI_GRID_W;
 			h = 2 * GUI_GRID_H;
-			onButtonClick = "call EMM_fnc_close; EMM_ENTERED_NAME = false";
+			onButtonClick = "call EMM_fnc_close;EMM_var_temp_ENTERED_NAME = false";
 		};
 	};
 };

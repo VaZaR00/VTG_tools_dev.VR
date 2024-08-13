@@ -1,7 +1,7 @@
 params[["_name", EMM_Current_Module], ["_showMsg", true]];
 
 private _data = [] call EMM_fnc_getModules;
-if (_data isEqualTo createHashMap) exitWith {};
+if (count _data != 0) exitWith {};
 
 _data deleteAt _name;
 

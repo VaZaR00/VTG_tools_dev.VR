@@ -62,7 +62,7 @@ private _algorithm = {
 			if !(_item isEqualType []) exitWith {};
 			if ("comp$$" in (_item#0)) then {
 				private _moduleData = [((_item#0) splitString "$$")#1] call EMM_fnc_getModules;
-				if !(_moduleData isEqualType true) then {
+				if (count _moduleData != 0) then {
 					_fullData append (_moduleData#1);
 					continue;
 				};

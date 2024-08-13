@@ -23,6 +23,8 @@ private _itemAmount = _tree tvValue _path;
 private _newAmount = _itemAmount + _amount;
 private _name = [_tree tvTooltip _path] call EMM_fnc_getClassDisplayName;
 
+_newAmount = _newAmount min 999999;
+
 _tree tvSetValue [_path, _newAmount];
 
 if (_newAmount == 0) exitWith {

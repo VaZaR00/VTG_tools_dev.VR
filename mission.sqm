@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=397;
+		nextID=400;
 	};
 	class Camera
 	{
 		pos[]={4530.9063,44.324104,2322.6917};
-		dir[]={0.034810487,-0.66443646,-0.74654114};
-		up[]={0.030948203,0.74734324,-0.66371626};
-		aside[]={-0.99891979,2.0398875e-007,-0.046577945};
+		dir[]={0.011852729,-0.75952226,-0.65038431};
+		up[]={0.013839302,0.65048003,-0.75939667};
+		aside[]={-0.99984038,2.6557245e-007,-0.018220713};
 	};
 };
 binarizationWanted=0;
@@ -28,13 +28,14 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Characters_F_AoW",
-	"A3_Supplies_F_Exp_Ammoboxes"
+	"A3_Supplies_F_Exp_Ammoboxes",
+	"A3_Modules_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -56,6 +57,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item3
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -71,7 +79,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Scenario";
 		class Attribute0
@@ -126,7 +134,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			dataType="Group";
@@ -215,6 +223,18 @@ class Mission
 			};
 			id=390;
 			type="Box_AAF_Equip_F";
+		};
+		class Item2
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={0,5,0};
+			};
+			name="EQUIP_MODULES_COMPILED_CODE";
+			init="if (!isServer) exitWith {};[] spawn {private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits;{_x forceAddUniform ""U_C_IDAP_Man_Tee_F"";_x call compile (selectRandomWeighted [""_x addItemToUniform """"FirstAidKit"""";"",111000,""_x addItemToUniform """"%NO_ITEM%Items"""";"",1]);}forEach (allUnits);{_x call compile (selectRandomWeighted [""_x forceAddUniform """"U_I_C_Soldier_Bandit_1_F"""";"",1,""_x forceAddUniform """"U_C_IDAP_Man_TeeShorts_F"""";"",1]);for ""_i"" from 1 to 400 do {_x addItemToUniform ""FirstAidKit"";};}forEach (allUnits);};";
+			id=397;
+			type="Logic";
 		};
 	};
 };

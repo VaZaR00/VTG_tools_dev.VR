@@ -5,6 +5,17 @@ private _nestingCategories = EMM_var_Nesting_Categories + ["rifl", "pist", "laun
 
 EMM_Arsenal_filter = "true";
 
+if ((EMM_var_Inv_Tree_Categories findIf {_x in (_tree tvData _treeSel)}) != -1) exitWith {
+	private _category = _tree tvText _treeSel;
+	private _combo = EMM_equipUI#19;
+	private _index = EMM_itemsCache_scheme findIf {(_x#0) in _category};
+	_combo lbSetCurSel _index;
+	[_tree, _treeSel] spawn {
+		uiSleep (diag_deltaTime * 3);
+		(_this#0) tvExpand (_this#1);
+	};
+};
+
 if (_treeSel isEqualTo EMM_nested_currnetParentPath) exitWith {
 	[false] call EMM_fnc_setNestParent;
 };
@@ -31,9 +42,9 @@ if (_category != -1) then {
 
 	EMM_Arsenal_filter = format["_this call compile %1", str _script];
 	[] call EMM_fnc_loadArsenalItems;
-	[true, _tree, _treeSel] call EMM_fnc_setNestParent;
+	[true, _tree, +_treeSel] call EMM_fnc_setNestParent;
 	[_tree, _treeSel] spawn {
-		sleep 0.1;
+		uiSleep (diag_deltaTime * 3);
 		(_this#0) tvExpand (_this#1);
 	};
 };

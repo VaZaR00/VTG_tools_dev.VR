@@ -85,7 +85,6 @@ if (
 	private _index = _tree tvAdd [_path, _category];
 	private _pathTemp = +_path;
 	_pathTemp deleteAt (-1);
-	// [str [_itemData#0, _tree tvText _pathTemp, _path, EMM_nested_currnetParentPath, _index]] call EMM_fnc_message;
 	_path pushBack _index;
 	_tree tvSetData [_path, _categoryType];
 

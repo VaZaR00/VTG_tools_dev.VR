@@ -6,6 +6,8 @@ private _pic = _itemData#2;
 private _func = _itemData#3;
 private _amount = _itemData#4;
 
+_amount = _amount min 999999;
+
 _tree tvExpand _path;
 
 _path pushBack (_tree tvAdd [_path, _name]);

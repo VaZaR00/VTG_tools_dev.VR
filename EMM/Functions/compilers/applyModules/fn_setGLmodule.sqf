@@ -35,7 +35,7 @@ private _setGL = {
 private _script = call EMM_fnc_compiler;
 
 if (isNil "_script") exitWith {
-	["No modules!"] call EMM_fnc_message;
+	["No modules!", 1] call EMM_fnc_message;
 };
 
 [_script, "EQUIP_MODULES_COMPILED_CODE"] call _setGL;

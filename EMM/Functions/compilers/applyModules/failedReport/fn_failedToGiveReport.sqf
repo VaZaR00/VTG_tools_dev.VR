@@ -9,6 +9,9 @@ if (count _failed == 0) exitWith {
 
 ["Some items couldn't be added", 1] call EMM_fnc_message;
 
+private _display = EMM_var_disp_MODULE_MANAGER createDisplay "EMM_failedItemsReport";
+private _textAreaCtrl = _display displayCtrl 1500;
+
 private _header = text "Module - unit - item";
 _header setAttributes ["size", "1", "font", "EtelkaMonospacePro"];
 
@@ -38,9 +41,6 @@ private _compose = [_header, lineBreak, lineBreak];
 	//_text = _text + _line;
 	_compose append [_moduleName, "  |  ", _unit, _unitClass, "  |  ", _amount, " x ", _item, lineBreak, lineBreak];
 } forEach _failed;
-
-private _display = EMM_var_disp_MODULE_MANAGER createDisplay "EMM_failedItemsReport";
-private _textAreaCtrl = _display displayCtrl 1500;
 
 private _composedText = composeText _compose;
 

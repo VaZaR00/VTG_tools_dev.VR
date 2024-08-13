@@ -16,7 +16,7 @@ class EMM_EquipmentModulesManager {
 	enableDisplay = 1;
 	onUnload = "call EMM_fnc_unload";
 	onLoad = "uiNamespace setVariable ['EMM_EquipmentModulesManager', (_this#0)]";
-	//onMouseMoving = "[str EMM_nested_currnetParentPath] call EMM_fnc_message;"; //str ((tvCurSel (EMM_equipUI#5))isEqualTo [])
+	//onMouseMoving = "[str ((EMM_var_ActiveModuleTab#1) tvData (tvCurSel (EMM_var_ActiveModuleTab#1)))] call EMM_fnc_message;"; //str ((tvCurSel (EMM_equipUI#5))isEqualTo [])
 	class controlsBackground {		
 		class BackgroundDisableTiles : ctrlStaticBackgroundDisableTiles {};
 		class BackgroundDisable : ctrlStaticBackgroundDisable {};
@@ -694,7 +694,7 @@ class EMM_EquipmentModulesManager {
 							y = 0 * GUI_GRID_H;
 							w = 5 * GUI_GRID_W;
 							h = 6.5 * GUI_GRID_H;
-							tooltip = "Add 1 Item"; //--- ToDo: Localize;
+							tooltip = "Add 1 Item (Amount in random is Chance)"; //--- ToDo: Localize;
 							onButtonClick = "[EMM_var_ActiveModuleTab#1, tvCurSel (EMM_var_ActiveModuleTab#1), 1] call EMM_fnc_modifyItem";
 							shortcuts[] = {"0x4E"};
 						};

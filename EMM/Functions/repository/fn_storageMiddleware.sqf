@@ -107,7 +107,7 @@ if (isNil "_result") exitWith {[]};
 
 if (_result isEqualType "") exitWith {
 	if (_result isEqualTo "") exitWith {[]};
-	_data = createHashMapFromArray call compile _data;
+	_data = createHashMapFromArray call compile _result;
 	+_data;
 };
 
@@ -115,6 +115,5 @@ if ((_type == 0) && (_storage == 1) && {!(_result isEqualType createHashMap)}) t
 	_result = createHashMapFromArray _result;
 };
 
-// [str [_result, typeName _result]] call EMM_fnc_message;
 
 +_result

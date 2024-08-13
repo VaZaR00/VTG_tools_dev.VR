@@ -2,6 +2,15 @@ params["_tree", "_path"];
 
 _tree tvDelete _path;
 
+private _selUpper = {
+	params["_prevSel"];
+
+	_prevSel set [-1, (_prevSel#-1) - 1];
+	if ((_prevSel#-1) < 0) exitWith {};
+	_tree tvSetCurSel _prevSel;
+};
+[+_path] call _selUpper;
+
 _path deleteAt (count _path - 1);
 
 private _data = _tree tvData _path;

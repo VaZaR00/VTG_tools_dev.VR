@@ -1,5 +1,5 @@
 private _modules = [1] call EMM_fnc_getModules;
-if (_modules isEqualTo []) exitWith {};
+if (count _modules == 0) exitWith {};
 
 _modules = toArray _modules;
 private _composites = [];

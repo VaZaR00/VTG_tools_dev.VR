@@ -1,5 +1,7 @@
 params[["_el", "Element"], ["_defaultName", nil], ["_display", EMM_var_disp_MODULE_MANAGER]];
 
+EMM_var_temp_rename_open = true;
+
 private _date = systemTimeUTC joinString "-";
 _defaultName = if ((isNil "_defaultName") || {_defaultName isEqualTo ""}) then {
 	"New" + _el + _date

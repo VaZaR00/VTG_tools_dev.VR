@@ -41,7 +41,7 @@ if (count _parent != 0) then {
         };
         _tab = EMM_moduleTabs#_tabIndex#0;
     };
-    [true, _tab, _parent] call EMM_fnc_setNestParent;
+    [true, _tab, +_parent, false] call EMM_fnc_setNestParent;
 };
 
 private _itemData = [_name, _class, _pic, _func, _amount];

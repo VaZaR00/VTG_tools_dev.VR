@@ -10,3 +10,5 @@ call EMM_fnc_wipePreset;
 [_name] call EMM_fnc_setPreset;
 
 ["Preset loaded"] call EMM_fnc_message;
+
+[EMM_PM_listBox] call EMM_fnc_close;

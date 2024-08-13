@@ -12,16 +12,19 @@ private _prevName = _tree tvText _path;
 
 private _menuClosed = (EMM_var_disp_MODULE_MANAGER isEqualTo displayNull) || ((findDisplay 15550) isEqualTo displayNull);
 
-waitUntil { !(isNil "EMM_ENTERED_NAME") || _menuClosed };
+waitUntil { !(isNil "EMM_var_temp_ENTERED_NAME") || _menuClosed || (isNil "EMM_var_temp_rename_open") };
 
 if (_menuClosed) exitWith {};
 
-[EMM_ENTERED_NAME] call EMM_fnc_setModulesTreeSize;
+if (isNil "EMM_var_temp_ENTERED_NAME") exitWith {};
 
-private _name = EMM_ENTERED_NAME;
-EMM_ENTERED_NAME = nil;
+private _name = EMM_var_temp_ENTERED_NAME;
+EMM_var_temp_ENTERED_NAME = nil;
 
 if (_name isEqualTo false) exitWith {};
+
+[_name] call EMM_fnc_setModulesTreeSize;
+
 if (_name == _prevName) exitWith {};
 
 _tree tvSetText [_path, _name];

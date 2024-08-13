@@ -41,12 +41,9 @@ if (
 
 private _storage = [_name] call EMM_fnc_getModules;
 
-if ((_storage isEqualTo createHashMap) ||
-	(_storage isEqualTo [])
-) exitWith {
+if (count _storage != 0) exitWith {
 	["No data", 1] call EMM_fnc_message;	
 };
-[str [_storage, _name, typeName _storage]] call EMM_fnc_message;
 _storage = _storage toArray false;
 
 if !(_nested isEqualTo []) then {
@@ -61,7 +58,6 @@ if (_name != "") then {
 };
 
 copyToClipboard str ["EMM_EXPORT", _folders, _storage];
-// copyToClipboard str [_storage isEqualType createHashMap, _nested, _storage];
 
 ["Data copied to clipboard"] call EMM_fnc_message;
 
