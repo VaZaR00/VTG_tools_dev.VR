@@ -1,1 +1,0 @@
-profileNamespace getVariable ["EMM_var_PRESET_STORAGE_prof", createHashMap];

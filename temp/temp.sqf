@@ -8,24 +8,4 @@ removeVest _u;
 removeBackpack _u;
 removeHeadgear _u;
 removeGoggles _u;};
-{_x call _removeEq} forEach allUnits;{_x call compile (selectRandomWeighted ["_x addWeapon ""arifle_AKM_F"";_x addWeapon ""sgun_HunterShotgun_01_F"";",1,"_x addWeapon ""SMG_03_khaki"";",1]);}forEach (allUnits);
-
-
-[
-  ["all"],
-  [
-    [
-      "Rand",
-      [
-        "comp$$c1",
-        "none",
-        1,
-        [
-          ["comp$$c3", "none", 1],
-          ["comp$$c5", "none", 1],
-        ],
-      ],
-      ["comp$$c2", "none", 1, [["comp$$c4", "none", 1]]],
-    ],
-  ],
-];
+{_x call _removeEq} forEach allUnits;{_x forceAddUniform "U_C_IDAP_Man_shorts_F";_x forceAddUniform "U_C_IDAP_Man_casual_F";_x forceAddUniform "U_C_IDAP_Man_Jeans_F";"-";_x call compile (selectRandomWeighted ["_x addHeadgear ""H_HelmetHBK_F"";",1,"_x addHeadgear ""H_HelmetHBK_ear_F"";",1,"""-"";",1]);_x addWeapon "arifle_AK12_arid_F";_x call compile (selectRandomWeighted ["_x addWeaponItem [""arifle_AK12_arid_F"", ""optic_Arco_AK_arid_F"", true];",1,"_x addWeaponItem [""arifle_AK12_arid_F"", ""optic_Arco_lush_F"", true];",1,"""-"";",1]);}forEach (allUnits);

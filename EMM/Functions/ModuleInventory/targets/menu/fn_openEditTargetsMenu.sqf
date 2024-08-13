@@ -1,0 +1,1 @@
+EMM_var_disp_MODULE_MANAGER createDisplay 'EMM_TargetsMenu';
