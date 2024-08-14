@@ -92,7 +92,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[""aaa"",[[""all""],[]]],[""sacxas"",[[""all""],[]]]]";
+					value="[[""hhj"",[[""all""],[[""Rand"",[""U_C_IDAP_Man_Tee_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1],[""U_C_ArtTShirt_01_v6_F"",""FAU"",1]]]]],[""jju"",[[""all""],[[""Rand"",[""%NO_ITEM%Uniforms"",""none"",1],[""U_C_IDAP_Man_cargo_F"",""FAU"",1]]]]]]";
 				};
 			};
 		};
@@ -105,7 +105,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[[],""%EMM_FOLDER%"",""zcxcxz"",10002],[[0],""%EMM_MODULE%"",""aaa"",20000],[[],""%EMM_MODULE%"",""sacxas"",20001]]";
+					value="[[[],""%EMM_FOLDER%"",""xxc"",10002],[[],""%EMM_MODULE%"",""jju"",20001]]";
 				};
 			};
 		};

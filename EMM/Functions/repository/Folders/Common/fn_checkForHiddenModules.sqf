@@ -1,7 +1,7 @@
 private _browser = [0] call EMM_fnc_getFolders;
 private _modules = [0] call EMM_fnc_getModules; //only module names
 
-if (count _modules != 0) exitWith {
+if (count _modules == 0) exitWith {
 	call EMM_fnc_wipePreset;
 	[nil] call EMM_fnc_setFoldersStorage;
 };

@@ -23,6 +23,4 @@ EMM_var_temp_RENAME_EL_TYPE = nil;
 
 EMM_var_MISSION_PRESET_mis = _preset;
 
-//[] call EMM_fnc_checkForHiddenModules;
-
 (EMM_equipUI#20) ctrlSetText _preset;

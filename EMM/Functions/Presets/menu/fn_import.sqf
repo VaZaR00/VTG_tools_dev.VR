@@ -38,7 +38,7 @@ EMM_var_temp_RENAME_EL_TYPE = nil;
 [_folders] call EMM_fnc_importFolders;
 
 [] call EMM_fnc_updateBrowser;
-//[] call EMM_fnc_checkForHiddenModules;
+[] call EMM_fnc_checkForHiddenModules;
 [] call EMM_fnc_loadModuleBrowser;
 
 EMM_EQUIP_TEST_FAILED_ARR = [];

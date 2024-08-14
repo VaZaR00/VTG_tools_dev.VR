@@ -41,6 +41,8 @@ call EMM_fnc_loadUserSettings;
 
 call EMM_fnc_initPreset;
 
+[] call EMM_fnc_checkForHiddenModules;
+
 call EMM_fnc_loadTargetsCombo; //load combo of modules target units
 
 (EMM_equipUI#14) ctrlShow false; //hide edit targets btn
