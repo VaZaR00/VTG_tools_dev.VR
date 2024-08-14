@@ -39,18 +39,6 @@ private _functions = [
 	],
 	*/
 
-	//modules
-	[
-		_main,
-		[
-			EMM_fnc_att_getModulesStorage,
-			EMM_fnc_att_setModulesStorage
-		],
-		[
-			EMM_fnc_var_getModulesStorage,
-			EMM_fnc_var_setModulesStorage
-		]
-	],
 	//folders
 	[
 		_main,
@@ -61,6 +49,18 @@ private _functions = [
 		[
 			EMM_fnc_var_getFoldersStorage,
 			EMM_fnc_var_setFoldersStorage
+		]
+	],
+	//modules
+	[
+		_main,
+		[
+			EMM_fnc_att_getModulesStorage,
+			EMM_fnc_att_setModulesStorage
+		],
+		[
+			EMM_fnc_var_getModulesStorage,
+			EMM_fnc_var_setModulesStorage
 		]
 	]
 ];
@@ -96,20 +96,28 @@ private _result = [_storage, _data] call _next;
 // WORKING WITH DATA CAME FROM "NEXT" FUNCTION
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 //if we need to duplicate preset data to mission file (so it will be accessable to other profiles in mission editor)
 if ((EMM_var_MISSION_PRESET_mis != "") && EMM_var_SAVE_TO_MISSION_FILE_TOO && (_type == 1)) then { 
-	_next = _functions#_storage#1#_type;
-	[_storage, _data] call _next;
+	private _presetData = [] call EMM_fnc_getPresetData;
+			
+	[nil, _presetData#0] call EMM_fnc_att_setFoldersStorage;
+	[nil, _presetData#1] call EMM_fnc_att_setModulesStorage;
 };
 
 if (isNil "_result") exitWith {[]};
 
+if (_type == 1) exitWith {_result};
+
 if (_result isEqualType "") exitWith {
 	if (_result isEqualTo "") exitWith {[]};
-	_data = createHashMapFromArray call compile _result;
+	_data = call compile _result;
+	if (_storage == 1) then {
+		_data = createHashMapFromArray _data;
+	};
 	+_data;
 };
+
+if (!(_result isEqualType []) && !(_result isEqualType createHashMap)) exitWith {[]};
 
 if ((_type == 0) && (_storage == 1) && {!(_result isEqualType createHashMap)}) then {
 	_result = createHashMapFromArray _result;

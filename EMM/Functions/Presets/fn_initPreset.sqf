@@ -11,10 +11,13 @@ if ((_preset == "") or !(_preset isEqualType "")) exitWith {EMM_var_MISSION_PRES
 
 EMM_var_temp_RENAME_EL_TYPE = "Preset";
 if !([_preset] call EMM_fnc_checkIfNameExists) exitWith {
-	["Cant't load preset", 1] call EMM_fnc_message;
-	EMM_var_MISSION_PRESET_mis = "";
-	[""] call EMM_fnc_setPreset;
 	EMM_var_temp_RENAME_EL_TYPE = nil;
+	[""] call EMM_fnc_setPreset;
+	private _modules = [] call EMM_fnc_getModules;
+	if (count _modules == 0) exitWith {
+		["Cant't load preset", 1] call EMM_fnc_message;
+		call EMM_fnc_wipePreset;
+	};
 };
 EMM_var_temp_RENAME_EL_TYPE = nil;
 

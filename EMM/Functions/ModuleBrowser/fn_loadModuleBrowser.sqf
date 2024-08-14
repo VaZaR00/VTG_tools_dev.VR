@@ -3,6 +3,8 @@ params[["_search", ""]];
 private _treeMap = [] call EMM_fnc_getFolders;
 private _tree = EMM_equipUI#5;
 
+if (count _treeMap == 0) exitWith {};
+
 tvClear _tree;
 {
 	private _path = _x#0;

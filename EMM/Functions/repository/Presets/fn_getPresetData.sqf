@@ -5,7 +5,7 @@ params[['_type', nil], ['_name', EMM_var_MISSION_PRESET_mis]];
 if !(_name isEqualType "") then {_name = EMM_var_MISSION_PRESET_mis};
 
 private _storage = [] call EMM_fnc_getPresetsStorage;
-if (_storage isEqualTo createHashMap) exitWith {[]};
+if (count _storage == 0) exitWith {[]};
 
 private _presetData = _storage get _name;
 

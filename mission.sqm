@@ -8,6 +8,7 @@ class EditorData
 	toggles=513;
 	mods[]=
 	{
+		"Equipment_Modules_Manager",
 		"3denEnhanced"
 	};
 	class ItemIDProvider
@@ -16,10 +17,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4530.9063,44.324104,2322.6917};
-		dir[]={0.011852729,-0.75952226,-0.65038431};
-		up[]={0.013839302,0.65048003,-0.75939667};
-		aside[]={-0.99984038,2.6557245e-007,-0.018220713};
+		pos[]={4542.2002,60.129936,2270.1143};
+		dir[]={0.14099318,-0.94639844,0.2906644};
+		up[]={0.41304275,0.32299742,0.85150832};
+		aside[]={0.89974952,4.1420572e-007,-0.43644357};
 	};
 };
 binarizationWanted=0;
@@ -80,6 +81,50 @@ class ScenarioData
 class CustomAttributes
 {
 	class Category0
+	{
+		name="EMM_attributes";
+		class Attribute0
+		{
+			property="EMM_EQUIP_STORAGE";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="STRING";
+					value="[[""aaa"",[[""all""],[]]],[""sacxas"",[[""all""],[]]]]";
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="EMM_BROWSER_STORAGE";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="STRING";
+					value="[[[],""%EMM_FOLDER%"",""zcxcxz"",10002],[[0],""%EMM_MODULE%"",""aaa"",20000],[[],""%EMM_MODULE%"",""sacxas"",20001]]";
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="EMM_att_MISSION_PRESET";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="STRING";
+					value="";
+				};
+			};
+		};
+		nAttributes=3;
+	};
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0

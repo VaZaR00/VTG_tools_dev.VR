@@ -172,7 +172,7 @@ class EMM_presetManager
 					x = 7.1 * GUI_GRID_W;
 					w = 3 * GUI_GRID_W;
 					tooltip = "Delete selected preset";
-					onButtonClick = "[] call EMM_fnc_presetsList_deleteItem";
+					onButtonClick = "[] spawn EMM_fnc_presetsList_deleteItem";
 				};
 				class Clear_All_btn: new_btn
 				{

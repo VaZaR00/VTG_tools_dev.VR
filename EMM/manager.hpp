@@ -54,17 +54,25 @@ class EMM_EquipmentModulesManager {
 			w = 150 * GUI_GRID_W;
 			h = 6 * GUI_GRID_H;
 		};
-		class Close_Btn: ctrlButtonToolbar
+		class Save_All_Btn: ctrlButtonToolbar
+		{
+			idc = 1647;
+			text = "\a3\3DEN\Data\Displays\Display3DEN\ToolBar\save_ca.paa";
+			x = 219 * GUI_GRID_W;
+			y = 0.5 * GUI_GRID_H;
+			w = 4.5 * GUI_GRID_W;
+			h = 6 * GUI_GRID_H;
+			tooltip = "Save All Data"; //--- ToDo: Localize;
+			onButtonClick = "call EMM_fnc_saveAllData";
+		};
+		class Close_Btn: Save_All_Btn
 		{
 			idc = 1610;
 			text = "a3\3den\data\controlsgroups\tutorial\close_ca.paa"; //--- ToDo: Localize;
 			// text = "X";
 			x = 224.5 * GUI_GRID_W;
-			y = 0.5 * GUI_GRID_H;
-			w = 4.5 * GUI_GRID_W;
-			h = 6 * GUI_GRID_H;
-			//tooltip = "Current progres will be saved"; //--- ToDo: Localize;
-			onButtonClick = "call EMM_fnc_close";
+			tooltip = "Save and Close";
+			onButtonClick = "call EMM_fnc_close; call EMM_fnc_saveAllData";
 		};
 
 		class Modules_tree_grp: RscControlsGroupNoScrollbars
@@ -197,6 +205,7 @@ class EMM_EquipmentModulesManager {
 					items[]=
 					{
 						"_OpenPM",
+						"_savePreset",
 						"_Import",
 						"_Export_Selected",
 						"_Export_All",
@@ -226,6 +235,12 @@ class EMM_EquipmentModulesManager {
 				{
 					text="Preset Manager...";
 					action = "[] call EMM_fnc_openPresetManager";
+				};
+				class _savePreset
+				{
+					text="Save";
+					action = "call EMM_fnc_saveAllData";
+					picture = "\a3\3DEN\Data\Displays\Display3DEN\ToolBar\save_ca.paa";
 				};
 				class _Import
 				{

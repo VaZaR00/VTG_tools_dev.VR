@@ -27,6 +27,15 @@ EMM_equipUI = call EMM_fnc_getUIelements;
 
 waitUntil {!(isNil 'EMM_equipUI')};
 
+//autosave
+[] spawn {
+	uiSleep 180;
+	while {!(isNil 'EMM_equipUI')} do {
+		call EMM_fnc_saveAllData;
+		uiSleep 180;
+	};
+};
+
 //load manager user settings
 call EMM_fnc_loadUserSettings;
 

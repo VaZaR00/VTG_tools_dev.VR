@@ -40,20 +40,19 @@ private _options = [
 		""
 	],
 	[
+		// private _map = (_presetData#0) apply {
+		// 		_x resize 4;
+		// 		(_x#0) deleteAt (count (_x#0) - 1);
+		// 	};
 		"EMM_var_SAVE_TO_MISSION_FILE_TOO", 
 		'Save to mission file', 
 		'Additionally save data to mission file (duplicate). Its needed when you send mission to someone else or open it with other profile',
 		true,
 		"if (EMM_var_SAVE_TO_MISSION_FILE_TOO) then {
 			private _presetData = [] call EMM_fnc_getPresetData;
-
-			private _map = (_presetData#0) apply {
-				_x resize 4;
-				(_x#0) deleteAt (count (_x#0) - 1);
-			};
-
-			[_map] call EMM_fnc_setFoldersStorage;
-			[_presetData#1] call EMM_fnc_setModulesStorage;
+			
+			[nil, _presetData#0] call EMM_fnc_att_setFoldersStorage;
+			[nil, _presetData#1] call EMM_fnc_att_setModulesStorage;
 		} else {
 			call EMM_fnc_wipePreset;
 		};"

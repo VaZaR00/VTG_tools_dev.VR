@@ -51,6 +51,7 @@ class CfgFunctions
 			class setPreset { file = "EMM\Functions\Presets\fn_setPreset.sqf"; };
 			class wipePreset { file = "EMM\Functions\Presets\fn_wipePreset.sqf"; };
 			class storageMiddleware { file = "EMM\Functions\repository\fn_storageMiddleware.sqf"; };
+			class saveAllData { file = "EMM\Functions\repository\fn_saveAllData.sqf"; };
 			class clearSearch { file = "EMM\Functions\Shared\fn_clearSearch.sqf"; };
 			class copyClassname { file = "EMM\Functions\Shared\fn_copyClassname.sqf"; };
 			class loadUserSettings { file = "EMM\Functions\Shared\fn_loadUserSettings.sqf"; };

@@ -4,6 +4,7 @@ private _allNames = [];
 
 switch (EMM_var_temp_RENAME_EL_TYPE) do {
 	case "Folder": {
+		copyToClipboard str ([] call EMM_fnc_getFolders);
 		_allNames = ([] call EMM_fnc_getFolders) select { (_x#1) == '%EMM_FOLDER%' };
 		_allNames = _allNames apply {_x#2};
 	};
