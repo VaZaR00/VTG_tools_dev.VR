@@ -1,1 +1,1 @@
-set3DENMissionAttributes [["EMM_attributes", "EMM_EQUIP_STORAGE", str (_this#1)]];
+set3DENMissionAttributes [["EMM_attributes", "EMM_MODULES_STORAGE", str (_this#1)]];

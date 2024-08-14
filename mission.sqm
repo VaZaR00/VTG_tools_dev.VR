@@ -85,14 +85,14 @@ class CustomAttributes
 		name="EMM_attributes";
 		class Attribute0
 		{
-			property="EMM_EQUIP_STORAGE";
+			property="EMM_MODULES_STORAGE";
 			expression="false";
 			class Value
 			{
 				class data
 				{
 					singleType="STRING";
-					value="[[""aaaa"",[[""all""],[[""Rand"",[""U_I_C_Soldier_Bandit_3_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1]]]]],[""sadsa"",[[""all""],[]]]]";
+					value="[[""xczs"",[[""all""],[[""Rand"",[""U_I_C_Soldier_Bandit_4_F"",""FAU"",1],[""U_C_IDAP_Man_Tee_F"",""FAU"",1]]]]],[""sadasdw"",[[""all""],[[""Rand"",[""U_C_IDAP_Man_TeeShorts_F"",""FAU"",1],[""U_C_IDAP_Man_shorts_F"",""FAU"",1]]]]]]";
 				};
 			};
 		};
@@ -105,7 +105,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[[],""%EMM_FOLDER%"",""xczcxz"",10002],[[0],""%EMM_MODULE%"",""aaaa"",20000],[[],""%EMM_MODULE%"",""sadsa"",20001]]";
+					value="[[[],""%EMM_MODULE%"",""sadasdw"",20000],[[],""%EMM_MODULE%"",""xczs"",20001]]";
 				};
 			};
 		};
@@ -118,7 +118,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="ggh";
+					value="";
 				};
 			};
 		};

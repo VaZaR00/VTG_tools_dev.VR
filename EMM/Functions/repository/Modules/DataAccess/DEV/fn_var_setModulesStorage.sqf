@@ -1,1 +1,1 @@
-parsingNamespace setVariable ["EMM_EQUIP_STORAGE", (_this#1)];
+parsingNamespace setVariable ["EMM_MODULES_STORAGE", (_this#1)];

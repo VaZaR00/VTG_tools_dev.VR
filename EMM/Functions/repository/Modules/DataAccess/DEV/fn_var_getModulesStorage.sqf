@@ -1,1 +1,1 @@
-+(parsingNamespace getVariable ["EMM_EQUIP_STORAGE", nil])
++(parsingNamespace getVariable ["EMM_MODULES_STORAGE", nil])
