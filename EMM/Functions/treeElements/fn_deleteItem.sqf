@@ -25,5 +25,5 @@ if (
 	[_tree, _path] call EMM_fnc_deleteItem;
 };
 
-[_tree] call EMM_fnc_checkItemsLabels;
+[_tree] spawn EMM_fnc_checkItemsLabels;
 [false] call EMM_fnc_setNestParent;

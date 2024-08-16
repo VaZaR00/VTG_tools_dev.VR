@@ -2,7 +2,7 @@ params[["_search", ""]];
 private _combo = EMM_equipUI#19;
 private _sel = lbCurSel _combo;
 
-private _EMM_itemCache = +(parsingNamespace getVariable ["EMM_itemCache", nil]);
+private _EMM_itemCache = +(parsingNamespace getVariable ["EMM_itemsCache", nil]);
 if (isNil "_EMM_itemCache") exitWith {};
 
 (EMM_equipUI#16) ctrlShow true; 

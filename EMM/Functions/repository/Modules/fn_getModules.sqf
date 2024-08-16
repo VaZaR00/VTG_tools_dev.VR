@@ -1,4 +1,6 @@
-params[['_type', nil], ['_name', '', '']];
+#include "..\..\..\defines.hpp";
+
+params[['_type', nil], ['_name', '']];
 
 /*
 	str - get by name

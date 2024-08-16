@@ -1,4 +1,4 @@
-params["_display"];
+params[["_display", EMM_var_disp_MODULE_MANAGER]];
 
 (_display displayCtrl 1598) ctrlSetEventHandler ['KeyUp', '[_this, EMM_fnc_loadArsenalItems, 0.5] call EMM_fnc_onSearchKeyUp'];
 (_display displayCtrl 9568) ctrlSetEventHandler ['KeyUp', '[_this, EMM_fnc_loadModuleBrowser, 0.3] call EMM_fnc_onSearchKeyUp'];

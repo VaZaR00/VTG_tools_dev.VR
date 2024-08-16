@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 params[["_one", false]];
 
 private _name = "";
@@ -25,7 +27,7 @@ if (
 				["Folder is empty", 1] call EMM_fnc_message;
 				true    //not founded
 			};
-			private _treeMap = [_tree] call EMM_fnc_treeMapper;
+			SPWN_N_WAIT_RES(EMM_fnc_treeMapper, _treeMap, [_tree]);
 			_nested = _treeMap select {
 				private _path = +(_x#0);
 				_path resize (count _sel);
@@ -41,7 +43,7 @@ if (
 
 private _storage = [_name] call EMM_fnc_getModules;
 
-if (count _storage != 0) exitWith {
+if (count _storage == 0) exitWith {
 	["No data", 1] call EMM_fnc_message;	
 };
 _storage = _storage toArray false;

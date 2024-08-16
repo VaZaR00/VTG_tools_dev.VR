@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 params["_map"];
 
 private _tree = EMM_equipUI#5;

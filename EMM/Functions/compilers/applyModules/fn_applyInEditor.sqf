@@ -3,7 +3,7 @@ params[["_one_", false]];
 private _main = {
 	params[["_one", false]];
 
-	if (_one && (EMM_Current_Module == "none")) exitWith {
+	if (_one && (EMM_Current_Module == "%none%")) exitWith {
 		["No module opened", 1] call EMM_fnc_message;
 	};
 

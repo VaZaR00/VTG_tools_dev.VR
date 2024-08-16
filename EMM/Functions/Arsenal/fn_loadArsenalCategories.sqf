@@ -1,3 +1,5 @@
+#include "..\..\defines.hpp";
+
 EMM_Arsenal_filter = "true";
 
 private _categories = EMM_itemsCache_scheme apply {_x#0};

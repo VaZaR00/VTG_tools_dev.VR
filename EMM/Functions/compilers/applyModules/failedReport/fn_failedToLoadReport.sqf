@@ -1,4 +1,4 @@
-if (count EMM_EQUIP_TEST_FAILED_ARR == 0) exitWith {EMM_EQUIP_TEST_FAILED_ARR=nil};
+if ((isNil "EMM_EQUIP_TEST_FAILED_ARR") || {count EMM_EQUIP_TEST_FAILED_ARR == 0}) exitWith {EMM_EQUIP_TEST_FAILED_ARR=nil};
 
 EMM_check_load = true;
 

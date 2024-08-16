@@ -203,7 +203,7 @@ class EMM_presetManager
 					w = 3 * GUI_GRID_W;
 					h = 1.2 * GUI_GRID_H;
 					tooltip = "Import presets from clipboard";
-					onButtonClick = "[] call EMM_fnc_importPresetsPM";
+					onButtonClick = "[] spawn EMM_fnc_importPresetsPM";
 				};
 				class export_all_btn: import_btn
 				{

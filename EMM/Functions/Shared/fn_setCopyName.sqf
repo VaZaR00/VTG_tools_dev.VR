@@ -1,7 +1,7 @@
 params["_itemData", "_pos"];
 	
 private _storage = [] call EMM_fnc_getModules;
-if (count _moduleData == 0) exitWith {
+if (count _storage == 0) exitWith {
 	_itemData
 };
 

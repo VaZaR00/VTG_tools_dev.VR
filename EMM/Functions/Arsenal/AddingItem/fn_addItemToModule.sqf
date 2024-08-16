@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 params['_itemData', '_category', '_tree', ['_isRand', true]];
 
 private _name = _itemData#0;

@@ -16,7 +16,7 @@ class EMM_EquipmentModulesManager {
 	enableDisplay = 1;
 	onUnload = "call EMM_fnc_unload";
 	onLoad = "uiNamespace setVariable ['EMM_EquipmentModulesManager', (_this#0)]";
-	//onMouseMoving = "[str ((EMM_var_ActiveModuleTab#1) tvData (tvCurSel (EMM_var_ActiveModuleTab#1)))] call EMM_fnc_message;"; //str ((tvCurSel (EMM_equipUI#5))isEqualTo [])
+	//onMouseMoving = "[str [EMM_TEMP_SPWN_N_WAIT_handle, EMM_TEMP_SPWN_N_WAIT_RETURN]] call EMM_fnc_message;"; //str ((tvCurSel (EMM_equipUI#5))isEqualTo []) str ((EMM_var_ActiveModuleTab#1) tvData (tvCurSel (EMM_var_ActiveModuleTab#1)))
 	class controlsBackground {		
 		class BackgroundDisableTiles : ctrlStaticBackgroundDisableTiles {};
 		class BackgroundDisable : ctrlStaticBackgroundDisable {};
@@ -171,7 +171,7 @@ class EMM_EquipmentModulesManager {
 							onLoad = "EMM_MODULE_BROWSER_DRAGGING = false; EMM_MODULE_BROWSER_SELECT_PATH = []";
 							onUnload = "EMM_MODULE_BROWSER_DRAGGING = nil; EMM_MODULE_BROWSER_SELECT_PATH = nil";
 
-							onTreeDblClick = "_this call EMM_fnc_openModule;";
+							onTreeDblClick = "_this spawn EMM_fnc_openModule;";
 							//for dragging
 							onTreeSelChanged = "EMM_MODULE_BROWSER_SELECT_PATH = (_this#1)";
 							onMouseButtonDown = "EMM_MODULE_BROWSER_DRAGGING = true; (_this#0) tvSetCurSel [-1];[EMM_equipUI#5] spawn EMM_fnc_dragItem";
@@ -245,20 +245,20 @@ class EMM_EquipmentModulesManager {
 				class _Import
 				{
 					text="Import";
-					action = "[] call EMM_fnc_import";
+					action = "[] spawn EMM_fnc_import";
 					picture = "a3\3den\data\cfgwaypoints\getinnearest_ca.paa";
 				};
 				class _Export_Selected
 				{
 					text="Export Selected";
-					action = "[true] call EMM_fnc_export";
+					action = "[true] spawn EMM_fnc_export";
 					tooltip = "Export cuurently selected module/folder";
 					picture = "a3\3den\data\cfgwaypoints\unload_ca.paa";
 				};
 				class _Export_All
 				{
 					text="Export All";
-					action = "[] call EMM_fnc_export";
+					action = "[] spawn EMM_fnc_export";
 					tooltip = "Export ALL modules";
 					picture = "a3\3den\data\cfgwaypoints\getout_ca.paa";
 				};
@@ -865,7 +865,7 @@ class EMM_EquipmentModulesManager {
 							h = 10 * GUI_GRID_H;
 							tooltip = "Save module"; //--- ToDo: Localize;
 
-							onButtonClick = "call EMM_fnc_saveModule";
+							onButtonClick = "[] spawn EMM_fnc_saveModule";
 						};
 						class Rename_module_Btn: Save_module_Btn
 						{

@@ -1,3 +1,5 @@
+#include "..\..\defines.hpp";
+
 params["_class"];
 
 if ("comp$$" in _class) exitWith {

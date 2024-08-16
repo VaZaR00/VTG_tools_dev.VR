@@ -1,11 +1,12 @@
-#include "defines.hpp"
+#include "cfgFunctions.hpp"
+#include "classDefines.hpp"
 #include "manager.hpp"
+#include "defines.hpp"
 #include "addFuncSelector.hpp"
 #include "TargetsMenu.hpp"
 #include "failedReport.hpp"
 #include "nameInput.hpp"
 #include "presetManager.hpp"
-#include "cfgFunctions.hpp"
 
 class CfgPatches
 {

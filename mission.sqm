@@ -13,7 +13,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=400;
+		nextID=4;
 	};
 	class Camera
 	{
@@ -24,19 +24,16 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="VTG_tools_dev";
+sourceName="EMM_TOOL";
 addons[]=
 {
-	"A3_Characters_F",
-	"A3_Characters_F_AoW",
-	"A3_Supplies_F_Exp_Ammoboxes",
-	"A3_Modules_F"
+	"A3_Characters_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=1;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -44,39 +41,12 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item1
-		{
-			className="A3_Characters_F_AoW";
-			name="Arma 3 Art of War - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item2
-		{
-			className="A3_Supplies_F_Exp";
-			name="Arma 3 Apex - Ammoboxes and Supplies";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item3
-		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
-dlcs[]=
-{
-	"AoW",
-	"Expansion"
-};
-randomSeed=6579932;
+randomSeed=1429364;
 class ScenarioData
 {
 	author="Vazar";
-	saving=0;
 };
 class CustomAttributes
 {
@@ -92,7 +62,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[""xczs"",[[""all""],[[""Rand"",[""U_I_C_Soldier_Bandit_4_F"",""FAU"",1],[""U_C_IDAP_Man_Tee_F"",""FAU"",1]]]]],[""sadasdw"",[[""all""],[[""Rand"",[""U_C_IDAP_Man_TeeShorts_F"",""FAU"",1],[""U_C_IDAP_Man_shorts_F"",""FAU"",1]]]]]]";
+					value="[[""bnbb"",[[""all""],[[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1],[""Rand"",[""H_Bandanna_gry"",""AH"",1],[""H_Bandanna_khk"",""AH"",1]],[""FirstAidKit"",""AIU"",1],[""Medikit"",""AIV"",1],[""H_HelmetAggressor_F"",""AIB"",1]]]],[""bnmbnmbn"",[[""all""],[[""Rand"",[""H_Bandanna_gry"",""AH"",1],[""H_Bandanna_khk"",""AH"",1]],[""FirstAidKit"",""AIU"",1],[""Medikit"",""AIV"",1],[""H_HelmetAggressor_F"",""AIB"",1]]]],["".,"",[[[""B_soldier_AAT_F"",""B_support_Mort_F""],"""",""""],[[""U_C_IDAP_Man_TeeShorts_F"",""FAU"",1],[""U_C_IDAP_Man_shorts_F"",""FAU"",1],[""U_C_IDAP_Man_casual_F"",""FAU"",1],[""U_C_IDAP_Man_cargo_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_4_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_2_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1],[""Rand"",[""H_Bandanna_gry"",""AH"",1],[""H_Bandanna_khk"",""AH"",1]],[""FirstAidKit"",""AIU"",1],[""Medikit"",""AIV"",1],[""H_HelmetAggressor_F"",""AIB"",1]]]]]";
 				};
 			};
 		};
@@ -105,7 +75,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[[],""%EMM_MODULE%"",""sadasdw"",20000],[[],""%EMM_MODULE%"",""xczs"",20001]]";
+					value="[[[],""%EMM_FOLDER%"",""vbvbmbnmbnmbnmbn"",10003],[[0],""%EMM_MODULE%"","".,"",20000],[[],""%EMM_MODULE%"",""bnbb"",20001],[[],""%EMM_MODULE%"",""bnmbnmbn"",20002]]";
 				};
 			};
 		};
@@ -124,37 +94,6 @@ class CustomAttributes
 		};
 		nAttributes=3;
 	};
-	class Category1
-	{
-		name="Scenario";
-		class Attribute0
-		{
-			property="Init";
-			expression="if !(is3DEN) then {[] call compile _value;};";
-			class Value
-			{
-				class data
-				{
-					singleType="STRING";
-					value="[] execVM ""CrewControlScript.sqf"";";
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="EnableDebugConsole";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					singleType="SCALAR";
-					value=1;
-				};
-			};
-		};
-		nAttributes=2;
-	};
 };
 class Mission
 {
@@ -168,8 +107,6 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		wavesForced=1;
-		windForced=1;
 		year=2035;
 		day=28;
 		hour=13;
@@ -179,107 +116,63 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
 			side="West";
 			class Entities
 			{
-				items=2;
+				items=1;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4546.2798,5.0014391,2294.113};
+						position[]={4557.7886,5.0014391,2288.845};
 					};
 					side="West";
-					flags=6;
+					flags=7;
 					class Attributes
 					{
 						isPlayer=1;
 					};
-					id=384;
-					type="B_soldier_repair_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male12ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=2;
-					};
+					id=1;
+					type="B_soldier_AAT_F";
 				};
-				class Item1
+			};
+			class Attributes
+			{
+			};
+			id=0;
+		};
+		class Item1
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4542.4966,5.0014391,2289.6282};
+						position[]={4560.8779,5.0014391,2277.4705};
 					};
 					side="West";
-					flags=5;
+					flags=7;
 					class Attributes
 					{
 					};
-					id=385;
-					type="B_Officer_Parade_Veteran_F";
+					id=3;
+					type="B_support_Mort_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=373;
-		};
-		class Item1
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4543.2158,5.3815289,2286.2322};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=390;
-			type="Box_AAF_Equip_F";
-		};
-		class Item2
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={0,5,0};
-			};
-			name="EQUIP_MODULES_COMPILED_CODE";
-			init="if (!isServer) exitWith {};[] spawn {private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits;{_x forceAddUniform ""U_C_IDAP_Man_Tee_F"";_x call compile (selectRandomWeighted [""_x addItemToUniform """"FirstAidKit"""";"",111000,""_x addItemToUniform """"%NO_ITEM%Items"""";"",1]);}forEach (allUnits);{_x call compile (selectRandomWeighted [""_x forceAddUniform """"U_I_C_Soldier_Bandit_1_F"""";"",1,""_x forceAddUniform """"U_C_IDAP_Man_TeeShorts_F"""";"",1]);for ""_i"" from 1 to 400 do {_x addItemToUniform ""FirstAidKit"";};}forEach (allUnits);};";
-			id=397;
-			type="Logic";
+			id=2;
 		};
 	};
 };

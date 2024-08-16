@@ -30,14 +30,8 @@ if (_name == _prevName) exitWith {};
 _tree tvSetText [_path, _name];
 _tree tvSetTooltip [_path, _name];
 
-if (EMM_Current_Module == _prevName) then {
+if (EMM_Current_Module != _prevName) then {
 	EMM_Current_Module = _name;
 };
 
-call EMM_fnc_updateBrowser;
-
-// if (EMM_Current_Module != "none") then {
-// 	EMM_Current_Module = _name;
-// 	call EMM_fnc_saveModule;
-// 	call EMM_fnc_loadModuleData;
-// };
+[] spawn EMM_fnc_updateBrowser;

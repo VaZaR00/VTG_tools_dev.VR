@@ -36,4 +36,4 @@ if (_newAmount > 1) exitWith {
 };
 _tree tvSetText [_path, _name];
 
-[_tree] call EMM_fnc_checkItemsLabels;
+[_tree] spawn EMM_fnc_checkItemsLabels;

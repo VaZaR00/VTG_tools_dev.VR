@@ -1,16 +1,19 @@
-params[["_display", findDisplay 11549], "_show"];
+#include "..\..\defines.hpp";
+
+params["_show"];
 
 //arsenal
-(_display displayCtrl 1800) ctrlShow _show;
-(_display displayCtrl 1511) ctrlShow _show;
-(_display displayCtrl 1338) ctrlShow false;
+C_SHOW_EMM(1800) _show;
+C_SHOW_EMM(1511) _show;
+C_SHOW_EMM(1338) false;
 
 //module
-(_display displayCtrl 1801) ctrlShow _show;
-(_display displayCtrl 6451) ctrlShow _show;
+C_SHOW_EMM(1801) _show;
+C_SHOW_EMM(6451) _show;
 
 //start
-(_display displayCtrl 6512) ctrlShow (!_show);
+// (_display displayCtrl 6512) ctrlShow (!_show);
+C_SHOW_EMM(6512) (!_show);
 
 if (isNil "EMM_equipUI") exitWith {};
 //attachments hint
