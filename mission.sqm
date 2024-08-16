@@ -6,31 +6,34 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=513;
+	mods[]=
+	{
+		"Equipment_Modules_Manager",
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
-		nextID=391;
+		nextID=4;
 	};
 	class Camera
 	{
-		pos[]={4543.3379,9.4168053,2298.3127};
-		dir[]={0.52433854,-0.38820651,-0.75801659};
-		up[]={0.22095485,0.9214772,-0.31942707};
-		aside[]={-0.82249707,1.2198943e-006,-0.56894678};
+		pos[]={4542.2002,60.129936,2270.1143};
+		dir[]={0.14099318,-0.94639844,0.2906644};
+		up[]={0.41304275,0.32299742,0.85150832};
+		aside[]={0.89974952,4.1420572e-007,-0.43644357};
 	};
 };
 binarizationWanted=0;
-sourceName="VTG_tools_dev";
+sourceName="EMM_TOOL";
 addons[]=
 {
-	"A3_Characters_F",
-	"A3_Characters_F_AoW",
-	"A3_Supplies_F_Exp_Ammoboxes"
+	"A3_Characters_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=1;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -38,65 +41,58 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item1
-		{
-			className="A3_Characters_F_AoW";
-			name="Arma 3 Art of War - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item2
-		{
-			className="A3_Supplies_F_Exp";
-			name="Arma 3 Apex - Ammoboxes and Supplies";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
-dlcs[]=
-{
-	"AoW",
-	"Expansion"
-};
-randomSeed=6579932;
+randomSeed=1429364;
 class ScenarioData
 {
 	author="Vazar";
-	saving=0;
 };
 class CustomAttributes
 {
 	class Category0
 	{
-		name="Scenario";
+		name="EMM_attributes";
 		class Attribute0
 		{
-			property="Init";
-			expression="if !(is3DEN) then {[] call compile _value;};";
+			property="EMM_MODULES_STORAGE";
+			expression="false";
 			class Value
 			{
 				class data
 				{
 					singleType="STRING";
-					value="[] execVM ""CrewControlScript.sqf"";";
+					value="[[""bnbb"",[[""all""],[[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1],[""Rand"",[""H_Bandanna_gry"",""AH"",1],[""H_Bandanna_khk"",""AH"",1]],[""FirstAidKit"",""AIU"",1],[""Medikit"",""AIV"",1],[""H_HelmetAggressor_F"",""AIB"",1]]]],[""bnmbnmbn"",[[""all""],[[""Rand"",[""H_Bandanna_gry"",""AH"",1],[""H_Bandanna_khk"",""AH"",1]],[""FirstAidKit"",""AIU"",1],[""Medikit"",""AIV"",1],[""H_HelmetAggressor_F"",""AIB"",1]]]],["".,"",[[[""B_soldier_AAT_F"",""B_support_Mort_F""],"""",""""],[[""U_C_IDAP_Man_TeeShorts_F"",""FAU"",1],[""U_C_IDAP_Man_shorts_F"",""FAU"",1],[""U_C_IDAP_Man_casual_F"",""FAU"",1],[""U_C_IDAP_Man_cargo_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_4_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_2_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1],[""Rand"",[""H_Bandanna_gry"",""AH"",1],[""H_Bandanna_khk"",""AH"",1]],[""FirstAidKit"",""AIU"",1],[""Medikit"",""AIV"",1],[""H_HelmetAggressor_F"",""AIB"",1]]]]]";
 				};
 			};
 		};
 		class Attribute1
 		{
-			property="EnableDebugConsole";
-			expression="true";
+			property="EMM_BROWSER_STORAGE";
+			expression="false";
 			class Value
 			{
 				class data
 				{
-					singleType="SCALAR";
-					value=1;
+					singleType="STRING";
+					value="[[[],""%EMM_FOLDER%"",""vbvbmbnmbnmbnmbn"",10003],[[0],""%EMM_MODULE%"","".,"",20000],[[],""%EMM_MODULE%"",""bnbb"",20001],[[],""%EMM_MODULE%"",""bnmbnmbn"",20002]]";
 				};
 			};
 		};
-		nAttributes=2;
+		class Attribute2
+		{
+			property="EMM_att_MISSION_PRESET";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="STRING";
+					value="";
+				};
+			};
+		};
+		nAttributes=3;
 	};
 };
 class Mission
@@ -111,8 +107,6 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		wavesForced=1;
-		windForced=1;
 		year=2035;
 		day=28;
 		hour=13;
@@ -122,85 +116,11 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
 			side="West";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4546.2798,5.0014391,2294.113};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						isPlayer=1;
-					};
-					id=384;
-					type="B_soldier_repair_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male12ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4542.4966,5.0014391,2289.6282};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-					};
-					id=385;
-					type="B_Officer_Parade_Veteran_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=373;
-		};
-		class Item1
-		{
-			dataType="Group";
-			side="East";
 			class Entities
 			{
 				items=1;
@@ -209,36 +129,50 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4546.6421,5.0014391,2279.7183};
+						position[]={4557.7886,5.0014391,2288.845};
 					};
-					side="East";
+					side="West";
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 					};
-					id=389;
-					type="O_helipilot_F";
+					id=1;
+					type="B_soldier_AAT_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=388;
+			id=0;
 		};
-		class Item2
+		class Item1
 		{
-			dataType="Object";
-			class PositionInfo
+			dataType="Group";
+			side="West";
+			class Entities
 			{
-				position[]={4543.2158,5.3815289,2286.2322};
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4560.8779,5.0014391,2277.4705};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=3;
+					type="B_support_Mort_F";
+				};
 			};
-			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
-			id=390;
-			type="Box_AAF_Equip_F";
+			id=2;
 		};
 	};
 };
