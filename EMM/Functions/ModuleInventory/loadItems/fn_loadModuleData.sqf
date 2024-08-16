@@ -29,6 +29,7 @@ if !(ctrlShown (EMM_equipUI#13)) then {
 };
 
 EMM_moduleTargets = _targets;
+EMM_Current_Module = _module;
 
 // if (!EMM_expandInvChkbox) then {
 // 	{ (_x#1) tvCollapse [] } forEach EMM_moduleTabs;

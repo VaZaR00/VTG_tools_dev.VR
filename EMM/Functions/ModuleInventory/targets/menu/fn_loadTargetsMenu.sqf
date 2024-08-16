@@ -3,7 +3,7 @@ private _tree = _display displayCtrl 1568;
 private _includeField = _display displayCtrl 1400;
 private _excludeField = _display displayCtrl 1401;
 
-private _moduleTargets = if (EMM_Current_Module != "none") then {
+private _moduleTargets = if (EMM_Current_Module != "%none%") then {
 	([1, EMM_Current_Module] call EMM_fnc_getModules)#0;
 } else { [] };
 

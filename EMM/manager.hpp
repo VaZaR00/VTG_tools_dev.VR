@@ -16,7 +16,7 @@ class EMM_EquipmentModulesManager {
 	enableDisplay = 1;
 	onUnload = "call EMM_fnc_saveAllData; call EMM_fnc_unload";
 	onLoad = "uiNamespace setVariable ['EMM_EquipmentModulesManager', (_this#0)]";
-	//onMouseMoving = "[str [EMM_TEMP_SPWN_N_WAIT_handle, EMM_TEMP_SPWN_N_WAIT_RETURN]] call EMM_fnc_message;"; //str ((tvCurSel (EMM_equipUI#5))isEqualTo []) str ((EMM_var_ActiveModuleTab#1) tvData (tvCurSel (EMM_var_ActiveModuleTab#1)))
+	onMouseMoving = "[str [EMM_Current_Module]] call EMM_fnc_message;"; //str ((tvCurSel (EMM_equipUI#5))isEqualTo []) str ((EMM_var_ActiveModuleTab#1) tvData (tvCurSel (EMM_var_ActiveModuleTab#1)))
 	class controlsBackground {		
 		class BackgroundDisableTiles : ctrlStaticBackgroundDisableTiles {};
 		class BackgroundDisable : ctrlStaticBackgroundDisable {};
