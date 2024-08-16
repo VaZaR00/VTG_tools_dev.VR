@@ -17,5 +17,19 @@ treeElements_
 \Functions\
 \EMM\
 
-*/ ["%EMM_EXPORT%", [], ["NewModule2024-8-16-20-40-42-597", [["all"], []]]];
-["%EMM_EXPORT%", [], [["NewModule2024-8-16-20-40-42-597", [["all"], []]]]];
+*/
+
+[
+  "%EMM_EXPORT%",
+  [
+    [[], "%EMM_FOLDER%", "red", 10005],
+    [[], "%EMM_MODULE%", "r_rifle", 20002],
+    [[], "%EMM_MODULE%", "r_unif", 20003],
+    [[], "%EMM_MODULE%", "r_vest", 20004],
+  ],
+  [
+    ["r_rifle", [["all"], []]],
+    ["r_unif", [["all"], []]],
+    ["r_vest", [["all"], []]],
+  ],
+];

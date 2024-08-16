@@ -34,7 +34,7 @@ if (
 				_path isEqualTo _sel;
 			};
 			_folders = _folders select { private _name_ = (_x#2); (_nested findIf { _name_ == (_x#2) }) != -1 };
-			_folders = _folders apply { (_x#0) deleteAt (count (_x#0) - 1); _x };
+			// _folders = _folders apply { (_x#0) deleteAt (count (_x#0) - 1); _x };
 			false
 		};
 	} else {false}
