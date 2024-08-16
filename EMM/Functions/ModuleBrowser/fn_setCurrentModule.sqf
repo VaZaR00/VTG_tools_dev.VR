@@ -1,6 +1,6 @@
 params ["_tree", "_sel"];
 
-EMM_Current_Module = "none";
+EMM_Current_Module = "%none%";
 EMM_moduleTargets = nil;
 
 private _module = _tree tvText _sel;

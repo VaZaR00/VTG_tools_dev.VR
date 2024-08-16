@@ -14,7 +14,7 @@ class EMM_EquipmentModulesManager {
 	idd = 11549;
 	//enableSimulation = 1;
 	enableDisplay = 1;
-	onUnload = "call EMM_fnc_unload";
+	onUnload = "call EMM_fnc_saveAllData; call EMM_fnc_unload";
 	onLoad = "uiNamespace setVariable ['EMM_EquipmentModulesManager', (_this#0)]";
 	//onMouseMoving = "[str [EMM_TEMP_SPWN_N_WAIT_handle, EMM_TEMP_SPWN_N_WAIT_RETURN]] call EMM_fnc_message;"; //str ((tvCurSel (EMM_equipUI#5))isEqualTo []) str ((EMM_var_ActiveModuleTab#1) tvData (tvCurSel (EMM_var_ActiveModuleTab#1)))
 	class controlsBackground {		
@@ -72,7 +72,7 @@ class EMM_EquipmentModulesManager {
 			// text = "X";
 			x = 224.5 * GUI_GRID_W;
 			tooltip = "Save and Close";
-			onButtonClick = "call EMM_fnc_close; call EMM_fnc_saveAllData";
+			onButtonClick = "call EMM_fnc_close;"; //call EMM_fnc_saveAllData";
 		};
 
 		class Modules_tree_grp: RscControlsGroupNoScrollbars
@@ -292,14 +292,14 @@ class EMM_EquipmentModulesManager {
 				class _Give
 				{
 					text="Give";
-					action = "[true] call EMM_fnc_applyInEditor";
+					action = "[true] spawn EMM_fnc_applyInEditor";
 					tooltip = "Compiles currently open module and applies to its targets with test, so you can see if all items are given";
 					picture = "a3\3den\data\cfgwaypoints\seekanddestroy_ca.paa";
 				};
 				class _Give_All
 				{
 					text="Give All";
-					action = "[] call EMM_fnc_applyInEditor";
+					action = "[] spawn EMM_fnc_applyInEditor";
 					tooltip = "Compiles all modules and applies to its targets with test, so you can see if all items are given";
 					picture = "a3\3den\data\displays\display3den\tree_expand_ca.paa";
 				};

@@ -1,3 +1,5 @@
+#include "..\..\defines.hpp";
+
 private _EMM_itemsCache = +EMM_itemsCache_scheme;
 
 {
@@ -34,8 +36,10 @@ private _EMM_itemsCache = +EMM_itemsCache_scheme;
 	(_x#1) insert [0, [["Nothing", "%NO_ITEM%", EMM_var_pic_NOTHING]]]
 } forEach _EMM_itemsCache;
 
+_EMM_itemsCache = createHashMapFromArray _EMM_itemsCache;
+parsingNamespace setVariable ["EMM_itemsCache", _EMM_itemsCache];
 
 //return
-_EMM_itemsCache
+// _EMM_itemsCache
 
 //item: [name, class, picture]

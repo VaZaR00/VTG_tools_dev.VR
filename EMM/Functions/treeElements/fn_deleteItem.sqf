@@ -1,5 +1,7 @@
 params["_tree", "_path"];
 
+if (count _path == 0) exitWith {};
+
 _tree tvDelete _path;
 
 private _selUpper = {

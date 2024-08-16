@@ -11,9 +11,9 @@ private _moduleExists = _treeMap findIf {(_x#2) == EMM_Current_Module};
 
 if (_moduleExists == -1) then {
 	call EMM_fnc_resetModule;
-	[nil, false] call EMM_fnc_hideStartMsg;
+	[false] call EMM_fnc_hideStartMsg;
 } else {
-	if (EMM_Current_Module != "none") then {
+	if (EMM_Current_Module != "%none%") then {
 		_path = _treeMap#_moduleExists#0;
 		
 		//turn off save message

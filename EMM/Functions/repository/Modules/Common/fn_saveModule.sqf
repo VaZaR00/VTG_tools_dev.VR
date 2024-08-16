@@ -1,5 +1,5 @@
 disableSerialization;
-if (EMM_Current_Module == "none") exitWith {};
+if (EMM_Current_Module == "%none%") exitWith {};
 
 private _targetsCombo = EMM_equipUI#7;
 private _type = [_targetsCombo lbData (lbCurSel _targetsCombo)];

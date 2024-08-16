@@ -25,7 +25,7 @@ call EMM_fnc_failedToLoadReport; //check if there any problems
 } forEach EMM_moduleTabs;
 
 if !(ctrlShown (EMM_equipUI#13)) then {
-	[nil, true] call EMM_fnc_hideStartMsg;
+	[true] call EMM_fnc_hideStartMsg;
 };
 
 EMM_moduleTargets = _targets;

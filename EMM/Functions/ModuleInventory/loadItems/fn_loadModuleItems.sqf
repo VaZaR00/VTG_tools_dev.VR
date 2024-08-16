@@ -1,6 +1,6 @@
 params["_items", ["_next", EMM_fnc_setModuleItem]];
 //hint str [1, _items];
-
+[0] call EMM_fnc_setModuleTab;
 EMM_EQUIP_TEST_FAILED_ARR = [];
 
 private _iterate = {
@@ -48,8 +48,9 @@ private _iterate = {
 
 call EMM_fnc_checkIfEmpty;
 
-if (isNil "EMM_TEMP_NEW_ACTIVE_TAB") then {EMM_TEMP_NEW_ACTIVE_TAB = 0};
-[EMM_TEMP_NEW_ACTIVE_TAB] call EMM_fnc_setModuleTab;
-
 [false] call EMM_fnc_setNestParent;
-EMM_TEMP_NEW_ACTIVE_TAB = nil;
+
+// if (isNil "EMM_TEMP_NEW_ACTIVE_TAB") then {EMM_TEMP_NEW_ACTIVE_TAB = 0};
+// [EMM_TEMP_NEW_ACTIVE_TAB] call EMM_fnc_setModuleTab;
+
+// EMM_TEMP_NEW_ACTIVE_TAB = nil;

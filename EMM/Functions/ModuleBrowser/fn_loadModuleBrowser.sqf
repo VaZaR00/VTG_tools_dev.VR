@@ -1,3 +1,5 @@
+#include "..\..\defines.hpp";
+
 params[["_search", ""]];
 
 private _treeMap = [] call EMM_fnc_getFolders;

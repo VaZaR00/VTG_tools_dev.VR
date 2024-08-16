@@ -13,31 +13,39 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4;
+		nextID=5;
 	};
 	class Camera
 	{
-		pos[]={4542.2002,60.129936,2270.1143};
-		dir[]={0.14099318,-0.94639844,0.2906644};
-		up[]={0.41304275,0.32299742,0.85150832};
-		aside[]={0.89974952,4.1420572e-007,-0.43644357};
+		pos[]={4557.7119,6.9045801,2290.9473};
+		dir[]={0.30937874,-0.37472087,-0.87412113};
+		up[]={0.12506273,0.92708331,-0.35334715};
+		aside[]={-0.94279432,6.6529901e-007,-0.33368531};
 	};
 };
 binarizationWanted=0;
 sourceName="EMM_TOOL";
 addons[]=
 {
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Modules_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -62,7 +70,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[""bnbb"",[[""all""],[[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1],[""Rand"",[""H_Bandanna_gry"",""AH"",1],[""H_Bandanna_khk"",""AH"",1]],[""FirstAidKit"",""AIU"",1],[""Medikit"",""AIV"",1],[""H_HelmetAggressor_F"",""AIB"",1]]]],[""bnmbnmbn"",[[""all""],[[""Rand"",[""H_Bandanna_gry"",""AH"",1],[""H_Bandanna_khk"",""AH"",1]],[""FirstAidKit"",""AIU"",1],[""Medikit"",""AIV"",1],[""H_HelmetAggressor_F"",""AIB"",1]]]],["".,"",[[[""B_soldier_AAT_F"",""B_support_Mort_F""],"""",""""],[[""U_C_IDAP_Man_TeeShorts_F"",""FAU"",1],[""U_C_IDAP_Man_shorts_F"",""FAU"",1],[""U_C_IDAP_Man_casual_F"",""FAU"",1],[""U_C_IDAP_Man_cargo_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_4_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_2_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1],[""Rand"",[""H_Bandanna_gry"",""AH"",1],[""H_Bandanna_khk"",""AH"",1]],[""FirstAidKit"",""AIU"",1],[""Medikit"",""AIV"",1],[""H_HelmetAggressor_F"",""AIB"",1]]]]]";
+					value="[[""123"",[[""all""],[[""Rand"",[""U_C_IDAP_Man_cargo_F"",""FAU"",2],[""%NO_ITEM%Uniforms"",""none"",5],[""U_C_IDAP_Man_casual_F"",""FAU"",1]]]]],[""gg"",[[""B_soldier_AAT_F""],[[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1],[""SMG_03_TR_hex"",""AW"",1]]]]]";
 				};
 			};
 		};
@@ -75,7 +83,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[[],""%EMM_FOLDER%"",""vbvbmbnmbnmbnmbn"",10003],[[0],""%EMM_MODULE%"","".,"",20000],[[],""%EMM_MODULE%"",""bnbb"",20001],[[],""%EMM_MODULE%"",""bnmbnmbn"",20002]]";
+					value="[[[],""%EMM_MODULE%"",""123"",20000],[[],""%EMM_MODULE%"",""gg"",20001]]";
 				};
 			};
 		};
@@ -116,7 +124,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			dataType="Group";
@@ -173,6 +181,18 @@ class Mission
 			{
 			};
 			id=2;
+		};
+		class Item2
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={0,5,0};
+			};
+			name="EQUIP_MODULES_COMPILED_CODE";
+			init="if (!isServer) exitWith {};[] spawn {private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits; {}forEach (allUnits); {}forEach (allUnits);};";
+			id=4;
+			type="Logic";
 		};
 	};
 };

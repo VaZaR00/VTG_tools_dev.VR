@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 params[["_one_", false]];
 
 private _main = {
@@ -32,8 +34,7 @@ private _main = {
 
 			_script = format["private _handle = [] spawn {%1};; waitUntil { scriptDone _handle };", _script];
 			_script = compile _script;
-			private _handle = [] spawn _script;
-			waitUntil { scriptDone _handle };
+			SPWN_N_WAIT(_script);
 			terminate _waitHandle;
 		} else {
 			call compile _script;

@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 if (EMM_var_BLOCK_BROWSER_OPERATIONS) exitWith {["Operation cannot be performed while Search active!", 1] call EMM_fnc_message};
 
 params["_el"];
