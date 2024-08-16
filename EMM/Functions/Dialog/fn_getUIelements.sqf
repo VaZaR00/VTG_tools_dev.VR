@@ -25,7 +25,7 @@ private _presetLbl = _display displayCtrl 6678;
 
 
 
-[
+EMM_equipUI = [
     _arsenal,               //0  -  ars
     _inventoryTree,         //1  -  inv
     _arsSearchInput,        //2  -  search
