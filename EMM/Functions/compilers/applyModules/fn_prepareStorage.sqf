@@ -6,7 +6,7 @@ private _algorithm = {
 	private _el = +(_x#1);
 
 	private _weight = 5;
-	private _first = ["FAU", "AV", "AB", "AW"];
+	private _first = ["FAU", "AV", "AB"];
 	private _second = ["AIU", "AIV", "AIB"];
 	//else is third
 

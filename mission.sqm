@@ -70,7 +70,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[""NewModule2024-8-16-20-40-42-597"",[[""all""],[]]],[""NewModule2024-8-16-20-40-42-597(0)"",[[""all""],[]]]]";
+					value="[[""NewModule2024-8-16-21-0-9-88"",[[""all""],[[""U_C_IDAP_Man_Jeans_F"",""FAU"",1]]]],[""NewModule2024-8-16-21-0-13-251"",[[""all""],[[""SMG_03_TR_khaki"",""AW"",1,[[""50Rnd_570x28_SMG_03"",""AWI"",1]]]]]],[""NewModule2024-8-16-21-1-16-756"",[[""all""],[[""FirstAidKit"",""AIU"",2]]]]]";
 				};
 			};
 		};
@@ -83,7 +83,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[[],""%EMM_MODULE%"",""NewModule2024-8-16-20-40-42-597"",20000],[[],""%EMM_MODULE%"",""NewModule2024-8-16-20-40-42-597(0)"",20001]]";
+					value="[[[],""%EMM_MODULE%"",""NewModule2024-8-16-21-0-13-251"",20000],[[],""%EMM_MODULE%"",""NewModule2024-8-16-21-0-9-88"",20001],[[],""%EMM_MODULE%"",""NewModule2024-8-16-21-1-16-756"",20002]]";
 				};
 			};
 		};
