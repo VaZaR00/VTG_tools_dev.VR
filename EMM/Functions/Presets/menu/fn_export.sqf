@@ -46,7 +46,9 @@ private _storage = [_name] call EMM_fnc_getModules;
 if (count _storage == 0) exitWith {
 	["No data", 1] call EMM_fnc_message;	
 };
-_storage = _storage toArray false;
+if !(_storage isEqualType []) then {
+	_storage = _storage toArray false;
+};
 
 if !(_nested isEqualTo []) then {
 	_storage = _storage select { private _name_ = (_x#0); (_folders findIf { _name_ == (_x#2) }) != -1; };
@@ -56,6 +58,7 @@ if (_name != "") then {
 	private _data = +_storage;
 	_storage = [];
 	_storage insert [0, [_name, _data]];
+	_storage = [_storage];
 	_folders = [];
 };
 

@@ -69,8 +69,8 @@ class CustomAttributes
 			{
 				class data
 				{
-					nil=1;
 					singleType="STRING";
+					value="[[""NewModule2024-8-16-20-40-42-597"",[[""all""],[]]],[""NewModule2024-8-16-20-40-42-597(0)"",[[""all""],[]]]]";
 				};
 			};
 		};
@@ -83,7 +83,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[]";
+					value="[[[],""%EMM_MODULE%"",""NewModule2024-8-16-20-40-42-597"",20000],[[],""%EMM_MODULE%"",""NewModule2024-8-16-20-40-42-597(0)"",20001]]";
 				};
 			};
 		};
