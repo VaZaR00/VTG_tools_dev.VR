@@ -1,6 +1,6 @@
 private _importText = copyFromClipboard;
 
-if !("EMM_EXPORT" in _importText) exitWith {
+if !("%EMM_EXPORT%" in _importText) exitWith {
 	["Invalid data!", 1] call EMM_fnc_message;
 };
 

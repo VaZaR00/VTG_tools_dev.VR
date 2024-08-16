@@ -20,6 +20,11 @@ if (_input == (_tree tvText _path)) exitWith {
 if ([_input] call EMM_fnc_checkIfNameExists) exitWith {
 	["Name is already used!", 1] call EMM_fnc_message;
 };
+
+if (_input in ["*Mission preset*", "none", "EMM_EXPORT"]) exitWith {
+	["Name is not allowed!", 1] call EMM_fnc_message;
+};
+
 EMM_var_temp_RENAME_EL_TYPE = nil;
 
 EMM_var_temp_ENTERED_NAME = _input;

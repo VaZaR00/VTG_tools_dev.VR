@@ -47,7 +47,7 @@ class EMM_EquipmentModulesManager {
 			idc = 6678;
 			style = 2;
 			sizeEx = 6.3 * GUI_GRID_H;
-			text = "*Unsaved preset*"; //--- ToDo: Localize;
+			text = "*Mission preset*"; //--- ToDo: Localize;
 			colorText[] = {1,1,1,1};
 			x = 28 * GUI_GRID_W;
 			y = 0 * GUI_GRID_H;

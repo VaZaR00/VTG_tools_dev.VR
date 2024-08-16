@@ -8,5 +8,5 @@ if (EMM_DEV_STATE) then {
 
 EMM_var_MISSION_PRESET_mis = _name;
 
-if (_name == "") then {_name = "*Unsaved preset*"};
+if (_name == "") then {_name = "*Mission preset*"};
 (EMM_equipUI#20) ctrlSetText _name;

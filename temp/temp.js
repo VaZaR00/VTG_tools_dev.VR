@@ -19,7 +19,7 @@ treeElements_
 
 */
 [
-  "EMM_EXPORT",
+  "%EMM_EXPORT%",
   [
     [[], "%EMM_FOLDER%", "fff", 10001],
     [[0], "%EMM_MODULE%", "324234", 20000],

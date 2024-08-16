@@ -69,8 +69,8 @@ class CustomAttributes
 			{
 				class data
 				{
+					nil=1;
 					singleType="STRING";
-					value="[[""123"",[[""all""],[[""Rand"",[""U_C_IDAP_Man_cargo_F"",""FAU"",2],[""%NO_ITEM%Uniforms"",""none"",5],[""U_C_IDAP_Man_casual_F"",""FAU"",1]]]]],[""gg"",[[""B_soldier_AAT_F""],[[""U_I_C_Soldier_Bandit_5_F"",""FAU"",1],[""SMG_03_TR_hex"",""AW"",1]]]]]";
 				};
 			};
 		};
@@ -83,7 +83,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[[],""%EMM_MODULE%"",""123"",20000],[[],""%EMM_MODULE%"",""gg"",20001]]";
+					value="[]";
 				};
 			};
 		};

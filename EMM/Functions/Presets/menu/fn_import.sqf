@@ -1,6 +1,6 @@
 private _clipboard = copyFromClipboard;
 
-if !("EMM_EXPORT" in _clipboard) exitWith {
+if !("%EMM_EXPORT%" in _clipboard) exitWith {
 	["Invalid data!", 1] call EMM_fnc_message;
 };
 
@@ -8,7 +8,7 @@ private _data = call compile _clipboard;
 private _folders = _data#1;
 private _modules = _data#2;
 
-// private _tagPos = _modules findIf {"EMM_EXPORT" in _x};
+// private _tagPos = _modules findIf {"%EMM_EXPORT%" in _x};
 // _modules deleteAt _tagPos;
 
 

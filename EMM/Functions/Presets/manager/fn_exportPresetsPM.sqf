@@ -18,4 +18,4 @@ if (_one) then {
 	_data = [[_name, _data]];
 };
 
-copyToClipboard str ["EMM_EXPORT", _data];
+copyToClipboard str ["%EMM_EXPORT%", _data];

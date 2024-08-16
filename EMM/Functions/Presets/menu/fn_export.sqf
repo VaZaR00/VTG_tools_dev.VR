@@ -59,7 +59,7 @@ if (_name != "") then {
 	_folders = [];
 };
 
-copyToClipboard str ["EMM_EXPORT", _folders, _storage];
+copyToClipboard str ["%EMM_EXPORT%", _folders, _storage];
 
 ["Data copied to clipboard"] call EMM_fnc_message;
 
