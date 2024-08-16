@@ -9,6 +9,7 @@
 // #define SPWN_N_WAIT_RES_G(func, var, args) private _handle = args spawn {EMM_TEMP_SPWN_N_WAIT_RETURN = _this call func}; waitUntil {scriptDone _handle}; var = EMM_TEMP_SPWN_N_WAIT_RETURN; EMM_TEMP_SPWN_N_WAIT_RETURN = nil;
 #define WAIT_VAR(var, value) private var = value; waitUntil {!isNil #var#};
 #define PR(var) private var
+#define ARR_IN_STR(arr, str) ((arr findIf {_x in ( str )}) != -1)
 
 #define MSG(text,type) [text, type] call EMM_fnc_message
 #define CR_DISP(parent, name) (findDisplay parent) createDisplay name;

@@ -2,21 +2,23 @@
 
 private _EMM_itemsCache = +EMM_itemsCache_scheme;
 
+private _uniqueNames = createHashMap;
 {
 	private _configName = configName _x;
-	_element = [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
-	// if (([_configName] call EMM_fnc_getItemTypeFunc) isEqualTo 2) then {
-	// 	_weapons pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
-	// } else {
-	// 	_items pushBackUnique [getText (_x >> 'displayName'), _configName, getText (_x >> 'picture')];
-	// };
+	private _name = getText (_x >> 'displayName');
+
+	if (_uniqueNames getOrDefault [_name, false]) then {continue};
+
+	_element = [_name, _configName, getText (_x >> 'picture')];
+	
 	private _cateogry = _EMM_itemsCache#(_configName call EMM_fnc_getCategory)#1;
 	_cateogry pushBackUnique _element;
+
+	_uniqueNames set [_name, true];
 } forEach ('
 	(getNumber(_x >> "scope") isEqualTo 2) && 
-	([getText(_x >> "picture")] call EMM_fnc_validPic) && 
-	!((getText (_x >> "displayName")) isEqualTo "") &&
-	!(isClass(_x >> "LinkedItems"))
+	{([getText(_x >> "picture")] call EMM_fnc_validPic) && 
+	{!((getText (_x >> "displayName")) isEqualTo "")}}
 ' configClasses (configFile >> 'CfgWeapons'));
 
 {
@@ -39,7 +41,6 @@ private _EMM_itemsCache = +EMM_itemsCache_scheme;
 _EMM_itemsCache = createHashMapFromArray _EMM_itemsCache;
 parsingNamespace setVariable ["EMM_itemsCache", _EMM_itemsCache];
 
-//return
-// _EMM_itemsCache
+_uniqueNames = nil;
 
 //item: [name, class, picture]
