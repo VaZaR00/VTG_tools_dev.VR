@@ -3,10 +3,10 @@ _uniforms   0
 _vests      1
 _helmets    2
 _backpacks  3
-_rifles     4
-_pistols    5
-_launchers  6
-_magazines  7
+_magazines  4
+_rifles     5
+_pistols    6
+_launchers  7
 _binoculars 8
 _items      9
 _devices    10
@@ -36,13 +36,13 @@ switch (_type) do {
     case "AW": {
         private _baseclass = [configFile >> 'CfgWeapons' >> _class, true] call BIS_fnc_returnParents;
         switch (_baseclass select -2) do {
-            case "RifleCore": { 4 /*_rifles*/ };
-            case "PistolCore": { 5 /*_pistols*/ };
-            case "LauncherCore": { 6 /*_launchers*/ };
+            case "RifleCore": { 5 /*_rifles*/ };
+            case "PistolCore": { 6 /*_pistols*/ };
+            case "LauncherCore": { 7 /*_launchers*/ };
             default { 9 /*_items*/ };
         };
     };
-    case "AM": { 7 /*_magazines*/ };
+    case "AM": { 4 /*_magazines*/ };
     case "AI": { 9 /*_items*/ };
     case "LI": {
         switch (_itemType#1) do {
@@ -57,7 +57,7 @@ switch (_type) do {
     };
     case call {if (_type=="AWI") then {"AWI"} else {"APWI"}}: {
         //accessories
-        if ((_itemType#0)=="Magazine") exitwith {7 /*_magazines*/};
+        if ((_itemType#0)=="Magazine") exitwith {4 /*_magazines*/};
 
         switch (_itemType#1) do {
             case "AccessorySights": { 11 /*_sights*/ };

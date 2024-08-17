@@ -22,7 +22,7 @@ private _uniqueNames = createHashMap;
 ' configClasses (configFile >> 'CfgWeapons'));
 
 {
-	(_EMM_itemsCache#7#1) pushBackUnique [getText (_x >> 'displayName'), configName _x, getText (_x >> 'picture')];
+	(_EMM_itemsCache#4#1) pushBackUnique [getText (_x >> 'displayName'), configName _x, getText (_x >> 'picture')];
 } forEach ('(getNumber(_x >> "scope") isEqualTo 2) && {[getText(_x >> "picture")] call EMM_fnc_validPic}' configClasses (configFile >> 'CfgMagazines'));
 
 {

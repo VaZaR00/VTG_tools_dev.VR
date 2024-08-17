@@ -53,6 +53,7 @@ if (_class == "Rand") exitWith {
 
 private _func = [_data#1] call EMM_fnc_convertAttributeToFunction;
 private _amount = _data#2;
+private _itemType = _class call BIS_fnc_itemType;
 
 private _ifTestFormat = {
 	params["_text"];
@@ -77,8 +78,7 @@ private _ifTestFormat = {
 			case "AIV": { "_x canAddItemToVest %1" };
 			case "AIB": { "_x canAddItemToBackpack %1" };
 			case "LI": {
-				private _type = _class call BIS_fnc_itemType;
-				private _slot = switch (_type#1) do {
+				private _slot = switch (_itemType#1) do {
 					case "Map": { 608 };
 					case "Compass": { 609 };
 					case "Watch": { 610 };
@@ -121,7 +121,11 @@ if ((_amount > 1)&&((_data#1) != "AMS")) then {
 };
 _text = format[_format, _func, str _class, _amount, str _dest];
 
-if (count _data < 4) exitWith {_text};//return
+if (count _data < 4) exitWith {_text}; //return if has no netsed items
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 			work with attachments and nested items
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 private _attachs = _data#3;
 

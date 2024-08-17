@@ -12,6 +12,10 @@ private _data = [] call EMM_fnc_getFoldersStorage;
 if (isNil "_data") then {[]};
 if (count _data == 0) exitWith {[]};
 
+if (_type isEqualType []) exitWith {
+	_data select {(_x#0) isEqualTo _type};
+};
+
 switch (_type) do {
 	case 0: { _data };
 	case 1: {
