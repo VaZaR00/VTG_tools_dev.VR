@@ -44,6 +44,7 @@ EMM_var_Nesting_Categories = ["unif", "vest", "backpack", "module"];
 
 //autosave
 [] spawn {
+	SPWN_HNDL(EMM_autosave_hndl);
 	uiSleep 180;
 	while {!(isNil 'EMM_equipUI')} do {
 		call EMM_fnc_saveAllData;

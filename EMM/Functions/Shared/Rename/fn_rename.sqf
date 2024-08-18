@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 if (EMM_var_BLOCK_BROWSER_OPERATIONS) exitWith {["Operation cannot be performed while Search active!", 1] call EMM_fnc_message};
 
 private _tree = EMM_equipUI#5;
@@ -27,12 +29,16 @@ if (_name isEqualTo false) exitWith {};
 
 if (_name == _prevName) exitWith {};
 
+private _data = [_prevName] call EMM_fnc_getModules;
+[_prevName, true, true] call EMM_fnc_deleteModule;
+_data = [[_name, _data]];
+[_data] call EMM_fnc_addModule;
+
+if (EMM_Current_Module == _prevName) then {
+	EMM_Current_Module = _name;
+};
+
 _tree tvSetText [_path, _name];
 _tree tvSetTooltip [_path, _name];
-
-if (EMM_Current_Module != "") then {
-	[_prevName] call EMM_fnc_deleteModule;
-};
-EMM_Current_Module = _name;
 
 [] call EMM_fnc_updateBrowser;

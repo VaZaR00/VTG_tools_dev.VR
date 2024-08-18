@@ -18,9 +18,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={4560.0054,7.7145886,2280.4063};
-		dir[]={0.73076725,-0.45628703,-0.50796586};
-		up[]={0.37488732,0.88967937,-0.26058733};
-		aside[]={-0.57083142,-1.1815573e-006,-0.8212145};
+		dir[]={0.33242455,-0.6474762,-0.68594378};
+		up[]={0.28245884,0.76190037,-0.58283842};
+		aside[]={-0.90000087,-2.2407621e-006,-0.43616721};
 	};
 };
 binarizationWanted=0;
@@ -70,7 +70,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[""NewModule2024-8-17-18-37-5-914"",[[""all""],[]]]]";
+					value="[[""gg1"",[[""all""],[[""Rand"",[""U_I_C_Soldier_Bandit_1_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_4_F"",""FAU"",1]]]]],[""gg"",[[""all""],[[""V_PlateCarrier1_rgr_noflag_F"",""AV"",1]]]]]";
 				};
 			};
 		};
@@ -83,7 +83,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[[],""%EMM_FOLDER%"",""NewFolder2024-8-17-18-37-2-922"",10000],[[],""%EMM_MODULE%"",""NewModule2024-8-17-18-37-5-914"",20001]]";
+					value="[[[],""%EMM_MODULE%"",""gg"",20000],[[],""%EMM_MODULE%"",""gg1"",20001]]";
 				};
 			};
 		};

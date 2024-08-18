@@ -23,6 +23,7 @@ private _main = {
 	_scriptArr apply {
 		private _script = _x;
 		if (EMM_var_COMPILE_IN_SPAWN) then {
+			SPWN_HNDL(EMM_giveWait_hndl);
 			private _waitHandle = [] spawn {
 				uiSleep 0.4;
 				["Give started. Wait till the end (reopen mission to terminate proccess)"] call EMM_fnc_message;

@@ -1,16 +1,17 @@
-params[["_name", EMM_Current_Module], ["_showMsg", true]];
+params[["_name", EMM_Current_Module], ["_showMsg", true], ["_noReset", false]];
 
 private _data = [] call EMM_fnc_getModules;
 if (count _data == 0) exitWith {};
 
 _data deleteAt _name;
-
 [_data] call EMM_fnc_setModulesStorage;
-EMM_Current_Module = "%none%";
+
+if (_noReset) exitWith {};
+
 call EMM_fnc_modulesAmount;
+EMM_Current_Module = "%none%";
+[false] call EMM_fnc_hideStartMsg;
 
 if (!_showMsg) exitWith {};
-
-[false] call EMM_fnc_hideStartMsg;
 
 ["Module deleted"] call EMM_fnc_message;
