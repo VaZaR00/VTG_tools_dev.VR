@@ -9,14 +9,6 @@ private _upPath = [];
 	_path insert [0, _upPath];
 	_path resize (count (_x#0));
 
-	private _pic = switch (_x#1) do {
-		case "%EMM_FOLDER%": {
-			EMM_var_pic_FOLDER
-		};
-		case "%EMM_MODULE%": {
-			EMM_var_pic_MODULE
-		};
-		default {""};
-	};
+	private _pic = BROWSER_TYPE_DATA((_x#1), 0);
 	_upPath = [[(_x#2), (_x#2), _pic, (_x#1), 0], _tree, _path] call EMM_fnc_addItem;
 } forEach _map;

@@ -68,3 +68,8 @@ class EMM_DBUG_MENU_STRIP: ctrlMenuStrip
 	{
 	};
 };
+
+class EMM_tree: RscTree
+{
+	multiselectEnabled = 1;
+};

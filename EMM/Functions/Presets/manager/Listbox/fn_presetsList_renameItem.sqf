@@ -8,7 +8,7 @@ if (_new && {_sel < 0}) exitWith {
 	["Nothing selected!", 1] call EMM_fnc_message;
 };
 
-["Preset", _prevName, EMM_var_disp_PRESET_MANAGER] call EMM_fnc_openRenameMenu;
+["Preset", _prevName, nil, EMM_var_disp_PRESET_MANAGER] call EMM_fnc_openRenameMenu;
 
 waitUntil {!((findDisplay 15550) isEqualTo displayNull)};
 

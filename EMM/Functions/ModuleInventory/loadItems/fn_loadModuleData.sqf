@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 params[["_module", EMM_Current_Module]];
 
 call EMM_fnc_resetModule;
@@ -8,13 +10,17 @@ private _moduleData = [_module] call EMM_fnc_getModules;
 
 private _targets = [];
 private _items = [];
+private _type = nil;
 
 if (count _moduleData != 0) then {
 	_targets = _moduleData#0;
 	_items = _moduleData#1;
+	_type = _moduleData#2;
 };
 
-[_targets] call EMM_fnc_loadModuleTargets;
+[] call (([ISNIL(_type, nil)] call EMM_fnc_moduleTypeData)#1);
+
+[_targets, (ISNIL(_type, 0))] call EMM_fnc_loadModuleTargets;
 
 [_items] call EMM_fnc_loadModuleItems;
 
@@ -30,6 +36,7 @@ if !(ctrlShown (EMM_equipUI#13)) then {
 
 EMM_moduleTargets = _targets;
 EMM_Current_Module = _module;
+EMM_Current_Module_type = ISNIL(_type, nil);
 
 // if (!EMM_expandInvChkbox) then {
 // 	{ (_x#1) tvCollapse [] } forEach EMM_moduleTabs;

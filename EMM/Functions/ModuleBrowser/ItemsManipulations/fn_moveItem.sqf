@@ -4,7 +4,7 @@ if (EMM_var_BLOCK_BROWSER_OPERATIONS) exitWith {["Operation cannot be performed 
 
 params["_tree", "_startPath", "_destinationPath"];
 
-if ((_tree tvData _destinationPath) in ["%EMM_MODULE%"]) exitWith {
+if ((_tree tvData _destinationPath) in EMM_var_BROWSER_TYPES) exitWith {
 	["Can't move item there!", 1] call EMM_fnc_message;
 };
 
@@ -30,15 +30,7 @@ _nested = _nested apply {
 	private _path = _x#0;
 	_path insert [0, _destinationPath];
 
-	private _pic = switch ((_x#1)) do {
-		case "%EMM_FOLDER%": {
-			EMM_var_pic_FOLDER;
-		};
-		case "%EMM_MODULE%": {
-			EMM_var_pic_MODULE;
-		};
-		default {""};
-	};
+	private _pic = BROWSER_TYPE_DATA((_x#1), 0);
 
 	private _newPath = [
 		[

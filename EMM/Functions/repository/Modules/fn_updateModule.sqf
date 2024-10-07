@@ -1,8 +1,8 @@
-params["_name", ["_type", "all"], "_moduleItemsList"];
+params["_name", ["_targets", "all"], "_moduleItemsList", ["_type", 0]];
 
 private _data = [] call EMM_fnc_getModules; 
 
-			//_type = [[*]]
-_data set [_name, [_type, _moduleItemsList]];
+			//_targets = [[*]]
+_data set [_name, [_targets, _moduleItemsList, _type]];
 
 [_data] call EMM_fnc_setModulesStorage;

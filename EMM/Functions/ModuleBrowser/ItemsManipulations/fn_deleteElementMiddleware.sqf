@@ -14,23 +14,20 @@ private _text = "";
 private _title = "";
 EMM_delete_secondFunc = {};
 
-switch (_type) do {
-	case "%EMM_FOLDER%": {
-		_text = "Are you sure you want to delete the folder? It will delete all modules in it!";
-	    _title = "Delete folder";
-		EMM_var_temp_folder_path = +_path;
-		EMM_delete_secondFunc = {
-			PR(_folderItems) = [EMM_var_temp_folder_path] call EMM_fnc_getFolders;
-			_folderItems apply {if ((_x#1) == "%EMM_MODULE%") then {[_x#2] call EMM_fnc_deleteModule}};
-			EMM_var_temp_folder_path = nil;
-		};
+if (_type == type_EMM_FOLDER) then {
+	_text = "Are you sure you want to delete the folder? It will delete all modules in it!";
+	_title = "Delete folder";
+	EMM_var_temp_folder_path = +_path;
+	EMM_delete_secondFunc = {
+		PR(_folderItems) = [EMM_var_temp_folder_path] call EMM_fnc_getFolders;
+		_folderItems apply {if ((_x#1) in EMM_var_BROWSER_TYPES) then {[_x#2] call EMM_fnc_deleteModule}};
+		EMM_var_temp_folder_path = nil;
 	};
-	case "%EMM_MODULE%": {
-		_text = "Are you sure you want to delete the Module?";
-	    _title = "Delete module";
-		EMM_var_TEMP_MODULE_TO_DELETE = _tree tvText _path;
-		EMM_delete_secondFunc = {[EMM_var_TEMP_MODULE_TO_DELETE] call EMM_fnc_deleteModule; EMM_var_TEMP_MODULE_TO_DELETE = nil;};
-	};
+} else {
+	_text = "Are you sure you want to delete the Module?";
+	_title = "Delete module";
+	EMM_var_TEMP_MODULE_TO_DELETE = _tree tvText _path;
+	EMM_delete_secondFunc = {[EMM_var_TEMP_MODULE_TO_DELETE] call EMM_fnc_deleteModule; EMM_var_TEMP_MODULE_TO_DELETE = nil;};
 };
 
 [

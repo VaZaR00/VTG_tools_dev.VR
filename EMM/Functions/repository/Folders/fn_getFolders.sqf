@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 params[["_type", 0]];
 
 /*
@@ -19,10 +21,10 @@ if (_type isEqualType []) exitWith {
 switch (_type) do {
 	case 0: { _data };
 	case 1: {
-		_data select { (_x#1) == "%EMM_MODULE%" };
+		_data select { (_x#1) in EMM_var_BROWSER_TYPES };
 	};
 	case 2: {
-		_data select { (_x#1) == "%EMM_FOLDER%" };
+		_data select { (_x#1) == type_EMM_FOLDER };
 	};
 	default { _data };
 };

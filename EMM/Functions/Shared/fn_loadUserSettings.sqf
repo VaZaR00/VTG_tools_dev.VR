@@ -26,10 +26,11 @@ private _options = [
 		"EMM_SHOW_TARGETS_CLASSES", 
 		"Targets as class",  
 		"Show targets as classes",
-		false,
+		true,
 		"if (EMM_Current_Module == 'none') exitWith {};
 		private _moduleData = [EMM_Current_Module] call EMM_fnc_getModules;
-		_targets = if (count _moduleData != 0) exitWith {_moduleData#0} else {[]};
+		_targets = if (count _moduleData != 0) then {_moduleData#0} else {[]};
+		[] call EMM_fnc_loadTargetPresets;
 		[_targets] call EMM_fnc_loadModuleTargets;"
 	],
 	[
@@ -61,7 +62,7 @@ private _options = [
 		"EMM_var_COMPILE_IN_SPAWN", 
 		'Compile "Spawn" code (optimize)', 
 		'When checked code will be compiled into "spawn" block, which can be more Optimized (prevent freeze!) when adding many items but Slower',
-		true,
+		false,
 		""
 	]
 ];

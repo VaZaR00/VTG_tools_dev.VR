@@ -28,7 +28,7 @@ EMM_var_Nesting_Categories = ["unif", "vest", "backpack", "module"];
 [] call EMM_fnc_loadUserSettings;
 [] call EMM_fnc_initPreset;
 [] call EMM_fnc_checkForHiddenModules;
-[] call EMM_fnc_loadTargetsCombo;
+[] call EMM_fnc_loadTargetPresets;
 [] call EMM_fnc_modulesAmount;
 [] call EMM_fnc_loadModuleTabs;
 [] call EMM_fnc_loadModuleBrowser;

@@ -25,7 +25,7 @@ lnbClear _arsenal;
 	private _class = _x#1;
 	private _pic = _x#2;
 
-	if ((_search != "") && !([_search, _name, false] call BIS_fnc_inString)) then {continue};
+	if ((_search != "") && !(([_search, _name, false] call BIS_fnc_inString)||([_search, _class, false] call BIS_fnc_inString))) then {continue};
 	if (
 		!(_class call compile EMM_Arsenal_filter) &&
 		(_class != "%NO_ITEM%")

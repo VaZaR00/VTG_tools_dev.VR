@@ -23,5 +23,7 @@ switch (_attribute) do {
 	case "AWI": { "addWeaponItem" };
 	case "FAU": { "forceAddUniform" };
 	case "AB": { "addBackpack" };
+	case "AICG": { "addItemCargoGlobal" };
+	case "ABCG": { "addBackpackCargoGlobal" };
 	default { "none" };
 };

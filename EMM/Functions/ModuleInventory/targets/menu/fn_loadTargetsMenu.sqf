@@ -1,4 +1,8 @@
+#include "..\..\..\..\defines.hpp";
+
 params ["_display"];
+
+PR(_type) = ISNIL(EMM_Current_Module_type, 0);
 private _tree = _display displayCtrl 1568;
 private _includeField = _display displayCtrl 1400;
 private _excludeField = _display displayCtrl 1401;
@@ -17,28 +21,44 @@ if (count _moduleTargets > 1) then {
 	_excludeField ctrlSetText _exclude;
 };
 
-private _blue = [];
-private _red = [];
-private _green = [];
-private _civ = [];
+private _all = [];
 
-{
-	private _class = typeOf _x;
+switch (_type) do {
+	case 0: {
+		private _blue = [];
+		private _red = [];
+		private _green = [];
+		private _civ = [];
 
-	switch (side _x) do {
-		case west: { _blue };
-		case east: { _red };
-		case resistance: { _green };
-		case civilian: { _civ };
-	} pushBackUnique _class;
-} forEach allUnits;
+		{
+			private _class = typeOf _x;
 
-private _all = [
-	[_blue, "Blue"],	/*, [0.3,0.4,1,1]], */
-	[_red, "Red"],	/*, [1,0,0,1]], */
-	[_green, "Green"],	/*, [0,1,0,1]], */
-	[_civ, "Civilian"]	/*, [0.8,0.3,1,1]] */
-];
+			switch (side _x) do {
+				case west: { _blue };
+				case east: { _red };
+				case resistance: { _green };
+				case civilian: { _civ };
+			} pushBackUnique _class;
+		} forEach allUnits;
+
+		_all = [
+			[_blue, "Blue"],	/*, [0.3,0.4,1,1]], */
+			[_red, "Red"],	/*, [1,0,0,1]], */
+			[_green, "Green"],	/*, [0,1,0,1]], */
+			[_civ, "Civilian"]	/*, [0.8,0.3,1,1]] */
+		];
+	};
+	case 1: {
+		private _vehicles = [];
+		{
+			private _class = typeOf _x;
+
+			_vehicles pushBackUnique _class;
+		} forEach vehicles;
+
+		_all = [[_vehicles, "Containers"]];
+	};
+};
 
 {
 	if (count (_x#0) == 0) then { continue; };

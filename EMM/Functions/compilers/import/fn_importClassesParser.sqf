@@ -1,12 +1,18 @@
+#include "..\..\..\defines.hpp";
+
 params["_text"];
 
-private _classes = _text splitString " ;,.[]()&%$#/'""";
+private _classes = _text splitString " 
+;,.[]()&%$#/'""";
+
 private _elements = [];
 {
-	private _class = _x;
+	private _class = trim _x;
 	private _func = [_class] call EMM_fnc_getItemTypeFunc;
 
 	_elements pushBack [_class, _func, 1];
 } forEach _classes;
+_arr = [_elements, _classes];
+MSG(str _arr, 0);
 
 _elements

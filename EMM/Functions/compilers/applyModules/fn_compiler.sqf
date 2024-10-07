@@ -1,9 +1,10 @@
-params[["_data", call EMM_fnc_prepareStorage], ["_compose", true]];
+params[["_data", call EMM_fnc_prepareStorage], ["_compose", true], ["_skipByVar", true]];
 
 if (count _data == 0) exitWith {nil};
 
 private _script = 
-["private _removeEq = {
+[format["private _removeEq = {
+%1
 params[""_u""];
 removeAllWeapons _u;
 removeAllItems _u;
@@ -13,9 +14,28 @@ removeVest _u;
 removeBackpack _u;
 removeHeadgear _u;
 removeGoggles _u;};
-{_x call _removeEq} forEach allUnits;"];
+
+private _clearCargo = {
+%1
+params[""_c""];
+clearItemCargoGlobal _c;
+clearMagazineCargoGlobal _c;
+clearWeaponCargoGlobal _c;
+clearBackpackCargoGlobal _c;};
+
+{_x call _removeEq} forEach allUnits;
+{_x call _clearCargo} forEach vehicles;
+",if (_skipByVar) then {
+	"if (_x getVariable ['EMM_skip_object', false]) exitWith {};"
+} else {
+	"if ('EMM_skip_object' in ((_x get3DENAttribute 'init')#0)) exitWith {};"
+}]];
 
 {
+	if (count (_x#1) == 0) then {
+		[_x#0, false, true] call EMM_fnc_deleteModule;
+		continue
+	};
 	private _moduleScript = [+_x] call EMM_fnc_compileModule;
 	_script pushBack _moduleScript;
 } forEach _data;

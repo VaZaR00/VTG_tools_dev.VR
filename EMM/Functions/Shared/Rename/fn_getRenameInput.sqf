@@ -3,7 +3,12 @@ private _path = tvCurSel _tree;
 
 private _display = (findDisplay 15550);
 private _inputField = _display displayCtrl 1400;
+private _typeCombo = _display displayCtrl 1258;
 private _input = ctrlText _inputField;
+
+if (ctrlShown _typeCombo) then {
+	EMM_var_temp_RENAME_ITEM_TYPE = _typeCombo lbText (lbCurSel _typeCombo);
+};
 
 if (_input == "") exitWith {
 	["Name shouldn't be empty!", 1] call EMM_fnc_message;

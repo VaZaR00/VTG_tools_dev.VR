@@ -1,10 +1,12 @@
+#include "..\..\defines.hpp";
+
 private _tree = EMM_var_ActiveModuleTab#1;
 
 private _sel = tvCurSel _tree;
 private _data = _tree tvData _sel;
 
 if ((EMM_var_Inv_Tree_Categories findIf {_x in _data}) == -1) exitWith {
-	["You can randomize categories only!"] call EMM_fnc_message;
+	MSG("You can randomize categories only!", 1);
 };
 
 private _isRand = true;

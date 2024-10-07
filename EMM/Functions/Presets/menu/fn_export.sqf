@@ -18,11 +18,11 @@ if (
 			true    //not founded
 		};
 
-		if (_type == "%EMM_MODULE%") exitWith {
+		if (_type in EMM_var_BROWSER_TYPES) exitWith {
 			_name = _tree tvtext _sel;
 			false	//founded
 		};
-		if (_type == "%EMM_FOLDER%") exitWith {
+		if (_type == type_EMM_FOLDER) exitWith {
 			if ((_tree tvCount _sel) == 0) exitWith {
 				["Folder is empty", 1] call EMM_fnc_message;
 				true    //not founded

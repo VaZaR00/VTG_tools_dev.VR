@@ -1,3 +1,7 @@
+#include "..\..\..\defines.hpp";
+
+#define ConatinerFuncs "AICG", "ABCG"
+
 params["_data", "_moduleName", ["_dest", ""]];
 
 private _text = "";
@@ -51,7 +55,18 @@ if (_class == "Rand") exitWith {
 	_text //return
 };
 
-private _func = [_data#1] call EMM_fnc_convertAttributeToFunction;
+private _func = [switch (EMM_var_temp_COMPILE_MODULE_TYPE) do {
+	case 1: {
+		PR(_funcC) = switch (_data#1) do {
+			case "AB": { "ABCG" };
+			default { "AICG" };
+		};
+		_data set [1, _funcC];
+		_funcC
+	};
+	default { _data#1 };
+}] call EMM_fnc_convertAttributeToFunction;
+
 private _amount = _data#2;
 private _itemType = _class call BIS_fnc_itemType;
 
@@ -112,11 +127,14 @@ private _format = switch (_data#1) do {
 	};
 	default { "_x %1 %2;" };
 };
+if ((_data#1) in [ConatinerFuncs]) then {
+	_format = "_x %1 [%2, %3];"
+};
 _format = _format call _ifTestFormat;
 if (((_data#1) == "none") && ("%NO_ITEM%" in _class)) then {
 	_format = '"-";';
 };
-if ((_amount > 1)&&((_data#1) != "AMS")) then {
+if ((_amount > 1) && !((_data#1) in ["AMS", ConatinerFuncs])) then {
 	_format = "for ""_i"" from 1 to %3 do {" + _format + "};";
 };
 _text = format[_format, _func, str _class, _amount, str _dest];

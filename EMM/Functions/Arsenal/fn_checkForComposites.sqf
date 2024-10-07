@@ -1,13 +1,17 @@
 #include "..\..\defines.hpp";
 
-private _modules = [1] call EMM_fnc_getModules;
+private _modules = [3] call EMM_fnc_getModules;
 if (count _modules == 0) exitWith {};
 
 _modules = toArray _modules;
+
 private _composites = [];
 {
 	if ("%EMM_comp%" in (_modules#1#_forEachIndex#0)) then {
-		_composites pushBack [_x, "%EMM_comp%", EMM_var_pic_MODULE];
+		PR(_typeIndex) = _modules#1#_forEachIndex#1;
+		_typeIndex = ISNIL(_typeIndex, 0);
+		PR(_pic) = TYPE_DATA_BY_I(_typeIndex, 0);
+		_composites pushBack [_x, "%EMM_comp%", _pic];
 	};
 } forEach (_modules#0);
 

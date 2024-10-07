@@ -13,18 +13,10 @@ tvClear _tree;
 	private _type = _x#1;
 	private _name = _x#2;
 
-	private _pic = switch (_type) do {
-		case "%EMM_FOLDER%": {
-			EMM_var_pic_FOLDER;
-		};
-		case "%EMM_MODULE%": {
-			EMM_var_pic_MODULE;
-		};
-		default {""};
-	};
+	private _pic = BROWSER_TYPE_DATA(_type, 0);
 
 	if (_search != "") then {
-		if (_type == "%EMM_FOLDER%") then {continue};
+		if (_type == type_EMM_FOLDER) then {continue};
 		if !([_search, _name, false] call BIS_fnc_inString) then {continue};
 		_path = [];
 	};

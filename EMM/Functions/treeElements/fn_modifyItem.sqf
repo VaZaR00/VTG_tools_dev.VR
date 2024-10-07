@@ -8,15 +8,15 @@ private _destination = EMM_var_ActiveModuleTab#0;
 private _categoryPath = +_path;
 _categoryPath deleteAt (count _categoryPath - 1);
 private _category = _tree tvText _categoryPath;
-if (
-	(_destination == 0) and
-	!("Random" in _category) and
-	!(EMM_var_currentArsenalCategory in [
-		"Items",
-		"Magazines"
-	]) and
-	(count _path < 3)
-) exitWith {};
+// if (
+// 	(_destination == 0) and
+// 	!("Random" in _category) and
+// 	!(EMM_var_currentArsenalCategory in [
+// 		"Items",
+// 		"Magazines"
+// 	]) and
+// 	(count _path < 3)
+// ) exitWith {};
 
 private _itemName = _tree tvText _path;
 private _itemAmount = _tree tvValue _path;

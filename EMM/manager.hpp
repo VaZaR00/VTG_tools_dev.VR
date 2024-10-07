@@ -16,7 +16,7 @@ class EMM_EquipmentModulesManager {
 	enableDisplay = 1;
 	onUnload = "call EMM_fnc_saveAllData; call EMM_fnc_unload";
 	onLoad = "uiNamespace setVariable ['EMM_EquipmentModulesManager', (_this#0)]";
-	// onMouseMoving = "[str [EMM_Current_Module]] call EMM_fnc_message;"; //str ((tvCurSel (EMM_equipUI#5))isEqualTo []) str ((EMM_var_ActiveModuleTab#1) tvData (tvCurSel (EMM_var_ActiveModuleTab#1)))
+	//onMouseMoving = "[str (tvSelection (EMM_var_ActiveModuleTab#1))] call EMM_fnc_message;"; //(EMM_equipUI#5) tvData (tvCurSel (EMM_equipUI#5)); str ((tvCurSel (EMM_equipUI#5))isEqualTo []) str ((EMM_var_ActiveModuleTab#1) tvData (tvCurSel (EMM_var_ActiveModuleTab#1)))
 	class controlsBackground {		
 		class BackgroundDisableTiles : ctrlStaticBackgroundDisableTiles {};
 		class BackgroundDisable : ctrlStaticBackgroundDisable {};
@@ -125,10 +125,20 @@ class EMM_EquipmentModulesManager {
 					idc = 9568;
 					x = 21 * GUI_GRID_W;
 					y = 0.4 * GUI_GRID_H;
-					w = 29 * GUI_GRID_W;
+					w = 22.5 * GUI_GRID_W;
 					h = 6.8 * GUI_GRID_H;
 					tooltip = "Search";
 					sizeEx = 6.7 * GUI_GRID_H;
+				};
+				class Search_folder_btn : Add_folder_btn
+				{
+					idc = 9571;
+					x = 44 * GUI_GRID_W;
+					colorBackground[] = {0,0,0,0.5};
+					text = "a3\3den\data\displays\display3den\search_start_ca.paa";
+					tooltip = "Search";
+
+					onButtonClick = "[[((ctrlParent (_this#0)) displayCtrl 9568)], EMM_fnc_loadModuleBrowser, 0] call EMM_fnc_onSearchKeyUp"; //[] call EMM_fnc_loadModuleBrowser";
 				};
 				class Clear_Search_folder_btn : Add_folder_btn
 				{
@@ -245,7 +255,7 @@ class EMM_EquipmentModulesManager {
 				class _Import
 				{
 					text="Import";
-					action = "[] spawn EMM_fnc_import";
+					action = "[] call EMM_fnc_import";
 					picture = "a3\3den\data\cfgwaypoints\getinnearest_ca.paa";
 				};
 				class _Export_Selected
@@ -737,12 +747,12 @@ class EMM_EquipmentModulesManager {
 							h = 6.5 * GUI_GRID_H;
 							tooltip = "Delete All Selected Items"; //--- ToDo: Localize;
 							sizeEx = 7 * GUI_GRID_H;
-							onButtonClick = "[EMM_var_ActiveModuleTab#1, tvCurSel (EMM_var_ActiveModuleTab#1)] call EMM_fnc_deleteItem";
+							onButtonClick = "[] call EMM_f_DELETE_SELECTION";
 							shortcuts[] = {"0xD3"};
 						};
 						class Import_Items_module_Btn: RscButton
 						{
-							idc = 1601;
+							idc = 1671;
 
 							text = "Import"; //--- ToDo: Localize;
 							x = 42 * GUI_GRID_W;
@@ -751,7 +761,8 @@ class EMM_EquipmentModulesManager {
 							h = 6.5 * GUI_GRID_H;
 							tooltip = "Import items from arsenal"; //--- ToDo: Localize;
 							sizeEx = 7 * GUI_GRID_H;
-							onButtonClick = "[] spawn EMM_fnc_importFromArsenal";
+							onButtonClick = "[] call EMM_fnc_importFromArsenal";
+							shortcuts[] = {"512 + 0x2F"};
 						};
 						// class Attachments_Items_module_Btn: RscButton
 						// {
@@ -811,6 +822,17 @@ class EMM_EquipmentModulesManager {
 					h = 17 * GUI_GRID_H;
 					class controls
 					{
+						class TargetContainers_Lbl: RscText
+						{
+							// onLoad = "(_this#0) ctrlShow false";
+							idc = 1330;
+							text = "Target containers: "; //--- ToDo: Localize;
+							x = 0 * GUI_GRID_W;
+							y = 0 * GUI_GRID_H;
+							w = 35 * GUI_GRID_W;
+							h = 7 * GUI_GRID_H;
+							tooltip = "Types of containers on which the module will affect"; //--- ToDo: Localize;
+						};
 						class TargetUnits_Lbl: RscText
 						{
 							idc = 1016;
@@ -865,7 +887,7 @@ class EMM_EquipmentModulesManager {
 							h = 10 * GUI_GRID_H;
 							tooltip = "Save module"; //--- ToDo: Localize;
 
-							onButtonClick = "[] spawn EMM_fnc_saveModule";
+							onButtonClick = "[] call EMM_fnc_saveModule";
 						};
 						class Rename_module_Btn: Save_module_Btn
 						{

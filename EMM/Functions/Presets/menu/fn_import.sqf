@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 private _clipboard = copyFromClipboard;
 
 if !("%EMM_EXPORT%" in _clipboard) exitWith {
@@ -13,7 +15,7 @@ private _modules = _data#2;
 
 
 if (_folders isEqualTo []) then {
-	_folders = _modules apply {[[], "%EMM_MODULE%", _x#0, 0]};
+	_folders = _modules apply {[[], MODULE_TYPE_DATA(_x#1#2, 0), _x#0, 0]; };
 };
 
 EMM_var_temp_RENAME_EL_TYPE = "Module";
@@ -21,14 +23,14 @@ _modules = _modules apply {
 	[_x, 0] call EMM_fnc_setCopyName;
 };
 _folders = _folders apply {
-	if ((_x#1) == "%EMM_MODULE%") then {
+	if ((_x#1) in EMM_var_BROWSER_TYPES) then {
 		[_x, 2] call EMM_fnc_setCopyName;
 	} else {_x};
 };
 
 EMM_var_temp_RENAME_EL_TYPE = "Folder";
 _folders = _folders apply {
-	if ((_x#1) == "%EMM_FOLDER%") then {
+	if ((_x#1) == type_EMM_FOLDER) then {
 		[_x, 2] call EMM_fnc_setCopyName;
 	} else {_x};
 };

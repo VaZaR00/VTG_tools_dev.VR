@@ -6,7 +6,7 @@ private _setGL = {
 	};
 
 	private _set = {
-		_script = "if (!isServer) exitWith {};" + _script;
+		_script = "if (!isServer) exitWith {};" + _script + ";EMM_flag_GIVE_DONE = true;";
 
 		call _modifyOldModule;
 

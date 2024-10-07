@@ -1,3 +1,5 @@
+#include "..\..\..\defines.hpp";
+
 private _arsenal = EMM_equipUI#0;
 
 private _category = EMM_var_currentArsenalCategory;
@@ -24,12 +26,21 @@ if (
 	};
 };
 
-if (
-	(_name == EMM_Current_Module)&&
-	(_class == "%EMM_comp%")
+if ((_class == "%EMM_comp%") &&
+	(_name == EMM_Current_Module)
 ) exitWith {
 	["Can't add composite module into itself!", 1] call EMM_fnc_message;
 };
+if ((_class == "%EMM_comp%") &&
+	{
+		_typeIndex = ISNIL(EMM_Current_Module_type, 0);
+		PR(_pic) = TYPE_DATA_BY_I(_typeIndex, 0);
+		_modulePic != _pic
+	}
+) exitWith {
+	["Can't add composite module of different type!", 1] call EMM_fnc_message;
+};
+
 if (_class == "%EMM_comp%") then {
 	_class = "comp$$" + _name;
 	_func = "none";

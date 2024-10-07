@@ -15,9 +15,9 @@ private _main = {
 	private _scriptArr = if (_one) then {
 		private _data = [EMM_Current_Module] call EMM_fnc_getModules;
 		_data = [[EMM_Current_Module, _data]];
-		[_data, false] call EMM_fnc_compiler;
+		[_data, false, false] call EMM_fnc_compiler;
 	} else {
-		[nil, false] call EMM_fnc_compiler;
+		[nil, false, false] call EMM_fnc_compiler;
 	};
 
 	_scriptArr apply {
@@ -33,7 +33,7 @@ private _main = {
 				};
 			};
 
-			_script = format["private _handle = [] spawn {%1};; waitUntil { scriptDone _handle };", _script];
+			_script = format["private _handle = [] spawn {%1}; waitUntil { scriptDone _handle };", _script];
 			_script = compile _script;
 			SPWN_N_WAIT(_script);
 			terminate _waitHandle;

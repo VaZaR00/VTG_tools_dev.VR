@@ -1,26 +1,33 @@
 version=54;
 class EditorData
 {
-	moveGridStep=1;
+	moveGridStep=2;
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=513;
 	mods[]=
 	{
-		"Equipment_Modules_Manager",
-		"3denEnhanced"
+		"Equipment_Modules_Manager"
 	};
 	class ItemIDProvider
 	{
-		nextID=5;
+		nextID=489;
+	};
+	class MarkerIDProvider
+	{
+		nextID=36;
+	};
+	class LayerIndexProvider
+	{
+		nextID=135;
 	};
 	class Camera
 	{
-		pos[]={4560.0054,7.7145886,2280.4063};
-		dir[]={0.33242455,-0.6474762,-0.68594378};
-		up[]={0.28245884,0.76190037,-0.58283842};
-		aside[]={-0.90000087,-2.2407621e-006,-0.43616721};
+		pos[]={4213.022,6.6336365,5437.9897};
+		dir[]={0.28074953,-0.24781273,-0.92736602};
+		up[]={0.071836583,0.96876723,-0.2372891};
+		aside[]={-0.95722538,2.8219074e-007,-0.28979024};
 	};
 };
 binarizationWanted=0;
@@ -28,7 +35,7 @@ sourceName="EMM_TOOL";
 addons[]=
 {
 	"A3_Characters_F",
-	"A3_Modules_F"
+	"ace_explosives"
 };
 class AddonsMetaData
 {
@@ -44,14 +51,14 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="ace_explosives";
+			name="ACE3 - Explosives";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 	};
 };
-randomSeed=1429364;
+randomSeed=11457308;
 class ScenarioData
 {
 	author="Vazar";
@@ -70,7 +77,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[""gg1"",[[""all""],[[""Rand"",[""U_I_C_Soldier_Bandit_1_F"",""FAU"",1],[""U_I_C_Soldier_Bandit_4_F"",""FAU"",1]]]]],[""gg"",[[""all""],[[""V_PlateCarrier1_rgr_noflag_F"",""AV"",1]]]]]";
+					value="[[""NewModule2024-10-7-9-35-14-941"",[[""""],[],0]]]";
 				};
 			};
 		};
@@ -83,7 +90,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[[],""%EMM_MODULE%"",""gg"",20000],[[],""%EMM_MODULE%"",""gg1"",20001]]";
+					value="[[[],""%EMM_MODULE%"",""NewModule2024-10-7-9-35-14-941"",20000]]";
 				};
 			};
 		};
@@ -108,23 +115,27 @@ class Mission
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0;
+		startWeather=0.30000001;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0;
+		forecastWeather=0.30000001;
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		year=2035;
-		day=28;
-		hour=13;
-		minute=37;
-		startFogDecay=0.014;
-		forecastFogDecay=0.014;
+		wavesForced=1;
+		windForced=1;
+		year=2015;
+		month=6;
+		day=6;
+		hour=12;
+		startFogBase=250;
+		forecastFogBase=250;
+		startFogDecay=0.017999999;
+		forecastFogDecay=0.017999999;
 	};
 	class Entities
 	{
-		items=3;
+		items=1;
 		class Item0
 		{
 			dataType="Group";
@@ -137,7 +148,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4557.7886,5.0014391,2288.845};
+						position[]={4213.6123,5.0014391,5435.5107};
 					};
 					side="West";
 					flags=7;
@@ -145,54 +156,14 @@ class Mission
 					{
 						isPlayer=1;
 					};
-					id=1;
-					type="B_soldier_AAT_F";
+					id=487;
+					type="B_soldier_exp_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=0;
-		};
-		class Item1
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4560.8779,5.0014391,2277.4705};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=3;
-					type="B_support_Mort_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2;
-		};
-		class Item2
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={0,5,0};
-			};
-			name="EQUIP_MODULES_COMPILED_CODE";
-			init="if (!isServer) exitWith {};[] spawn {private _removeEq = {" \n "params[""_u""];" \n "removeAllWeapons _u;" \n "removeAllItems _u;" \n "removeAllAssignedItems _u;" \n "removeUniform _u;" \n "removeVest _u;" \n "removeBackpack _u;" \n "removeHeadgear _u;" \n "removeGoggles _u;};" \n "{_x call _removeEq} forEach allUnits; {}forEach (allUnits); {}forEach (allUnits);};";
-			id=4;
-			type="Logic";
+			id=486;
 		};
 	};
 };

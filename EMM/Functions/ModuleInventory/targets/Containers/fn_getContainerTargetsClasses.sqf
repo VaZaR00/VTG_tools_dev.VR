@@ -1,4 +1,4 @@
-private _classes = allUnits apply { typeOf _x };
+private _classes = vehicles apply { typeOf _x };
 private _unique = _classes arrayIntersect _classes;
 private _names = _unique apply {
 	private _displayName = getText (configFile >> "CfgVehicles" >> _x >> "displayName");
@@ -9,7 +9,8 @@ private _names = _unique apply {
 	};
 	[
 		_displayName, 
-		format["Apply for units of ""%1"" class", _class],
+		format["Apply for containers of ""%1"" class", _class],
 		_x //classname
-	]};
+	]
+};
 _names;

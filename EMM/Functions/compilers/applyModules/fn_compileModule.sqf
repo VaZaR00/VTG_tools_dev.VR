@@ -1,27 +1,41 @@
+#include "..\..\..\defines.hpp";
+
 params["_module"];
 
 private _targets = (_module#1)#0;
 private _items = (_module#1)#1;
+PR(_type) = (_module#1)#2;
+_type = ISNIL(_type, 0);
 private _name = _module#0;
 
 if ("%EMM_comp%" in (_targets#0)) exitWith {""};
 
+EMM_var_temp_COMPILE_MODULE_TYPE = _type;
+PR(_func) = EMM_fnc_compileItemFunc;
 private _itemsScripts = "";
 
+PR(_entities) = switch (_type) do {
+	case 1: {
+		"vehicles"
+	};
+	default { "allUnits" };
+};
+
+
 {
-	private _itemFunc = [+_x, _name] call EMM_fnc_compileItemFunc;
+	private _itemFunc = [+_x, _name] call _func;
 	_itemsScripts = _itemsScripts + _itemFunc;
 } forEach _items;
 
 private _targetsScript = if (count _targets == 1) then {
-	switch (_targets#0) do {
-		case "all": { "allUnits" };
-		case "blue": { "allUnits select {side _x == west}" };
-		case "red": { "allUnits select {side _x == east}" };
-		case "ind": { "allUnits select {side _x == resistance}" };
-		case "civ": { "allUnits select {side _x == civilian}" };
-		default { format["allUnits select {(typeOf _x) == %1}", str (_targets#0)] };
-	};
+	format[switch (_targets#0) do {
+		case "all": { "%1" };
+		case "blue": { "%1 select {side _x == west}" };
+		case "red": { "%1 select {side _x == east}" };
+		case "ind": { "%1 select {side _x == resistance}" };
+		case "civ": { "%1 select {side _x == civilian}" };
+		default { "%1 select {(typeOf _x) == %2}" };
+	}, _entities, str (_targets#0)]
 } else {
 	private _targetsClasses = _targets#0;
 	private _include = _targets#1;
@@ -29,7 +43,7 @@ private _targetsScript = if (count _targets == 1) then {
 
 	private _getUnits = {
 		params["_arr"];
-		private _units = allUnits select {
+		private _units = (call compile _entities) select {
 			private _var = _x get3DENAttribute "name"; 
 			(_var#0) in _arr 
 		};
@@ -37,7 +51,7 @@ private _targetsScript = if (count _targets == 1) then {
 	};
 
 	_targetsClasses apply { str _x };
-	private _text = format["(allUnits select {(typeOf _x) in %1})", _targetsClasses];
+	private _text = format["(%1 select {(typeOf _x) in %2})", _entities, _targetsClasses];
 
 	if (_include != "") then {
 		_include = _include splitString " ,;.";
@@ -68,5 +82,7 @@ private _targetsScript = if (count _targets == 1) then {
 };
 
 private _script = format["{%1}forEach (%2);", _itemsScripts, _targetsScript];
+
+EMM_var_temp_COMPILE_MODULE_TYPE = nil;
 
 _script;

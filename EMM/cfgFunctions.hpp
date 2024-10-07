@@ -32,7 +32,6 @@ class CfgFunctions
 			class isWeapon { file = "EMM\Functions\Items\fn_isWeapon.sqf"; };
 			class validateFunction { file = "EMM\Functions\Items\fn_validateFunction.sqf"; };
 			class validPic { file = "EMM\Functions\Items\fn_validPic.sqf"; };
-			class checkIfModuleNameExists { file = "EMM\Functions\ModuleBrowser\fn_checkIfModuleNameExists.sqf"; };
 			class loadModuleBrowser { file = "EMM\Functions\ModuleBrowser\fn_loadModuleBrowser.sqf"; };
 			class openModule { file = "EMM\Functions\ModuleBrowser\fn_openModule.sqf"; };
 			class setCurrentModule { file = "EMM\Functions\ModuleBrowser\fn_setCurrentModule.sqf"; };
@@ -50,8 +49,9 @@ class CfgFunctions
 			class initPreset { file = "EMM\Functions\Presets\fn_initPreset.sqf"; };
 			class setPreset { file = "EMM\Functions\Presets\fn_setPreset.sqf"; };
 			class wipePreset { file = "EMM\Functions\Presets\fn_wipePreset.sqf"; };
-			class storageMiddleware { file = "EMM\Functions\repository\fn_storageMiddleware.sqf"; };
 			class saveAllData { file = "EMM\Functions\repository\fn_saveAllData.sqf"; };
+			class storageMiddleware { file = "EMM\Functions\repository\fn_storageMiddleware.sqf"; };
+			class browserTypesData { file = "EMM\Functions\Shared\fn_browserTypesData.sqf"; };
 			class clearSearch { file = "EMM\Functions\Shared\fn_clearSearch.sqf"; };
 			class copyClassname { file = "EMM\Functions\Shared\fn_copyClassname.sqf"; };
 			class loadUserSettings { file = "EMM\Functions\Shared\fn_loadUserSettings.sqf"; };
@@ -95,8 +95,7 @@ class CfgFunctions
 			class setNestParent { file = "EMM\Functions\ModuleInventory\Nesting\fn_setNestParent.sqf"; };
 			class addTargetToCombo { file = "EMM\Functions\ModuleInventory\targets\fn_addTargetToCombo.sqf"; };
 			class getTargetOptionName { file = "EMM\Functions\ModuleInventory\targets\fn_getTargetOptionName.sqf"; };
-			class getTargetsByClass { file = "EMM\Functions\ModuleInventory\targets\fn_getTargetsByClass.sqf"; };
-			class getTargetSides { file = "EMM\Functions\ModuleInventory\targets\fn_getTargetSides.sqf"; };
+			class loadTargetPresets { file = "EMM\Functions\ModuleInventory\targets\fn_loadTargetPresets.sqf"; };
 			class loadTargetsCombo { file = "EMM\Functions\ModuleInventory\targets\fn_loadTargetsCombo.sqf"; };
 			class exportPresetsPM { file = "EMM\Functions\Presets\manager\fn_exportPresetsPM.sqf"; };
 			class importPresetsPM { file = "EMM\Functions\Presets\manager\fn_importPresetsPM.sqf"; };
@@ -125,11 +124,16 @@ class CfgFunctions
 			class copyReport { file = "EMM\Functions\compilers\applyModules\failedReport\fn_copyReport.sqf"; };
 			class failedToGiveReport { file = "EMM\Functions\compilers\applyModules\failedReport\fn_failedToGiveReport.sqf"; };
 			class failedToLoadReport { file = "EMM\Functions\compilers\applyModules\failedReport\fn_failedToLoadReport.sqf"; };
+			class containerTargets { file = "EMM\Functions\ModuleInventory\targets\Containers\fn_containerTargets.sqf"; };
+			class getContainerTargetsClasses { file = "EMM\Functions\ModuleInventory\targets\Containers\fn_getContainerTargetsClasses.sqf"; };
 			class loadTargetsMenu { file = "EMM\Functions\ModuleInventory\targets\menu\fn_loadTargetsMenu.sqf"; };
 			class onSelectTarget { file = "EMM\Functions\ModuleInventory\targets\menu\fn_onSelectTarget.sqf"; };
 			class openEditTargetsMenu { file = "EMM\Functions\ModuleInventory\targets\menu\fn_openEditTargetsMenu.sqf"; };
 			class setTargets { file = "EMM\Functions\ModuleInventory\targets\menu\fn_setTargets.sqf"; };
 			class showEditBtn { file = "EMM\Functions\ModuleInventory\targets\menu\fn_showEditBtn.sqf"; };
+			class getTargetSides { file = "EMM\Functions\ModuleInventory\targets\Units\fn_getTargetSides.sqf"; };
+			class getUnitTargetsClasses { file = "EMM\Functions\ModuleInventory\targets\Units\fn_getUnitTargetsClasses.sqf"; };
+			class unitsTargets { file = "EMM\Functions\ModuleInventory\targets\Units\fn_unitsTargets.sqf"; };
 			class presetsList_addItem { file = "EMM\Functions\Presets\manager\Listbox\fn_presetsList_addItem.sqf"; };
 			class presetsList_deleteItem { file = "EMM\Functions\Presets\manager\Listbox\fn_presetsList_deleteItem.sqf"; };
 			class presetsList_renameItem { file = "EMM\Functions\Presets\manager\Listbox\fn_presetsList_renameItem.sqf"; };
@@ -137,6 +141,7 @@ class CfgFunctions
 			class getFoldersStorage { file = "EMM\Functions\repository\Folders\DataAccess\fn_getFoldersStorage.sqf"; };
 			class setFoldersStorage { file = "EMM\Functions\repository\Folders\DataAccess\fn_setFoldersStorage.sqf"; };
 			class modulesAmount { file = "EMM\Functions\repository\Modules\Common\fn_modulesAmount.sqf"; };
+			class moduleTypeData { file = "EMM\Functions\repository\Modules\Common\fn_moduleTypeData.sqf"; };
 			class saveModule { file = "EMM\Functions\repository\Modules\Common\fn_saveModule.sqf"; };
 			class getModulesStorage { file = "EMM\Functions\repository\Modules\DataAccess\fn_getModulesStorage.sqf"; };
 			class setModulesStorage { file = "EMM\Functions\repository\Modules\DataAccess\fn_setModulesStorage.sqf"; };
@@ -150,6 +155,7 @@ class CfgFunctions
 			class att_setModulesStorage { file = "EMM\Functions\repository\Modules\DataAccess\3den_Attributes\fn_att_setModulesStorage.sqf"; };
 			class var_getModulesStorage { file = "EMM\Functions\repository\Modules\DataAccess\DEV\fn_var_getModulesStorage.sqf"; };
 			class var_setModulesStorage { file = "EMM\Functions\repository\Modules\DataAccess\DEV\fn_var_setModulesStorage.sqf"; };
+			class getVehMagsList { file = "EMM\Functions\VehicleLoadouts\fn_getVehMagsList.sqf"; };
 
 		};
 

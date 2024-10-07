@@ -33,6 +33,40 @@ class EMM_name_input_menu {
 			w = 7 * GUI_GRID_W;
 			h = 2.5 * GUI_GRID_H;
 		};
+		class type_lbl: RscText
+		{
+			onLoad = "(_this#0) ctrlShow false";
+			idc = 1257;
+			x = 26 * GUI_GRID_W;
+			y = 26.6 * GUI_GRID_H;
+			w = 7 * GUI_GRID_W;
+			h = 1 * GUI_GRID_H;
+			SizeEx = 1.4 * GUI_GRID_H;
+			text = "Type:";
+		};
+		class type_combo: RscCombo
+		{
+			onLoad = "(_this#0) ctrlShow false";
+			idc = 1258;
+			x = 26 * GUI_GRID_W;
+			y = 27.8 * GUI_GRID_H;
+			w = 12.5 * GUI_GRID_W;
+			h = 1.7 * GUI_GRID_H;
+			class Items
+			{
+				class unit
+				{
+					text = "Unit";
+					tooltip = "Module for units inventory and equipment";
+					default = 1;
+				};
+				class container
+				{
+					text = "Container";
+					tooltip = "Module for containers (boxes, vehicle inventory)";
+				};
+			};
+		};
 		class ok_btn: RscButtonMenuOK
 		{
 			idc = 1031;

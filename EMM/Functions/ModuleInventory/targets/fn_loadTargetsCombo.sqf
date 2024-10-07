@@ -1,10 +1,11 @@
-private _sides = call EMM_fnc_getTargetSides;
-private _types = call EMM_fnc_getTargetsByClass;
-EMM_TARGETS_OPTIONS = [["All", "Apply module to ALL PLAYABLE units", "all"]] + _sides + [["*Custom*", "Click ""Edit"" to set custom terms", "edit"]] + [["*Composite*", "Module can be added to other modules as item", "%EMM_comp%"]] + _types;
+params[["_type", 0]];
+
+EMM_CURRENT_TARGETS_OPTIONS = +(EMM_var_TARGET_PRESETS#_type);
+
 lbClear (EMM_equipUI#7);
 
 {
 	_x call EMM_fnc_addTargetToCombo;
-} forEach EMM_TARGETS_OPTIONS;
+} forEach EMM_CURRENT_TARGETS_OPTIONS;
 
 (EMM_equipUI#7) lbSetCurSel 0;

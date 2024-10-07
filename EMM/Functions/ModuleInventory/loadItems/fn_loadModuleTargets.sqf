@@ -1,6 +1,8 @@
-params["_targets"];
+#include "..\..\..\defines.hpp";
 
-call EMM_fnc_loadTargetsCombo;
+params["_targets", ["_type", (ISNIL(EMM_Current_Module_type, 0))]];
+
+[_type] call EMM_fnc_loadTargetsCombo;
 
 private _targetsCtrl = EMM_equipUI#7;
 

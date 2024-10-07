@@ -61,7 +61,7 @@ private _setTabTree = {
 
 
 for "_i" from 0 to 3 do {
-	private _treeTab = _display ctrlCreate ["RscTree", 5110 + _i, _treeTabsGrp];
+	private _treeTab = _display ctrlCreate ["EMM_tree", 5110 + _i, _treeTabsGrp];
 	private _tabBtn = _display displayCtrl (3330 + _i);
 	private _tabBg = _display displayCtrl (3320 + _i);
 	//private _tabCount = _display displayCtrl (3340 + _i);

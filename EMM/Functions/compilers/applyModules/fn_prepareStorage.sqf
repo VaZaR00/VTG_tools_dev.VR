@@ -96,6 +96,7 @@ private _algorithm = {
 		1 //return
 	};
 
+	if (count _el < 2) exitWith {10};
 	private _newWeight = [_el#1] call _check;
 	if (_newWeight > _weight) then {_weight} else {_newWeight};
 };

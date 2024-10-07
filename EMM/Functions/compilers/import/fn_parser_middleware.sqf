@@ -10,10 +10,10 @@ if (
 	[_text] call EMM_fnc_bi_arsenalExportParser; //return
 };
 
-if ("_" in (toLower _text)) exitWith {
-	[_text] call EMM_fnc_importClassesParser; //return
-};
+// if ("_" in (toLower _text)) exitWith {
+private _res = [_text] call EMM_fnc_importClassesParser; //return
+// };
 
-["Import not valid!", 0] call EMM_fnc_message;
+if (count _res != 0) then {_res} else {nil};
 
-nil;
+// ["Import not valid!", 1] call EMM_fnc_message;

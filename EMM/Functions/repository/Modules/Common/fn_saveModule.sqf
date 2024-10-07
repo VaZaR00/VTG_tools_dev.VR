@@ -1,3 +1,5 @@
+#include "..\..\..\..\defines.hpp";
+
 disableSerialization;
 if (EMM_Current_Module == "%none%") exitWith {};
 
@@ -8,7 +10,7 @@ if ((_type#0) == "edit") then {
 	_type = EMM_moduleTargets;
 };
 private _moduleItemsList = call EMM_fnc_parseModuleItemsTree;
-[EMM_Current_Module, _type, _moduleItemsList] call EMM_fnc_updateModule;
+[EMM_Current_Module, _type, _moduleItemsList, ISNIL(EMM_Current_Module_type, 0)] call EMM_fnc_updateModule;
 
 call EMM_fnc_checkForComposites;
 
